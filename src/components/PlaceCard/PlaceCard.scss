@@ -1,0 +1,86 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
+
+.placeCardContainer {
+    width: 330px;
+    height: 450px;
+    @include displayFlexCard;
+    justify-content: space-between;
+    margin: 0 0 50px 0;
+    font-weight: bold;
+    .grey {
+        color: $placeCardFontColor;   
+    }
+}
+.placeCardImageContainer {
+    height: 213px;
+    width: 100%;
+    background-color: $placeCardButtonsColor;
+    .placeCardImage {
+        height: 213px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.placeCardName {
+    font-size: 0.97em;
+    font-family: 'Montserrat', sans-serif;
+}
+.placeCardPrice {
+    font-size: 0.85em;
+    font-family: 'Varela Round';
+    font-weight: 400;
+}
+.rateStarIcon {
+    font-size: 0.85em;
+    color: $placeCardYellow;
+}
+.placeCarInfo {
+    margin-left: 10px;
+    font-size: 0.85em;
+    font-family: 'Montserrat';
+}
+.placeCardIcon {
+    color: $placeCardBlue;
+    font-size: 0.9em;
+}
+.placeCardAvatarContainer {
+    position: absolute;
+    margin-left: 260px;
+    margin-top: 185px;
+    height: 50px;
+    width: 50px;
+    background-color: $placeCardButtonsColor;
+    border-radius: 50%;
+    border: solid 1px white;
+    .placeCardAvatar {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    }
+}
+.placeCardButtons {
+    @include displayFlexCardRow;
+    width: 100%;
+    height: 47px;
+    .placeCardButton {
+        font-weight: 500;
+        border: 0;
+        border-radius: 2px;
+        background-color: $placeCardButtonsColor;
+        width: 50px;
+        height: 100%;
+        @include displayFlexOnCenter;
+        .cardButtonIcon {
+            font-size: 1.45em;
+        }
+    }
+    .detail {
+        width: 160px;
+        font-family: 'Montserrat';
+        font-size: 1em;
+    }
+}
+

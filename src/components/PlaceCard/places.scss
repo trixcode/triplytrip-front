@@ -1,0 +1,53 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
+
+.placesContainer {
+    padding: 0px 16px;
+    @include displayFlexOnCenter;
+
+    width: 1408px;
+    
+}
+.placesButtonContainer {
+    @include displayFlexCardRow;
+    width: 100%;
+    margin-bottom: 42px;
+    .placesButton {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        background: none;
+        padding: 0;        
+        border: solid 1px $placeCardFontColor;
+        height: 50px;
+        width: 13.2%;
+        border-radius: 5px;
+        font-size: 1.2em;
+    }
+    .placesButton:hover {
+        border: 0;
+        color: white;
+        background: -moz-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
+        background: -webkit-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
+        background: linear-gradient(left, #5884e8 0%, #2cc7de 100%);
+    }
+}
+.placesTitle {
+    margin: 0 0 10px 0;
+    font-size: 2.25em;
+    margin-left: 5px; 
+    font-family: 'Montserrat', sans-serif;
+}
+.placesText {
+    margin:0 0 54px 0; 
+    font-size: 1.25em;
+    margin-right: 3px;  
+    font-family: 'Varela Round', sans-serif;
+}
+.placeCardsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
