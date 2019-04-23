@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Krona+One|Montserrat|Varela+Round');
+
+body, h1, h2, h3, ul {
+    margin: 0
+}
+
+.GradientWrapper {
+    height: 787px;
+    width: 100%;
+    background: rgb(140,163,246);
+    background: linear-gradient(90deg, rgba(140,163,246,1) 0%, rgba(229,107,207,1) 100%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.headerBorder {
+    height: 2px;
+    background:#b4aff3;
+    width: 100%;
+    border: none;
+    margin: 0;
+}

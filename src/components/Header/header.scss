@@ -1,6 +1,57 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 
-.test {
-    color: $primaryColor;
+
+.headerContainer {
+    width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    .header {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .headerBrand {
+            width: 200px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 43px;
+                color: #fff;
+            }
+        }
+        .headerNavigation {
+            .headerNavigationList {
+                list-style: none;
+                margin-top: 20px;
+                li {
+                    display: inline;
+                    margin-left: 20px;
+                    color: #d994e1;
+                    font-size: 12px;
+                    font-family: 'Krona One', sans-serif;
+                    button {
+                        width: 130px;
+                        height: 33px;
+                        border: #fff 1px solid;
+                        border-radius: 3px;
+                        background: none;
+                        color: #fff;
+                        font-family: 'Krona One', sans-serif;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
+
+
+

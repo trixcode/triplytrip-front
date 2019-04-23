@@ -1,12 +1,20 @@
+import { Fragment } from 'react'
 
 import Header from '../src/components/Header';
+import TopContent from '../src/components/TopContent'
 
 import "../src/assets/styles/main.scss";
 
 function Home() {
-    return <div className="example">
-    <Header text="This is test"/>
-    </div>;
+    return (
+      <Fragment>
+        <div className="GradientWrapper">
+          <Header />
+          <hr className="headerBorder" />
+          <TopContent />
+        </div>
+      </Fragment> 
+    )
   }
   
   export default Home;
