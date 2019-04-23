@@ -2,30 +2,28 @@
 @import '../../assets/styles/variables';
 
 
-.headerContainer {
-    width: 1440px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
     .header {
+        width: 1440px;
         height: 70px;
-        width: 100%;
         display: flex;
+        margin: 0;
         justify-content: space-between;
-        .headerBrand {
+        &__brand {
             width: 200px;
             height: 100%;
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
-            h2 {
+            &--title {
                 font-family: 'Montserrat', sans-serif;
                 font-size: 43px;
                 color: #fff;
             }
         }
-        .headerNavigation {
-            .headerNavigationList {
+        &__navigation {
+            display: flex;
+            justify-content: space-between;
+            &--list {
                 list-style: none;
                 margin-top: 20px;
                 li {
@@ -34,7 +32,17 @@
                     color: #d994e1;
                     font-size: 12px;
                     font-family: 'Krona One', sans-serif;
-                    button {
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+                
+            }
+            .header__actions {
+                margin-top: 13px;
+                button {
+                        margin-left: 20px;
                         width: 130px;
                         height: 33px;
                         border: #fff 1px solid;
@@ -42,15 +50,16 @@
                         background: none;
                         color: #fff;
                         font-family: 'Krona One', sans-serif;
-                    }
                 }
                 a {
                     text-decoration: none;
                     color: #fff;
+                    margin-left: 20px;
+                    font-family: 'Krona One', sans-serif;
+                    font-size: 12px;
                 }
             }
         }
-    }
 }
 
 

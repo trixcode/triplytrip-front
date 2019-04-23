@@ -2,30 +2,31 @@
 import './header.scss';
 
 const Header = () => {
-    return (
-            <div className="headerContainer">
-                <header className="header">
-                    <div className="headerBrand">
-                        <img scr="./mainIcon.png" className="brandLogo" alt="logo" />
-                        <h2 className="brand">Listicle</h2>
-                    </div>
-                    <div className="headerNavigation">
-                        <ul className="headerNavigationList">
-                            <li className="headerNavigationItem"><a href="#">Home</a></li>
-                            <li className="headerNavigationItem"><a href="#">Explore</a></li>
-                            <li className="headerNavigationItem"><a href="#">Listings</a></li>
-                            <li className="headerNavigationItem"><a href="#">Destinations</a></li>
-                            <li className="headerNavigationItem"><a href="#">Pages</a></li>
-                            <li className="headerNavigationItem"><a href="#">Blog</a></li>
-                            <li className="headerNavigationItem">|</li>
-                            <li className="headerNavigationItem"><button>+ Add Listing</button></li>
-                            <li className="headerNavigationItem"><a href="#">icon</a></li>
-                            <li className="headerNavigationItem"><a href="#">icon</a></li>
-                        </ul>
-                    </div>
-                </header>
-            </div>
-    )
+  return (
+      <header className="header">
+        <div className="header__brand">
+          <img scr="./mainIcon.png" className="header__brand--logo" alt="logo" />
+          <h2 className="header__brand--title">Listicle</h2>
+        </div>
+        <nav className="header__navigation">
+          <ul className="header__navigation--list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Listings</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Blog</a></li>
+            <li>|</li>
+          </ul>
+
+          <div className="header__actions">
+            <button>+ Add Listing</button>
+            <a href="#">icon</a>
+            <a href="#">icon</a>
+          </div>
+        </nav>
+      </header>
+  )
 }
 
 export default Header;
