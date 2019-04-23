@@ -1,6 +1,14 @@
 @import 'mixins.scss';
-
-.container {
-    width: 1440px;
-    @include displayFlexCenter;
+body  {
+    font-family: 'Montserrat', sans-serif;
+}
+*, h1, h2, h3, h4, h5, h6, button, span, ul, li {
+    margin: 0;
+    padding: 0;
+}
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

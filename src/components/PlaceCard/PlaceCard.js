@@ -5,92 +5,93 @@ import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchan
 
 const PlaceCard = props => {
     const {place} = props;
+
     return (
-        <div className='placeCardContainer'>
-            <div className='placeCardImageContainer'> 
+        <div className='placeCard-container'>
+            <div className='placeCard-img-container'> 
                 <img 
                     src={place.mainImage} 
                     alt='place' 
-                    className='placeCardImage'/>
+                    className='placeCard__img'/>
             </div>
-            <div className='placeCardAvatarContainer'>
+            <div className='placeCard-avatar-container'>
                 <img 
                     src='https://img5.goodfon.com/wallpaper/big/0/de/devushka-ulybka-vzgliad-glaza-vesnushki-veronika-vonka-roma.jpg' 
                     alt='avatar' 
-                    className='placeCardAvatar'/>
+                    className='placeCard__avatar'/>
             </div>
-            <span className='placeCardName'>
+            <span className='placeCard__name'>
                 {place.name} 
             </span> 
-            <span className='placeCardPrice grey'>
+            <span className='placeCard__price grey'>
                 {place.price} сом
             </span>
-            <div className='placeCardRates'>
+            <div className='placeCard-rates'>
                { <FontAwesomeIcon 
-                    className='rateStarIcon' 
+                    className='rate__star__icon' 
                     icon={faStar} 
                 />}
                 { <FontAwesomeIcon 
-                    className='rateStarIcon' 
+                    className='rate__star__icon' 
                     icon={faStar} 
                 />}
                 { <FontAwesomeIcon 
-                    className='rateStarIcon' 
+                    className='rate__star__icon' 
                     icon={faStar} 
                 />}
                 { <FontAwesomeIcon 
-                    className='rateStarIcon' 
+                    className='rate__star__icon' 
                     icon={faStar} 
                 />}
                 { <FontAwesomeIcon 
-                    className='rateStarIcon' 
+                    className='rate__star__icon' 
                     icon={faStar} 
                 />}               
             </div>
-            <div className='placeCardAddres grey'>
+            <div className='placeCard-addres grey'>
                 <FontAwesomeIcon 
-                    className='placeCardIcon'
+                    className='placeCard__icon'
                     icon={faMapMarkerAlt} />
                 <span 
-                    className='placeCarInfo location'>
+                    className='placeCard__info location'>
                     {place.address}  
                 </span> 
             </div>
-            <div className='placeCardSite grey'> 
+            <div className='placeCard-site grey'> 
                 <FontAwesomeIcon 
-                    className='placeCardIcon'
+                    className='placeCard__icon'
                     icon={faGlobeAmericas} />
                 <a 
                     href={place.email} 
-                    className='placeCarInfo site'> 
+                    className='placeCard__info site'> 
                     {place.email}  
                 </a>
             </div>
-            <div className='placeCardPhoneNumber grey'>
+            <div className='placeCard-phone-number grey'>
                 <FontAwesomeIcon 
-                    className='placeCardIcon'
+                    className='placeCard__icon'
                     icon={faMobileAlt} />
-                <span className='placeCarInfo number'>  
+                <span className='placeCard__info number'>  
                     +{place.phone} 
                 </span>
             </div>  
-            <div className='placeCardButtons'>
-                <button className='placeCardButton detail'>
+            <div className='placeCard-button-container'>
+                <button className='placeCard__button detail'>
                     View Detail
                 </button>
-                <button className='placeCardButton'>
+                <button className='placeCard__button'>
                     <FontAwesomeIcon 
-                        className='cardButtonIcon location' 
+                        className='card__button__icon location' 
                         icon={faMapMarkerAlt} />
                 </button>
-                <button className='placeCardButton'>
+                <button className='placeCard__button'>
                     <FontAwesomeIcon 
-                        className='cardButtonIcon arrows' 
+                        className='card__button__icon arrows' 
                         icon={faExchangeAlt} />
                 </button>
-                <button className='placeCardButton'>
+                <button className='placeCard__button'>
                     <FontAwesomeIcon 
-                        className='cardButtonIcon heard' 
+                        className='card__button__icon heard' 
                         icon={faHeart} />
                 </button>
             </div>          

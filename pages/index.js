@@ -5,10 +5,12 @@ import Places from '../src/components/PlaceCard/Places'
 import "../src/assets/styles/main.scss";
 
 function Home() {
-    return <div className="example">
-    <Header text=""/>
-    <Places />
-    </div>;
+    return (
+      <div className="home-container">
+        <Header text=""/>
+        <Places />
+      </div>
+    )
   }
   
   export default Home;

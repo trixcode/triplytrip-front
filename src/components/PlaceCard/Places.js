@@ -1,52 +1,52 @@
 import PlaceCard from './PlaceCard';
 import './places.scss'
 
-import hotels from '../../../../fake-api-triplytrip/src/db/hotels.json';
+import hotels from './hotels.json';
 
 const Places = props => {
     const places = hotels.hotels
     return (
-     <section className='placesContainer' > 
-        <h2 className='placesTitle'>
+     <section className='places-container' > 
+        <h2 className='places__title'>
             Popular Thing To Do
         </h2>
-        <span className='placesText'>
+        <span className='places__text'>
             popular exclusive listings in our directory
         </span>
-        <div className='placesButtonContainer'>
+        <div className='places-button-container'>
             <button 
-                className='placesButton all'
+                className='places__button all'
                 id='all'> 
                 All 
             </button>
             <button 
                 id='hotels'
-                className='placesButton hotel'> 
+                className='places__button hotel'> 
                 Hotel
             </button>
             <button 
                 id='restaraunts'
-                className='placesButton restaurant'>
+                className='places__button restaurant'>
                 Restaurant
             </button>
             <button 
-                className='placesButton dinner'> 
+                className='places__button dinner'> 
                 Dinner 
             </button>
             <button 
-                className='placesButton clubBar'> 
+                className='places__button clubBar'> 
                 Club & Bar 
             </button>
             <button 
-                className='placesButton coffee'>
+                className='places__button coffee'>
                 Coffee
             </button>
             <button 
-                className='placesButton destinations'>
+                className='places__button destinations'>
                 Destinations
             </button>
          </div>
-        <div className='placeCardsContainer'>
+        <div className='place-cards-container'>
            { places.slice(0, 8).map(placeObj=>{
                return ( 
                     <PlaceCard 
@@ -60,4 +60,4 @@ const Places = props => {
     )
 }
 
-export default Places
+export default Places;

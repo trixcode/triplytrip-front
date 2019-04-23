@@ -2,29 +2,30 @@
 @import '../../assets/styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
-.placesContainer {
-    padding: 0px 16px;
+.places-container {
+    padding: 0px 15px;
     @include displayFlexOnCenter;
-
-    width: 1408px;
-    
+    width: 1440px;
 }
-.placesButtonContainer {
+.places__text {
+    margin-bottom: 54px; 
+    font-size: 1.25em;
+    font-family: 'Varela Round', sans-serif;
+}
+.places-button-container {
     @include displayFlexCardRow;
     width: 100%;
     margin-bottom: 42px;
-    .placesButton {
-        font-family: 'Montserrat';
+    .places__button{
         font-weight: 600;
-        background: none;
-        padding: 0;        
+        background: none; 
         border: solid 1px $placeCardFontColor;
         height: 50px;
         width: 13.2%;
         border-radius: 5px;
         font-size: 1.2em;
     }
-    .placesButton:hover {
+    .places__button:hover {
         border: 0;
         color: white;
         background: -moz-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
@@ -32,19 +33,12 @@
         background: linear-gradient(left, #5884e8 0%, #2cc7de 100%);
     }
 }
-.placesTitle {
-    margin: 0 0 10px 0;
+.places__title {
+    margin-bottom: 10px;
     font-size: 2.25em;
-    margin-left: 5px; 
-    font-family: 'Montserrat', sans-serif;
 }
-.placesText {
-    margin:0 0 54px 0; 
-    font-size: 1.25em;
-    margin-right: 3px;  
-    font-family: 'Varela Round', sans-serif;
-}
-.placeCardsContainer {
+
+.place-cards-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
