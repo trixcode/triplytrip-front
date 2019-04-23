@@ -1,5 +1,9 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/main.scss';
 
-.titleBlock {
+
+.title__block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +19,7 @@
     margin-bottom: 21px;
     text-align: center;
   }
-  .subTitle {
+  .sub-title {
     width: 374px;
     height: 16px;
     color: #000000;    
@@ -29,49 +33,79 @@
 
 
 
-.cardsBlock{
+.card__block{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   .card {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 330px;
     height: 430px;
-    .cardTopSide {
-      width: 330px;
-      height: 239px;
+    .card__top-side {
+      position: relative;
+      margin-bottom: 20px;
+      .image {
+        width: 100%;
+        height: 239px;
+      }
       .date {
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 53px;
         height: 63px;
-        text-transform: capitalize;
+        .date__day {
+          width: 26px;
+          height: 18px;
+          color: #000000;
+          font-family: 'Montserrat';
+          font-size: 24px;
+          text-transform: uppercase;
+          font-weight: 400;
+          border-bottom: 1px solid #000000;
+          padding: 10px;
+        } 
+        .date__month {
+          width: 25px;
+          height: 9px;
+          color: #000000;
+          font-family: 'Montserrat';
+          font-size: 12px;
+          font-weight: 300;
+          text-transform: uppercase;
+          padding: 5px;
+        }
       }
     }
-    .cardBottomSide {
-      width: 320px;
+    .card-news__bottom-side {
+      width: 330px;
       height: 201px;
-      .cardNews {
-        width: 250px;
+      .card-news__title {
         height: 41px;
         color: #232323;
         font-family: 'Montserrat';
         font-size: 20px;
         font-weight: 400;
-        padding: 20px 0 13px; 
+        overflow: hidden;
+        margin-bottom: 13px;
       }
-      .com {
-        width: 156px;
+      .card-news__tag {
+        width: 60%;
         height: 13px;
         display: flex;
-        padding: 0 0 25px 3px;
+        justify-content: space-between;
+        margin-bottom: 27px;
         .icons {
           height: 10px;
           color: #949494;
           font-family: "Varela Round";
         }
       }
-      .description {
+      .card-news__description {
         width: 320px;
         height: 35px;
         color: #949494;
@@ -79,14 +113,21 @@
         font-size: 14px;
         line-height: 22px;
         font-weight: 500;
-        padding: 0 0 25px;
+        margin-bottom: 25px;
       }
-      .btn {
+      .card-news__button {
         width: 184px;
         height: 30px;
-        border: 2px solid #e03e53;
-        border-radius: 10px;
-        text-transform: capitalize;
+        border: 2px solid #e3e3e3;
+        color: #9c9c9c;
+        background-color: #ffffff;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-family: 'Montserrat';
+        }
+        .card-news__button:hover {
+          border: 2px solid #e03e53;
+          color: #e03e53;
       }
     }
   }
