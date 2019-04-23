@@ -13,25 +13,25 @@
       display: flex;
       justify-content: space-around;
       margin-left: 100px;
-      .search__form--input-first{
+      .search-form__input-first{
         width: 474px;
         background: none;
         border: 1px white solid;
         padding: 0;
       }
-      .search__form--input-first::placeholder{
+      .search-form__input-first::placeholder{
         color: #ffffff;
         font-family: "Varela Round";
         font-size: 16px;
         padding-left: 20px;
         font-weight: 400;
       }
-      .search_form--input-second{
+      .search-form__input-second{
         background: none;
         width: 375px;
         border: 1px solid #ffffff;
       }
-      .search_form--input-second::placeholder{
+      .search-form__input-second::placeholder{
         opacity: 0.8;
         color: #ffffff;
         font-family: "Varela Round";
@@ -40,7 +40,7 @@
         line-height: 83.33px;
         padding-left: 20px;
       }
-      .search__form--button{
+      .search-form__button{
         vertical-align: middle;
         width: 245px;
         height: 54px;
