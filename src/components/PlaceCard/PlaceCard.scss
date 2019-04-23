@@ -12,6 +12,10 @@
     .grey {
         color: $placeCardFontColor;   
     }
+    .site {
+        text-decoration: none;
+        color: $placeCardFontColor;
+    }
 }
 .placeCardImageContainer {
     height: 213px;
@@ -40,6 +44,7 @@
     margin-left: 10px;
     font-size: 0.85em;
     font-family: 'Montserrat';
+   
 }
 .placeCardIcon {
     color: $placeCardBlue;

@@ -4,46 +4,75 @@ import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchan
 
 
 const PlaceCard = props => {
-
-    <FontAwesomeIcon icon={faMapMarkerAlt} />
+    const {place} = props;
     return (
         <div className='placeCardContainer'>
             <div className='placeCardImageContainer'> 
-                <img src='https://img3.goodfon.com/wallpaper/big/7/66/other-serbia-city-night-hotel.jpg' alt='hotel' className='placeCardImage'/>
+                <img 
+                    src={place.mainImage} 
+                    alt='place' 
+                    className='placeCardImage'/>
             </div>
             <div className='placeCardAvatarContainer'>
-                <img src='https://img5.goodfon.com/wallpaper/big/0/de/devushka-ulybka-vzgliad-glaza-vesnushki-veronika-vonka-roma.jpg' alt='avatar' className='placeCardAvatar'/>
+                <img 
+                    src='https://img5.goodfon.com/wallpaper/big/0/de/devushka-ulybka-vzgliad-glaza-vesnushki-veronika-vonka-roma.jpg' 
+                    alt='avatar' 
+                    className='placeCardAvatar'/>
             </div>
             <span className='placeCardName'>
-                Jardiniere Restaurant   
+                {place.name} 
             </span> 
             <span className='placeCardPrice grey'>
-                Restaurant . $10 - $90
+                {place.price} сом
             </span>
             <div className='placeCardRates'>
-               { <FontAwesomeIcon className='rateStarIcon' icon={faStar} />}
-               { <FontAwesomeIcon className='rateStarIcon' icon={faStar} />}
-               { <FontAwesomeIcon className='rateStarIcon' icon={faStar} />}
-               { <FontAwesomeIcon className='rateStarIcon' icon={faStar} />}
-               { <FontAwesomeIcon className='rateStarIcon' icon={faStar} />}
+               { <FontAwesomeIcon 
+                    className='rateStarIcon' 
+                    icon={faStar} 
+                />}
+                { <FontAwesomeIcon 
+                    className='rateStarIcon' 
+                    icon={faStar} 
+                />}
+                { <FontAwesomeIcon 
+                    className='rateStarIcon' 
+                    icon={faStar} 
+                />}
+                { <FontAwesomeIcon 
+                    className='rateStarIcon' 
+                    icon={faStar} 
+                />}
+                { <FontAwesomeIcon 
+                    className='rateStarIcon' 
+                    icon={faStar} 
+                />}               
             </div>
             <div className='placeCardAddres grey'>
                 <FontAwesomeIcon 
                     className='placeCardIcon'
                     icon={faMapMarkerAlt} />
-                <span className='placeCarInfo location'>Montana, USA </span> 
+                <span 
+                    className='placeCarInfo location'>
+                    {place.address}  
+                </span> 
             </div>
             <div className='placeCardSite grey'> 
                 <FontAwesomeIcon 
                     className='placeCardIcon'
                     icon={faGlobeAmericas} />
-               <span className='placeCarInfo site'>  https://chatak.com </span>
+                <a 
+                    href={place.email} 
+                    className='placeCarInfo site'> 
+                    {place.email}  
+                </a>
             </div>
             <div className='placeCardPhoneNumber grey'>
                 <FontAwesomeIcon 
                     className='placeCardIcon'
                     icon={faMobileAlt} />
-                <span className='placeCarInfo number'>  +996550 054450 </span>
+                <span className='placeCarInfo number'>  
+                    +{place.phone} 
+                </span>
             </div>  
             <div className='placeCardButtons'>
                 <button className='placeCardButton detail'>

@@ -6,7 +6,7 @@ import "../src/assets/styles/main.scss";
 
 function Home() {
     return <div className="example">
-    <Header text="This is test"/>
+    <Header text=""/>
     <Places />
     </div>;
   }
