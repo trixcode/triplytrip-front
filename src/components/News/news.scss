@@ -1,0 +1,93 @@
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 65px;
+  .title {
+    width: 322px;
+    height: 36px;
+    color: #000000;
+    font-family: "Montserrat - Semi Bold";
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 21px;
+    text-align: center;
+  }
+  .subTitle {
+    width: 374px;
+    height: 16px;
+    color: #000000;    
+    font-family: "Varela Round";
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+  }
+}
+
+
+
+.cardsBlock{
+  display: flex;
+  justify-content: space-evenly;
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 430px;
+    .cardTopSide {
+      width: 330px;
+      height: 239px;
+      .date {
+        display: flex;
+        flex-direction: column;
+        width: 53px;
+        height: 63px;
+        text-transform: capitalize;
+      }
+    }
+    .cardBottomSide {
+      width: 320px;
+      height: 201px;
+      .cardNews {
+        width: 250px;
+        height: 41px;
+        color: #232323;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 400;
+        padding: 20px 0 13px; 
+      }
+      .com {
+        width: 156px;
+        height: 13px;
+        display: flex;
+        padding: 0 0 25px 3px;
+        .icons {
+          height: 10px;
+          color: #949494;
+          font-family: "Varela Round";
+        }
+      }
+      .description {
+        width: 320px;
+        height: 35px;
+        color: #949494;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+        padding: 0 0 25px;
+      }
+      .btn {
+        width: 184px;
+        height: 30px;
+        border: 2px solid #e03e53;
+        border-radius: 10px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
