@@ -2,7 +2,8 @@
 import './category.scss';
 
 const Category = (props) => {
-    return (
+  return (
+    <div className="category-wrapper">
       <div class="category-container ">
         <div class="category container-Tynai">
           <div class="category-block first-block">
@@ -27,7 +28,9 @@ const Category = (props) => {
           </div>
         </div>
       </div>
-    )
+    </div>
+
+  )
 }
 
 export default Category;
