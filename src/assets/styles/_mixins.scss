@@ -4,3 +4,10 @@
     flex-direction: column;
     justify-content: center;
 }
+
+@mixin displayFlexTynai {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
