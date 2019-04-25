@@ -2,12 +2,13 @@ import './topContent.scss'
 
 const TopContent = () => {
     return (
-        <div className="TopContentContainer">
-        <h2 className="titleOne">Discover interesting</h2>
-        <h2 className="titleTwo">places around Europe</h2>
-        <span className="titleThree">Find great places to stay eat, or visit from local experts.</span>
-        <span className="titleFour">Browse the most desirable categories</span>
-        <p className="arrowBottom">icon</p>
+        <div className="top-content">
+        <h1 className="top-content__title">
+            Discover interesting<br />
+            <span>places around Europe</span>
+        </h1>
+        <span className="top-content__text-one">Find great places to stay eat, or visit from local experts.</span>
+        <span className="top-content__text-two">Browse the most desirable categories</span>
         </div>
     )
 }

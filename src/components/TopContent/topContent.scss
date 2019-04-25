@@ -1,34 +1,33 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 
-.TopContentContainer {
+.top-content {
     height: 715px;
     width: 1440px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    h2, span, p {
-        margin: 0 auto;
+    align-items: center;
+    position: relative;
+    h1, span {
         color: #fff;
     }
-    .titleOne {
+    .top-content__title{
         font-size: 76px;
         font-weight: 100;
         margin-top: 195px;
         font-family: 'Montserrat', sans-serif;
+        span {
+            font-weight: 800;
+        }
     }
-    .titleTwo {
-        font-size: 76px;
-        font-weight: 800;
-        font-family: 'Montserrat', sans-serif;
-    }
-    .titleThree {
+    .top-content__text-one {
         font-size: 20px;
-        margin-bottom: 190px;
         font-family: 'Varela Round', sans-serif;
     }
-    .titleFour {
+    .top-content__text-two {
         font-size: 24px;
+        position: absolute;
+        bottom: 80px;
         font-family: 'Varela Round', sans-serif;
     }
 }
