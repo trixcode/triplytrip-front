@@ -8,6 +8,14 @@ body, h1, h2, h3, ul {
     margin: 0
 }
 
+.container-event {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
 .upcomming-events {
     background: #e5f8fb;
     height: 970px;
@@ -21,39 +29,47 @@ body, h1, h2, h3, ul {
         font-size: 36px;
         font-family: 'Montserrat', sans-serif;
         margin-top: 65px;
-        font-weight: 700
+        font-weight: 700;
+        margin-bottom: 20px;
     }
     &-text {
         color: #2a3250;
         font-size: 20px;
         font-family: 'Varela Round', sans-serif;
-        margin-top: 20px;
     }
-    &-events {
+    &-wrapper {
         margin-top: 50px;
         display: flex;
         justify-content: space-around;
         width: 100%;
         align-items: center;
-        &-event {
+        &-card {
             width: 690px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            &-title {
-                &__title {
-                    font-size: 16px;
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 700;
-                }
-                &__location, &__price {
+            align-items: center;
+            &-header {
+                font-size: 16px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                &-information {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 250px;
+                    &__location, &__price {
                     color: #afb5b6;
                     font-size: 14px;
                     font-family: 'Montserrat', sans-serif;
-                    margin-right: 20px;
+                    }
+                    &__open {
+                        color: red;
+                    }
                 }
             }
-            &-index {
+            &-rating {
                 width: 90px;
                 height: 60px;
                 background: #fffa66;
@@ -76,7 +92,8 @@ body, h1, h2, h3, ul {
                 th, td {
                     text-align: left;
                     margin-left: 10px;
-                    border: 1px #f0eff1 solid; 
+                    border-right: 1px #f0eff1 solid;
+                    border-bottom: 1px #f0eff1 solid; 
                 }
             }
         }
