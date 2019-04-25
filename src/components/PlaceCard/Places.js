@@ -6,6 +6,9 @@ import hotels from './hotels.json';
 const Places = props => {
     const places = hotels.hotels
     return (
+        <div className='places-wraper'>
+
+        
      <section className='places-container' > 
         <h2 className='places__title'>
             Popular Thing To Do
@@ -46,8 +49,9 @@ const Places = props => {
                 Destinations
             </button>
          </div>
-        <div className='place-cards-container'>
-           { places.slice(0, 8).map(placeObj=>{
+        <div 
+            className='place-cards-container'>
+            {places.slice(0, 8).map(placeObj=>{
                return ( 
                     <PlaceCard 
                         key={placeObj.name} 
@@ -57,6 +61,7 @@ const Places = props => {
            })}           
         </div>
      </section>
+     </div>
     )
 }
 

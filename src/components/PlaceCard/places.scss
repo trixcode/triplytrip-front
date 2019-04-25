@@ -2,10 +2,17 @@
 @import '../../assets/styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
+
+.places-wraper { 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 .places-container {
-    padding: 0px 15px;
     @include displayFlexOnCenter;
     width: 1440px;
+    padding: 0px 15px;
+    box-sizing: border-box;
 }
 .places__text {
     margin-bottom: 54px; 
