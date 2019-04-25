@@ -1,0 +1,13 @@
+.component-title {
+    display: flex;
+    flex-direction: column;
+}
+.places__title__name {
+    margin-bottom: 10px;
+    font-size: 2.25em;
+}
+.places__title__text {
+    margin-bottom: 54px; 
+    font-size: 1.25em;
+    font-family: 'Varela Round', sans-serif;
+}

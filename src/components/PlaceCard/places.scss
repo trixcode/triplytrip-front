@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
 
-.places-wraper { 
+.places-wrapper { 
     display: flex;
     width: 100%;
     justify-content: center;
@@ -14,11 +14,7 @@
     padding: 0px 15px;
     box-sizing: border-box;
 }
-.places__text {
-    margin-bottom: 54px; 
-    font-size: 1.25em;
-    font-family: 'Varela Round', sans-serif;
-}
+
 .places-button-container {
     @include displayFlexCardRow;
     width: 100%;
@@ -40,15 +36,9 @@
         background: linear-gradient(left, #5884e8 0%, #2cc7de 100%);
     }
 }
-.places__title {
-    margin-bottom: 10px;
-    font-size: 2.25em;
-}
-
 .place-cards-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
 }
