@@ -3,7 +3,7 @@ import './upcommingEvents.scss'
 const UpcommingEvents = () => {
   return (
     <section className="upcomming-events">
-    <div className="container">
+    <div className="container-event">
       <h1 className="upcomming-events-title">Upcomming Events</h1>
       <span className="upcomming-events-text">
         Lorem ipsum dolor sit amet,
