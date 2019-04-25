@@ -3,12 +3,12 @@
 @import '../../assets/styles/main.scss';
 
 
-.title__block {
+.section-top__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 65px;
-  .title {
+  .section-top__title {
     width: 322px;
     height: 36px;
     color: #000000;
@@ -19,7 +19,7 @@
     margin-bottom: 21px;
     text-align: center;
   }
-  .sub-title {
+  .section-top__sub-title {
     width: 374px;
     height: 16px;
     color: #000000;    
@@ -33,7 +33,7 @@
 
 
 
-.news-card-wrapper{
+.news-cards-wrapper{
   display: flex;
   justify-content: space-between;
   .news-card {
