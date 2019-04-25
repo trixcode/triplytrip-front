@@ -2,6 +2,10 @@
 @import '../../assets/styles/variables';
 @import '../../assets/styles/main.scss';
 
+.section-discover {
+  display: flex;
+  justify-content: center;
+}
 
 .section-top-wrapper {
   display: flex;

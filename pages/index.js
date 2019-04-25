@@ -1,16 +1,21 @@
-
+import { Fragment } from 'react'
 import Header from '../src/components/Header';
-
-import "../src/assets/styles/main.scss";
-import News from '../src/components/News';
+import TopContent from '../src/components/TopContent'
 import Discover from '../src/components/Discover';
+import "../src/assets/styles/main.scss";
+import "../src/components/Header/header.scss";
 
 function Home() {
-    return <div className="example">
-    <Header text="This is test"/>
-    <Discover />
-    <News />
-    </div>;
-  }
-  
-  export default Home;
+  return (
+    <Fragment>
+      <div className="header-gradient-wrapper">
+        <Header />
+        <hr className="header-border" />
+        <TopContent />
+      </div>
+      <Discover />
+    </Fragment>
+  )
+}
+
+export default Home;

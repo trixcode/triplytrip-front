@@ -3,6 +3,12 @@
 @import '../../assets/styles/main.scss';
 
 
+.section-news {
+  display: flex;
+  justify-content: center;
+}
+
+
 .section-top__wrapper {
   display: flex;
   flex-direction: column;
