@@ -6,6 +6,7 @@
 .section-news {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 
@@ -46,7 +47,7 @@
     display: flex;
     flex-direction: column;
     width: 330px;
-    height: 430px;
+    height: 470px;
     .news-card-header {
       position: relative;
       margin-bottom: 20px;
@@ -91,7 +92,7 @@
       width: 330px;
       height: 201px;
       .news-card__title {
-        height: 41px;
+        height: 45px;
         color: #232323;
         font-family: 'Montserrat';
         font-size: 20px;

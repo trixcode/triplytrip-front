@@ -6,7 +6,7 @@ const Header = () => {
   return (
       <header className="header">
         <div className="header-brand">
-          <img scr="./mainIcon.png" className="header-brand__logo" alt="logo" />
+          <img src='static/mainIcon.png' className="header-brand__logo" alt="logo" />
           <h2 className="header-brand__title">TryplyTrip</h2>
         </div>
         <nav className="header-navigation">

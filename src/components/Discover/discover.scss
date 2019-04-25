@@ -7,36 +7,6 @@
   justify-content: center;
 }
 
-.section-top-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 65px;
-  .section-top__tittle {
-    width: 517px;
-    height: 29px;
-    color: #000000;
-    font-family: "Montserrat - Semi Bold";
-    font-size: 36px;
-    font-weight: 400;
-    text-transform: capitalize;
-    margin-bottom: 21px;
-    text-align: center;
-  }
-  .section-top__sub-title {
-    width: 924px;
-    height: 69px;
-    color: #000000;
-    font-family: "Varela Round";
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: capitalize;
-    text-align: center;
-  }
-}
-
-
-
 .discover-cards-wrapper{
   display: flex;
   justify-content: space-between;

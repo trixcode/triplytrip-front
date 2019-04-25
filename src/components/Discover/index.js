@@ -1,3 +1,4 @@
+import SectionTitle from '../SectionTitle';
 
 import './discover.scss';
 
@@ -5,10 +6,10 @@ const Discover = (props) => {
   return (
     <section className='section-discover'>
       <div className='container'>
-        <div className='section-top-wrapper'>
-          <h2 className='section-top__tittle'>discover your dream places</h2>
-          <p className='section-top__sub-title'>All the pathos and irony of leaving one’s youth behind is thus implicit in every joyous moment of travel: one knows that the first joy can never be recovered, and the wise traveler learns not to repeat successes but tries new places all the time.</p>
-        </div>
+        <SectionTitle 
+          name="discover your dream places"
+          text="All the pathos and irony of leaving one’s youth behind is thus implicit in every joyous moment of travel: one knows that the first joy can never be recovered, and the wise traveler learns not to repeat successes but tries new places all the time."
+        />
         <div className='discover-cards-wrapper'>
           <div className='discover-card'>
             <img className='discover-card__image' src='https://static.wixstatic.com/media/c9dceb0320d64d4ab5995ff29a3e4a8e.jpg/v1/fill/w_330,h_420,al_c,q_80,usm_0.66_1.00_0.01/c9dceb0320d64d4ab5995ff29a3e4a8e.jpg' alt='logo' />

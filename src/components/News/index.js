@@ -1,3 +1,4 @@
+import SectionTitle from '../SectionTitle';
 
 import './news.scss';
 
@@ -5,10 +6,10 @@ const News = (props) => {
   return (
     <section className='section-news'>
       <div className='container'>
-        <div className='section-top__wrapper'>
-          <h2 className='section-top__title'>daily news tips</h2>
-          <p className='section-top__sub-title'>the best places to see autumn colours</p>
-        </div>
+        <SectionTitle 
+          name="daily news tips"
+          text="the best places to see autumn colours"
+        />
         <div className='news-cards-wrapper'>
           <div className='news-card'>
             <div className='news-card-header'>

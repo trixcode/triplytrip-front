@@ -10,6 +10,14 @@ body  {
 a {
     text-decoration: none;
 }
+.container {
+    display: flex;
+    width: 1440px;
+    justify-content: center;
+    padding: 0px 15px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
 .home-container {
     width: 100%;
     display: flex;

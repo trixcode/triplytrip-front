@@ -19,9 +19,9 @@ function Home() {
         <TopContent />
       </div>
       <Discover />
+      <Places />
       <UpcommingEvents />
       <News />
-      <Places />
       <Subscribe />
     </Fragment>
   )

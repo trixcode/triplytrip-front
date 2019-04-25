@@ -3,16 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
 
-.places-container { 
+.section-places { 
     display: flex;
     width: 100%;
     justify-content: center;
-}
-.places-wrapper {
-    @include displayFlexOnCenter;
-    width: 1440px;
-    padding: 0px 15px;
-    box-sizing: border-box;
 }
 
 .places-tags-wrapper {

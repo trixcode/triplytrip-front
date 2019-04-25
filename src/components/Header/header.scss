@@ -42,7 +42,11 @@ body, h1, h2, h3, ul {
         font-size: 43px;
         color: #fff;
         }
+    &__logo {
+        margin-right: 15px;
     }
+    }
+
     &-navigation {
     	display: flex;
     	justify-content: space-between;
