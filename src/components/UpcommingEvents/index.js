@@ -10,7 +10,6 @@ const UpcommingEvents = () => {
         Phasselus aliquam retrum 
       </span>
       <div className="upcomming-events-events">
-      <div className="upcomming-events-events-arrow"></div>
         <div className="upcomming-events-events-event">
           <div className="upcomming-events-events-event-title">
             <span className="upcomming-events-events-event-title__title">Low Road Live</span><br/>
@@ -38,7 +37,6 @@ const UpcommingEvents = () => {
             <tr><th>8-9 Hoxton Square London N1<br/> 6NU UK</th><th>July 22, 19<br/>10:15 AM</th><th>July 26, 19<br/>10:15 AM</th></tr>
           </table>
         </div>
-        <div className="upcomming-events-events-arrow"></div>
       </div>
     </div>
   )
