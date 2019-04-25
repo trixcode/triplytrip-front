@@ -1,0 +1,13 @@
+.section-title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.section-title__name{
+    margin-bottom: 10px;
+    font-size: 2.25em;
+}
+.section-title__text {
+    margin-bottom: 54px; 
+    font-size: 1.25em;
+    font-family: 'Varela Round', sans-serif;
+}
