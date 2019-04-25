@@ -3,16 +3,16 @@ import './componentTitle.scss';
 const ComponentTitle = props => {
     const {name, text} = props;
     return (
-        <div className="component-title">
+        <section className="section-title-wrapper">
             <h2 
-                className='places__title__name'>
+                className='section-title__name'>
                 {name}
             </h2>
             <span 
-                className='places__title__text'>
+                className='section-title__text'>
                 {text}
             </span>
-        </div>
+        </section>
     )    
 }
 

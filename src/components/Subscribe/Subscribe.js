@@ -5,17 +5,17 @@ const Subscribe = () => {
         <section className='subscribe'>
             <div className='subscribe-strip'>
             </div>
-            <div className='subscribe-wraper'>
-                <img
-                    src='static/subscribemail.png'
-                    className='subscribe__mail__icon'
-                />
-                <div className='subscribe-container'>
+            <div className='subscribe-container'>
+                <div className='subscribe-wrapper'>
+                    <img
+                        src='static/subscribemail.png'
+                        className='subscribe__mail__icon'
+                    />
                     <div className='subscribe-description' >
                         <h3 className='subscribe-description__title'>
                             <span
-                                className='subscribe-description__title thin'>
-                                Subscribe
+                                className='subscribe-description__title subscribe-description__title_thin'>
+                                Subscribe 
                             </span>
                             To Newsletter
                         </h3>
@@ -26,10 +26,10 @@ const Subscribe = () => {
                     </div>
                     <input
                         placeholder='Your Name'
-                        className='subscribe__input name' />
+                        className='subscribe__input subscribe__input_name' />
                     <input
                         placeholder='Your Email'
-                        className='subscribe__input email' />
+                        className='subscribe__input subscribe__input_email' />
                     <button className='subscribe__button'>
                         Subscribe Now
                     </button>

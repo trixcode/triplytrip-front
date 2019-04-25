@@ -12,7 +12,7 @@
     height: 8px;
     background: url('/static/strip.png') repeat;
 }
-.subscribe-wraper { 
+.subscribe-container { 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,8 +24,7 @@
     margin-right: 10px;
     margin-bottom: 25px;
 }
-.subscribe-container {
-    margin-right: 4%;
+.subscribe-wrapper {
     padding: 0px 15px;
     box-sizing: border-box;
     height: 140px;
@@ -40,9 +39,10 @@
     font-size: 1.54em;
     font-weight: 900; 
     color: #2a3250;
-    .thin {
+    .subscribe-description__title_thin {
+        margin-right: 10px;
         font-weight: 300;
-        font-size: 1.1em;
+        font-size: 1em;
         color: #2a3250;
     }
 }
@@ -61,14 +61,14 @@
     font-size: 1.1em;
     color: #9498a7;
 }
-.email {
-    width: 22%;
+.subscribe__input_email {
+    width: 19%;
 }
-.name {
-    width: 31%;
+.subscribe__input_name {
+    width: 27%;
 }
 .subscribe__button {
-    width: 16%;
+    width: 12%;
     height: 50px;
     border: 0px;
     background-color: #e03e53;

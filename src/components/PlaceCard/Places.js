@@ -7,47 +7,47 @@ import hotels from './hotels.json';
 const Places = props => {
     const places = hotels.hotels
     return (
-        <div className='places-wrapper'>
-            <section className='places-container' > 
+        <section className='places-container'>
+            <div className='places-wrapper' > 
                 <ComponentTitle 
                     name="Popular Thing To Do" 
                     text="popular exclusive listings in our directory"
                 />
-                <div className='places-button-container'>
+                <div className='places-tags-wrapper'>
                     <button 
-                        className='places__button all'
+                        className='places__tag places__tag_all'
                         id='all'> 
                         All 
                     </button>
                     <button 
                         id='hotels'
-                        className='places__button hotel'> 
+                        className='places__tag places__tag_hotel'> 
                         Hotel
                     </button>
                     <button 
                         id='restaraunts'
-                        className='places__button restaurant'>
+                        className='places__tag places__tag_restaurant'>
                         Restaurant
                     </button>
                     <button 
-                        className='places__button dinner'> 
+                        className='places__tag places__tag_dinner'> 
                         Dinner 
                     </button>
                     <button 
-                        className='places__button clubBar'> 
+                        className='places__tag places__tag_clubbar'> 
                         Club & Bar 
                     </button>
                     <button 
-                        className='places__button coffee'>
+                        className='places__tag places__tag_coffee'>
                         Coffee
                     </button>
                     <button 
-                        className='places__button destinations'>
+                        className='places__tag places__tag_destinations'>
                         Destinations
                     </button>
                 </div>
                 <div 
-                    className='place-cards-container'>
+                    className='place-cards-wrapper'>
                     {places.slice(0, 8).map(placeObj=>{
                     return ( 
                             <PlaceCard 
@@ -57,8 +57,8 @@ const Places = props => {
                         )
                     })}           
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     )
 }
 
