@@ -1,0 +1,33 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.top-content {
+    height: 715px;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    h1, span {
+        color: #fff;
+    }
+    .top-content__title{
+        font-size: 76px;
+        font-weight: 100;
+        margin-top: 195px;
+        font-family: 'Montserrat', sans-serif;
+        span {
+            font-weight: 800;
+        }
+    }
+    .top-content__text-one {
+        font-size: 20px;
+        font-family: 'Varela Round', sans-serif;
+    }
+    .top-content__text-two {
+        font-size: 24px;
+        position: absolute;
+        bottom: 80px;
+        font-family: 'Varela Round', sans-serif;
+    }
+}
