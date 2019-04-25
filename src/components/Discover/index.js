@@ -6,8 +6,8 @@ const Discover = (props) => {
     <section className='section-discover'>
       <div className='container'>
         <div className='section-top-wrapper'>
-          <div className='section-top__tittle'>discover your dream places</div>
-          <div className='section-top__sub-title'>All the pathos and irony of leaving one’s youth behind is thus implicit in every joyous moment of travel: one knows that the first joy can never be recovered, and the wise traveler learns not to repeat successes but tries new places all the time.</div>
+          <h2 className='section-top__tittle'>discover your dream places</h2>
+          <p className='section-top__sub-title'>All the pathos and irony of leaving one’s youth behind is thus implicit in every joyous moment of travel: one knows that the first joy can never be recovered, and the wise traveler learns not to repeat successes but tries new places all the time.</p>
         </div>
         <div className='discover-cards-wrapper'>
           <div className='discover-card'>

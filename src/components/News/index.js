@@ -6,8 +6,8 @@ const News = (props) => {
     <section className='section-news'>
       <div className='container'>
         <div className='section-top__wrapper'>
-          <div className='section-top__title'>daily news tips</div>
-          <div className='section-top__sub-title'>the best places to see autumn colours</div>
+          <h2 className='section-top__title'>daily news tips</h2>
+          <p className='section-top__sub-title'>the best places to see autumn colours</p>
         </div>
         <div className='news-cards-wrapper'>
           <div className='news-card'>
