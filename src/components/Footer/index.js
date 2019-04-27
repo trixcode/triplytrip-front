@@ -2,9 +2,8 @@ import './footer.scss';
 
 const Footer = () => {
   return (
-    <div className = "footer">
-        <div className = "footer-blocks">
-            <div className = "footer-blocks-1">
+    <footer className = "footer">
+        <div className = "container footer__container">
                      <ul className = "footer__list">
                          <li><span href="#">The Highights</span></li>
                          <li><a href="#">Dinner</a></li>
@@ -30,27 +29,17 @@ const Footer = () => {
                         <li><a href="#">Favourties</a></li>
                         <li><a href="#">Cart</a></li>
                     </ul>
-
-                <div className = "footer__list">
-                    <span className="App">Download App</span>
-                    <div className="footer__list-img"> </div>
-                    <div className="footer__list-img"> </div>
-                </div>
-            </div>
         </div>
-        <div className="footer__bottom">
-          <div className="footer__end">
-              <span className="footer__end-txt">
-                Copyright@2018 Listings.com        Tel: +91 12343210
-              </span>
-              <ul className = "footer__end-icons">
-                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              </ul>
-          </div>
+            <br></br>
+              <div className="footer__end">
+                <span className="footer__end-txt">
+                 Copyright © 2018 Listicle.com | Tel: +91 12343210
+                </span>
+                <ul className = "footer__end-icons">
+                <static />
+            </ul>
         </div>
-    </div>
+    </footer>
   )
 }
 export default Footer;
