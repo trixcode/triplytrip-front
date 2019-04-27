@@ -23,8 +23,14 @@ const UpcommingEvents = () => {
         </div>
           <div className="event-card-rating">4,3</div>
           <table className="event-card-table">
-            <tr><th>Adress</th><th>From</th><th>To</th></tr>
-            <tr><th>8-9 Hoxton Square London N1<br/> 6NU UK</th><th>July 22, 19<br/>10:15 AM</th><th>July 26, 19<br/>10:15 AM</th></tr>
+          <tbody>
+            <tr>
+              <th>Adress</th>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+            <tr><td>8-9 Hoxton Square London N1<br/> 6NU UK</td><td>July 22, 19<br/>10:15 AM</td><td>July 26, 19<br/>10:15 AM</td></tr>
+            </tbody>
           </table>
         </div>
 
@@ -40,8 +46,14 @@ const UpcommingEvents = () => {
         </div>
           <div className="event-card-rating">4,3</div>
           <table className="event-card-table">
-            <tr><th>Adress</th><th>From</th><th>To</th></tr>
-            <tr><th>8-9 Hoxton Square London N1<br/> 6NU UK</th><th>July 22, 19<br/>10:15 AM</th><th>July 26, 19<br/>10:15 AM</th></tr>
+          <tbody>
+            <tr>
+              <th>Adress</th>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+            <tr><td>8-9 Hoxton Square London N1<br/> 6NU UK</td><td>July 22, 19<br/>10:15 AM</td><td>July 26, 19<br/>10:15 AM</td></tr>
+            </tbody>
           </table>
         </div>
       </div>
