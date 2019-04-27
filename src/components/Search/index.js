@@ -3,12 +3,12 @@ import './search.scss';
 
 const Search = (props) => {
     return (
-      <div class="search-container">
-        <div class="search container">
-          <form class="search-form">
-            <input class="search-form__input-first" placeholder="Address, city or select suggestion category"></input>
-            <input class="search-form__input-second" placeholder="Location"></input>
-            <button class="search-form__button">search now</button>
+      <div className="search-container">
+        <div className="search container">
+          <form className="search-form">
+            <input className="search-form__input-first" placeholder="Address, city or select suggestion category"></input>
+            <input className="search-form__input-second" placeholder="Location"></input>
+            <button className="search-form__button">search now</button>
           </form>
         </div>
       </div>
