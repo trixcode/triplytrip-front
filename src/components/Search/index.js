@@ -5,20 +5,20 @@ import { faSearch, faMapMarkerAlt  } from '@fortawesome/free-solid-svg-icons';
 
 const Search = (props) => {
   return (
-    <section className="search-container">
-      <div className="search container">
+    <section className="search-wrapper">
+      <div className="container">
         <form className="search-form">
-          <div className="search-form__input">
-            <input className="search-form__input-first" placeholder="Address, city or select suggestion category" />
+          <div className="search-form__places">
+            <input className="search-form__input" placeholder="Address, city or select suggestion category" />
             {<FontAwesomeIcon
-              className='search-icon'
+              className="search-form__icon-search"
               icon={faSearch}
             />}
           </div>
-          <div className="search-form__input">
-            <input className="search-form__input-second" placeholder="Location" />
+          <div className="search-form__location">
+            <input className="search-form__input" placeholder="Location" />
             {<FontAwesomeIcon
-            className='map'
+            className='search-form__icon-map'
             icon={faMapMarkerAlt}
           />}
           </div>
