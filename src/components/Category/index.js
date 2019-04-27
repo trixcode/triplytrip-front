@@ -1,33 +1,52 @@
 
 import './category.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faHotel, faHamburger, faMapMarkedAlt, faCoffee, faBeer } from '@fortawesome/free-solid-svg-icons';
 
 const Category = (props) => {
-    return (
-      <div class="category-container ">
-        <div class="category container-Tynai">
-          <div class="category-block first-block">
-            <img src="/static/" class="category-block__image"></img>
-            <span class="category-block__name">Hotel</span>
-          </div>
-          <div class="category-block">
-            <img class="category-block__image"></img>
-            <span class="category-block__name">Dinner</span>
-          </div>
-          <div class="category-block">
-            <img class="category-block__image"></img>
-            <span class="category-block__name">Destination</span>
-          </div>
-          <div class="category-block">
-            <img class="category-block__image"></img>
-            <span class="category-block__name">Coffee</span>
-          </div>
-          <div class="category-block last-block">
-            <img class="category-block__image"></img>
-            <span class="category-block__name">Club and Bear</span>
-          </div>
+  return (
+
+    <section className="category-wrapper">
+      <div className="container-Tynai category">
+        <div className="category-block">
+          {<FontAwesomeIcon
+            className='icon-category hotel-icon'
+            icon={faHotel}
+          />}
+          <span className="category-block__name">Hotel</span>
+        </div>
+        <div className="category-block">
+          {<FontAwesomeIcon
+            className='icon-category hamburger-icon'
+            icon={faHamburger}
+          />}
+          <span className="category-block__name">Dinner</span>
+        </div>
+        <div className="category-block">
+          {<FontAwesomeIcon
+            className='icon-category map-icon'
+            icon={faMapMarkedAlt}
+          />}
+          <span className="category-block__name">Destination</span>
+        </div>
+        <div className="category-block">
+          {<FontAwesomeIcon
+            className='icon-category coffee-icon'
+            icon={faCoffee}
+          />}
+          <span className="category-block__name">Coffee</span>
+        </div>
+        <div className="category-block">
+          {<FontAwesomeIcon
+            className='icon-category beer-icon'
+            icon={faBeer}
+          />}
+          <span className="category-block__name last_name">Club and Bear</span>
         </div>
       </div>
-    )
+    </section>
+
+  )
 }
 
 export default Category;
