@@ -1,0 +1,62 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/main.scss';
+
+.section-discover {
+  display: flex;
+  justify-content: center;
+}
+
+.discover-cards-wrapper{
+  display: flex;
+  justify-content: space-between;
+  .discover-card {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 420px;
+    background-image: linear-gradient(to right, #5884e8 0%, #2cc7de 100%);
+    .discover-card__image {
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+    .discover-card__info-text {
+      position: relative;
+      .discover-card__info-place {
+        width: 115px;
+        height: 39px;
+        background-image: linear-gradient(-235deg, #6585fd 0%, #e834c3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 48px;
+        .discover-card__info-place-name {
+          color: #ffffff;
+          font-family: 'Montserrat';
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+      }
+      .discover-card__info-destination {
+        width: 155px;
+        height: 39px;
+        background-color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        .discover-card__info-destination-name {
+          color: #ffffff;
+          font-family: 'Montserrat';
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

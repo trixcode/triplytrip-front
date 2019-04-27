@@ -1,6 +1,8 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 @import '../../assets/styles/main.scss';
+@import url('https://fonts.googleapis.com/css?family=Krona+One|Montserrat|Varela+Round');
+
 
 .search-container{
   background: rgb(94,136,233);
@@ -12,33 +14,34 @@
     .search-form{
       display: flex;
       justify-content: space-around;
-      margin-left: 100px;
       .search-form__input-first{
         width: 474px;
         background: none;
         border: 1px white solid;
         padding: 0;
+        color: #fff;
+        padding-left: 10px;
+        font-size: 18px;
+
       }
       .search-form__input-first::placeholder{
         color: #ffffff;
         font-family: "Varela Round";
-        font-size: 16px;
-        padding-left: 20px;
         font-weight: 400;
       }
       .search-form__input-second{
         background: none;
         width: 375px;
         border: 1px solid #ffffff;
+        color: #fff;
+        font-size: 18px;
+        padding-left: 10px;
       }
       .search-form__input-second::placeholder{
         opacity: 0.8;
         color: #ffffff;
         font-family: "Varela Round";
-        font-size: 16px;
         font-weight: 400;
-        line-height: 83.33px;
-        padding-left: 20px;
       }
       .search-form__button{
         vertical-align: middle;
@@ -46,12 +49,11 @@
         height: 54px;
         background-color: #e03e53;
         color: #ffffff;
-        font-family: Montserrat;
+        font-family: 'Montserrat', sans-serif;
         font-size: 16px;
         font-weight: 400;
         text-transform: uppercase;
         border: #e03e53 1px solid;
-        margin-right: 100px;
       }
     }
   }

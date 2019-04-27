@@ -4,6 +4,22 @@
 body{
   margin: 0;
 }
+.category-border{
+  height: 1px;
+  background: #ffffff;
+  width: 100%;
+  border: none;
+  margin: 0;
+}
+
+.icon-category{
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 12px;
+  margin-right: 5px;
+}
+
 .category-wrapper{
   background: rgb(98,140,233);
   background: linear-gradient(90deg, rgba(98,140,233,1) 0%, rgba(49,200,223,1) 100%);
@@ -20,23 +36,37 @@ body{
   justify-content: space-between;
   margin: 0 auto;
 }
+.hotel-icon{
+  background-color: #fb718e;
+}
+.hamburger-icon{
+  background-color: #6ec6fd;
+}
+.map-icon{
+  background-color: #392d81;
+}
+.coffee-icon{
+  background-color: #e979fa;
+}
+.beer-icon{
+  background-color: #9cd47e;
+}
 .category{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  margin: 0 auto;
   .category-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     .category-block__name{
-      width: 42px;
+      width: 150px;
       height: 13px;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 400;
-      font-family: Montserrat;
+      margin-bottom: 10px;
     }
-  }
-  .first-block{
-    margin-left: 300px;
-  }
-  .last-block{
-    margin-right: 350px;
   }
 }

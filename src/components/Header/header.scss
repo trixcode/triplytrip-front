@@ -1,6 +1,89 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 
-.test {
-    color: $primaryColor;
+
+@import url('https://fonts.googleapis.com/css?family=Krona+One|Montserrat|Varela+Round');
+
+body, h1, h2, h3, ul {
+    margin: 0
 }
+
+
+.header-gradient-wrapper {
+    background: rgb(140,163,246);
+    background: linear-gradient(90deg, rgba(140,163,246,1) 0%, rgba(229,107,207,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.header-border {
+    height: 2px;
+    background: linear-gradient(90deg, rgba(167,184,248,1) 0%, rgba(230,144,216,1) 100%);
+    width: 100%;
+    border: none;
+    margin: 0;
+}
+
+.header {
+  width: 1440px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  &-brand {
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 43px;
+        color: #fff;
+        }
+    &__logo {
+        margin-right: 15px;
+    }
+    }
+
+    &-navigation {
+    	display: flex;
+    	justify-content: space-between;
+        align-items: center;
+        &-list {
+            list-style: none;
+            li {
+            	display: inline;
+                margin-left: 20px;
+                color: #d994e1;
+                font-size: 12px;
+                font-family: 'Krona One', sans-serif;
+                a {
+                  text-decoration: none;
+                  color: #fff;
+                    }
+                }
+            }
+            .header-actions {
+                button {
+                  	margin-left: 20px;
+                    width: 130px;
+                	height: 33px;
+                    border: #fff 1px solid;
+                    border-radius: 3px;
+                    background: none;
+                    color: #fff;
+                    font-family: 'Krona One', sans-serif;
+                    }
+                    a {
+                    	text-decoration: none;
+                        color: #fff;
+                        margin-left: 20px;
+                        font-family: 'Krona One', sans-serif;
+                        font-size: 12px;
+                      }
+            	}
+        	}
+    }
+                
