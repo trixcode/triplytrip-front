@@ -36,9 +36,13 @@ a {
 
 .article-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: relative;
 }
  .article-container {
      flex-direction: row;
      justify-content: space-between;
+
  }
