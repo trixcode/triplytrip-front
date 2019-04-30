@@ -3,11 +3,12 @@
 
 .top-content {
     height: 715px;
-    width: 1440px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    //background-image: url('static/top.jpg');
     h1, span {
         color: #fff;
     }
