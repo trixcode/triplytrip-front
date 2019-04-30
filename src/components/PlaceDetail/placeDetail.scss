@@ -73,7 +73,7 @@
     width: 330px;
 }
 
-.owner-info {
+.sidebar-owner-info {
     @include detailSidebar;
     height: 400px;
     @include displayFlexOnCenter;
@@ -120,10 +120,18 @@
         color: #ffba00;
         font-size: 14px;
         font-family: 'Montserrat', sans-serif;
+        svg {
+            margin-left: 5px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
     }
 }
 
-.owner-contacts {
+.sidebar-owner-contacts {
     @include detailSidebar;
     height: 350px;
     @include displayFlexOnCenter;
@@ -136,9 +144,18 @@
         margin-bottom: 35px;
         li {
             margin-bottom: 45px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            position: relative;
         }
         li:last-child {
             margin-bottom: 0;
+        }
+        &__icon {
+            font-size: 18px;
+            position: absolute;
+            right: 220px;
         }
     }
     &-networks {
@@ -148,10 +165,35 @@
             display: inline-block;
             padding: 0 5px;
             div {
-                background: #f85454;
                 height: 40px;
                 width: 40px;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                path {
+                    color: #fff;
+
+                }
             }
+        }
+        .sidebar-facebook {
+            background: #355d93;
+        }
+        .sidebar-twitter {
+            background: #35ccfd;
+        }
+        .sidebar-google {
+            background: #f85454;
+        }
+        .sidebar-t {
+            background: #39485d;
+        }
+        .sidebar-insta {
+            background: #c43380;
+        }
+        .sidebar-in {
+            background: #0676b4;
         }
     }
 }
@@ -185,8 +227,16 @@
     div {
         width: 42px;
         height: 42px;
-        background: #45a2e4;
+        background: rgb(88,132,232);
+        background: linear-gradient(135deg, rgba(88,132,232,1) 0%, rgba(44,199,222,1) 100%);
         margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            color: #fff;
+            font-size: 20px;
+        }
     }
     h5 {
         font-size: 18px;
@@ -201,7 +251,7 @@
     justify-content: center;
 }
 
-.price {
+.sidebar-price {
     @include detailSidebar;
     height: 135px;
     span {
@@ -215,7 +265,7 @@
     }
 }
 
-.contact-me {
+.sidebar-contact-me {
     @include detailSidebar;
     height: 540px;
     &-input-block {
@@ -239,7 +289,12 @@
     }
 }
 
-.gallery {
+.sidebar-map {
+    @include detailSidebar;
+    height: 180px;
+}
+
+.sidebar-gallery {
     @include detailSidebar;
     height: 180px;
 }
@@ -247,6 +302,7 @@
 .sidebar-subscribe {
     @include detailSidebar;
     height: 200px;
+    position: relative;
     span {
         font-size: 14px;
         font-family: 'Varela Round', sans-serif;
@@ -267,6 +323,16 @@
             font-size: 16px;
             font-family: 'Varela Round', sans-serif;
             color: #000;
+        }
+    }
+    button {
+        position: absolute;
+        background: none;
+        border: none;
+        right: 20px;
+        bottom: 26px;
+        svg {
+            font-size: 30px;
         }
     }
 }

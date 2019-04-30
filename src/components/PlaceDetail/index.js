@@ -1,4 +1,7 @@
 import './placeDetail.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi} from '@fortawesome/free-solid-svg-icons';
+import {faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
 
 const PlaceDetail = () => {
   return (
@@ -71,11 +74,11 @@ const PlaceDetail = () => {
         </div>
         
         <aside className="sidebar">
-          <div className="owner-info">
-            <div className="owner-info__avatar"></div>
-            <span className="owner-info__name">Rose Lee</span>
-            <span className="owner-info__status">Editor</span>
-            <div className="owner-info__followers">
+          <div className="sidebar-owner-info">
+            <div className="sidebar-owner-info__avatar"></div>
+            <span className="sidebar-owner-info__name">Rose Lee</span>
+            <span className="sidebar-owner-info__status">Editor</span>
+            <div className="sidebar-owner-info__followers">
               <div>
                 <span>Followers</span>
                 <span>120</span>
@@ -85,66 +88,71 @@ const PlaceDetail = () => {
                 <span>10</span>
               </div>
             </div>
-            <span className="owner-info__follow">Follow</span>
+            <span className="sidebar-owner-info__follow">Follow<FontAwesomeIcon icon={faWifi} /></span>
 
           </div>
-          <div className="owner-contacts">
-            <ul className="owner-contacts-info">
-              <li>Montana, USA</li>
-              <li>http://masttbigbreakfast.com/</li>
-              <li>+1234 567 8910</li>
+          <div className="sidebar-owner-contacts">
+            <ul className="sidebar-owner-contacts-info">
+              <li><FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon"/>Montana, USA</li>
+              <li><FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-owner-contacts-info__icon"/>http://masttbigbreakfast.com/</li>
+              <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon"/>+1234 567 8910</li>
             </ul>
-            <ul className="owner-contacts-networks">
-              <li><div></div></li>
-              <li><div></div></li>
-              <li><div></div></li>
-              <li><div></div></li>
-              <li><div></div></li>
-              <li><div></div></li>
+            <ul className="sidebar-owner-contacts-networks">
+              <li><div className="sidebar-facebook"><FontAwesomeIcon icon={faFacebookF} className="owner-contact-icon"/></div></li>
+              <li><div className="sidebar-twitter"><FontAwesomeIcon icon={faTwitter} className="owner-contact-icon"/></div></li>
+              <li><div className="sidebar-google"><FontAwesomeIcon icon={faGooglePlusG} className="owner-contact-icon"/></div></li>
+              <li><div className="sidebar-t"><FontAwesomeIcon icon={faTumblr} className="owner-contact-icon"/></div></li>
+              <li><div className="sidebar-insta"><FontAwesomeIcon icon={faInstagram} className="owner-contact-icon"/></div></li>
+              <li><div className="sidebar-in"><FontAwesomeIcon icon={faLinkedinIn} className="owner-contact-icon"/></div></li>
             </ul>
             <div className="sidebars-button">Visit Website</div>
           </div>
-          <div className="price">
+          <div className="sidebar-price">
             <div className="sidebars-title">
-              <div></div><h5>Price Range</h5>
+              <div><FontAwesomeIcon icon={faDollarSign} /></div><h5>Price Range</h5>
             </div>
-            <span>Price: </span><span className="owner-price__price"> $100 - $300</span>
+            <span>Price: </span><span className="sidebar-price__price"> $100 - $300</span>
           </div>
-          <div className="contact-me">
+          <div className="sidebar-contact-me">
               <div className="sidebars-title">
-                <div></div><h5>Contact Me</h5>
+                <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Contact Me</h5>
               </div>
               <div className="sidebars-form-wrapper">
-              <div className="contact-me-input-block">
+              <div className="sidebar-contact-me-input-block">
                 <span>Your Name</span>
                 <input type="text"/>
               </div>
-              <div className="contact-me-input-block">
+              <div className="sidebar-contact-me-input-block">
                 <span>Your Email</span>
                 <input type="email" />
               </div>
-              <div className="contact-me-input-block">
+              <div className="sidebar-contact-me-input-block">
                 <span>Subject</span>
                 <input type="text"/>
               </div>
-              <div className="contact-me-input-block">
+              <div className="sidebar-contact-me-input-block">
                 <span>Your Message</span>
                 <input type="text"/>
               </div>
               <button className="sidebars-button">Submit</button>
             </div>
           </div>
-          <div className="gallery">
+          <div className="sidebar-map">
+              <div className="sidebars-title">
+                <div><FontAwesomeIcon icon={faMapMarkerAlt} /></div><h5>Map</h5>
+              </div>
+            </div>
+          <div className="sidebar-gallery">
             <div className="sidebars-title">
-              <div></div><h5>Gallery</h5>
+              <div><FontAwesomeIcon icon={faCameraRetro} /></div><h5>Gallery</h5>
             </div>
           </div>
           <div className="sidebar-subscribe">
             <div className="sidebars-title">
-              <div></div><h5>Subscribe</h5>
+              <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Subscribe</h5>
             </div>
             <span>Subscribe us and never miss our new<br/> articles</span><br/>
-            <input type="email" placeholder="Enter Your Email"></input>
+            <input type="email" placeholder="Enter Your Email" /><button><FontAwesomeIcon icon={faTelegramPlane} /></button>
           </div>
         </aside>
       </div>
