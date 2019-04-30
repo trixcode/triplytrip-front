@@ -7,9 +7,13 @@
   margin-bottom: 26px;
   display: flex;
   &__box {
-    margin: 13px;
-    width: 12px;
-    height: 34px;
+    width: 8px;
+    margin-right: 3px;
+    background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
+  }
+  &__boxSecond {
+    margin-right: 13px;
+    width: 3px;
     background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
   }
   &__name {
@@ -20,25 +24,34 @@
     font-size: 18px;
     font-weight: 800;
     text-transform: capitalize;
+    padding: 8px 0 8px;
   }
 }
 
 .section-article-sidebar {
-  .article-sidebar-wrapper {
-    .article-sidebar-search {
-      margin-bottom: 45px;
-      .search {
-        width: 330px;
-        height: 52px;
-        border: 1px solid #d7d7d7;
-        border-radius: 30px;
-        opacity: 0.5;
-        font-family: "Varela Round";
-        font-size: 18px;
-        font-weight: 400;
-        text-transform: capitalize;
-        padding-left: 36px;
-      }
+  width: 330px;
+  .article-sidebar-search {
+    margin-bottom: 45px;
+    position: relative;
+    .search {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #d7d7d7;
+      border-radius: 30px;
+      opacity: 0.5;
+      font-family: "Varela Round";
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding-left: 36px;
+    }
+    .search-icon {
+      position: absolute;
+      color: #000000;
+      font-size: 18px;
+      font-weight: 400;
+      right: 28px;
+      bottom: 18px;
     }
   }
 }
@@ -93,18 +106,29 @@
     font-family: "Varela Round";
     font-size: 14px;
     font-weight: 400;
-    margin-bottom: 40px;
+    margin-bottom: 19px;
+    display: inline-block;    
   }
-  &__email {
-    width: 327px;
-    height: 47px;
-    border: 1px solid #e4dfe9;
-    color: #949494;
-    font-family: "Varela Round";
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: capitalize;
-    padding-left: 14px;
-    margin-top: 19px;
+  &__input{
+    position: relative;
+    &--email {
+      width: 100%;
+      height: 47px;
+      border: 1px solid #e4dfe9;
+      color: #949494;
+      font-family: "Varela Round";
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding-left: 14px;
+    }
+    .telegram-icon {
+      color: #232323;
+      font-size: 24px;
+      font-weight: 400;
+      position: absolute;
+      right: 20px;
+      bottom: 13px;
+    }
   }
 }
