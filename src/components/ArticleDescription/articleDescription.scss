@@ -1,0 +1,101 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/main.scss';
+
+
+
+.section-article-desctiption {
+  width: 1047px;
+  .article-description-header {
+    margin-bottom: 70px;
+    &__text {
+      color: #444444;
+      font-family: "Varela Round";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+  }
+  .article-description-middle {
+    margin-bottom: 36px;
+    &__title {
+      color: #2a3250;
+      font-family: 'Montserrat';
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 28px;
+      text-transform: capitalize;
+    }
+    &__image {
+      height: 469px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .article-description-footer {
+    margin-bottom: 57px;
+    &__text {
+      color: #444444;
+      font-family: "Varela Round";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      margin-bottom: 52px;
+    }
+    &__tags {
+      color: #666666;
+      font-family: "Varela Round";
+      font-size: 16px;
+      font-weight: 400;
+      .bold {
+        color: #000000;
+      }
+    }
+  }
+  .article-description-buttons {
+    margin-bottom: 53px;
+    display: flex;
+    justify-content: space-between;
+    &__block {
+      position: relative;
+      .button {
+        width: 512px;
+        height: 54px;
+        color: #000000;
+        font-family: "Montserrat - Semi Bold";
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: capitalize;
+        border: none;
+        &:hover {
+          background-color: #6585fd;
+        }
+      }
+      .button-icon-less {
+        color: #000000;
+        font-size: 8px;
+        font-weight: 400;
+        position: absolute;
+        left: 185px;
+        bottom: 23px;
+      }
+      .button-icon-greater {
+        color: #000000;
+        font-size: 8px;
+        font-weight: 400;
+        position: absolute;
+        right: 190px;
+        bottom: 23px;
+      }
+    }
+    .article-description-advertising {
+      width: 100%;
+      height: 140px;
+      background-image: linear-gradient(to right, #5884e8 0%, #2cc7de 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.filter-form {
+    width: 100%;
+    @include displayFlexCenter;
+    align-items: center;
+
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+   
+    &__input, &__select {
+        color: gray;
+        width: 32%;
+        height: 50px;
+        border: solid 1px #c4c4c4;
+        background: none;
+        border-radius: 5px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin-bottom: 18px;
+    }
+   
+    .keywords__input {
+        width: 66%;
+    }
+
+    .filter-form-radius {
+
+        &__title {
+            font-weight: 800;
+        }
+    }
+
+    &-checkboxs {
+        padding-bottom: 20px;
+        padding-top: 40px;
+        border-top: solid 1px #c4c4c4;
+        border-bottom: solid 1px #c4c4c4;
+        margin-bottom: 50px;
+        
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 150px;
+            margin-bottom: 20px;
+            &__text {
+                font-weight: 800;
+            }
+            &__icon {
+                display: none;
+                font-size: 0.9em;
+            }
+            .action {
+                display: flex;
+            }
+            :hover {
+                cursor: pointer;
+            }
+        }
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        .checkboxs_hide {
+            display: none;
+        }
+
+    }
+  
+    .radius__select {
+        height: 40px; 
+        width: 120px;
+        margin-left: 20px;
+    }
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        width: 230px;
+        margin-bottom: 15px;
+
+        &__input {
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+            background: none;
+            border: 1px solid rgb(175, 175, 175);     
+        }
+
+        &__text {
+            font-weight: 800;
+            color: rgb(97, 97, 97);
+            text-transform: capitalize;
+        }
+        
+    }
+    &-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    
+}
