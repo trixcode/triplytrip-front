@@ -47,7 +47,7 @@ const ArticleDescription = (props) => {
       </div>
       <div className='article-description-advertising'>
         Deleate
-          </div>
+      </div>
     </section>
   )
 }
