@@ -3,7 +3,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-};
+}
+
+@mixin displayFlexTynai {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 @mixin displayFlexCard {
     display: flex;
     flex-direction: column;
