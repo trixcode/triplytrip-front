@@ -1,4 +1,4 @@
-import PlaceCard from './PlaceCard';
+import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
 import './places.scss'
 
@@ -18,33 +18,33 @@ const Places = props => {
             className='places__tag places__tag_all'
             id='all'>
             All
-                    </button>
+          </button>
           <button
             id='hotels'
             className='places__tag places__tag_hotel'>
             Hotel
-                    </button>
+          </button>
           <button
             id='restaraunts'
             className='places__tag places__tag_restaurant'>
             Restaurant
-                    </button>
+          </button>
           <button
             className='places__tag places__tag_dinner'>
             Dinner
-                    </button>
+          </button>
           <button
             className='places__tag places__tag_clubbar'>
             Club & Bar
-                    </button>
+          </button>
           <button
             className='places__tag places__tag_coffee'>
             Coffee
-                    </button>
+          </button>
           <button
             className='places__tag places__tag_destinations'>
             Destinations
-                    </button>
+          </button>
         </div>
         <div
           className='place-cards-wrapper'>

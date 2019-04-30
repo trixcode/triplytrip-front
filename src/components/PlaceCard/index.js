@@ -5,7 +5,7 @@ import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchan
 
 const PlaceCard = props => {
   const { place } = props;
-
+  console.log(place.image)
   return (
     <div className='place-card-container'>
       <div className='place-card-image-wrapper'>
