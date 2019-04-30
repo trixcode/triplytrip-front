@@ -11,11 +11,11 @@ const ArticleTitle = (props) => {
             <span className="aricle-tags__title">Posted On</span>
             <span className="aricle-tags__subtitle">May 09, 2017</span>
           </div>
-          <div>
+          <div className="aricle-tags__wrapper">
             <span className="aricle-tags__title">Category</span>
             <span className="aricle-tags__subtitle">Hotel</span>
           </div>
-          <div>
+          <div className="aricle-tags__wrapper">
             <span className="aricle-tags__title">Comment</span>
             <span className="aricle-tags__subtitle">Icon</span>
           </div>
