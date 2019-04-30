@@ -4,7 +4,7 @@
 
 
 
-.article-description-wrapper {
+.section-article-desctiption {
   width: 1047px;
   .article-description-header {
     margin-bottom: 70px;
@@ -57,26 +57,45 @@
     margin-bottom: 53px;
     display: flex;
     justify-content: space-between;
-    .button {
-      width: 512px;
-      height: 54px;
-      color: #000000;
-      font-family: "Montserrat - Semi Bold";
-      font-size: 16px;
-      font-weight: 400;
-      text-transform: capitalize;
-      border: none;
-      &:hover {
-        background-color: #6585fd;
+    &__block {
+      position: relative;
+      .button {
+        width: 512px;
+        height: 54px;
+        color: #000000;
+        font-family: "Montserrat - Semi Bold";
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: capitalize;
+        border: none;
+        &:hover {
+          background-color: #6585fd;
+        }
+      }
+      .button-icon-less {
+        color: #000000;
+        font-size: 8px;
+        font-weight: 400;
+        position: absolute;
+        left: 185px;
+        bottom: 23px;
+      }
+      .button-icon-greater {
+        color: #000000;
+        font-size: 8px;
+        font-weight: 400;
+        position: absolute;
+        right: 190px;
+        bottom: 23px;
       }
     }
-  }
-  .article-description-advertising {
-    width: 1048px;
-    height: 140px;
-    background-image: linear-gradient(to right, #5884e8 0%, #2cc7de 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .article-description-advertising {
+      width: 100%;
+      height: 140px;
+      background-image: linear-gradient(to right, #5884e8 0%, #2cc7de 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
