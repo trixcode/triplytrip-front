@@ -1,8 +1,8 @@
 import SectionTitle from '../SectionTitle';
 
-import './news.scss';
+import './articles.scss';
 
-const News = (props) => {
+const Articles = (props) => {
   return (
     <section className='section-news'>
       <div className='container'>
@@ -89,4 +89,4 @@ const News = (props) => {
   )
 }
 
-export default News;
+export default Articles;
