@@ -1,0 +1,29 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.article-title{
+  display: flex;
+  justify-content: center;
+  height: 168px;
+}
+.aricle-title__name{
+  color: #000000;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 83.33px;
+}
+.article-tags{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.aricle-tags__wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.aricle-tags__title{
+
+}
+.aricle-tags__subtitle{
+
+}
