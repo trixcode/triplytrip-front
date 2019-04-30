@@ -1,0 +1,272 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+
+@import url('https://fonts.googleapis.com/css?family=Krona+One|Montserrat|Varela+Round');
+
+.place-detail {
+    display: flex;
+    justify-content: center;
+    &-container {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.main-info {
+    width: 1050px;
+    &-tabs {
+        width: 100%;
+        border-bottom: 2px solid #ebebeb;
+        margin-bottom: 50px;
+        &__tab {
+            height: 50px;
+            border: none;
+            background: none;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: #2a3250;
+            font-weight: 700;
+            width: 180px;
+            //margin-right: 38px;
+            //margin-left: 17px;
+            outline: none;
+            &_selected {
+                color: #6585fd;
+                border-bottom: 2px #6585fd solid;
+            }
+            &:hover{
+                color: #6585fd;
+                border-bottom: 2px #6585fd solid;
+            } 
+        }
+    }
+    &-text {
+        &__text {
+            color: #696969;
+            font-size: 16px;
+            font-family: 'Varela Round', sans-serif;
+            line-height: 2;
+            margin-bottom: 50px;
+        }
+        &__title {
+            font-size: 36px;
+            font-family: 'Montserrat', sans-serif;
+            color: #696969;
+            margin-bottom: 35px;
+        }
+        &__pics {
+            width: 100%;
+            height: 470px;
+            background: #e7e7e7;
+            margin-bottom: 20px;
+        }
+        &__save {
+            width: 100%;
+            height: 140px;
+            background: #42a5e3;
+        }
+    }
+}
+
+.sidebar {
+    width: 330px;
+}
+
+.owner-info {
+    @include detailSidebar;
+    height: 400px;
+    @include displayFlexOnCenter;
+    &__avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #e7e7e7;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    &__name {
+        color: #101010;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+    &__status {
+        color: #f85454;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+    &__followers {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        div {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            span {
+                color: #333333;
+                font-size: 14px;
+                font-family: 'Varela Round', sans-serif;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+        }
+    }
+    &__follow {
+        color: #ffba00;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.owner-contacts {
+    @include detailSidebar;
+    height: 350px;
+    @include displayFlexOnCenter;
+    &-info {
+        list-style: none;
+        color: #ababab;
+        font-size: 14px;
+        font-family: 'Varela Round', sans-serif;
+        font-weight: 500;
+        margin-bottom: 35px;
+        li {
+            margin-bottom: 45px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-networks {
+        list-style: none;
+        margin-bottom: 25px;
+        li {
+            display: inline-block;
+            padding: 0 5px;
+            div {
+                background: #f85454;
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+.sidebars-button {
+    width: 290px;
+    height: 50px;
+    border: none;
+    background: #e03e53;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.sidebars-title {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-left: 12px;
+    padding-top: 12px;
+    margin-bottom: 30px;
+    div {
+        width: 42px;
+        height: 42px;
+        background: #45a2e4;
+        margin-right: 15px;
+    }
+    h5 {
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        color: #2a3250;
+        }
+}
+
+.sidebars-form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price {
+    @include detailSidebar;
+    height: 135px;
+    span {
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        margin-left: 20px;
+    }
+    &__price {
+        color: #5da433;
+    }
+}
+
+.contact-me {
+    @include detailSidebar;
+    height: 540px;
+    &-input-block {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+        input {
+            background: none;
+            border: 1px #b7b7b7 solid;
+            width: 285px;
+            height: 40px;
+            padding-left: 15px;
+            font-size: 16px;
+            font-family: 'Varela Round', sans-serif
+        }
+        span {
+            font-size: 16px;
+            font-family: 'Varela Round', sans-serif;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.gallery {
+    @include detailSidebar;
+    height: 180px;
+}
+
+.sidebar-subscribe {
+    @include detailSidebar;
+    height: 200px;
+    span {
+        font-size: 14px;
+        font-family: 'Varela Round', sans-serif;
+        color: #949494;
+        display: block;
+        margin-left: 18px;
+    }
+    input {
+        background: none;
+        border: 1px #b7b7b7 solid;
+        width: 285px;
+        height: 40px;
+        margin-left: 18px;
+        padding-left: 15px;
+        font-size: 16px;
+        font-family: 'Varela Round', sans-serif;
+        &::placeholder{
+            font-size: 16px;
+            font-family: 'Varela Round', sans-serif;
+            color: #000;
+        }
+    }
+}

@@ -14,8 +14,7 @@ function Home() {
     <Fragment>
       <div className="header-gradient-wrapper">
         <Header />
-        <hr
-          className="header-border" />
+        <hr className="header-border" />
         <TopContent />
       </div>
       <Discover />
