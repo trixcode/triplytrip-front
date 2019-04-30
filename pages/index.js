@@ -1,5 +1,7 @@
 import { Fragment } from 'react'
 import Header from '../src/components/Header';
+import HomeCategory from '../src/components/HomeCategory'
+import Search from '../src/components/Search'
 import Places from '../src/components/PlaceCard/Places'
 import Subscribe from '../src/components/Subscribe/Subscribe'
 import TopContent from '../src/components/TopContent'
@@ -17,6 +19,9 @@ function Home() {
         <hr className="header-border" />
         <TopContent />
       </div>
+      <HomeCategory />
+      <hr className="category-border" />
+      <Search />
       <Discover />
       <Places />
       <UpcommingEvents />
