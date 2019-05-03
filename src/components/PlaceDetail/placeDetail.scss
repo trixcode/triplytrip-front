@@ -7,7 +7,7 @@
 .place-detail {
     display: flex;
     justify-content: center;
-    &-container {
+    .place-detail-container {
         justify-content: space-between;
         flex-direction: row;
     }
@@ -17,8 +17,9 @@
     width: 1050px;
     &-tabs {
         width: 100%;
-        border-bottom: 2px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
         margin-bottom: 50px;
+        margin-top: -1px;
         &__tab {
             height: 50px;
             border: none;
@@ -33,15 +34,23 @@
             outline: none;
             &_selected {
                 color: #6585fd;
-                border-bottom: 2px #6585fd solid;
+                border: none;
+                border-bottom: 1px #6585fd solid;
+                height: 50px;
+                background: none;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                width: 180px;
+                outline: none;
             }
             &:hover{
                 color: #6585fd;
-                border-bottom: 2px #6585fd solid;
+                border-bottom: 1px #6585fd solid;
             } 
         }
     }
-    &-text {
+    .overview {
         &__text {
             color: #696969;
             font-size: 16px;
@@ -66,6 +75,60 @@
             height: 140px;
             background: #42a5e3;
         }
+    }
+}
+
+.contact {
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    .sidebars-form-wrapper {
+        width: 500px;
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            input {
+                background: none;
+                border: 1px #b7b7b7 solid;
+                width: 100%;
+                height: 40px;
+                padding-left: 15px;
+                font-size: 16px;
+                font-family: 'Varela Round', sans-serif
+            }
+            span {
+                font-size: 16px;
+                font-family: 'Varela Round', sans-serif;
+                margin-bottom: 5px;
+            }
+        }
+        .sidebars-button {
+            margin-left: 260px;
+        }
+    }
+    &-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 500px;
+        background: #f7f7f7;
+    }
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    div {
+        width: 1000px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #f7f7f7;
     }
 }
 
@@ -329,7 +392,7 @@
         position: absolute;
         background: none;
         border: none;
-        right: 20px;
+        right: 35px;
         bottom: 26px;
         svg {
             font-size: 30px;
