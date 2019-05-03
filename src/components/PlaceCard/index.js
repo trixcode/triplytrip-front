@@ -56,7 +56,7 @@ const PlaceCard = props => {
           {place.address}
         </span>
       </div>
-      <div className='placeCard-site place-card__text_grey'>
+      <div className='place-card-site place-card__text_grey'>
         <FontAwesomeIcon
           className='place-card__icon'
           icon={faGlobeAmericas} />
