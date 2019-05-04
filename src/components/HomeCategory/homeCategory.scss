@@ -1,0 +1,63 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.category-border{
+  height: 1px;
+  background: linear-gradient(90deg, #597dcd 0%, #95d8e3 100%);
+  width: 100%;
+  border: none;
+  margin: 0;
+}
+
+
+
+.category-wrapper{
+  background: rgb(98,140,233);
+  background: linear-gradient(90deg, rgba(98,140,233,1) 0%, rgba(49,200,223,1) 100%);
+  height: 92px;
+  display: flex;
+  justify-content: center;
+
+  .category-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+  .category-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .category-block__name{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+}
+
+.category__icon_hotel{
+  background-color: #fb718e;
+}
+.category__icon_hamburger{
+  background-color: #6ec6fd;
+}
+.category__icon_map{
+  background-color: #392d81;
+}
+.category__icon_coffee{
+  background-color: #e979fa;
+}
+.category__icon_beer{
+  background-color: #9cd47e;
+}
+
+.category__icon {
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  // padding: 12px;
+  margin-right: 5px;
+}
