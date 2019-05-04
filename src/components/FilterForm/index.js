@@ -11,9 +11,16 @@ const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
   'outdoor seating', 'wireless internet', 'park',
   'massage therapy', 'venues', 'jewellery', 'fashion']
 
+// getBoundingClientRect().left  - show last left pixel 
+//  window.event.clientX  - show mouses x cordination as pixel
+
 const FilterForm = props => {
   const { places } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const distanceValue = null;
+  const pointStyleLeft = null;
+  const lineStyleWidth = null;
 
   return (
     <div className='filter-form'>
@@ -57,7 +64,7 @@ const FilterForm = props => {
         </form>
 
         <div className='filter-form-radius'>
-          <span className='filter-form-radius__title'>Radius: 10 km</span>
+          <span className='filter-form-radius__title'>Radius: {distanceValue ? distanceValue : '10'} km</span>
           <select
             className='filter-form__select radius__select'
             name="categorieslist"
@@ -66,6 +73,20 @@ const FilterForm = props => {
             <option value="meters">meters</option>
             <option value="miles">miles</option>
           </select>
+          <div
+            className='filter-form-radius-distance'>
+            <div
+              style={{ left: pointStyleLeft ? pointStyleLeft : '100' + 'px' }}
+              id='filter-form-radius-distance__point'
+              className='filter-form-radius-distance__point' />
+            <div
+              style={{ width: lineStyleWidth ? lineStyleWidth : '100' + 'px' }}
+              id='filter-form-radius-distance__select__line'
+              className='filter-form-radius-distance__select__line' />
+            <div
+              id='filter-form-radius-distance__static__line'
+              className='filter-form-radius-distance__static__line' />
+          </div>
         </div>
 
         <div className='filter-form-checkboxs'>
@@ -76,8 +97,8 @@ const FilterForm = props => {
               Filter by Tags
 						</span>
             <FontAwesomeIcon
-                className='filter-form-checkboxs__title__icon'
-                icon={isFilterOpen ? faAngleUp : faAngleDown} />
+              className='filter-form-checkboxs__title__icon'
+              icon={isFilterOpen ? faAngleUp : faAngleDown} />
           </p>
           {
             isFilterOpen && (
