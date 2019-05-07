@@ -16,13 +16,21 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-sass": "^1.0.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^8.1.0",
+    "next-redux-saga": "^4.0.1",
+    "next-redux-wrapper": "^3.0.0-alpha.2",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.0",
+    "redux-saga": "^1.0.2"
   },
   "devDependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "redux-logger": "^3.0.6"
   }
 }
