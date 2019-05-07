@@ -5,25 +5,36 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 import PlaceCard from '../PlaceCard';
 import './filterform.scss';
+import { get } from 'https';
 
-const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
+  const FilterForm = props => {
+  const { places } = props;
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isMouseDown, setpixels] = useState(false);
+
+  const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
   'coffe', 'ckin care', 'spa', 'parking street',
   'outdoor seating', 'wireless internet', 'park',
   'massage therapy', 'venues', 'jewellery', 'fashion']
 
-// getBoundingClientRect().left  - show last left pixel 
-//  window.event.clientX  - show mouses x cordination as pixel
-
-const FilterForm = props => {
-  const { places } = props;
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-
-  const distanceValue = null;
-  const pointStyleLeft = null;
-  const lineStyleWidth = null;
-
+  const setPointPosition = ()=> {
+    const distanceStaticLineLeftSide = document.getElementById('filter-form-radius-distance__static__line')
+    const point =  document.getElementById('filter-form-radius-distance__point')
+    const selectLine = document.getElementById('filter-form-radius-distance__select__line')
+    if (event.x>distanceStaticLineLeftSide.getBoundingClientRect().left && event.x<distanceStaticLineLeftSide.getBoundingClientRect().right) {
+      point.style.left = event.x-distanceStaticLineLeftSide.getBoundingClientRect().left -7+ 'px';
+      selectLine.style.width = event.x-distanceStaticLineLeftSide.getBoundingClientRect().left -7+ 'px';
+    }
+    point.ondragstart = function() {
+      return false;
+    };
+  }
+  
   return (
-    <div className='filter-form'>
+    <div 
+      onMouseUp={()=> setpixels(false)}
+      onMouseMove={()=>isMouseDown && setPointPosition()}
+      className='filter-form'>
       <div className='container'>
 
         <form className='filter-form-wrapper'>
@@ -64,23 +75,24 @@ const FilterForm = props => {
         </form>
 
         <div className='filter-form-radius'>
-          <span className='filter-form-radius__title'>Radius: {distanceValue ? distanceValue : '10'} km</span>
+          <span className='filter-form-radius__title'>Radius: 10 км</span>
           <select
             className='filter-form__select radius__select'
             name="categorieslist"
             form="categorieslform">
-            <option value="milomerts">milomerts</option>
+            <option value="milomerts">kilomerts</option>
             <option value="meters">meters</option>
             <option value="miles">miles</option>
           </select>
           <div
             className='filter-form-radius-distance'>
             <div
-              style={{ left: pointStyleLeft ? pointStyleLeft : '100' + 'px' }}
+              onMouseDown={()=> setpixels(true)}
+              style={{left: '100px'}}
               id='filter-form-radius-distance__point'
-              className='filter-form-radius-distance__point' />
+              className='filter-form-radius-distance__point' />    
             <div
-              style={{ width: lineStyleWidth ? lineStyleWidth : '100' + 'px' }}
+              style={{ width: '100px' }}
               id='filter-form-radius-distance__select__line'
               className='filter-form-radius-distance__select__line' />
             <div
@@ -124,7 +136,6 @@ const FilterForm = props => {
           }
 
         </div>
-
         <div className='filter-form-cards-wrapper'>
           {places.slice(0, 12).map(placeObj => {
             return (
@@ -135,7 +146,6 @@ const FilterForm = props => {
             )
           })}
         </div>
-
       </div>
     </div>
   )
