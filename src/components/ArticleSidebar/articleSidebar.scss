@@ -1,6 +1,5 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
-@import '../../assets/styles/main.scss';
 
 
 .article-sidebar-title {
@@ -46,6 +45,7 @@
       padding-left: 36px;
     }
     .search-icon {
+      width: 18px;
       position: absolute;
       color: #000000;
       font-size: 18px;
@@ -123,6 +123,8 @@
       padding-left: 14px;
     }
     .telegram-icon {
+      width: 24px;
+      height: 24px;
       color: #232323;
       font-size: 24px;
       font-weight: 400;

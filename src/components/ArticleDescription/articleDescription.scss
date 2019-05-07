@@ -1,6 +1,5 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
-@import '../../assets/styles/main.scss';
 
 
 
@@ -73,6 +72,8 @@
         }
       }
       .button-icon-less {
+        width: 8px;
+        height: 8px;
         color: #000000;
         font-size: 8px;
         font-weight: 400;
@@ -81,6 +82,8 @@
         bottom: 23px;
       }
       .button-icon-greater {
+        width: 8px; 
+        height: 8px;
         color: #000000;
         font-size: 8px;
         font-weight: 400;

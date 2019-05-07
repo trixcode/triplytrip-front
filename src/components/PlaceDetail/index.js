@@ -10,6 +10,13 @@ const PlaceDetail = () => {
   const [isContactClicked, setContact] = useState(false)
   const [isReviewsClicked, setReview] = useState(false)
   const [isVideoClicked, setVideo] = useState(false)
+  
+  const switchTabs =(a, b, c, d) => {
+    a(true)
+    b(false)
+    c(false)
+    d(false)
+  }
 
   const selectedClass = 'main-info-tabs__tab_selected'
   const defaultClass = 'main-info-tabs__tab'
@@ -85,14 +92,14 @@ const PlaceDetail = () => {
               </div>
               <button className="sidebars-button">Submit</button>
         </div>
-        <div className="contact-map">There is must be a map</div>
+        <div className="contact-map">There must be a map here</div>
       </div>
 
   const reviews = <h2>Reviews</h2>
 
   const video = 
       <div className="video">
-        <div>There is mast be a video</div>
+        <div>There must be a video here</div>
       </div>
 
   return (
@@ -101,22 +108,22 @@ const PlaceDetail = () => {
         <div className="main-info">
           <div className="main-info-tabs">
             <button id="overview" onClick={() =>
-              setOverview(true) + setVideo(false) + setReview(false) + setContact(false)}
+              switchTabs(setOverview, setVideo, setReview, setContact)}
               className={isOverviewClicked ? selectedClass : defaultClass}>
               Overview
             </button>
             <button id="contact" onClick={() =>
-              setContact(true) + setOverview(false) + setVideo(false) + setReview(false)}
+              switchTabs(setContact, setOverview, setReview, setVideo)}
               className={isContactClicked ? selectedClass : defaultClass}>
               Contact
             </button>
             <button id="reviews" onClick={() =>
-              setReview(true) + setContact(false) + setOverview(false) + setVideo(false)}
+              switchTabs(setReview, setVideo, setOverview, setContact)}
               className={isReviewsClicked ? selectedClass : defaultClass}>
               Reviews & Rating
             </button>
             <button id="video" onClick={() =>
-              setVideo(true) + setReview(false) + setOverview(false) + setContact(false)}
+              switchTabs(setVideo, setOverview, setReview, setContact)}
               className={isVideoClicked ? selectedClass : defaultClass}>
               Video
             </button>
