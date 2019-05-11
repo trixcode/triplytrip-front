@@ -1,8 +1,14 @@
+import {useEffect} from 'react';
 import SectionTitle from '../SectionTitle';
 
 import './discover.scss';
 
 const Discover = (props) => {
+  const { topDestinations, getTopDestinationsStart } = props;
+  useEffect(() => {
+    getTopDestinationsStart()
+  }, []);
+  console.log(topDestinations)
   return (
     <section className='section-discover'>
       <div className='container'>
