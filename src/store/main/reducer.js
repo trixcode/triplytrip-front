@@ -4,11 +4,11 @@ import * as actionTypes from './actionTypes';
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.EXAMPLE_ACTION_TYPE:
-        return {
+    case actionTypes.GET_TOP_DESTINATIONS_SUCCESS:
+      return {
         ...state,
-        main: true,
-        };
+        topDestinations: action.response,
+      };
     default:
       return state;
   }

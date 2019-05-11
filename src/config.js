@@ -7,14 +7,14 @@ const config = {
     basename: process.env.PUBLIC_PATH || '/',
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || 3000,
-    apiUrl: 'http://localhost:8001/api/v1/',
+    apiUrl: 'http://localhost:8000/api/v1/',
   },
   test: {},
   development: {},
   production: {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || 8080,
-    apiUrl: 'http://localhost:8001/api/v1/',
+    apiUrl: 'http://localhost:8000/api/v1/',
   },
 };
 

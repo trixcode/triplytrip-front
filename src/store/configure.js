@@ -2,8 +2,9 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import { isProd } from '../config';
-import rootReducer from './main/reducer';
+import rootReducer from './reducer';
 import rootSaga from './sagas';
+import api from '../services/api';
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -26,12 +27,12 @@ const bindMiddleware = () => {
 const configureStore = (initialState = {}) => {
 
   const store = createStore(
-    rootReducer,
+    rootReducer(),
     initialState,
     bindMiddleware(),
   )
 
-  store.sagaTask = sagaMiddleware.run(rootSaga)
+  store.sagaTask = sagaMiddleware.run(rootSaga, { api: api.create() })
   
   return store
 }
