@@ -20,7 +20,24 @@ import {
       yield call(getTopDestinationsRequest, requestParams);
     }
   }
+
+  export function* getEventsRequest(requestParams) {
+    try {
+      const response = yield call(api.GET, 'events', requestParams);
+      yield put(actions.getEventsSuccess(response));
+    } catch (responseError) {
+      yield put(actions.getEventsFailure(responseError));
+    }
+  }
+  export function* watchGetEventsRequest() {
+    while (true) {
+      const { requestParams } = yield take(actionTypes.GET_EVENTS_SRART);
+      yield call(getEventsRequest, requestParams);
+    }
+  }
+
   export default function* () {
     yield fork(watchGetTopDestinationsRequest);
+    yield fork(watchGetEventsRequest)
   }
   
