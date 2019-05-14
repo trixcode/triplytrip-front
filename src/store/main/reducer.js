@@ -9,11 +9,6 @@ export default (state = initialState, action) => {
         ...state,
         topDestinations: action.response,
       };
-    case actionTypes.GET_EVENTS_SUCCESS:
-      return {
-        ...state,
-        events: action.response,
-      };
     default:
       return state;
   }

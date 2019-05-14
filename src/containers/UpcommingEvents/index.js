@@ -7,7 +7,7 @@ import {getEventsStart} from '../../store/actions';
 const UpcommingEventsContainer = (props) => <UpcommingEvents {...props} />;
 
 const mapStateToProps = (store) => ({
-    events: store.main.events,
+    currentEvents: store.events.currentEvents,
   })
 const mapDispatchToProps = (dispatch) => ({
     getEventsStart: (requestParams='') => dispatch(getEventsStart(requestParams)),

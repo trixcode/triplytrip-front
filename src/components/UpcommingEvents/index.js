@@ -3,9 +3,9 @@ import {useEffect} from 'react';
 import './upcommingEvents.scss'
 
 const UpcommingEvents = (props) => {
-  const { events, getEventsStart } = props;
+  const { currentEvents, getEventsStart } = props;
   useEffect(() => {
-    getEventsStart()
+    getEventsStart('isOpen=true&_sort=dateTimeStart&_limit=2')
   }, []);
   return (
     <section className="upcomming-events">
@@ -15,34 +15,32 @@ const UpcommingEvents = (props) => {
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasselus aliquam retrum"
       />
       <div className="upcomming-events-wrapper">
-      {Object.keys(events).map(key=> (
-        <div className="event-card" key={key}>
-        <img className="event-card-image" src="https://img2.goodfon.com/wallpaper/big/c/5c/hotel-vyveska-neon-vecher.jpg" />
+      {currentEvents.map(currentEvent=> (
+        <div className="event-card" key={currentEvent.id}>
+        <img className="event-card-image" src={currentEvent.imageUrl} />
         <div className="event-card-info">
-          <h5 className="event-card-info__name">{events[key].name}</h5>
+          <h5 className="event-card-info__name">{currentEvent.name}</h5>
           <div className="event-card-info-block">
-            <span className="info-block__location">{events[key].type}</span>
-            <span className="info-block__price">{events[key].price}$</span>
-            <span className="info-block__open">{events[key].status}</span>
+            <span className="info-block__location">{currentEvent.type}</span>
+            <span className="info-block__price">{currentEvent.price}$</span>
+            <span className="info-block__open">{currentEvent.isOpen}</span>
           </div>
         </div>
-          <div className="event-card-rating">{events[key].rating}</div>
+          <div className="event-card-rating">{currentEvent.rating}</div>
           <table className="event-card-table">
           <tbody>
             <tr>
-              <th>Adress</th>
+              <th>Address</th>
               <th>From</th>
               <th>To</th>
             </tr>
-            <tr><td>{events[key].adress}</td>
-            <td>{events[key].fromDate}<br/>{events[key].fromTime}</td>
-            <td>{events[key].toDate}<br/>{events[key].toTime}</td></tr>
+            <tr><td>{currentEvent.address}</td>
+            <td>{currentEvent.dateTimeStart}</td>
+            <td>{currentEvent.dateTimeEnd}</td></tr>
             </tbody>
           </table>
         </div>
       ))}
-        
-        
       </div>
     </div>
     </section>
