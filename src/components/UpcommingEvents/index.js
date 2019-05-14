@@ -1,5 +1,7 @@
-import SectionTitle from '../SectionTitle';
 import {useEffect} from 'react';
+import moment from 'moment';
+
+import SectionTitle from '../SectionTitle';
 import './upcommingEvents.scss'
 
 const UpcommingEvents = (props) => {
@@ -35,8 +37,8 @@ const UpcommingEvents = (props) => {
               <th>To</th>
             </tr>
             <tr><td>{currentEvent.address}</td>
-            <td>{currentEvent.dateTimeStart}</td>
-            <td>{currentEvent.dateTimeEnd}</td></tr>
+            <td>{moment(currentEvent.dateTimeStart).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeStart).format('HH:mm')}</td>
+            <td>{moment(currentEvent.dateTimeEnd).format('DD MMM YYYY HH:mm')}</td></tr>
             </tbody>
           </table>
         </div>
