@@ -1,8 +1,15 @@
 import './articleDescription.scss'
+import {useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 
+
 const ArticleDescription = (props) => {
+  const { articles, getArticlesStart } = props;
+  useEffect(() => {
+    getArticlesStart()
+  }, []);
+  console.log(articles)
   return (
     <section className='section-article-desctiption'>
       <div className='article-description-header'>
