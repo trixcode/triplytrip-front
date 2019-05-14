@@ -14,13 +14,33 @@ import {
       yield put(actions.getTopDestinationsFailure(responseError));
     }
   }
+
+  export function* getArticlesRequest(requestParams) {
+    try {
+      const response = yield call(api.GET, 'articles', requestParams);
+      yield put(actions.getArticlesSuccess(response));
+    } catch (responseError) {
+      yield put(actions.getArticlesFailure(responseError));
+    }
+  }
+
+
   export function* watchGetTopDestinationsRequest() {
     while (true) {
       const { requestParams } = yield take(actionTypes.GET_TOP_DESTINATIONS_START);
       yield call(getTopDestinationsRequest, requestParams);
     }
   }
+
+  export function* watchGetArticlesRequest() {
+    while (true) {
+      const { requestParams } = yield take(actionTypes.GET_ARTICLES_START);
+      yield call(getArticlesRequest, requestParams);
+    }
+  }
+
   export default function* () {
     yield fork(watchGetTopDestinationsRequest);
+    yield fork(watchGetArticlesRequest);
   }
   

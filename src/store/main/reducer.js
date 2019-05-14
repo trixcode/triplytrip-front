@@ -9,6 +9,11 @@ export default (state = initialState, action) => {
         ...state,
         topDestinations: action.response,
       };
+      case actionTypes.GET_ARTICLES_SUCCESS:
+      return {
+        ...state,
+        articles: action.response,
+      };
     default:
       return state;
   }
