@@ -8,7 +8,7 @@ import { getLatestNewsStart } from '../../store/actions';
 const LatestNewsContainer = (props) => <Articles {...props} />;
 
 const mapStateToProps = (store) => ({
-  latestNews: store.main.latestNews,
+  latestNews: store.latestNews.latestNews,
 })
 const mapDispatchToProps = (dispatch) => ({
   getLatestNewsStart: (requestParams='') => dispatch(getLatestNewsStart(requestParams)),
