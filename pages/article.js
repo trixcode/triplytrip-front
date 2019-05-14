@@ -1,5 +1,7 @@
 import { Fragment } from 'react'
-import ArticleDescription from '../src/components/ArticleDescription';
+
+import ArticleContainer from '../src/containers/Article'
+
 import ArticleSidebar from '../src/components/ArticleSidebar';
 import Header from '../src/components/Header';
 import DetailMainImage from '../src/components/DetailMainImage';
@@ -16,7 +18,7 @@ function Article() {
       <div className='article-wrapper'>
         <DetailTitle />
         <div className="container article-container">
-          <ArticleDescription />
+          <ArticleContainer/>
           <ArticleSidebar />
         </div>
       </div>
