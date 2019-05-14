@@ -36,8 +36,24 @@ import {
     }
   }
 
+  export function* getLatestNewsRequest(requestParams) {
+    try {
+      const response = yield call(api.GET, 'articles?_limit=4', requestParams);
+      yield put(actions.getLatestNewsSuccess(response));
+    } catch (responseError) {
+      yield put(actions.getLatestNewsFailure(responseError));
+    }
+  }
+  export function* watchLatestNewsRequest() {
+    while (true) {
+      const { requestParams } = yield take(actionTypes.GET_LATEST_NEWS_START);
+      yield call(getLatestNewsRequest, requestParams);
+    }
+  }
+
   export default function* () {
     yield fork(watchGetTopDestinationsRequest);
-    yield fork(watchGetEventsRequest)
+    yield fork(watchGetEventsRequest);
+    yield fork(watchLatestNewsRequest);
   }
   

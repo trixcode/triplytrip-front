@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 
 import DiscoverContainer from '../src/containers/Discover';
+import LatestNewsContainer from '../src/containers/LatestNews';
 
 import Header from '../src/components/Header';
 import HomeCategory from '../src/components/HomeCategory'
@@ -27,7 +28,7 @@ function Home() {
       <DiscoverContainer />
       <Places />
       <UpcommingEventsContainer />
-      <Articles />
+      <LatestNewsContainer />
       <Subscribe />
     </Fragment>
   )

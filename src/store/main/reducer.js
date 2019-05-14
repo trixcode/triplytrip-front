@@ -14,6 +14,11 @@ export default (state = initialState, action) => {
         ...state,
         events: action.response,
       };
+    case actionTypes.GET_LATEST_NEWS_SUCCESS:
+      return {
+        ...state,
+        latestNews: action.response,
+      }  
     default:
       return state;
   }
