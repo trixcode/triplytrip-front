@@ -7,33 +7,54 @@ import PlaceCard from '../PlaceCard';
 import './filterform.scss';
 import { get } from 'https';
 
-  const FilterForm = props => {
+
+const FilterForm = props => {
+
   const { places } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isMouseDown, setpixels] = useState(false);
+  const [distanceUnit, setUnit] = useState('km');
+  const [distanceValue, setValue] = useState(10)
 
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
-  'coffe', 'ckin care', 'spa', 'parking street',
-  'outdoor seating', 'wireless internet', 'park',
-  'massage therapy', 'venues', 'jewellery', 'fashion']
-
-  const setPointPosition = ()=> {
+    'coffe', 'ckin care', 'spa', 'parking street',
+    'outdoor seating', 'wireless internet', 'park',
+    'massage therapy', 'venues', 'jewellery', 'fashion']
+  
+  const setPointPosition = () => {
     const distanceStaticLineLeftSide = document.getElementById('filter-form-radius-distance__static__line')
-    const point =  document.getElementById('filter-form-radius-distance__point')
+    const point = document.getElementById('filter-form-radius-distance__point')
     const selectLine = document.getElementById('filter-form-radius-distance__select__line')
-    if (event.x>distanceStaticLineLeftSide.getBoundingClientRect().left && event.x<distanceStaticLineLeftSide.getBoundingClientRect().right) {
-      point.style.left = event.x-distanceStaticLineLeftSide.getBoundingClientRect().left -7+ 'px';
-      selectLine.style.width = event.x-distanceStaticLineLeftSide.getBoundingClientRect().left -7+ 'px';
+    if (event.x > distanceStaticLineLeftSide.getBoundingClientRect().left && event.x < distanceStaticLineLeftSide.getBoundingClientRect().right) {
+      point.style.left = event.x - distanceStaticLineLeftSide.getBoundingClientRect().left - 7 + 'px';
+      selectLine.style.width = event.x - distanceStaticLineLeftSide.getBoundingClientRect().left - 7 + 'px';
     }
-    point.ondragstart = function() {
+    point.ondragstart = function () {
       return false;
     };
   }
+
+  const setDistance = (unit) => {
+    const staticLine = document.getElementById('filter-form-radius-distance__static__line').getBoundingClientRect().width;
+    const pointLeft = 7 + parseInt(document.getElementById('filter-form-radius-distance__point').style.left)
+    const persent = Math.round(pointLeft * 100 / staticLine);
+    if (unit === 'km') {
+      return Math.round((100 - 1) / 100 * persent + 1)
+    }
+    else if (unit === 'm') {
+      return Math.round(((900 - 10) / 100 * persent + 10) / 10) * 10
+    }
+  }
   
   return (
-    <div 
-      onMouseUp={()=> setpixels(false)}
-      onMouseMove={()=>isMouseDown && setPointPosition()}
+    <div
+      onMouseUp={() => setpixels(false)}
+      onMouseMove={() => {
+        if (isMouseDown) {
+          setPointPosition()
+          setValue(setDistance(distanceUnit))
+        }
+      }}
       className='filter-form'>
       <div className='container'>
 
@@ -75,22 +96,26 @@ import { get } from 'https';
         </form>
 
         <div className='filter-form-radius'>
-          <span className='filter-form-radius__title'>Radius: 10 км</span>
+          <span className='filter-form-radius__title'> Radius: </span>
+          <p className='filter-form-radius__dictance__number'> {distanceValue} {distanceUnit} </p>
           <select
+            onChange={(event) => {
+              setUnit(event.target.value)
+              setValue(setDistance(event.target.value))
+            }}
             className='filter-form__select radius__select'
             name="categorieslist"
-            form="categorieslform">
-            <option value="milomerts">kilomerts</option>
-            <option value="meters">meters</option>
-            <option value="miles">miles</option>
+            form="categoriesform">
+            <option value="km">kilomerts</option>
+            <option value="m">meters</option>
           </select>
           <div
             className='filter-form-radius-distance'>
             <div
-              onMouseDown={()=> setpixels(true)}
-              style={{left: '100px'}}
+              onMouseDown={() => setpixels(true)}
+              style={{ left: '100px' }}
               id='filter-form-radius-distance__point'
-              className='filter-form-radius-distance__point' />    
+              className='filter-form-radius-distance__point' />
             <div
               style={{ width: '100px' }}
               id='filter-form-radius-distance__select__line'
@@ -132,9 +157,7 @@ import { get } from 'https';
                   )
                 })}
               </form>
-            )
-          }
-
+          )}
         </div>
         <div className='filter-form-cards-wrapper'>
           {places.slice(0, 12).map(placeObj => {

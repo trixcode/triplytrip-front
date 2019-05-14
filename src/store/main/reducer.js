@@ -14,6 +14,11 @@ export default (state = initialState, action) => {
         ...state,
         articles: action.response,
       };
+    case actionTypes.GET_EVENTS_SUCCESS:
+      return {
+        ...state,
+        events: action.response,
+      };
     default:
       return state;
   }

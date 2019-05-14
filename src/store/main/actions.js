@@ -25,5 +25,20 @@ export const getArticlesSuccess = (response) => ({
 });
 export const getArticlesFailure = (responseError) => ({
   type: actionTypes.GET_ARTICLES_FAILURE,
+});
+
+
+
+
+export const getEventsStart = (requestParams) => ({
+  type: actionTypes.GET_EVENTS_SRART,
+  requestParams,
+});
+export const getEventsSuccess = (response) => ({
+  type: actionTypes.GET_EVENTS_SUCCESS,
+  response,
+});
+export const getEventsFailure = (responseError) => ({
+  type: actionTypes.GET_EVENTS_FAILURE,
   responseError,
 });

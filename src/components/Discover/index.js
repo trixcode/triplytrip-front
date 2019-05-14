@@ -8,7 +8,6 @@ const Discover = (props) => {
   useEffect(() => {
     getTopDestinationsStart()
   }, []);
-  console.log(topDestinations)
   return (
     <section className='section-discover'>
       <div className='container'>
