@@ -1,4 +1,8 @@
 node_modules
 .next
 build
+<<<<<<< HEAD
+.DS_Store
+=======
 .idea
+>>>>>>> dev

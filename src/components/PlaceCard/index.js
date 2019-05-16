@@ -35,6 +35,26 @@ const PlaceCard = props => {
         {place.price} сом
       </span>
       <div className='place-card__rates'>
+        {<FontAwesomeIcon
+          className='rate__star__icon'
+          icon={faStar}
+        />}
+        {<FontAwesomeIcon
+          className='rate__star__icon'
+          // icon={faStar}
+        />}
+        {<FontAwesomeIcon
+          className='rate__star__icon'
+          icon={faStar}
+        />}
+        {<FontAwesomeIcon
+          className='rate__star__icon'
+          icon={faStar}
+        />}
+        {<FontAwesomeIcon
+          className='rate__star__icon'
+          icon={faStar}
+        />}
         <div 
           className='place-card__rates__wrapper'>
           {createArrayFronNumber(place.rating).map(key=>(
