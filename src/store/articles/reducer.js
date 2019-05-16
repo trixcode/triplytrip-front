@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
         ...state,
         articleList: action.response,
       };
-      case actionTypes.GET_ARTICLE_BY_ID_SUCCESS:
+      case actionTypes.GET_ARTICLE_DETAIL_BY_ID_SUCCESS:
       return {
         ...state,
         articleDetail: action.response,

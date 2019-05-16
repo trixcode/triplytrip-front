@@ -7,9 +7,9 @@ import * as actionTypes from './actionTypes';
 
 
 
-export function* getArticleDetailRequest(requestParams) {
+export function* getArticleDetailRequest(articleList) {
   try {
-    const response = yield call(api.GET, 'articles', requestParams);
+    const response = yield call(api.GET, 'articles', articleList);
     yield put(actions.getArticleDetailSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticleDetailFailure(responseError));
@@ -17,9 +17,9 @@ export function* getArticleDetailRequest(requestParams) {
 }
 
 
-export function* getArticleByIdRequest(articleId) {
+export function* getArticleDetailByIdRequest(articleDetail) {
   try {
-    const response = yield call(api.GET, `articles/${articleId}`);
+    const response = yield call(api.GET, `articles/${articleDetail}`);
     yield put(actions.getArticleDetailByIdSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticleDetailByIdFailure(responseError));
@@ -30,20 +30,20 @@ export function* getArticleByIdRequest(articleId) {
 
 export function* watchGetArticleDetailRequest() {
   while (true) {
-    const { requestParams } = yield take(actionTypes.GET_ARTICLE_DETAIL_START);
-    yield call(getArticleRequest, requestParams);
+    const { articleList } = yield take(actionTypes.GET_ARTICLE_DETAIL_START);
+    yield call(getArticleRequest, articleList);
   }
 }
 
 
-export function* watchGetArticleByIdRequest() {
+export function* watchGetArticleDetailByIdRequest() {
   while (true) {
-    const { articleId } = yield take(actionTypes.GET_ARTICLE_BY_ID_START);
-    yield call(getArticleByIdRequest, articleId);
+    const { articleDetail } = yield take(actionTypes.GET_ARTICLE_DETAIL_BY_ID_START);
+    yield call(getArticleDetailByIdRequest, articleDetail);
   }
 }
 
 export default function* () {
   yield fork(watchGetArticleDetailRequest);
-  yield fork(watchGetArticleByIdRequest);
+  yield fork(watchGetArticleDetailByIdRequest);
 }

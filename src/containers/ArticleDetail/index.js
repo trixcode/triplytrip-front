@@ -13,7 +13,7 @@ const mapStateToProps = (store) => ({
     articleDetail: fromMain.getState(store).articleDatial,
   })
 const mapDispatchToProps = (dispatch) => ({
-  getArticleDetailByIdStart: (articalId) => dispatch(getArticleDetailByIdStart(articalId)),
+  getArticleDetailByIdStart: (articleDetail) => dispatch(getArticleDetailByIdStart(articleDetail)),
 })
   
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleDetailContainer);

@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes';
 
 
-export const getArticleDetailStart = (requestParams) => ({
+export const getArticleDetailStart = (articleList) => ({
   type: actionTypes.GET_ARTICLE_DETAIL_START,
-  requestParams,
+  articleList,
 });
 export const getArticleDetailSuccess = (response) => ({
   type: actionTypes.GET_ARTICLE_DETAIL_SUCCESS,
@@ -15,15 +15,15 @@ export const getArticleDetailFailure = (responseError) => ({
 });
 
 
-export const getArticleDetailByIdStart = (articleId) => ({
-  type: actionTypes.GET_ARTICLE_BY_ID_START,
-  articleId,
+export const getArticleDetailByIdStart = (articleDetail) => ({
+  type: actionTypes.GET_ARTICLE_DETAIL_BY_ID_START,
+  articleDetail,
 });
 export const getArticleDetailByIdSuccess = (response) => ({
-  type: actionTypes.GET_ARTICLE_BY_ID_SUCCESS,
+  type: actionTypes.GET_ARTICLE_DETAIL_BY_ID_SUCCESS,
   response,
 });
 export const getArticleDetailByIdFailure = (responseError) => ({
-  type: actionTypes.GET_ARTICLE_BY_ID_FAILURE,
+  type: actionTypes.GET_ARTICLE_DETAIL_BY_ID_FAILURE,
   responseError,
 });
