@@ -3,9 +3,21 @@
 body  {
     font-family: 'Montserrat', sans-serif;
 }
+<<<<<<< HEAD
 *, h1, h2, h3, h4, h5, h6, button, span, ul {
+=======
+* {
+>>>>>>> dev
     margin: 0;
     padding: 0;
+    box-sizing: border-box
+}
+h1, h2, h3, h4, h5, h6, button, span, ul, li {
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
 }
 li {
     list-style: none;
@@ -21,14 +33,6 @@ a {
     flex-direction: column;
     box-sizing: border-box;
 }
-
-.container-Tynai{
-    display: flex;
-    width: 1440px;
-    justify-content: space-between;
-    flex-direction: row;
-    box-sizing: border-box;
-}
    
 .home-container {
     width: 100%;
@@ -36,3 +40,16 @@ a {
     flex-direction: column;
     align-items: center;
 }
+
+.article-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+ .article-container {
+     flex-direction: row;
+     justify-content: space-between;
+
+ }

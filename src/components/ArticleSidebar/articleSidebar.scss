@@ -1,0 +1,136 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+
+.article-sidebar-title {
+  margin-bottom: 26px;
+  display: flex;
+  &__box {
+    width: 8px;
+    margin-right: 3px;
+    background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
+  }
+  &__boxSecond {
+    margin-right: 13px;
+    width: 3px;
+    background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: capitalize;
+    padding: 8px 0 8px;
+  }
+}
+
+.section-article-sidebar {
+  width: 330px;
+  .article-sidebar-search {
+    margin-bottom: 45px;
+    position: relative;
+    .search {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #d7d7d7;
+      border-radius: 30px;
+      opacity: 0.5;
+      font-family: "Varela Round";
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding-left: 36px;
+    }
+    .search-icon {
+      width: 18px;
+      position: absolute;
+      color: #000000;
+      font-size: 18px;
+      font-weight: 400;
+      right: 28px;
+      bottom: 18px;
+    }
+  }
+}
+
+.article-sidebar-categories {
+  margin-bottom: 42px;
+  &__list {
+        margin-bottom: 26px;
+        .article-sidebar-categories__link {
+          color: #949494;
+          font-family: "Varela Round";
+          font-size: 14px;
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+      }  
+    }
+
+.article-sidebar-latest {
+  margin-bottom: 57px;
+  &__news {
+    display: flex;
+    margin-bottom: 26px;
+    &--image {
+      margin-right: 15px;
+    }
+    &-text {
+      display: flex;
+      flex-direction: column;
+      &--description {
+        color: #000000;
+        font-family: "Varela Round";
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin-bottom: 15px;
+      }
+      &--date {
+        font-family: "Varela Round";
+        font-size: 14px;
+        font-weight: 400;
+        color: #949494;
+        text-transform: capitalize;
+      }
+    }
+  }
+}    
+    
+.article-sidebar-newsletter {
+  &__text {
+    color: #949494;
+    font-family: "Varela Round";
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 19px;
+    display: inline-block;    
+  }
+  &__input{
+    position: relative;
+    &--email {
+      width: 100%;
+      height: 47px;
+      border: 1px solid #e4dfe9;
+      color: #949494;
+      font-family: "Varela Round";
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: capitalize;
+      padding-left: 14px;
+    }
+    .telegram-icon {
+      width: 24px;
+      height: 24px;
+      color: #232323;
+      font-size: 24px;
+      font-weight: 400;
+      position: absolute;
+      right: 20px;
+      bottom: 13px;
+    }
+  }
+}

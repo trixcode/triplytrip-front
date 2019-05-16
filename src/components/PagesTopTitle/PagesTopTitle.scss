@@ -1,0 +1,41 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+
+.pages-top-subheader {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #895FCD;
+    box-shadow: -10px 7px 20px rgba(85, 85, 85, 0.5);
+
+    &-wrapper {
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__list {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        display: flex;
+        color: #BDA4E7;
+    }
+
+    &__title {
+        color: white;
+        font-size: 2.3em;
+    }
+
+    &__link {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        color: rgb(211, 196, 238);
+    }
+}
