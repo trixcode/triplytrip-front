@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 
-import ArticleContainer from '../src/containers/Article'
+import ArticleDetailContainer from '../src/containers/ArticleDetail'
 
 import ArticleSidebar from '../src/components/ArticleSidebar';
 import Header from '../src/components/Header';
@@ -8,7 +8,7 @@ import DetailMainImage from '../src/components/DetailMainImage';
 import DetailTitle from '../src/components/DetailTitle ';
 
 
-function Article() {
+function ArticleDetail() {
   return (
     <Fragment>
       <div className="header-gradient-wrapper">
@@ -18,7 +18,7 @@ function Article() {
       <div className='article-wrapper'>
         <DetailTitle />
         <div className="container article-container">
-          <ArticleContainer/>
+          <ArticleDetailContainer/>
           <ArticleSidebar />
         </div>
       </div>
@@ -26,4 +26,4 @@ function Article() {
   )
 }
 
-export default Article;
+export default ArticleDetail;

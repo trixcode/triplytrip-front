@@ -24,5 +24,4 @@ export function* watchGetTopDestinationsRequest() {
 
 export default function* () {
   yield fork(watchGetTopDestinationsRequest);
-
 }

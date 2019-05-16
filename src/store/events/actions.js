@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 
 export const getEventsStart = (requestParams) => ({
-    type: actionTypes.GET_EVENTS_SRART,
+    type: actionTypes.GET_EVENTS_START,
     requestParams,
   });
   export const getEventsSuccess = (response) => ({

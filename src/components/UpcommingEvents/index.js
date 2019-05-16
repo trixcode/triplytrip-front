@@ -38,7 +38,7 @@ const UpcommingEvents = (props) => {
             </tr>
             <tr><td>{currentEvent.address}</td>
             <td>{moment(currentEvent.dateTimeStart).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeStart).format('HH:mm')}</td>
-            <td>{moment(currentEvent.dateTimeEnd).format('DD MMM YYYY HH:mm')}</td></tr>
+            <td>{moment(currentEvent.dateTimeEnd).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeEnd).format('HH:mm')}</td></tr>
             </tbody>
           </table>
         </div>
