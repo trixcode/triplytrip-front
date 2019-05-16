@@ -9,7 +9,7 @@ const Places = props => {
   const { places, getPlacesStart } = props;
 
   useEffect(() => {
-    getPlacesStart('isOpen=true?')
+    getPlacesStart('isOpen=true')
   }, []);
 
     return (
