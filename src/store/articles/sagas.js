@@ -31,7 +31,7 @@ export function* getArticleDetailByIdRequest(articleDetail) {
 export function* watchGetArticleDetailRequest() {
   while (true) {
     const { articleList } = yield take(actionTypes.GET_ARTICLE_DETAIL_START);
-    yield call(getArticleRequest, articleList);
+    yield call(getArticleDetailRequest, articleList);
   }
 }
 
