@@ -5,11 +5,10 @@ import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 
 
 const ArticleDescription = (props) => {
-  const { articles, getArticlesStart } = props;
+  const { articleDetail, getArticleDetailByIdStart } = props;
   useEffect(() => {
-    getArticlesStart()
-  }, []);
-  console.log(articles)
+    getArticleDetailByIdStart(1)
+  }, [])
   return (
     <section className='section-article-desctiption'>
       <div className='article-description-header'>

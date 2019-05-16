@@ -91,13 +91,13 @@
       width: 330px;
       height: 201px;
       .news-card__title {
-        height: 45px;
         color: #232323;
         font-family: 'Montserrat';
+        text-transform: uppercase;
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 500;
         overflow: hidden;
-        margin-bottom: 13px;
+        margin-bottom: 16px;
       }
       .news-card__tag {
         width: 60%;
@@ -119,7 +119,7 @@
         font-size: 14px;
         line-height: 22px;
         font-weight: 500;
-        margin-bottom: 25px;
+        margin-bottom: 38px;
       }
       .news-card-button {
         width: 184px;
