@@ -3,9 +3,12 @@
 body  {
     font-family: 'Montserrat', sans-serif;
 }
-*, h1, h2, h3, h4, h5, h6, button, span, ul, li {
+*, h1, h2, h3, h4, h5, h6, button, span, ul {
     margin: 0;
     padding: 0;
+}
+li {
+    list-style: none;
 }
 a {
     text-decoration: none;

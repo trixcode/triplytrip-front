@@ -33,7 +33,7 @@ const PlaceCard = props => {
         />}
         {<FontAwesomeIcon
           className='rate__star__icon'
-          icon={faStar}
+          // icon={faStar}
         />}
         {<FontAwesomeIcon
           className='rate__star__icon'
