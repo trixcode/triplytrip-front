@@ -15,7 +15,6 @@ export function* getTopDestinationsRequest(requestParams) {
   }
 }
 
-
 export function* watchGetTopDestinationsRequest() {
   while (true) {
     const { requestParams } = yield take(actionTypes.GET_TOP_DESTINATIONS_START);
@@ -41,4 +40,5 @@ export function* watchGetEventsRequest() {
 export default function* () {
   yield fork(watchGetTopDestinationsRequest);
   yield fork(watchGetEventsRequest)
+  yield fork(watchGetTopDestinationsRequest);
 }

@@ -94,10 +94,13 @@ const FilterForm = props => {
             <option value="clubs">Clubs</option>
           </select>
         </form>
-
         <div className='filter-form-radius'>
           <span className='filter-form-radius__title'> Radius: </span>
-          <p className='filter-form-radius__dictance__number'> {distanceValue} {distanceUnit} </p>
+          <p 
+            className='filter-form-radius__dictance__number'> 
+            {distanceValue} 
+            {distanceUnit} 
+          </p>
           <select
             onChange={(event) => {
               setUnit(event.target.value)
@@ -110,9 +113,9 @@ const FilterForm = props => {
             <option value="m">meters</option>
           </select>
           <div
+            onMouseDown={() => setpixels(true)}
             className='filter-form-radius-distance'>
             <div
-              onMouseDown={() => setpixels(true)}
               style={{ left: '100px' }}
               id='filter-form-radius-distance__point'
               className='filter-form-radius-distance__point' />
@@ -125,7 +128,6 @@ const FilterForm = props => {
               className='filter-form-radius-distance__static__line' />
           </div>
         </div>
-
         <div className='filter-form-checkboxs'>
           <p
             onClick={() => setIsFilterOpen(!isFilterOpen)}
