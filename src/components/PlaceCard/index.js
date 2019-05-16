@@ -35,7 +35,6 @@ const PlaceCard = props => {
         {place.price} сом
       </span>
       <div className='place-card__rates'>
-<<<<<<< HEAD:src/components/PlaceCard/PlaceCard.js
         {<FontAwesomeIcon
           className='rate__star__icon'
           icon={faStar}
@@ -56,7 +55,6 @@ const PlaceCard = props => {
           className='rate__star__icon'
           icon={faStar}
         />}
-=======
         <div 
           className='place-card__rates__wrapper'>
           {createArrayFronNumber(place.rating).map(key=>(
@@ -74,7 +72,6 @@ const PlaceCard = props => {
               icon={faStar}/>)
             )}
         </div>
->>>>>>> dev:src/components/PlaceCard/index.js
       </div>
       <div 
         className='place-card-addres place-card__text_grey'>
