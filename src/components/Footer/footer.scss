@@ -75,7 +75,10 @@
 
 .footer-social__icon {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 45px;
   padding: 12px;
   float: right;
+  :hover {
+    color: red;
+  }
 }
