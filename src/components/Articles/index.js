@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import moment from 'moment';
+
 import SectionTitle from '../SectionTitle';
 
 import './articles.scss';
@@ -21,8 +23,8 @@ const Articles = (props) => {
               <div className='news-card' latestNews={latestNews}>
                 <div className='news-card-header'>
                   <div className='news-card__date'>
-                    <span className='date__day'>15</span>
-                    <span className='date__month'>jun</span>
+                    <span className='date__day'>{moment(latestNews.createdDate).format('DD')}</span>
+                    <span className='date__month'>{moment(latestNews.createdDate).format('MMM')}</span>
                   </div>
                   <img className='news-card__image' src={latestNews.image} alt={latestNews.title} />
                 </div>
