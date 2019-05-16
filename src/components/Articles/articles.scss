@@ -112,16 +112,18 @@
         }
       }
       .news-card__description {
-        width: 320px;
-        height: 60px;
-        color: #949494;
-        font-family: 'Montserrat';
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 500;
-        margin-bottom: 38px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        & p {
+          width: 320px;
+          height: 60px;
+          color: #949494;
+          font-family: 'Montserrat';
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 500;
+          margin-bottom: 38px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
       }
       .news-card-button {
         width: 184px;

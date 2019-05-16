@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
     case actionTypes.GET_LATEST_NEWS_SUCCESS:
       return {
         ...state,
-        latestNews: action.response,
+        latestNewsList: action.response,
       }
     default:
       return state;

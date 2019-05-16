@@ -1,5 +1,5 @@
 export const initialState = {
-  latestNews: [],
+  latestNewsList: [],
 };
 
 export const getState = (state = initialState) => state || initialState;
