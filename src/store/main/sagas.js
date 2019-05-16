@@ -15,15 +15,6 @@ export function* getTopDestinationsRequest(requestParams) {
   }
 }
 
-export function* getArticlesRequest(requestParams) {
-  try {
-    const response = yield call(api.GET, 'articles', requestParams);
-    yield put(actions.getArticlesSuccess(response));
-  } catch (responseError) {
-    yield put(actions.getArticlesFailure(responseError));
-  }
-}
-
 
 export function* watchGetTopDestinationsRequest() {
   while (true) {
@@ -32,12 +23,6 @@ export function* watchGetTopDestinationsRequest() {
   }
 }
 
-export function* watchGetArticlesRequest() {
-  while (true) {
-    const { requestParams } = yield take(actionTypes.GET_ARTICLES_START);
-    yield call(getArticlesRequest, requestParams);
-  }
-}
 export function* getEventsRequest(requestParams) {
   try {
     const response = yield call(api.GET, 'events', requestParams);
@@ -55,6 +40,5 @@ export function* watchGetEventsRequest() {
 
 export default function* () {
   yield fork(watchGetTopDestinationsRequest);
-  yield fork(watchGetArticlesRequest);
   yield fork(watchGetEventsRequest)
 }

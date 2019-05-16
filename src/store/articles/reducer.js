@@ -1,18 +1,19 @@
-
 import { initialState } from './selectors';
 import * as actionTypes from './actionTypes';
 
+
+
 export default (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.GET_TOP_DESTINATIONS_SUCCESS:
+    case actionTypes.GET_ARTICLE_DETAIL_SUCCESS:
       return {
         ...state,
-        topDestinations: action.response,
+        articleList: action.response,
       };
-    case actionTypes.GET_EVENTS_SUCCESS:
+      case actionTypes.GET_ARTICLE_BY_ID_SUCCESS:
       return {
         ...state,
-        events: action.response,
+        articleDetail: action.response,
       };
     default:
       return state;

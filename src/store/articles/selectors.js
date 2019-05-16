@@ -1,6 +1,6 @@
 export const initialState = {
-  topDestinations: [],
-  events: [],
+  articleList: [],
+  articleDetail: {},
 };
 
 export const getState = (state = initialState) => state || initialState;

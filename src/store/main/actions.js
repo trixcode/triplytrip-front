@@ -15,21 +15,6 @@ export const getTopDestinationsFailure = (responseError) => ({
 
 
 
-export const getArticlesStart = (requestParams) => ({
-  type: actionTypes.GET_ARTICLES_START,
-  requestParams,
-});
-export const getArticlesSuccess = (response) => ({
-  type: actionTypes.GET_ARTICLES_SUCCESS,
-  response,
-});
-export const getArticlesFailure = (responseError) => ({
-  type: actionTypes.GET_ARTICLES_FAILURE,
-});
-
-
-
-
 export const getEventsStart = (requestParams) => ({
   type: actionTypes.GET_EVENTS_SRART,
   requestParams,
