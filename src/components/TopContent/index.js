@@ -2,7 +2,7 @@ import './topContent.scss'
 
 const TopContent = () => {
     return (
-        <div className="top-content">
+        <div className="top-content container">
         <h1 className="top-content__title">
             Discover interesting<br />
             <span>places around Europe</span>
