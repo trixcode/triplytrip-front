@@ -9,7 +9,7 @@ const PlaceCard = props => {
     <div className='place-card-container'>
       <div className='place-card-image-wrapper'>
         <img
-          src={place.mainImage}
+          src={ place.mainImage? place.mainImage :"https://cdn3.wpbeginner.com/wp-content/uploads/2018/03/httperrorwpuploads-1.png"}
           alt='place'
           className='place__card__images' />
         <div className='place-card-avatar-wrapper'>
@@ -25,27 +25,13 @@ const PlaceCard = props => {
       <span className='place-card__price place-card__text_grey'>
         {place.price} сом
             </span>
-      <div className='place-card__rates'>
-        {<FontAwesomeIcon
+      <div className='place-card__rates'> 
+        {[1,2,3,4,5].map(key=>(
+          <FontAwesomeIcon
+          key={key}
           className='rate__star__icon'
-          icon={faStar}
-        />}
-        {<FontAwesomeIcon
-          className='rate__star__icon'
-          icon={faStar}
-        />}
-        {<FontAwesomeIcon
-          className='rate__star__icon'
-          icon={faStar}
-        />}
-        {<FontAwesomeIcon
-          className='rate__star__icon'
-          icon={faStar}
-        />}
-        {<FontAwesomeIcon
-          className='rate__star__icon'
-          icon={faStar}
-        />}
+          icon={faStar}/>)
+        )}
       </div>
       <div className='place-card-addres place-card__text_grey'>
         <FontAwesomeIcon

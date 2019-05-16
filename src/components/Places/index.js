@@ -1,12 +1,18 @@
+import {useEffect} from 'react';
+
 import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
 import './places.scss'
 
-import hotels from './hotels.json';
-
 const Places = props => {
-  const places = hotels.hotels
-  return (
+
+  const { places, getPlacesStart } = props;
+
+  useEffect(() => {
+    getPlacesStart('isOpen=true?')
+  }, []);
+
+    return (
     <section className='section-places'>
       <div className='container' >
         <SectionTitle
@@ -48,10 +54,10 @@ const Places = props => {
         </div>
         <div
           className='place-cards-wrapper'>
-          {places.slice(0, 8).map(placeObj => {
+          {places.places.slice(0, 8).map(placeObj => {
             return (
               <PlaceCard
-                key={placeObj.name}
+                key={placeObj.id}
                 place={placeObj}
               />
             )
