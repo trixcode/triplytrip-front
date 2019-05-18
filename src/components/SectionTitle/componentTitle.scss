@@ -12,7 +12,7 @@
     text-align: center;
     text-transform: capitalize;
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 575px){
       font-size: 2em;
     }
   }
@@ -22,7 +22,7 @@
     font-family: 'Varela Round', sans-serif;
     text-align: justify;
     
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 575px){
       font-size: 1.1em;
       padding: 0 10px;
       box-sizing: border-box;

@@ -17,8 +17,11 @@
     justify-content: space-evenly;
   }
 
-  @media  screen and (max-width: 991px) {
-    width: 100%;
+  @media  screen and (max-width: 767px) {
+    justify-content: space-between;
+  }
+  @media  screen and (max-width: 575px) {
+    justify-content:center;
   }
   .discover-card {
     display: flex;
@@ -26,18 +29,23 @@
     min-width: 250px;
     max-width: 330px;
     height: 420px;
-    
+    @media screen and (max-width: 1439px) {
+      max-width: 260px;
+    }
     @media screen and (max-width: 1199px) {
+      max-width: 330px;
       margin-bottom: 30px;
+    }
+    @media screen and (max-width: 991px) {
+      max-width: 300px; 
     }
     @media screen and (max-width: 767px) {
       max-width: 250px;
-      margin-bottom: 30px;
     }
-    @media screen and (max-width: 575px) {
+    @media  screen and (max-width: 575px) {
       max-width: 330px;
-      margin-bottom: 80px;
     }
+    
 
     &__image {
       object-fit: cover;
