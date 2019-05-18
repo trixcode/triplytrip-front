@@ -10,8 +10,12 @@ import PlacesContainer from '../src/containers/Places'
 import Subscribe from '../src/components/Subscribe/Subscribe'
 import TopContent from '../src/components/TopContent'
 import UpcommingEventsContainer from '../src/containers/UpcommingEvents';
+import Footer from '../src/components/Footer';
 import "../src/assets/styles/main.scss";
 import "../src/components/Header/header.scss";
+
+
+
 
 function Home() {
   return (
@@ -29,6 +33,7 @@ function Home() {
       <UpcommingEventsContainer />
       <LatestNewsContainer />
       <Subscribe />
+      <Footer text="Footer"/>
     </Fragment>
   )
 }
