@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+   
     //background-image: url('static/top.jpg');
     h1, span {
         color: #fff;
@@ -30,4 +31,31 @@
         bottom: 80px;
         font-family: 'Varela Round', sans-serif;
     }
+}
+
+// Mobile
+.top-content{
+    @media screen and (max-width: 1200px){
+    .top-content__title {
+        font-size: 55px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .top-content__subtitle {
+            font-size: 50px;
+            }
+        }    
+    .top-content__text-one {
+            
+        }
+    .top-content__text-two {
+            
+        }
+    
+    }
+    @media screen and (max-width: 800px) {
+    h1,span{
+        text-align: center; 
+    }
+}
 }

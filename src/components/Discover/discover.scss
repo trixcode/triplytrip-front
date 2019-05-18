@@ -19,8 +19,6 @@
 
   @media  screen and (max-width: 991px) {
     width: 100%;
-    justify-content: space-evenly;
-  
   }
   .discover-card {
     display: flex;
@@ -29,18 +27,14 @@
     max-width: 330px;
     height: 420px;
     
-    @media screen and (max-width: 1200px) {
-      margin-bottom: 30px;
-    }
-    @media screen and (max-width: 19px) {
-      max-width: 250px;
+    @media screen and (max-width: 1199px) {
       margin-bottom: 30px;
     }
     @media screen and (max-width: 767px) {
       max-width: 250px;
       margin-bottom: 30px;
     }
-    @media screen and (max-width: 545px) {
+    @media screen and (max-width: 575px) {
       max-width: 330px;
       margin-bottom: 80px;
     }

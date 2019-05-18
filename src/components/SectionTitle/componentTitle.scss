@@ -20,10 +20,12 @@
     margin-bottom: 54px; 
     font-size: 1.25em;
     font-family: 'Varela Round', sans-serif;
-    text-align: center;
+    text-align: justify;
     
     @media screen and (max-width: 767px){
       font-size: 1.1em;
+      padding: 0 10px;
+      box-sizing: border-box;
     }
   }
 }
