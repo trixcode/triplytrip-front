@@ -151,14 +151,15 @@ body, h1, h2, h3, ul {
         }
     }
 }
-@media (min-width: 768px) { 
+@media (max-width: 768px) { 
     .upcomming-events{
         &-wrapper {
             flex-wrap: wrap;
+            flex-direction: column;
         }
     }
     .event-card {
-        
+        width: 80%;
         &-image {
             height: 240px;
         }
