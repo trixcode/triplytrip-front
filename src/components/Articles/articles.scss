@@ -166,15 +166,23 @@
     justify-content: space-around;
     .news-card {
       margin-bottom: 50px;
+      width: 250px;
+      .news-card-footer {
+        .news-card__description {
+          p {
+            width: 250px;
+          }
+        }
+      }
     }
   }
 }
 @media (min-width: 992px) { 
- 
+  
 }
 @media (min-width: 1200px) { 
 
 }
 @media (min-width: 1440px) { 
-
+  
 }

@@ -123,6 +123,15 @@ body, h1, h2, h3, ul {
             flex-wrap: wrap;
         }
     }
+    .event-card {
+        width: 540px;
+        &-image {
+            height: 240px;
+        }
+        &-table {
+            height: 90px;
+        }
+    }
 }
 @media (min-width: 576px) { 
     .upcomming-events{
@@ -130,11 +139,29 @@ body, h1, h2, h3, ul {
             flex-wrap: wrap;
         }
     }
+    .event-card {
+        width: 540px;
+        &-image {
+            height: 240px;
+        }
+        &-table {
+            height: 90px;
+        }
+    }
 }
 @media (min-width: 768px) { 
     .upcomming-events{
         &-wrapper {
             flex-wrap: wrap;
+        }
+    }
+    .event-card {
+        width: 540px;
+        &-image {
+            height: 240px;
+        }
+        &-table {
+            height: 90px;
         }
     }
 }
