@@ -14,7 +14,7 @@
 .search-form{
     display: flex;
     justify-content: space-around;
-
+    width: 100%;
     @media screen and (max-width: 768px) {
     flex-direction: column;
     height: 30px;
@@ -22,13 +22,19 @@
 }
 .search-form__places{
   position: relative;
+  width: 40%;
+  margin-right: 10px;
+
  }
  .search-form__location{
   position: relative;
   height: 55px;
+  width: 40%;
+  margin-right: 10px;
+
  }
 .search-form__input{
-  width: 500px;
+  width: 100%;
   height: 55px;
   background: none;
   border: 1px white solid;
@@ -39,8 +45,7 @@
 
   @media screen and (max-width: 768px) {
     height: 30px;
-    margin-bottom: 3px;
-
+    margin-bottom: 5px;
   }
 }
 .search-form__input::placeholder{
@@ -49,10 +54,9 @@ font-family: "Varela Round";
 font-weight: 400;
 }
 
-      
 .search-form__button{
   vertical-align: middle;
-  width: 260px;
+  width: 170px;
   height: 54px;
   background-color: #e03e53;
   color: #ffffff;
@@ -61,13 +65,8 @@ font-weight: 400;
   font-weight: bold;
   text-transform: uppercase;
   border: #e03e53 1px solid;
-
-  @media screen and (max-width: 768px) {
-    width: 160px;
-    height: 34px;
-    font-size: 15px;
-  }
 }
+
 .search-form__icon-search{
   position: absolute;
   right: 20px;
