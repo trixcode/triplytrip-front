@@ -1,5 +1,6 @@
 import Link from 'next/link'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import './header.scss';
 
 
@@ -12,6 +13,8 @@ const Header = () => {
           <h2 className="header-brand__title">TryplyTrip</h2>
         </a>
       </Link>
+      <div className="header-burger-menu">MENU</div>
+        
       <nav className="header-navigation">
         <ul className="header-navigation-list">
           <li><a href="#">Home</a></li>
@@ -22,7 +25,7 @@ const Header = () => {
           <li><a href="#">Blog</a></li>
           <li>|</li>
         </ul>
-
+       
         <div className="header-actions">
           <button>+ Add Listing</button>
           <a href="#">icon</a>

@@ -7,8 +7,9 @@ const HomeCategory = (props) => {
   return (
 
     <section className="category-wrapper">
-      <div className='container category-container'>
-        <div className="category-block">
+    <div className="container">
+      <div className=' category-container'>
+        <div className="category-block ">
           {<FontAwesomeIcon
             className="category__icon category__icon_hotel"
             icon={faHotel}
@@ -44,7 +45,7 @@ const HomeCategory = (props) => {
           <span className="category-block__name last_name">Club and Bear</span>
         </div>
       </div>
-
+      </div>
     </section>
 
   )

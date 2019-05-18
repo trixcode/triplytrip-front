@@ -1,26 +1,15 @@
-import './articleDescription.scss'
-import {useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
+import './articleDescription.scss'
 
 
 const ArticleDescription = (props) => {
-  const { articleDetail, getArticleDetailByIdStart } = props;
-  useEffect(() => {
-    getArticleDetailByIdStart(1)
-  }, [])
+  const { articleDetail, getArticleDetailByIdStartAction } = props;
+  console.log(articleDetail.tags)
   return (
     <section className='section-article-desctiption'>
       <div className='article-description-header'>
-        <p className='article-description-header__text'>
-          Fusce feugiat, ligula suscipit accumsan consectetur, libero dolor accumsan urna, ac dapibus ex urna vitae lacus. Quisque id suscipit mi, vel mollis dui. Aliquam ullamcorper cursus tellus et imperdiet. Phasellus sodales sapien tempus risus euismod placerat. Aenean in ipsum nec massa cursus euismod. Nam ultricies neque ex, vitae convallis eros lacinia vitae. Ut quis magna ut velit tristique euismod. Phasellus viverra enim non tortor facilisis consequat. Ut odio nunc, malesuada at nisi in, aliquet aliquet nulla. Phasellus sit amet lacinia urna, in lacinia arcu. Fusce a est luctus, eleifend augue vel, vehicula velit.
-              <br />
-          <br />
-          Pellentesque gravida fermentum justo, vel bibendum nunc faucibus eget. Ut pellentesque turpis nec libero mattis, sed aliquet augue maximus. Ut quis fermentum erat. Sed non massa magna. Donec tincidunt commodo massa, quis lacinia libero congue a. Integer posuere velit quis ex blandit, id posuere neque laoreet. Donec tincidunt commodo massa, quis lacinia libero congue a. Integer posuere velit quis ex blandit, id posuere neque laoreet. Donec tincidunt commodo massa, quis lacinia libero congue a. Integer posuere velit quis ex blandit, id posuere neque laoreet.
-              <br />
-          <br />
-          Ut bibendum quam ut magna dapibus finibus. Suspendisse sed dignissim metus, ut tristique enim. Nunc non finibus justo, at cursus risus. Aenean in mauris eu neque varius porttitor eu eget ligula. Mauris ac elit nec justo lobortis consequat. Nunc sagittis rhoncus velit in iaculis.
-            </p>
+        <div dangerouslySetInnerHTML={{ __html: articleDetail.description }} className='article-description-header__text'></div>
       </div>
       <div className='article-description-middle'>
         <h2 className='article-description-middle__title'>
@@ -31,15 +20,14 @@ const ArticleDescription = (props) => {
             </div>
       </div>
       <div className='article-description-footer'>
-        <p className='article-description-footer__text'>
-          Fusce feugiat, ligula suscipit accumsan consectetur, libero dolor accumsan urna, ac dapibus ex urna vitae lacus. Quisque id suscipit mi, vel mollis dui. Aliquam ullamcorper cursus tellus et imperdiet. Phasellus sodales sapien tempus risus euismod placerat. Aenean in ipsum nec massa cursus euismod. Nam ultricies neque ex, vitae convallis eros lacinia vitae. Ut quis magna ut velit tristique euismod. Phasellus viverra enim non tortor facilisis consequat. Ut odio nunc, malesuada at nisi in, aliquet aliquet nulla. Phasellus sit amet lacinia urna, in lacinia arcu. Fusce a est luctus, eleifend augue vel, vehicula velit.
-              <br />
-          <br />
-          Pellentesque gravida fermentum justo, vel bibendum nunc faucibus eget. Ut pellentesque turpis nec libero mattis, sed aliquet augue maximus. Ut quis fermentum erat. Sed non massa magna. Donec tincidunt commodo massa, quis lacinia libero congue a. Integer posuere velit quis ex blandit, id posuere neque laoreet. Ut bibendum quam ut magna dapibus finibus. Suspendisse sed dignissim metus, ut tristique enim. Nunc non finibus justo, at cursus risus. Aenean in mauris eu neque varius porttitor eu eget ligula.
-            </p>
+        <div dangerouslySetInnerHTML={{ __html: articleDetail.extraDescription }} className='article-description-footer__text'></div>
         <span className='article-description-footer__tags'>
-          <span className='bold'>Tags :</span> Beaty, Life, Music, Skin Care, Travel
-            </span>
+          <span className='bold'>Tags :</span>
+          {articleDetail.tags && articleDetail.tags.map(tag => (
+            tag + ' '
+          ))}
+        
+        </span>
       </div>
       <div className='article-description-buttons'>
         <div className='article-description-buttons__block'>

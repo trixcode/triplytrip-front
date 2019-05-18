@@ -11,6 +11,20 @@
     font-weight: bold;
     .place-card__text_grey  {
         color: $placeCardFontColor;   
+    }    
+    @media screen and (max-width: 576px) { 
+        max-width: 300px;
+    }
+    @media screen and (max-width: 768px) { 
+        max-width: 300px;
+    }
+    @media screen and (max-width: 992px) { 
+        max-width: 300px;
+        .place-card-avatar-wrapper {
+            position: absolute;
+            left: 220px;
+            top: 190px;
+        }
     }
 }
 .place-card-image-wrapper {
