@@ -18,7 +18,6 @@ body, h1, h2, h3, ul {
 
 .upcomming-events {
     background: #e5f8fb;
-    height: 970px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -51,6 +50,7 @@ body, h1, h2, h3, ul {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 50px;
     &-image {
         width: 100%;
         height: 300px;
@@ -104,9 +104,67 @@ body, h1, h2, h3, ul {
         th, td {
             text-align: left;
             margin-left: 10px;
-            border-right: 1px #f0eff1 solid;
-            border-bottom: 1px #f0eff1 solid;
             padding-left: 20px; 
+        }
+        th {
+            border-bottom: 1px #f0eff1 solid;
+            border-right: 1px #f0eff1 solid;
+        }
+        td {
+            border-right: 1px #f0eff1 solid;
+        }
+    }
+}
+
+//MEDIA//
+@media (min-width: 320px) {
+    .upcomming-events{
+        &-wrapper {
+            flex-wrap: wrap;
+        }
+    }
+}
+@media (min-width: 576px) { 
+    .upcomming-events{
+        &-wrapper {
+            flex-wrap: wrap;
+        }
+    }
+}
+@media (min-width: 768px) { 
+    .upcomming-events{
+        &-wrapper {
+            flex-wrap: wrap;
+        }
+    }
+}
+@media (min-width: 992px) { 
+    .upcomming-events{
+        &-wrapper {
+            flex-wrap: wrap;
+        }
+    }
+    .event-card {
+        width: 540px;
+        &-image {
+            height: 240px;
+        }
+        &-table {
+            height: 90px;
+        }
+    }
+}
+@media (min-width: 1200px) { 
+
+}
+@media (min-width: 1440px) { 
+    .event-card {
+        width: 690px;
+        &-image {
+            height: 300px;
+        }
+        &-table {
+            height: 130px;
         }
     }
 }
