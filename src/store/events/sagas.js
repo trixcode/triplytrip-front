@@ -16,7 +16,7 @@ import {
   }
   export function* watchGetEventsRequest() {
     while (true) {
-      const { requestParams } = yield take(actionTypes.GET_EVENTS_SRART);
+      const { requestParams } = yield take(actionTypes.GET_EVENTS_START);
       yield call(getEventsRequest, requestParams);
     }
   }

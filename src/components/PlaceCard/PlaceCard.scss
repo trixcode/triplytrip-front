@@ -46,11 +46,22 @@
     font-family: 'Varela Round';
     font-weight: 400;
 }
+.place-card__rates__wrapper {
+    position: absolute;
+    z-index: 1;
+}
 .rate__star__icon {
     width: 15px;
     height: 15px;
     font-size: 0.85em;
     color: $placeCardYellow;
+}
+.rate__star__icon__background {
+    width: 15px;
+    height: 15px;
+    font-size: 0.85em;
+    color: gray;
+    opacity: 0.3;
 }
 .place-card__info {
     margin-left: 10px;

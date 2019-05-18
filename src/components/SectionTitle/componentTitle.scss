@@ -8,13 +8,22 @@
   &__name {
     padding-top: 65px;
     margin-bottom: 25px;
-    font-size: 2.25em;
+    font-size: 2.20em;
+    text-align: center;
     text-transform: capitalize;
+
+    @media screen and (max-width: 767px){
+      font-size: 2em;
+    }
   }
   &__text {
     margin-bottom: 54px; 
     font-size: 1.25em;
     font-family: 'Varela Round', sans-serif;
     text-align: center;
+    
+    @media screen and (max-width: 767px){
+      font-size: 1.1em;
+    }
   }
 }

@@ -23,7 +23,7 @@ const UpcommingEvents = (props) => {
         <div className="event-card-info">
           <h5 className="event-card-info__name">{currentEvent.name}</h5>
           <div className="event-card-info-block">
-            <span className="info-block__location">{currentEvent.type}</span>
+            <span className="info-block__location">Fest</span>
             <span className="info-block__price">{currentEvent.price}$</span>
             <span className="info-block__open">{currentEvent.isOpen}</span>
           </div>
@@ -38,7 +38,7 @@ const UpcommingEvents = (props) => {
             </tr>
             <tr><td>{currentEvent.address}</td>
             <td>{moment(currentEvent.dateTimeStart).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeStart).format('HH:mm')}</td>
-            <td>{moment(currentEvent.dateTimeEnd).format('DD MMM YYYY HH:mm')}</td></tr>
+            <td>{moment(currentEvent.dateTimeEnd).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeEnd).format('HH:mm')}</td></tr>
             </tbody>
           </table>
         </div>
