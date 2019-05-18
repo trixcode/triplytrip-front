@@ -72,7 +72,8 @@ const Footer = () => {
         </div>
         <br></br>
         <div className="sub-footer">
-          <div className="footer-footer-wrapper">
+          <div className="container">
+           <div className="footer-footer-wrapper">
         <div className="footer-copyright">
           <span className="footer-copyright__text">
                Copyright © 2018 Listicle.com | Tel: +91 12343210
@@ -96,6 +97,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
+        </div>
         </div>
         </div>
         

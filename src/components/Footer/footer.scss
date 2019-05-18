@@ -47,6 +47,7 @@
 }
 
 .footer-footer-wrapper {
+  border-top: solid 1px grey;
   display: flex;
   width: 1440px;
   height: 125px;
@@ -82,3 +83,7 @@
     color: red;
   }
 }
+// v proch x
+// @media (min-width: 992px)
+// .container {
+//     max-width: 960px;
