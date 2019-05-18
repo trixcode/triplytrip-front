@@ -6,9 +6,12 @@
 .search-wrapper{
   background: rgb(94,136,233);
   background: linear-gradient(90deg, rgba(94,136,233,1) 0%, rgba(55,202,224,1) 100%);
-  height: 94px;
+  height: 90px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+  height: 135px;
+  }
       
 }
 .search-form{
@@ -22,14 +25,15 @@
 }
 .search-form__places{
   position: relative;
-  width: 40%;
+  width: 100%;
   margin-right: 10px;
+  margin-bottom: 1
 
  }
  .search-form__location{
   position: relative;
   height: 55px;
-  width: 40%;
+  width: 100%;
   margin-right: 10px;
 
  }
@@ -53,7 +57,6 @@ color: #ffffff;
 font-family: "Varela Round";
 font-weight: 400;
 }
-
 .search-form__button{
   vertical-align: middle;
   width: 170px;
@@ -65,6 +68,9 @@ font-weight: 400;
   font-weight: bold;
   text-transform: uppercase;
   border: #e03e53 1px solid;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .search-form__icon-search{
