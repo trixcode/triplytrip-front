@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import Header from '../src/components/Header';
 import PagesTopTitle from '../src/components/PagesTopTitle'
 import FilterForm from '../src/components/FilterForm';
+import Footer from '../src/components/Footer';
 import "../src/assets/styles/main.scss";
 
 import hotels from '../src/components/Places/hotels.json';
@@ -16,6 +17,7 @@ const PlacesCategory = () => {
       <PagesTopTitle/>
       <FilterForm 
         places={placesArr} />
+        <Footer text="Footer"/>
     </Fragment>
   )
 }
