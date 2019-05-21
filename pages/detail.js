@@ -5,9 +5,7 @@ import PlaceDetail from '../src/components/PlaceDetail';
 function Detail() {
   return (
     <Fragment>
-      <div className="header-gradient-wrapper">
-        <Header />
-      </div>
+      <Header />
       <PlaceDetail />
     </Fragment>
   )

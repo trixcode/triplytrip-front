@@ -11,9 +11,7 @@ const PlacesCategory = () => {
   const placesArr = hotels.hotels
   return (
     <Fragment>
-      <div className="header-gradient-wrapper">
-        <Header />
-      </div>
+      <Header />
       <PagesTopTitle/>
       <FilterForm 
         places={placesArr} />

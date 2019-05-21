@@ -19,9 +19,7 @@ function ArticleDetail(props) {
   }, [])
   return (
     <Fragment>
-      <div className="header-gradient-wrapper">
-        <Header />
-      </div>
+      <Header />
       <DetailMainImage />
       <div className='article-wrapper'>
         <DetailTitleContainer />
