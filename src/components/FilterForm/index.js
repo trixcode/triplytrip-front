@@ -48,7 +48,7 @@ const FilterForm = props => {
 
   useEffect(()=>{
     Object.keys(document.querySelectorAll('.place-card__button')).map(key=>{
-      console.log(document.querySelectorAll('.place-card__button')[key].style.backgroundColor = '#e5f8fb')
+      document.querySelectorAll('.place-card__button')[key].style.backgroundColor = '#e5f8fb';
     });
   })
   
