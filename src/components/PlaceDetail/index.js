@@ -1,5 +1,6 @@
 import './placeDetail.scss';
 import { useState } from 'react';
+import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
@@ -109,22 +110,22 @@ const PlaceDetail = () => {
           <div className="main-info-tabs">
             <button id="overview" onClick={() =>
               switchTabs(setOverview, setVideo, setReview, setContact)}
-              className={isOverviewClicked ? selectedClass : defaultClass}>
+              className={isOverviewClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
               Overview
             </button>
             <button id="contact" onClick={() =>
               switchTabs(setContact, setOverview, setReview, setVideo)}
-              className={isContactClicked ? selectedClass : defaultClass}>
+              className={isContactClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
               Contact
             </button>
             <button id="reviews" onClick={() =>
               switchTabs(setReview, setVideo, setOverview, setContact)}
-              className={isReviewsClicked ? selectedClass : defaultClass}>
+              className={isReviewsClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
               Reviews & Rating
             </button>
             <button id="video" onClick={() =>
               switchTabs(setVideo, setOverview, setReview, setContact)}
-              className={isVideoClicked ? selectedClass : defaultClass}>
+              className={isVideoClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
               Video
             </button>
           </div>
@@ -162,9 +163,7 @@ const PlaceDetail = () => {
               <li><div className="sidebar-facebook"><FontAwesomeIcon icon={faFacebookF} className="owner-contact-icon" /></div></li>
               <li><div className="sidebar-twitter"><FontAwesomeIcon icon={faTwitter} className="owner-contact-icon" /></div></li>
               <li><div className="sidebar-google"><FontAwesomeIcon icon={faGooglePlusG} className="owner-contact-icon" /></div></li>
-              <li><div className="sidebar-t"><FontAwesomeIcon icon={faTumblr} className="owner-contact-icon" /></div></li>
               <li><div className="sidebar-insta"><FontAwesomeIcon icon={faInstagram} className="owner-contact-icon" /></div></li>
-              <li><div className="sidebar-in"><FontAwesomeIcon icon={faLinkedinIn} className="owner-contact-icon" /></div></li>
             </ul>
             <div className="sidebars-button">Visit Website</div>
           </div>
