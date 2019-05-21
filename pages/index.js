@@ -7,7 +7,7 @@ import Header from '../src/components/Header';
 import HomeCategory from '../src/components/HomeCategory'
 import Search from '../src/components/Search'
 import PlacesContainer from '../src/containers/Places'
-import Subscribe from '../src/components/Subscribe/Subscribe'
+import Subscribe from '../src/components/Subscribe/index'
 import TopContent from '../src/components/TopContent'
 import UpcommingEventsContainer from '../src/containers/UpcommingEvents';
 import Footer from '../src/components/Footer';

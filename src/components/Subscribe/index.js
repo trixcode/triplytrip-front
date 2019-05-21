@@ -6,34 +6,39 @@ const Subscribe = () => {
             <div className='subscribe-strip'>
             </div>
             <div className='subscribe-container container'>
-                <div className='subscribe-wrapper'>
+                <div className='subscribe-mail'>
                     <img
                         src='static/subscribemail.png'
-                        className='subscribe__mail__icon'
+                        className='subscribe-mail__icon'
                     />
                     <div className='subscribe-description' >
-                        <h3 className='subscribe-description__title'>
+                        <h3 className='subscribe-mail__description__title'>
                             <span
-                                className='subscribe-description__title subscribe-description__title_thin'>
-                                Subscribe 
+                                className='subscribe-description__title'>
+                                Subscribe
+                                <span className='subscribe-description__title
+                                subscribe-description__title_bold'>
+                                    To Newsletter
+                                </span>
                             </span>
-                            To Newsletter
                         </h3>
-                        <span
+                        <p
                             className='subscribe-description__text'>
                             Please provide your email and let us send all  new happenings about your city.
-                        </span>
+                        </p>
                     </div>
+                </div>
+                <form className='subscribe-form'>
                     <input
                         placeholder='Your Name'
-                        className='subscribe__input subscribe__input_name' />
+                        className='subscribe-form__input subscribe-form__input_name' />
                     <input
                         placeholder='Your Email'
-                        className='subscribe__input subscribe__input_email' />
-                    <button className='subscribe__button'>
+                        className='subscribe-form__input subscribe-form__input_email' />
+                    <button className='subscribe-form__button'>
                         Subscribe Now
                     </button>
-                </div>
+                </form>
             </div>
         </section>
     );

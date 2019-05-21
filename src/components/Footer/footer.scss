@@ -48,16 +48,12 @@
   border-top: solid 1px grey;
   display: flex;
   justify-content: center;
+  .footer-wrapper {
+    text-align: center;
+    justify-content: space-between;
+  }
 }
 
-.footer-footer-wrapper {
-  border-top: solid 1px grey;
-  display: flex;
-  width: 1440px;
-  height: 125px;
-  text-align: center;
-  justify-content: space-between;
-}
 
 .footer-copyright {
   display: flex;
