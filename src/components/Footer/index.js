@@ -48,27 +48,7 @@ const Footer = () => {
                   <a className="footer-list__link"  href="#">Baseball Champs</a>
                 </li>
             </ul>
-        
-            <ul className = "footer-list">
-                <li>
-                  <span href="#">My account</span>
-                 </li>
-                <li>
-                  <a className="footer-list__link"  href="#">Dashboard</a>
-                 </li>
-                <li>
-                  <a className="footer-list__link"  href="#">Listings</a>
-                 </li>
-                <li>
-                  <a className="footer-list__link"  href="#">Events</a>
-                 </li>
-                <li>
-                  <a className="footer-list__link"  href="#">Favourties</a>
-                 </li>
-                <li>
-                  <a className="footer-list__link"  href="#">Cart</a>
-                 </li>
-            </ul>
+      
         </div>
         <br></br>
         <div className="sub-footer">
