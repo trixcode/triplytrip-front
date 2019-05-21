@@ -95,23 +95,27 @@ const FilterForm = props => {
           </select>
         </form>
         <div className='filter-form-radius'>
-          <span className='filter-form-radius__title'> Radius: </span>
-          <p 
-            className='filter-form-radius__dictance__number'> 
-            {distanceValue} 
-            {distanceUnit} 
-          </p>
-          <select
-            onChange={(event) => {
-              setUnit(event.target.value)
-              setValue(setDistance(event.target.value))
-            }}
-            className='filter-form__select radius__select'
-            name="categorieslist"
-            form="categoriesform">
-            <option value="km">kilomerts</option>
-            <option value="m">meters</option>
-          </select>
+
+          <div className='filter-form-radius__text__wrapper'>
+            <span className='filter-form-radius__title'> Radius: </span>
+            <p 
+              className='filter-form-radius__dictance__number'> 
+              {distanceValue} 
+              {distanceUnit} 
+            </p>
+            <select
+              onChange={(event) => {
+                setUnit(event.target.value)
+                setValue(setDistance(event.target.value))
+              }}
+              className='filter-form__select radius__select'
+              name="categorieslist"
+              form="categoriesform">
+              <option value="km">kilomerts</option>
+              <option value="m">meters</option>
+            </select>
+          </div>
+
           <div
             onMouseDown={() => setpixels(true)}
             className='filter-form-radius-distance'>
@@ -127,6 +131,7 @@ const FilterForm = props => {
               id='filter-form-radius-distance__static__line'
               className='filter-form-radius-distance__static__line' />
           </div>
+
         </div>
         <div className='filter-form-checkboxs'>
           <p
