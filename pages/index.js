@@ -20,11 +20,12 @@ import "../src/components/Header/header.scss";
 function Home() {
   return (
     <Fragment>
+      <Header />
       <div className="header-gradient-wrapper">
-        <Header />
         <hr className="header-border" />
         <TopContent />
       </div>
+
       <HomeCategory />
       <hr className="category-border" />
       <Search />
@@ -33,7 +34,7 @@ function Home() {
       <UpcommingEventsContainer />
       <LatestNewsContainer />
       <Subscribe />
-      <Footer text="Footer"/>
+      <Footer text="Footer" />
     </Fragment>
   )
 }
