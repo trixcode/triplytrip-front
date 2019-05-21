@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faInstagram, faFacebook, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 import './footer.scss';
 
@@ -58,28 +58,36 @@ const Footer = () => {
               Copyright © 2018 Listicle.com | Tel: +91 12343210
             </span>
           </div>
-          <ul className="footer-social-icons">
-            <li className="footer-social__item">
-              <a className="footer-social__icons">
-                <FontAwesomeIcon
-                  className='footer-social__icon'
-                  icon={faTwitter}
-                />
-                <FontAwesomeIcon
-                  className='footer-social__icon'
-                  icon={faInstagram}
-                />
+          <ul className="footer-social-item">
+            <li className="footer-social__list">
+              <a className="footer-social__link">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faFacebook}
                 />
               </a>
             </li>
+            <li className="footer-social__list">
+              <a className="footer-social__link">
+                <FontAwesomeIcon
+                  className='footer-social__icon'
+                  icon={faTwitter}
+                />
+              </a>
+            </li>
+            <li className="footer-social__list">
+              <a className="footer-social__link">
+                <FontAwesomeIcon
+                  className='footer-social__icon'
+                  icon={faInstagram}
+                />
+              </a>
+            </li>
           </ul>
         </div>
-      </div>
+      </div >
 
-    </footer>
+    </footer >
   )
 }
 export default Footer;
