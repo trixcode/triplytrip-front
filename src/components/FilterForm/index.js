@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 import PlaceCard from '../PlaceCard';
 import './filterform.scss';
@@ -45,6 +45,12 @@ const FilterForm = props => {
       return Math.round(((900 - 10) / 100 * persent + 10) / 10) * 10
     }
   }
+
+  useEffect(()=>{
+    Object.keys(document.querySelectorAll('.place-card__button')).map(key=>{
+      document.querySelectorAll('.place-card__button')[key].style.backgroundColor = '#e5f8fb';
+    });
+  })
   
   return (
     <div
@@ -175,6 +181,21 @@ const FilterForm = props => {
               />
             )
           })}
+        </div>
+        <div className="pages-numbers">
+          {[1, 2, 3, 4, 5].map(key=>(
+            <button
+              key={key} 
+              className="pages-numbers__button">
+              {key}
+          </button>
+          ))}
+          <button className="pages-numbers__button">
+            Next 
+            <FontAwesomeIcon
+              className='pages-numbers__button__icon'
+              icon={faAngleRight} />
+          </button>
         </div>
       </div>
     </div>

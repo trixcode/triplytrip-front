@@ -5,7 +5,7 @@ const Subscribe = () => {
         <section className='subscribe'>
             <div className='subscribe-strip'>
             </div>
-            <div className='subscribe-container'>
+            <div className='subscribe-container container'>
                 <div className='subscribe-wrapper'>
                     <img
                         src='static/subscribemail.png'
