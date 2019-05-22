@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames'
 
-import PlaceCard from '../PlaceCard';
 import './filterform.scss';
 import { get } from 'https';
 
-
 const FilterForm = props => {
 
-  const { places } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [isMouseDown, setpixels] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
 
@@ -21,7 +18,6 @@ const FilterForm = props => {
     'outdoor seating', 'wireless internet', 'park',
     'massage therapy', 'venues', 'jewellery', 'fashion']
 
-  
   return (
     <div
       className='filter-form'>
@@ -67,10 +63,10 @@ const FilterForm = props => {
 
           <div className='filter-form-radius__text__wrapper'>
             <span className='filter-form-radius__title'> Radius: </span>
-            <p 
-              className='filter-form-radius__dictance__number'> 
-              {distanceUnit==='m'? distanceValue * 10 : distanceValue} 
-              {distanceUnit} 
+            <p
+              className='filter-form-radius__dictance__number'>
+              {distanceUnit === 'm' ? distanceValue * 10 : distanceValue}
+              {distanceUnit}
             </p>
             <select
               onChange={(event) => {
@@ -83,7 +79,6 @@ const FilterForm = props => {
               <option value="m">meters</option>
             </select>
           </div>
-
           <div
             className='filter-form-radius-distance'>
             <div
@@ -93,18 +88,19 @@ const FilterForm = props => {
             <div
               id='filter-form-radius-distance__static__line'
               className='filter-form-radius-distance__static__line' />
-              <div className='filter-form-radius-distance__radio'>
-                {[1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(key=>(
-                  <div    key={key}>
-                    <div
-                      id={key} 
-                      onClick={()=>setValue(event.target.id)}
-                      className='filter-form-radius-distance__radio__point'/>
-                  </div>
-                ))}
-              </div>
+            <div className='filter-form-radius-distance__radio'>
+              {[1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(key => (
+                <div
+                  key={key}
+                  id={key}
+                  onClick={() => setValue(event.target.id)}
+                  className={key <= distanceValue ?
+                    classNames('filter-form-radius-distance__radio__point_active') :
+                    'filter-form-radius-distance__radio__point'}>
+                </div>
+              ))}
+            </div>
           </div>
-
         </div>
         <div className='filter-form-checkboxs'>
           <p
@@ -117,9 +113,8 @@ const FilterForm = props => {
               className='filter-form-checkboxs__title__icon'
               icon={isFilterOpen ? faAngleUp : faAngleDown} />
           </p>
-          {
-            isFilterOpen && (
-              <form
+          {isFilterOpen && (
+              <div
                 className='filter-form-checkboxs__wrapper'>
                 {tagsName.map(key => {
                   return (
@@ -133,36 +128,10 @@ const FilterForm = props => {
                         className='filter-form__checkbox__text'>
                         {key}
                       </span>
-                    </div>
-                  )
+                    </div> )
                 })}
-              </form>
-          )}
-        </div>
-        <div className='filter-form-cards-wrapper'>
-          {places.slice(0, 12).map(placeObj => {
-            return (
-              <PlaceCard
-                key={placeObj.name}
-                place={placeObj}
-              />
-            )
-          })}
-        </div>
-        <div className="pages-numbers">
-          {[1, 2, 3, 4, 5].map(key=>(
-            <button
-              key={key} 
-              className="pages-numbers__button">
-              {key}
-          </button>
-          ))}
-          <button className="pages-numbers__button">
-            Next 
-            <FontAwesomeIcon
-              className='pages-numbers__button__icon'
-              icon={faAngleRight} />
-          </button>
+              </div>
+            )}
         </div>
       </div>
     </div>

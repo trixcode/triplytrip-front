@@ -14,7 +14,6 @@
             flex-wrap: wrap; 
         }
     }
-   
     &__input, &__select {
         color: gray;
         width: 32%;
@@ -32,26 +31,26 @@
             width: 100%;
         }
     }
-   
+    &__select:hover {
+        cursor: pointer;
+    }
     .keywords__input {
         width: 66%;
         @media screen and (max-width: 767px) {
             width: 100%;
         }
     }
-     
-
     &-radius {
         margin-bottom: 15px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+
         @media screen and (max-width: 991px) {
             flex-direction: column; 
             align-items: flex-start;
         }
-
         &__text__wrapper {
             width: 32%;
             display: flex;
@@ -65,7 +64,6 @@
             @media screen and (max-width: 767px) {
                 width: 100%;
             }
-      
         &__title {
             font-weight: 800;
             height: auto;
@@ -108,36 +106,39 @@
                 justify-content: space-between;
 
                 &__point {
-                    height: 11px;
-                    width: 11px;
+                    transition: 700ms;
+                    height: 12px;
+                    width: 12px;
                     border-radius: 50%;
                     border: 2px solid  rgb(155, 155, 155);
                     background-color: white;
-                }
 
-                &__active {
-                    height: 15px;
-                    width: 15px;
-                    border-radius: 50%;
-                    background-color: #895FCD;
+                    &_active {
+                        transition: 700ms;
+                        height: 12px;
+                        width: 12px;
+                        border-radius: 50%;
+                        border: 2px solid  #B888E3;
+                        background-color: #B888E3;
+                    }
+                }
+                :hover {
+                    cursor: pointer;
                 }
             }
-           
-
-         
             &__select__line {
+                transition: 500ms;
                 position: absolute;
                 height: 5px;
                 background: linear-gradient(90deg, #8ca3f6 0%, #e56bcf 100%);
             }
             &__static__line {
-                width: 100%;
+                width: 99%;
                 height: 2px;
                 background-color: rgb(155, 155, 155);
             }
         }
     }
-
     &-checkboxs {
         padding-bottom: 20px;
         padding-top: 40px;
@@ -167,7 +168,6 @@
             flex-wrap: wrap;   
         }
     }
-  
     &__checkbox {
         display: flex;
         align-items: center;
@@ -182,69 +182,22 @@
         @media screen and (max-width: 575px) {
             width: 160px;
         }
-
         &__input {
             border-radius: 5px;
             margin-right: 10px;
             width: 15px;
             height: 15px;
             background: none;
-            border: 1px solid rgb(175, 175, 175);     
+            border: 1px solid rgb(175, 175, 175);   
         }
-
+        &__input:hover {
+            cursor: pointer;
+        }  
         &__text {
             font-weight: 800;
             color: rgb(97, 97, 97);
             text-transform: capitalize;
             font-size: 0.9em;
-        }
-        
+        }   
     }
-    &-cards-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        @media screen and (max-width: 1199px) {
-            justify-content: space-evenly;
-        }
-        @media screen and (max-width: 991px) {
-            justify-content: space-between;
-        }
-        @media screen and (max-width: 767px) {
-          justify-content: center;
-        }
-
-    }
-    
-}
-.pages-numbers {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-
-
-    &__button {
-        margin-right: 10px;
-        padding: 10px 22px;
-        height: 50px;
-        width: auto;
-        box-sizing: border-box;
-        background-color: #e5f8fb;
-        border: none;
-        font-weight: 500;
-        font-size: 1em;
-
-        @media screen and (max-width: 575px) {
-            margin-right: 5px;
-            padding: 5px 15px;
-            height: 40px;
-            font-size: 0.9em; 
-        }
-    }
-
-    &__button__icon {
-        margin-left: 5px;
-    }
-
 }
