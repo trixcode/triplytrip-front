@@ -20,27 +20,19 @@
         width: 100%;
         border-bottom: 1px solid #ebebeb;
         margin-bottom: 50px;
+        background: #fff;
         &__tab {
-            height: 50px;
             border: none;
             background: none;
             font-size: 20px;
+            padding: 10px 20px;
             font-family: 'Montserrat', sans-serif;
             color: #2a3250;
             font-weight: 700;
-            width: 180px;
             outline: none;
             &_selected {
                 color: #6585fd;
-                border: none;
                 border-bottom: 1px #6585fd solid;
-                height: 50px;
-                background: none;
-                font-size: 20px;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                width: 180px;
-                outline: none;
             }
             &:hover{
                 color: #6585fd;
@@ -410,17 +402,16 @@
     .place-detail {
         .place-detail-container {
             justify-content: center;
-            align-items: center;
+            align-content: center;
             flex-direction: column;
         } 
     }
     .main-info {
-        width: 100%;
+        width: 90%;
         margin-bottom: 50px;
         &-tabs {
             position: sticky;
-            top: 0px;
-            background: #fff;
+            top: 70px;
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -428,20 +419,13 @@
             &__tab {
                 width: 50%;
                 font-size: 14px;
-                height: 30px;
                 border: none;
                 margin-bottom: 10px;
-                &_selected {
-                    width: 50%;
-                    font-size: 14px;
-                    height: 30px;
-                    border: none;
-                }
             }
         }
     }
     .sidebar {
-        width: 320px;
+        min-width: 250px;
     }
     .contact {
         flex-wrap: wrap-reverse;
@@ -472,18 +456,16 @@
         width: 100%;
         margin-bottom: 50px;
         &-tabs {
+            flex-wrap: nowrap;
             border-bottom: 1px solid #ebebeb;
             &__tab {
                 margin: 0;
-                width: 126px;
+                width: unset;
                 font-size: 14px;
-                height: 30px;
                 flex-wrap: nowrap;
                 &_selected {
+                    color: #6585fd;
                     border-bottom: 1px #6585fd solid;
-                    width: 126px;
-                    font-size: 14px;
-                    height: 30px;
                 }
             }
         }
@@ -521,15 +503,7 @@
             border-bottom: 1px solid #ebebeb;
             &__tab {
                 margin: 0;
-                width: 152px;
                 font-size: 17px;
-                height: 40px;
-                &_selected {
-                    border-bottom: 1px #6585fd solid;
-                    width: 152px;
-                    font-size: 17px;
-                    height: 40px;
-                }
             }
         }
     }
@@ -551,17 +525,27 @@
 @media (min-width: 992px) {
     .place-detail {
         .place-detail-container {
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            flex-wrap: wrap;
+            justify-content: space-between;;
+            flex-direction: row;
         } 
     }
     .sidebar {
-        width: 330px;
+        width: 250px;
+        &-owner-contacts-info {
+            li {
+                svg {
+                    display: none;
+                }
+            }
+        }
+        &-contact-me-input-block {
+            input {
+                width: 100%;
+            }
+        }
     }
     .main-info {
-        width: 90%;
+        width: 70%;
     }
     .contact {
         flex-wrap: wrap-reverse;
