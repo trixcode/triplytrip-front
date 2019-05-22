@@ -45,6 +45,9 @@
     width: 68px;
     height: 68px;
     margin-right: 26px;
+    @media screen and (max-width: 992px) { 
+      margin-right: 0;
+    }
   }
   
   .subscribe-mail__description {

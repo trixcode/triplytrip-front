@@ -13,9 +13,15 @@
 
   .footer-container {
     flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     @media screen and (max-width: 576px) { 
       display: flex;
       flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -30,6 +36,7 @@
 
       span {
         color: white;
+        font-weight: 900;
       }
     }
 
@@ -45,12 +52,17 @@
 
 .sub-footer {
   width: 100%;
-  border-top: solid 1px grey;
   display: flex;
   justify-content: center;
   .footer-wrapper {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    @media screen and (max-width: 768px) { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
   }
 }
 
@@ -58,32 +70,34 @@
 .footer-copyright {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 
   .footer-copyright__text {
     display: flex;
     align-items: center;
-    color: white;
+    color: grey;
   }
+  @media screen and (max-width: 768px) {
+    text-align: center;
 }
-
-.footer-social__item {
-  display: flex;
-  width: 320px;
-  height: 125px;
-  align-items: center;
-}
-
-.footer-social__icon {
-  color: #ffffff;
-  font-size: 45px;
-  padding: 12px;
-  float: right;
   :hover {
-    color: red;
+    color: white;
+    cursor: pointer;
   }
 }
-// v proch x
-// @media (min-width: 992px)
-// .container {
-//     max-width: 960px;
+
+.footer-social-item{
+  display: flex;
+  .footer-social__list {
+    .footer-social__icon {
+      color: #ffffff;
+      font-size: 45px;
+      padding: 12px;
+      float: right;
+      :hover {
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
