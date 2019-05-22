@@ -85,7 +85,7 @@
         @media screen and (max-width: 991px) {
             width: 48.5%;
         }
-          @media screen and (max-width: 767px) {
+        @media screen and (max-width: 767px) {
             width: 48%;
         }
         @media screen and (max-width: 575px) {
@@ -101,16 +101,30 @@
             @media screen and (max-width: 991px) {
                 width: 100%;
             } 
+            &__radio {
+                width: 100%;
+                position: absolute;
+                display: flex;
+                justify-content: space-between;
+
+                &__point {
+                    height: 11px;
+                    width: 11px;
+                    border-radius: 50%;
+                    border: 2px solid  rgb(155, 155, 155);
+                    background-color: white;
+                }
+
+                &__active {
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    background-color: #895FCD;
+                }
+            }
            
 
-            &__point {
-                z-index: 1;
-                position: absolute;
-                height: 15px;
-                width: 15px;
-                border-radius: 50%;
-                background-color: #895FCD;
-            }
+         
             &__select__line {
                 position: absolute;
                 height: 5px;
