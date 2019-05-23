@@ -8,13 +8,11 @@
     justify-content: space-between;
     
     @media screen and (max-width: 1199px) {
-        justify-content: space-evenly;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
-    @media screen and (max-width: 991px) {
-        justify-content: space-between;
-    }
-    @media screen and (max-width: 767px) {
-      justify-content: center;
+    @media  screen and (max-width: 767px) {
+      justify-content:center;
     }
   }
 }
