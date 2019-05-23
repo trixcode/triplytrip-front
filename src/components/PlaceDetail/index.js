@@ -1,12 +1,21 @@
 import './placeDetail.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
-
-const PlaceDetail = () => {
-
+function isEmpty(obj) {
+  for(var key in obj) {
+      if(obj.hasOwnProperty(key))
+          return false;
+  }
+  return true;
+}
+const PlaceDetail = (props) => {
+  const { getPlaceDetailByIdStart, router, placeDetail } = props;
+  useEffect(() => {
+    getPlaceDetailByIdStart(router.query.placeId)
+  }, []);
   const [isOverviewClicked, setOverview] = useState(true)
   const [isContactClicked, setContact] = useState(false)
   const [isReviewsClicked, setReview] = useState(false)
@@ -18,57 +27,20 @@ const PlaceDetail = () => {
     c(false)
     d(false)
   }
-
+  console.log(placeDetail)
   const selectedClass = 'main-info-tabs__tab_selected'
   const defaultClass = 'main-info-tabs__tab'
 
   const overview = 
-      <div className="overview">
-        <p className="overview__text">
-          vulputate ut pharetra sit amet aliquam id diam maecenas
-          ultricies mi eget mauris pharetra et ultrices neque ornare
-          aenean euismod elementum nisi quis eleifend quam adipiscing
-          vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-          viverra justo nec ultrices dui sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-          sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-      </p>
-        <p className="overview__text">
-          vulputate ut pharetra sit amet aliquam id diam maecenas
-          ultricies mi eget mauris pharetra et ultrices neque ornare
-          aenean euismod elementum nisi quis eleifend quam adipiscing
-          vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-          viverra justo nec ultrices dui sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-          sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-      </p>
-
-        <h2 className="overview__title">Heading - Pellentesque gravida fermentum</h2>
+      <div  className="overview">
+      
+        <div className="overview__text" dangerouslySetInnerHTML={{__html: placeDetail.description}} />
+        <h2 className="overview__title">{placeDetail.name}</h2>
 
         <div className="overview__pics"></div>
 
-        <p className="overview__text">
-          vulputate ut pharetra sit amet aliquam id diam maecenas
-          ultricies mi eget mauris pharetra et ultrices neque ornare
-          aenean euismod elementum nisi quis eleifend quam adipiscing
-          vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-          viverra justo nec ultrices dui sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-          sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-      </p>
-        <p className="overview__text">
-          vulputate ut pharetra sit amet aliquam id diam maecenas
-          ultricies mi eget mauris pharetra et ultrices neque ornare
-          aenean euismod elementum nisi quis eleifend quam adipiscing
-          vitae proin sagittis nisl rhoncus mattis rhoncus urna neque
-          viverra justo nec ultrices dui sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-          sapien eget mi proin sed libero
-          enim sed faucibus turpis in eu mi bibendum neque
-      </p>
+        <div className="overview__text" dangerouslySetInnerHTML={{__html: placeDetail.extraDescription}} />
+
         <div className="overview__save"></div>
       </div>
 
@@ -105,7 +77,9 @@ const PlaceDetail = () => {
 
   return (
     <section className="place-detail">
-      <div className="place-detail-container container">
+    {
+      !isEmpty(placeDetail) && (
+        <div className="place-detail-container container">
         <div className="main-info">
           <div className="main-info-tabs">
             <button id="overview" onClick={() =>
@@ -138,7 +112,9 @@ const PlaceDetail = () => {
         <aside className="sidebar">
           <div className="sidebar-owner-info">
             <div className="sidebar-owner-info__avatar"></div>
-            <span className="sidebar-owner-info__name">Rose Lee</span>
+            <span className="sidebar-owner-info__name">
+              {`${placeDetail.user.firstName} ${placeDetail.user.lastName}`}
+            </span>
             <span className="sidebar-owner-info__status">Editor</span>
             <div className="sidebar-owner-info__followers">
               <div>
@@ -216,6 +192,9 @@ const PlaceDetail = () => {
           </div>
         </aside>
       </div>
+      )
+    }
+
     </section>
   )
 }

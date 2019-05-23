@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header-wrapper">
           <Link href="/">
             <a className="header-brand">
-              <img src='static/mainIcon.png' className="header-brand__logo" alt="logo" />
+              <img src='/static/mainIcon.png' className="header-brand__logo" alt="logo" />
               <h2 className="header-brand__title">TryplyTrip</h2>
             </a>
           </Link>

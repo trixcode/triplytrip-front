@@ -43,11 +43,16 @@
     }
     .overview {
         &__text {
-            color: #696969;
-            font-size: 16px;
-            font-family: 'Varela Round', sans-serif;
-            line-height: 2;
-            margin-bottom: 50px;
+            & p {
+                color: #696969;
+                font-size: 16px;
+                font-family: 'Varela Round', sans-serif;
+                line-height: 2;
+                margin-bottom: 20px;
+                & br {
+                    line-height: 4;
+                }
+            }
         }
         &__title {
             font-size: 36px;
