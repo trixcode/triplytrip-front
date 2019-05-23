@@ -1,14 +1,8 @@
-import './PlaceCard.scss';
+import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
-const createArrayFronNumber =(num)=>{
-  let numArray = [];
-  for(let i=0; i<num; i++) {
-    numArray.push(i)
-  }
-  return numArray
-}
+import './PlaceCard.scss';
 
 const PlaceCard = props => {
   const { place } = props;
@@ -16,7 +10,7 @@ const PlaceCard = props => {
     <div className='place-card-container'>
       <div className='place-card-image-wrapper'>
         <img
-          src={ place.mainImage? place.mainImage :"https://cdn3.wpbeginner.com/wp-content/uploads/2018/03/httperrorwpuploads-1.png"}
+          src={place.mainImage ? place.mainImage : "https://cdn3.wpbeginner.com/wp-content/uploads/2018/03/httperrorwpuploads-1.png"}
           alt='place'
           className='place__card__images' />
         <div className='place-card-avatar-wrapper'>
@@ -26,34 +20,25 @@ const PlaceCard = props => {
             className='place-card__avatar' />
         </div>
       </div>
-      <h4 
+      <h4
         className='place-card__name'>
         {place.name}
       </h4>
-      <span 
+      <span
         className='place-card__price place-card__text_grey'>
         {place.price} сом
       </span>
       <div className='place-card__rates'>
-        <div 
-          className='place-card__rates__wrapper'>
-          {createArrayFronNumber(place.rating).map(key=>(
-              <FontAwesomeIcon
-              key={key}
-              className='rate__star__icon'
-              icon={faStar}/>)
-            )}
-        </div> 
-        <div>
-          {createArrayFronNumber(5).map(key=>(
-              <FontAwesomeIcon
-              key={key}
-              className='rate__star__icon__background'
-              icon={faStar}/>)
-            )}
-        </div>
+        {[1, 2, 3, 4, 5].map(key => (
+          <FontAwesomeIcon
+            key={key}
+            className={key <= place.rating ?
+              classNames('rate__star__icon active') :
+              'rate__star__icon '}
+            icon={faStar} />)
+        )}
       </div>
-      <div 
+      <div
         className='place-card-addres place-card__text_grey'>
         <FontAwesomeIcon
           className='place-card__icon'
@@ -63,7 +48,7 @@ const PlaceCard = props => {
           {place.address}
         </span>
       </div>
-      <div 
+      <div
         className='place-card-site place-card__text_grey'>
         <FontAwesomeIcon
           className='place-card__icon'
@@ -74,7 +59,7 @@ const PlaceCard = props => {
           {place.email}
         </a>
       </div>
-      <div 
+      <div
         className='place-card__phone__number'>
         <FontAwesomeIcon
           className='place-card__icon'
@@ -84,23 +69,23 @@ const PlaceCard = props => {
         </span>
       </div>
       <div className='place-card-button-wrapper'>
-        <button 
+        <button
           className='place-card__button place-card__button_detail'>
           View Detail
         </button>
-        <button 
+        <button
           className='place-card__button'>
           <FontAwesomeIcon
             className='card__button__icon'
             icon={faMapMarkerAlt} />
         </button>
-        <button 
+        <button
           className='place-card__button'>
           <FontAwesomeIcon
             className='card__button__icon'
             icon={faExchangeAlt} />
         </button>
-        <button 
+        <button
           className='place-card__button'>
           <FontAwesomeIcon
             className='card__button__icon'
