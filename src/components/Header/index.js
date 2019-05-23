@@ -1,18 +1,6 @@
 import Link from 'next/link'
 import './header.scss';
 
-const state = {
-  checkbox: false,
-  isOpen: false,
-  checked: false,
-}
-const HandleChangeColor = () => {
-  if(event.target.checked === true){
-    document.body.style = " ";
-  }else{
-    document.body.style = " "
-  }
-}
 
 
 const Header = () => {
@@ -50,11 +38,6 @@ const Header = () => {
 
             <input
              type="checkbox"
-             value="menuOpen"
-            
-            //  checked="checked"
-            //  onClick={HandleChangeColor}
-             onChange={HandleChangeColor}
               />
             <span></span>
             <span></span>
