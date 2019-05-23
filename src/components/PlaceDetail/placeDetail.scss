@@ -403,6 +403,7 @@
         .place-detail-container {
             justify-content: center;
             align-content: center;
+            align-items: center;
             flex-direction: column;
         } 
     }
@@ -421,11 +422,32 @@
                 font-size: 14px;
                 border: none;
                 margin-bottom: 10px;
+                &:hover {
+                    border: none;
+                }
             }
         }
     }
     .sidebar {
-        min-width: 250px;
+        width: 250px;
+        &-owner-contacts-info {
+            li {
+                svg {
+                    display: none;
+                }
+            }
+        }
+        &-contact-me-input-block {
+            input {
+                width: 100%;
+            }
+        }
+        &-subscribe {
+            button {
+                bottom: 17px;
+                right: 17px;
+            }
+        }
     }
     .contact {
         flex-wrap: wrap-reverse;
@@ -465,6 +487,9 @@
                 flex-wrap: nowrap;
                 &_selected {
                     color: #6585fd;
+                    border-bottom: 1px #6585fd solid;
+                }
+                &:hover {
                     border-bottom: 1px #6585fd solid;
                 }
             }
@@ -525,7 +550,8 @@
 @media (min-width: 992px) {
     .place-detail {
         .place-detail-container {
-            justify-content: space-between;;
+            justify-content: space-between;
+            align-items: unset;
             flex-direction: row;
         } 
     }
@@ -576,6 +602,24 @@
     }
     .sidebar {
         width: 330px;
+        &-owner-contacts-info {
+            li {
+                svg {
+                    display: unset;
+                }
+            }
+        }
+        &-contact-me-input-block {
+            input {
+                width: 290px;
+            }
+        }
+        &-subscribe {
+            button {
+                bottom: 28px;
+                right: 35px;
+            }
+        }
     }
     .contact {
         width: 100%;
@@ -594,6 +638,7 @@
             width: 48%;
         }
     }
+    
 }
 @media (min-width: 1440px) { 
     
