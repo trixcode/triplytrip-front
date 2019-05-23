@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames'
 
-import PlaceCard from '../PlaceCard';
 import './filterform.scss';
 import { get } from 'https';
 
-
 const FilterForm = props => {
 
-  const { places } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [isMouseDown, setpixels] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
 
@@ -20,47 +17,9 @@ const FilterForm = props => {
     'coffe', 'ckin care', 'spa', 'parking street',
     'outdoor seating', 'wireless internet', 'park',
     'massage therapy', 'venues', 'jewellery', 'fashion']
-  
-  const setPointPosition = () => {
-    const distanceStaticLineLeftSide = document.getElementById('filter-form-radius-distance__static__line')
-    const point = document.getElementById('filter-form-radius-distance__point')
-    const selectLine = document.getElementById('filter-form-radius-distance__select__line')
-    if (event.x > distanceStaticLineLeftSide.getBoundingClientRect().left && event.x < distanceStaticLineLeftSide.getBoundingClientRect().right) {
-      point.style.left = event.x - distanceStaticLineLeftSide.getBoundingClientRect().left - 7 + 'px';
-      selectLine.style.width = event.x - distanceStaticLineLeftSide.getBoundingClientRect().left - 7 + 'px';
-    }
-    point.ondragstart = function () {
-      return false;
-    };
-  }
 
-  const setDistance = (unit) => {
-    const staticLine = document.getElementById('filter-form-radius-distance__static__line').getBoundingClientRect().width;
-    const pointLeft = 7 + parseInt(document.getElementById('filter-form-radius-distance__point').style.left)
-    const persent = Math.round(pointLeft * 100 / staticLine);
-    if (unit === 'km') {
-      return Math.round((100 - 1) / 100 * persent + 1)
-    }
-    else if (unit === 'm') {
-      return Math.round(((900 - 10) / 100 * persent + 10) / 10) * 10
-    }
-  }
-
-  useEffect(()=>{
-    Object.keys(document.querySelectorAll('.place-card__button')).map(key=>{
-      document.querySelectorAll('.place-card__button')[key].style.backgroundColor = '#e5f8fb';
-    });
-  })
-  
   return (
     <div
-      onMouseUp={() => setpixels(false)}
-      onMouseMove={() => {
-        if (isMouseDown) {
-          setPointPosition()
-          setValue(setDistance(distanceUnit))
-        }
-      }}
       className='filter-form'>
       <div className='container'>
 
@@ -104,15 +63,14 @@ const FilterForm = props => {
 
           <div className='filter-form-radius__text__wrapper'>
             <span className='filter-form-radius__title'> Radius: </span>
-            <p 
-              className='filter-form-radius__dictance__number'> 
-              {distanceValue} 
-              {distanceUnit} 
+            <p
+              className='filter-form-radius__dictance__number'>
+              {distanceUnit === 'm' ? distanceValue * 10 : distanceValue}
+              {distanceUnit}
             </p>
             <select
               onChange={(event) => {
                 setUnit(event.target.value)
-                setValue(setDistance(event.target.value))
               }}
               className='filter-form__select radius__select'
               name="categorieslist"
@@ -121,23 +79,28 @@ const FilterForm = props => {
               <option value="m">meters</option>
             </select>
           </div>
-
           <div
-            onMouseDown={() => setpixels(true)}
             className='filter-form-radius-distance'>
             <div
-              style={{ left: '100px' }}
-              id='filter-form-radius-distance__point'
-              className='filter-form-radius-distance__point' />
-            <div
-              style={{ width: '100px' }}
+              style={{ width: distanceValue + '%' }}
               id='filter-form-radius-distance__select__line'
               className='filter-form-radius-distance__select__line' />
             <div
               id='filter-form-radius-distance__static__line'
               className='filter-form-radius-distance__static__line' />
+            <div className='filter-form-radius-distance__radio'>
+              {[1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(key => (
+                <div
+                  key={key}
+                  id={key}
+                  onClick={() => setValue(event.target.id)}
+                  className={key <= distanceValue ?
+                    classNames('filter-form-radius-distance__radio__point_active') :
+                    'filter-form-radius-distance__radio__point'}>
+                </div>
+              ))}
+            </div>
           </div>
-
         </div>
         <div className='filter-form-checkboxs'>
           <p
@@ -150,9 +113,8 @@ const FilterForm = props => {
               className='filter-form-checkboxs__title__icon'
               icon={isFilterOpen ? faAngleUp : faAngleDown} />
           </p>
-          {
-            isFilterOpen && (
-              <form
+          {isFilterOpen && (
+              <div
                 className='filter-form-checkboxs__wrapper'>
                 {tagsName.map(key => {
                   return (
@@ -166,36 +128,10 @@ const FilterForm = props => {
                         className='filter-form__checkbox__text'>
                         {key}
                       </span>
-                    </div>
-                  )
+                    </div> )
                 })}
-              </form>
-          )}
-        </div>
-        <div className='filter-form-cards-wrapper'>
-          {places.slice(0, 12).map(placeObj => {
-            return (
-              <PlaceCard
-                key={placeObj.name}
-                place={placeObj}
-              />
-            )
-          })}
-        </div>
-        <div className="pages-numbers">
-          {[1, 2, 3, 4, 5].map(key=>(
-            <button
-              key={key} 
-              className="pages-numbers__button">
-              {key}
-          </button>
-          ))}
-          <button className="pages-numbers__button">
-            Next 
-            <FontAwesomeIcon
-              className='pages-numbers__button__icon'
-              icon={faAngleRight} />
-          </button>
+              </div>
+            )}
         </div>
       </div>
     </div>
