@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
@@ -8,8 +8,20 @@ const Places = props => {
 
   const { places, getPlacesStart } = props;
 
+  const [isAllSelected, setAllTab] = useState(true);
+  const [isHotelSelected, setHotelTab] = useState(false);
+  const [isRestaurantSelected, setRestaurantTab] = useState(false);
+  const [isDinnerSelected, setDinnerTab] = useState(false)
+
+  const switchClassesOfTabs = (a,b,c,d) => {
+    a(true)
+    b(false)
+    c(false)
+    d(false)
+  }
+
   useEffect(() => {
-    getPlacesStart('isOpen=true')
+    getPlacesStart('isOpen=true&_limit=8')
   }, []);
 
     return (
@@ -21,22 +33,29 @@ const Places = props => {
         />
         <div className='places-tags-wrapper'>
           <button
-            className='places__tag places__tag_all'
-            id='all'>
+            className={isAllSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            id='all' onClick={() => getPlacesStart('isOpen=true&_limit=8')
+            + switchClassesOfTabs(setAllTab,setHotelTab,setDinnerTab,setRestaurantTab)}>
             All
           </button>
           <button
             id='hotels'
-            className='places__tag places__tag_hotel'>
+            className={isHotelSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getPlacesStart('isOpen=true&categoriesId=1&_limit=8') 
+            + switchClassesOfTabs(setHotelTab,setAllTab,setDinnerTab,setRestaurantTab)}>
             Hotel
           </button>
           <button
             id='restaraunts'
-            className='places__tag places__tag_restaurant'>
+            className={isRestaurantSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getPlacesStart('isOpen=true&categoriesId=2&_limit=8')
+            + switchClassesOfTabs(setRestaurantTab,setAllTab,setDinnerTab,setHotelTab)}>
             Restaurant
           </button>
           <button
-            className='places__tag places__tag_dinner'>
+            className={isDinnerSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getPlacesStart('isOpen=true&categoriesId=3&_limit=8')
+            + switchClassesOfTabs(setDinnerTab,setAllTab,setHotelTab,setRestaurantTab)}>
             Dinner
           </button>
           <button

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,6 +8,7 @@ import './PlaceCard.scss';
 const PlaceCard = props => {
   const { place } = props;
   return (
+    <Link href={`/detail/${place.id}`}><a>
     <div className='place-card-container'>
       <div className='place-card-image-wrapper'>
         <img
@@ -93,6 +95,7 @@ const PlaceCard = props => {
         </button>
       </div>
     </div>
+    </a></Link>
   )
 }
 
