@@ -1,4 +1,3 @@
-
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
@@ -32,18 +31,25 @@
       font-size: 2.2em;
       text-transform: capitalize;
       margin-bottom: 10px;
+
+      @media screen and (max-width: 575px) { 
+        font-size: 1.7em;
+      }
     }
 
     &-wrapper {
-      height: 170px;
       box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.178);
       background-color: rgb(255, 255, 255);
-      padding: 32px;
-      box-sizing: border-box;
-      width: 100%;
+      padding: 30px 32px;
+      min-width: 200px;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media screen and (max-width: 575px) { 
+        padding: 20px 20px;
+      }
     }
 
     &-content {
@@ -51,27 +57,28 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
+    
       @media screen and (max-width: 991px) { 
         flex-direction: column;
       }
-
     }
-    &-info {
+    &-info {     
       display: flex;
+      flex-direction: row;
+      
+      @media screen and (max-width: 575px) { 
+        flex-direction: column;
+      }
+      @media screen and (max-width: 991px) { 
+        margin-bottom: 20px;
+        justify-content: space-around;
+      }
 
       &__text {
-        font-size: 0.8em;
         font-weight: bold;
         margin-bottom: 5px;
       }
-      &__name {
-        font-size: 0.9em;
-        color: rgb(146, 146, 146);
-        font-weight: 600;
-      }
-      &__date {
-        font-size: 0.9em;
+      &__detail {
         color: rgb(146, 146, 146);
         font-weight: 600;
       }
@@ -79,13 +86,14 @@
         display: flex;
         align-items: center;
 
-
+        &__icons {
+          display: flex;
+          flex-direction: row;
+        }
         &__icon {
         width: 15px;
         height: 15px;
-        font-size: 0.85em;
-        color: gray;
-        opacity: 0.3;
+        color: rgb(182, 182, 182)
         }
         &__number {
           margin-left: 10px;
@@ -93,18 +101,25 @@
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          font-size: 0.8em;
           border-radius: 50%;
           height: 25px;
           width: 25px;
           background-color: $placeCardYellow;
         }
       }
-
       &__wrapper {
-        width: 110px;
+        width: 120px;
+        font-size: 0.9em;
         display: flex;
         flex-direction: column;
+
+        @media screen and (max-width: 991px) { 
+          align-items: flex-start;
+          width: 100%;
+        }
+        @media screen and (max-width: 575px) { 
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -120,15 +135,24 @@
         align-items: center;        
         background-color:#EBEBEB;
         margin-right: 5px;
+
+        @media screen and (max-width: 767px) { 
+          width: 40px;
+          height: 40px;
+          font-size: 1em;
+        }
       }
     }
   }
-
 }
 
 .wrapper_right_line {
   border-right: 1px solid #EBEBEB;
-  margin-right: 15px;
+  margin-right: 15px; 
+  @media screen and (max-width: 575px) { 
+    margin-right: 0px; 
+    border: none;
+  }
 }
 .interactive__icon {
   &__user {
@@ -149,9 +173,4 @@
   &__envelope {
     color: #D8A889;
   } 
-}
-
-.rating__icon_active{
-  opacity: 1;
-  color: $placeCardYellow;
 }

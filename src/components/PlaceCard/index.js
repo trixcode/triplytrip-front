@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,12 +29,11 @@ const PlaceCard = props => {
         {place.price} сом
       </span>
       <div className='place-card__rates'>
-        {[1, 2, 3, 4, 5].map(key => (
+        {[1, 2, 3, 4, 5].map(iconIndex => (
           <FontAwesomeIcon
-            key={key}
-            className={key <= place.rating ?
-              classNames('rate__star__icon active') :
-              'rate__star__icon '}
+            key={iconIndex}
+            style={{color: iconIndex <= place.rating && '#ffba00' }}
+            className='rate__star__icon'
             icon={faStar} />)
         )}
       </div>
