@@ -38,7 +38,7 @@ const Articles = (props) => {
                     <span className='icon'>Comments</span>
                   </div>
                   <div dangerouslySetInnerHTML={{ __html: latestnews.description }} className='news-card__description'></div>
-                  <Link href='/article'>
+                  <Link href={`article/${latestnews.id}`}>
                     <button className='news-card-button'>read more</button>
                   </Link>
                 </div>
