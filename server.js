@@ -8,9 +8,13 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
-  
+
+  server.get('/detail', (req, res) => {
+    return handle(req, res)
+  })
+
   server.get('/detail/:placeId', (req, res) => {
-    return app.render(req, res, '/detail', { placeId: req.params.placeId })
+    return app.render(req, res, '/dynamic/detail', { placeId: req.params.placeId })
   })
 
   server.get('*', (req, res) => {
