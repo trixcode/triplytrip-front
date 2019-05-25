@@ -49,7 +49,7 @@ const DetailPostTop = (props) => {
                     Rating
                   </span>
                   <div className='detail-post-top-place-info__rating'>
-                    <p
+                    <div
                       className='detail-post-top-place-info__rating__icons'>
                       {[1, 2, 3, 4, 5].map(iconIndex => (
                         <FontAwesomeIcon
@@ -58,7 +58,7 @@ const DetailPostTop = (props) => {
                           className='detail-post-top-place-info__rating__icon'
                           icon={faStar} />
                       ))}
-                    </p>
+                    </div>
                     <p
                       className='detail-post-top-place-info__rating__number'>
                       3
