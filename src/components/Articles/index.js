@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import moment from 'moment';
+import Link from 'next/link'
 
 import SectionTitle from '../SectionTitle';
 
@@ -21,8 +22,8 @@ const Articles = (props) => {
           {
             latestNewsList.map(latestnews => (
               <div
-              key={latestnews.id} 
-              className='news-card' latestnews={latestnews}>
+                key={latestnews.id}
+                className='news-card' latestnews={latestnews}>
                 <div className='news-card-header'>
                   <div className='news-card__date'>
                     <span className='date__day'>{moment(latestnews.createdDate).format('DD')}</span>
@@ -36,8 +37,10 @@ const Articles = (props) => {
                     <span className='icon'>News</span>
                     <span className='icon'>Comments</span>
                   </div>
-                  <div dangerouslySetInnerHTML={{__html: latestnews.description}} className='news-card__description'></div>
-                  <button className='news-card-button'>read more</button>
+                  <div dangerouslySetInnerHTML={{ __html: latestnews.description }} className='news-card__description'></div>
+                  <Link href='/article'>
+                    <button className='news-card-button'>read more</button>
+                  </Link>
                 </div>
               </div>
             ))
