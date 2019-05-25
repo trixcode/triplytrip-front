@@ -5,36 +5,42 @@
 
 .search-wrapper{
   background: rgb(94,136,233);
-  background: linear-gradient(90deg, rgba(94,136,233,1) 0%, rgba(55,202,224,1) 100%);
-  height: 90px;
+  background: linear-gradient(90deg, #538CE6 0%, #2FC3DF 100%);
   display: flex;
-  justify-content: center;
-  @media screen and (max-width: 768px) {
-  height: 135px;
-  }
-      
+  justify-content: center;     
 }
 .search-form{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    padding: 20px 10%;
+    @media (max-width: 1199px) {
+      padding: 20px 0px;
+    }
     @media screen and (max-width: 768px) {
     flex-direction: column;
-    height: 30px;
   }
 }
 .search-form__places{
   position: relative;
-  width: 100%;
+  width: 55%;
   margin-right: 10px;
-  margin-bottom: 1
-
+  height: 55px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
  }
+ 
  .search-form__location{
   position: relative;
   height: 55px;
-  width: 100%;
+  width: 40%;
   margin-right: 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
  }
 .search-form__input{
@@ -45,10 +51,12 @@
   padding: 0;
   color: #fff;
   padding-left: 10px;
+  padding-right: 55px;
   font-size: 18px;
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   @media screen and (max-width: 768px) {
-    height: 30px;
     margin-bottom: 5px;
   }
 }
@@ -59,7 +67,7 @@ font-weight: 400;
 }
 .search-form__button{
   vertical-align: middle;
-  width: 170px;
+  width: 25%;
   height: 54px;
   background-color: #e03e53;
   color: #ffffff;
@@ -83,12 +91,6 @@ font-weight: 400;
   font-size: 24px;
   font-weight: 400;
   line-height: 83.33px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 15px;
-    bottom: 10px;
-  height: 15px;
-  }
 }
 .search-form__icon-map{
   position: absolute;
@@ -100,10 +102,4 @@ font-weight: 400;
   font-size: 26px;
   font-weight: 400;
   line-height: 83.33px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 15px;
-    bottom: 10px;
-    height: 15px;
-  }
 }
