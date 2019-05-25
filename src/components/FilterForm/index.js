@@ -60,7 +60,6 @@ const FilterForm = props => {
           </select>
         </form>
         <div className='filter-form-radius'>
-
           <div className='filter-form-radius__text__wrapper'>
             <span className='filter-form-radius__title'> Radius: </span>
             <p
@@ -82,21 +81,19 @@ const FilterForm = props => {
           <div
             className='filter-form-radius-distance'>
             <div
-              style={{ width: distanceValue + '%' }}
-              id='filter-form-radius-distance__select__line'
+              style={{ width: distanceValue - 1 + '%' }}
               className='filter-form-radius-distance__select__line' />
-            <div
-              id='filter-form-radius-distance__static__line'
-              className='filter-form-radius-distance__static__line' />
+            <div className='filter-form-radius-distance__static__line' />
             <div className='filter-form-radius-distance__radio'>
+              <p
+                style={{ left: distanceValue - 1.7 + '%' }}
+                className='filter-form-radius-distance__radio__point' />
               {[1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(key => (
                 <div
                   key={key}
                   id={key}
-                  onClick={() => setValue(event.target.id)}
-                  className={key <= distanceValue ?
-                    classNames('filter-form-radius-distance__radio__point_active') :
-                    'filter-form-radius-distance__radio__point'}>
+                  onClick={(event) => setValue(event.target.id)}
+                  className='filter-form-radius-distance__radio__part'>
                 </div>
               ))}
             </div>
@@ -114,24 +111,24 @@ const FilterForm = props => {
               icon={isFilterOpen ? faAngleUp : faAngleDown} />
           </p>
           {isFilterOpen && (
-              <div
-                className='filter-form-checkboxs__wrapper'>
-                {tagsName.map(key => {
-                  return (
-                    <div
-                      key={key}
-                      className='filter-form__checkbox'>
-                      <input
-                        className='filter-form__checkbox__input'
-                        type="checkbox" />
-                      <span
-                        className='filter-form__checkbox__text'>
-                        {key}
-                      </span>
-                    </div> )
-                })}
-              </div>
-            )}
+            <div
+              className='filter-form-checkboxs__wrapper'>
+              {tagsName.map(key => {
+                return (
+                  <div
+                    key={key}
+                    className='filter-form__checkbox'>
+                    <input
+                      className='filter-form__checkbox__input'
+                      type="checkbox" />
+                    <span
+                      className='filter-form__checkbox__text'>
+                      {key}
+                    </span>
+                  </div>)
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>
