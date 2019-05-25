@@ -4,7 +4,7 @@ import './articleDescription.scss'
 
 
 const ArticleDescription = (props) => {
-  const { articleDetail, getArticleDetailByIdStartAction } = props;
+  const { articleDetail } = props;
   console.log(articleDetail.tags)
   return (
     <section className='section-article-desctiption'>

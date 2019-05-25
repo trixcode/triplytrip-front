@@ -13,8 +13,16 @@ app.prepare().then(() => {
     return handle(req, res)
   })
 
+  server.get('/articles', (req, res) => {
+    return handle(req, res)
+  })
+
   server.get('/detail/:placeId', (req, res) => {
     return app.render(req, res, '/dynamic/detail', { placeId: req.params.placeId })
+  })
+
+  server.get('/article/:articleId', (req, res) => {
+    return app.render(req, res, '/dynamic/article', { articleId: req.params.articleId })
   })
 
   server.get('*', (req, res) => {
