@@ -9,7 +9,7 @@ const Search = (props) => {
       <div className="container">
         <form className="search-form">
           <div className="search-form__places">
-            <input className="search-form__input" placeholder="Address, city or select suggestion category" />
+            <input className="search-form__input" placeholder={"Address, city or select suggestion category"}/>
             {<FontAwesomeIcon
               className="search-form__icon-search"
               icon={faSearch}

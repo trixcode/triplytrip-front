@@ -7,44 +7,54 @@ const HomeCategory = (props) => {
   return (
 
     <section className="category-wrapper">
-    <div className="container">
-      <div className=' category-container'>
-        <div className="category-block ">
-          {<FontAwesomeIcon
-            className="category__icon category__icon_hotel"
-            icon={faHotel}
-          />}
-          <span className="category-block__name">Hotel</span>
+      <div className="container">
+        <div className=' category-container'>
+          <div className="category-block ">
+            <p className="category-block__icon__wrapper category__icon_hotel">
+              {<FontAwesomeIcon
+                className="category__icon"
+                icon={faHotel}
+              />}
+            </p>
+            <span className="category-block__name">Hotel</span>
+          </div>
+          <div className="category-block">
+            <p className="category-block__icon__wrapper category__icon_hamburger">
+              {<FontAwesomeIcon
+                className="category__icon"
+                icon={faHamburger}
+              />}
+            </p>
+            <span className="category-block__name">Dinner</span>
+          </div>
+          <div className="category-block">
+            <p className="category-block__icon__wrapper category__icon_map">
+              {<FontAwesomeIcon
+                className="category__icon"
+                icon={faMapMarkedAlt}
+              />}
+            </p>
+            <span className="category-block__name">Destination</span>
+          </div>
+          <div className="category-block">
+            <p className="category-block__icon__wrapper category__icon_coffee">
+              {<FontAwesomeIcon
+                className="category__icon"
+                icon={faCoffee}
+              />}
+            </p>
+            <span className="category-block__name">Coffee</span>
+          </div>
+          <div className="category-block">
+            <p className="category-block__icon__wrapper category__icon_beer">
+              {<FontAwesomeIcon
+                className="category__icon"
+                icon={faBeer}
+              />}
+            </p>
+            <span className="category-block__name last_name">Club and Bear</span>
+          </div>
         </div>
-        <div className="category-block">
-          {<FontAwesomeIcon
-            className="category__icon category__icon_hamburger"
-            icon={faHamburger}
-          />}
-          <span className="category-block__name">Dinner</span>
-        </div>
-        <div className="category-block">
-          {<FontAwesomeIcon
-            className="category__icon category__icon_map"
-            icon={faMapMarkedAlt}
-          />}
-          <span className="category-block__name">Destination</span>
-        </div>
-        <div className="category-block">
-          {<FontAwesomeIcon
-            className="category__icon category__icon_coffee"
-            icon={faCoffee}
-          />}
-          <span className="category-block__name">Coffee</span>
-        </div>
-        <div className="category-block">
-          {<FontAwesomeIcon
-            className="category__icon category__icon_beer"
-            icon={faBeer}
-          />}
-          <span className="category-block__name last_name">Club and Bear</span>
-        </div>
-      </div>
       </div>
     </section>
 
