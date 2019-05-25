@@ -4,6 +4,7 @@ import PlaceDetailContainer from '../src/containers/PlaceDetail';
 import DetailPostTop from '../src/components/DetailPostTop'
 
 function Detail() {
+  
   return (
     <Fragment>
       <Header />

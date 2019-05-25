@@ -27,7 +27,6 @@ const PlaceDetail = (props) => {
     c(false)
     d(false)
   }
-  console.log(placeDetail)
   const selectedClass = 'main-info-tabs__tab_selected'
   const defaultClass = 'main-info-tabs__tab'
 

@@ -8,7 +8,7 @@ import './PlaceCard.scss';
 const PlaceCard = props => {
   const { place } = props;
   return (
-    <Link href={`/detail/${place.id}`}><a>
+    <Link href={`/detail/${place.id}`}>
     <div className='place-card-container'>
       <div className='place-card-image-wrapper'>
         <img
@@ -94,7 +94,7 @@ const PlaceCard = props => {
         </button>
       </div>
     </div>
-    </a></Link>
+    </Link>
   )
 }
 
