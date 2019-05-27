@@ -26,27 +26,23 @@ const ArticleAside = (props) => {
           </h3>
         </div>
 
-        <ul className='zxz'>
-          <li className='article-aside-box__list'>
-            <a className='article-aside-box__link'>
+        <ul className='article-aside-box__list'>
+            <a 
+              className='article-aside-box__link'>
               coffee
             </a>
-          </li>
-          <li className='article-aside-box__list'>
-            <a className='article-aside-box__link'>
+            <a 
+              className='article-aside-box__link'>
               news
             </a>
-          </li>
-          <li className='article-aside-box__list'>
-            <a className='article-aside-box__link'>
+            <a 
+              className='article-aside-box__link'>
               tips & tricks
             </a>
-          </li>
-          <li className='article-aside-box__list'>
-            <a className='article-aside-box__link'>
+            <a 
+              className='article-aside-box__link'>
               uncategorized
             </a>
-          </li>
         </ul>
       </div>
       <div className='article-aside-box'>
