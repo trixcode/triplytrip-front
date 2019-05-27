@@ -63,6 +63,9 @@ a {
 
  }
 
- button:focus {
+button:focus {
+    outline: none;
+}
+input:focus {
     outline: none;
 }

@@ -7,6 +7,14 @@
   width: 330px;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 1439px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 1199px) {
+    width: 280px;
+    
+  }
+
 
   &__label {
     position: relative;
@@ -60,6 +68,9 @@
       &__text {
         font-size: 1.1em;
       }
+      &__text:hover {
+        cursor: pointer;
+      }
     }
 
     &__list {
@@ -71,10 +82,14 @@
     &__link {
       font-size: 0.85em;
     }
+    &__link:hover {
+      cursor: pointer;
+    }
 
     &__news {
       margin-bottom: 25px;
       display: flex;
+      
 
       &__description {
         display: flex;
@@ -102,6 +117,9 @@
         object-fit: cover;
       }
     }
+    &__news:hover {
+      cursor: pointer;
+    }
   
   &__newsletter__text {
     font-size: 0.9em;
@@ -119,6 +137,9 @@
       object-fit: cover;
     }
 
+  }
+  &__ad:hover {
+    cursor: pointer;
   }
 
   }

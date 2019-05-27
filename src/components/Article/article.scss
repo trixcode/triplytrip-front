@@ -8,11 +8,22 @@
   max-width: 1050px;
   @include displayFlexOnCenter;
 
+  @media screen and (max-width: 1439px) {
+    width: 780px; 
+  }
+  @media screen and (max-width: 1199px) {
+    width: 620px;
+    
+  }
+
   &-img-wrapper {
     width: 100%;
     height: 590px;
     position: relative;
     margin-bottom: 30px;
+  }
+  &-img-wrapper:hover {
+    cursor: pointer;
   }
 
   &__img {
@@ -74,6 +85,9 @@
         display: flex;
         flex-direction: row;
       }
+      &__wrapper:hover {
+        cursor: pointer;
+      }
 
       &__icon {
         margin-right: 10px;
@@ -107,10 +121,14 @@
       text-transform: uppercase;
       font-size: 0.8em;
       font-weight: 800;
-      
+
       &__arrow {
         margin-left: 25px;
       }
+    }
+
+    &__botton:hover {
+      cursor: pointer;
     }
   }
 }
