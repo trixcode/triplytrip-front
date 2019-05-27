@@ -62,3 +62,7 @@ a {
      justify-content: space-between;
 
  }
+
+ button:focus {
+    outline: none;
+}
