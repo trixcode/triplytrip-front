@@ -5,11 +5,41 @@
   justify-content: center;
 
   &-main-content {
-    margin-top: 40px;
+    margin-top: 60px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
- 
+}
+.pages-numbers {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  &__button {
+      margin-right: 10px;
+      padding: 10px 22px;
+      height: 50px;
+      width: auto;
+      box-sizing: border-box;
+      background-color: #e5f8fb;
+      border: none;
+      font-weight: 500;
+      font-size: 1em;
+
+      @media screen and (max-width: 575px) {
+          margin-right: 5px;
+          padding: 5px 15px;
+          height: 40px;
+          font-size: 0.9em; 
+      }  
+  }
+  &__button:hover {
+    cursor: pointer;
+  }
+  &__button__icon {
+      margin-left: 5px;
+  }
 }

@@ -11,7 +11,7 @@ const ArticleAside = (props) => {
 
       <label className='article-aside__label'>
         <input
-          className='article-aside__input'
+          className='article-aside__input article-aside__input_curve_radius '
           placeholder='Search' />
         <FontAwesomeIcon
           className='article-aside__input__icon'
@@ -55,7 +55,7 @@ const ArticleAside = (props) => {
           <div className='article-aside-box__title__trip' />
           <h3 className='article-aside-box__title__text'>
             Latest News
-            </h3>
+          </h3>
         </div>
         <div className='article-aside-box__news'>
           <div className='article-aside-box__news__img__wrapper'>
@@ -72,30 +72,62 @@ const ArticleAside = (props) => {
             </span>
           </div>
         </div>
-
-
+        <div className='article-aside-box__news'>
+          <div className='article-aside-box__news__img__wrapper'>
+            <img
+              src='https://img3.goodfon.com/original/1440x900/2/29/cafe-terrace-old-fashioned.jpg'
+              className='article-aside-box__news__img' />
+          </div>
+          <div className='article-aside-box__news__description'>
+            <h4 className='article-aside-box__news__description__text'>
+              15 Restaurants in Bishkek and Almata
+            </h4>
+            <span className='article-aside-box__news__description__date'>
+              April 11, 2018
+            </span>
+          </div>
+        </div>
+        <div className='article-aside-box__news'>
+          <div className='article-aside-box__news__img__wrapper'>
+            <img
+              src='https://img3.goodfon.com/original/1440x900/2/29/cafe-terrace-old-fashioned.jpg'
+              className='article-aside-box__news__img' />
+          </div>
+          <div className='article-aside-box__news__description'>
+            <h4 className='article-aside-box__news__description__text'>
+              15 Restaurants in Bishkek and Almata
+            </h4>
+            <span className='article-aside-box__news__description__date'>
+              April 11, 2018
+            </span>
+          </div>
+        </div>
+      
       </div>
       <div className='article-aside-box'>
         <div className='article-aside-box__title'>
           <div className='article-aside-box__title__trip' />
           <h3 className='article-aside-box__title__text'>
             Newsletter
-              </h3>
+          </h3>
         </div>
         <span className='article-aside-box__newsletter__text'>
-          
+          Subscribe us and never miss our new articles
         </span>
-        <label className='article-aside-box__newsletter__label'>
-          <input className='article-aside-box__newsletter__input'/>
+        <label className='article-aside__label'>
+          <input
+            placeholder='Email Address'
+            className='article-aside__input' />
           <FontAwesomeIcon
-          className='article-aside__newsletter__input__icon'
-          icon={faPaperPlane} />
+            className='article-aside__input__icon'
+            icon={faPaperPlane} />
         </label>
       </div>
-      <div className='article-aside-box__ad__wrapper'>
-    
+      <div className='article-aside-box__ad'>
+        <img
+          src='https://img1.goodfon.com/original/640x960/b/3d/sinister-2-clown-panic.jpg'
+          className='article-aside-box__ad__link' />
       </div>
-
     </aside>
   )
 }

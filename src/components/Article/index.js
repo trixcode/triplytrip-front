@@ -38,7 +38,7 @@ const Article =(props)=> {
               className='article-description-interactive__icon'
               icon={faUser} />
             <span className='article-description-interactive__name'>
-              jumabek kochorov
+              johan larson
             </span>
           </div>
 
@@ -56,7 +56,7 @@ const Article =(props)=> {
               className='article-description-interactive__icon'
               icon={faComments} />
             <span className='article-description-interactive__name'>
-              comments
+              0 comments
             </span>
           </div>
         
