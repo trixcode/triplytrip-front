@@ -17,7 +17,6 @@ const ArticleAside = (props) => {
           className='article-aside__input__icon'
           icon={faSearch} />
       </label>
-
       <div className='article-aside-box'>
         <div className='article-aside-box__title'>
           <div className='article-aside-box__title__trip' />
@@ -25,7 +24,6 @@ const ArticleAside = (props) => {
             Categories
           </h3>
         </div>
-
         <ul className='article-aside-box__list'>
             <a 
               className='article-aside-box__link'>
@@ -46,7 +44,6 @@ const ArticleAside = (props) => {
         </ul>
       </div>
       <div className='article-aside-box'>
-
         <div className='article-aside-box__title'>
           <div className='article-aside-box__title__trip' />
           <h3 className='article-aside-box__title__text'>
@@ -98,7 +95,6 @@ const ArticleAside = (props) => {
             </span>
           </div>
         </div>
-      
       </div>
       <div className='article-aside-box'>
         <div className='article-aside-box__title'>

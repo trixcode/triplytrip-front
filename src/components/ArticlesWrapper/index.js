@@ -16,7 +16,6 @@ const ArticlesWrapper = () => {
             <Article />
             <Article />
             <Article />
-
             <div className="pages-numbers">
               {[1, 2, 3, 4, 5].map(key => (
                 <button
@@ -25,7 +24,8 @@ const ArticlesWrapper = () => {
                   {key}
                 </button>
               ))}
-              <button className="pages-numbers__button">
+              <button 
+                className="pages-numbers__button">
                 Next
                 <FontAwesomeIcon
                   className='pages-numbers__button__icon'
@@ -37,9 +37,7 @@ const ArticlesWrapper = () => {
             <ArticleAside />
           </div>
         </div>
-
       </div>
-
     </div>
   )
 }

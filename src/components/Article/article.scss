@@ -118,8 +118,6 @@
         font-weight: bold;
         text-transform: capitalize;
         font-family: 'Varela Round';
-
-      
       }
     }
 
@@ -131,7 +129,8 @@
       font-family: 'Varela Round';
     }
 
-    &__botton {
+    &__button {
+      background: none;
       border: 2px solid #d6d6d6;
       max-width: 190px;
       height: 32px;
@@ -150,7 +149,7 @@
       }
     }
 
-    &__botton:hover {
+    &__button:hover {
       cursor: pointer;
     }
   }
