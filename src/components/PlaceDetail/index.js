@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import PlaceDetailContactFormContainer from '../../containers/PlaceDetailContactForm';
 function isEmpty(obj) {
   for(var key in obj) {
       if(obj.hasOwnProperty(key))
@@ -152,25 +153,7 @@ const PlaceDetail = (props) => {
             <div className="sidebars-title">
               <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Contact Me</h5>
             </div>
-            <div className="sidebars-form-wrapper">
-              <div className="sidebar-contact-me-input-block">
-                <span>Your Name</span>
-                <input type="text" />
-              </div>
-              <div className="sidebar-contact-me-input-block">
-                <span>Your Email</span>
-                <input type="email" />
-              </div>
-              <div className="sidebar-contact-me-input-block">
-                <span>Subject</span>
-                <input type="text" />
-              </div>
-              <div className="sidebar-contact-me-input-block">
-                <span>Your Message</span>
-                <input type="text" />
-              </div>
-              <button className="sidebars-button">Submit</button>
-            </div>
+            <PlaceDetailContactFormContainer />
           </div>
           <div className="sidebar-map">
             <div className="sidebars-title">
