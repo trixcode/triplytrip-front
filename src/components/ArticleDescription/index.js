@@ -23,7 +23,7 @@ const ArticleDescription = (props) => {
         <div dangerouslySetInnerHTML={{ __html: articleDetail.extraDescription }} className='article-description-footer__text'></div>
         <span className='article-description-footer__tags'>
           <span className='bold'>Tags :</span>
-          {articleDetail.tags && articleDetail.tags.map(tag => (
+          {articleDetail.tags.map(tag => (
             tag + ' '
           ))}
         
