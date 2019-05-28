@@ -60,5 +60,12 @@ a {
  .article-container {
      flex-direction: row;
      justify-content: space-between;
-
+    @media (max-width: 1200px) { 
+        display: flex;
+        flex-direction: column;    
+    }
+    @media (min-width: 1200px) { 
+        display: flex;
+        flex-direction: row;    
+    }
  }

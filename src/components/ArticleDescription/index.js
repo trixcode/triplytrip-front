@@ -23,7 +23,7 @@ const ArticleDescription = (props) => {
         <span className='article-description-footer__tags'>
           <span className='bold'>Tags :</span>
           {articleDetail.tags && articleDetail.tags.map(tag => (
-            tag + ' '
+            ' ' + tag
           ))}
         
         </span>
