@@ -125,6 +125,9 @@ body{
                         color: #e03e53;
                         cursor: pointer;
                     }
+                    button:focus{
+                      outline: none;
+                      }
                     a {
                     	text-decoration: none;
                         color: #fff;
