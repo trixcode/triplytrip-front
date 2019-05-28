@@ -1,6 +1,8 @@
 export const initialState = {
   articleList: [],
-  articleDetail: {},
+  articleDetail: {
+    tags: []
+  },
 };
 
 export const getState = (state = initialState) => state || initialState;

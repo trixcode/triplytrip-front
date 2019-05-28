@@ -69,3 +69,12 @@ a {
         flex-direction: row;    
     }
  }
+
+
+
+button:focus {
+    outline: none;
+}
+input:focus {
+    outline: none;
+}

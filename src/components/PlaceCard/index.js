@@ -22,6 +22,7 @@ const PlaceCard = props => {
             className='place-card__avatar' />
         </div>
       </div>
+      <div className="place-card__info-wrapper">
       <h4
         className='place-card__name'>
         {place.name}
@@ -69,6 +70,8 @@ const PlaceCard = props => {
           +{place.phone}
         </span>
       </div>
+      </div>
+
       <div className='place-card-button-wrapper'>
         <button
           className='place-card__button place-card__button_detail'>

@@ -1,0 +1,157 @@
+
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
+
+.article {
+  min-width: 290px;
+  max-width: 1050px;
+  @include displayFlexOnCenter;
+
+  @media screen and (max-width: 1439px) {
+    width: 780px; 
+  }
+  @media screen and (max-width: 1199px) {
+    width: 620px;
+  }
+  @media screen and (max-width: 991px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  &-img-wrapper {
+    width: 100%;
+    height: 590px;
+    position: relative;
+    margin-bottom: 30px;
+    @media screen and (max-width: 991px) {
+      height: 450px;
+    }
+  }
+  &-img-wrapper:hover {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-img__date {
+    left: 20px;
+    top: 20px;
+    height: 85px;
+    width: 70px;
+    padding: 10px 15px;
+    @include displayFlexOnCenter;
+    position: absolute;
+    background-color: #FFFFFF;
+
+    &__day {
+      font-size: 1.8em;
+      font-weight: bold;
+      font-family: 'Varela Round';
+    }
+
+    &__month {
+      border-top: 1px solid gray;
+      width: 100%;
+      height: 100%;
+      @include displayFlexOnCenter;
+      padding-top: 5px;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &-description {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+
+    @media screen and (max-width: 575px) {
+      padding: 0 20px;
+      
+    }
+
+    &__title {
+      font-size: 1.9em;
+      margin-bottom: 10px;
+      color: #2a3250;
+
+      @media screen and (max-width: 991px) {
+        font-size: 1.7em;
+        margin-bottom: 20px;
+     }
+    }
+
+    &-interactive {
+      font-size: 0.9em;
+      display: flex;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 575px) {
+        flex-direction: column;
+     }
+
+      &__wrapper {
+        margin-right: 10px;
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: 575px) {
+          margin-bottom: 10px;
+       }
+      }
+      &__wrapper:hover {
+        cursor: pointer;
+      }
+
+      &__icon {
+        margin-right: 10px;
+        color: $placeCardYellow;
+      }
+      &__name {
+        font-weight: bold;
+        text-transform: capitalize;
+        font-family: 'Varela Round';
+      }
+    }
+
+    &__text {
+      margin-bottom: 30px;
+      color: #666666;
+      font-size: 0.9em;
+      font-weight: 500;
+      font-family: 'Varela Round';
+    }
+
+    &__button {
+      background: none;
+      border: 2px solid #d6d6d6;
+      max-width: 190px;
+      height: 32px;
+      border-radius: 16px;
+      color: #2a3250;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 25px;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: 800;
+
+      &__arrow {
+        margin-left: 25px;
+      }
+    }
+
+    &__button:hover {
+      cursor: pointer;
+    }
+  }
+}
+

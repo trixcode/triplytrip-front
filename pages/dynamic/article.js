@@ -15,7 +15,6 @@ import DetailPostTop from '../../src/components/DetailPostTop';
 
 function ArticleDetail(props) {
   const { getArticleDetailByIdStartAction, router } = props;
-  console.log(router.query)
   useEffect(() => {
     getArticleDetailByIdStartAction(router.query.articleId)
   }, [])
