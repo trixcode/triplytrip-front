@@ -5,7 +5,6 @@ import './articleDescription.scss'
 
 const ArticleDescription = (props) => {
   const { articleDetail } = props;
-  console.log(articleDetail.tags)
   return (
     <section className='section-article-desctiption'>
       <div className='article-description-header'>

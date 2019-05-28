@@ -9,8 +9,8 @@ import DetailTitleContainer from '../../src/containers/DetailTitle';
 import { connect } from 'react-redux';
 import ArticleSidebar from '../../src/components/ArticleSidebar';
 import Header from '../../src/components/Header';
-import DetailMainImage from '../../src/components/DetailMainImage';
 import { getArticleDetailByIdStart } from '../../src/store/actions';
+import DetailPostTop from '../../src/components/DetailPostTop';
 
 
 function ArticleDetail(props) {
@@ -22,9 +22,8 @@ function ArticleDetail(props) {
   return (
     <Fragment>
       <Header />
-      <DetailMainImage />
+      <DetailPostTop />
       <div className='article-wrapper'>
-        <DetailTitleContainer />
         <div className="container article-container">
           <ArticleDetailContainer />
           <ArticleSidebar />

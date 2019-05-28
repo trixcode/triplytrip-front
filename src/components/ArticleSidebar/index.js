@@ -38,7 +38,7 @@ const ArticleSidebar = (props) => {
           <h4 className='article-sidebar-title__name'>latest news</h4>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
@@ -47,7 +47,7 @@ const ArticleSidebar = (props) => {
           </div>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
@@ -56,7 +56,7 @@ const ArticleSidebar = (props) => {
           </div>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
