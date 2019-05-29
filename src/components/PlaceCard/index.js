@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,9 +7,13 @@ import './PlaceCard.scss';
 
 const PlaceCard = props => {
   const { place } = props;
+  const like = () => {
+    console.log('liked!')
+  }
   return (
-    <Link href={`/detail/${place.id}`}>
     <div className='place-card-container'>
+    <Link href={`/detail/${place.id}`}>
+    <Fragment>
       <div className='place-card-image-wrapper'>
         <img
           src={place.mainImage ? place.mainImage : "https://cdn3.wpbeginner.com/wp-content/uploads/2018/03/httperrorwpuploads-1.png"}
@@ -71,7 +75,8 @@ const PlaceCard = props => {
         </span>
       </div>
       </div>
-
+      </Fragment>
+      </Link>
       <div className='place-card-button-wrapper'>
         <button
           className='place-card__button place-card__button_detail'>
@@ -90,14 +95,13 @@ const PlaceCard = props => {
             icon={faExchangeAlt} />
         </button>
         <button
-          className='place-card__button'>
+          className='like-button' onClick={like}>
           <FontAwesomeIcon
             className='card__button__icon'
             icon={faHeart} />
         </button>
       </div>
     </div>
-    </Link>
   )
 }
 
