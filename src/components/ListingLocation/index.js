@@ -1,11 +1,10 @@
-import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import GoogleMapReact from 'google-map-react';
 
 import './listingLocation.scss'
 
 const ListingLocation = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit } = props
   return (
     <form
       className='listing-location' 

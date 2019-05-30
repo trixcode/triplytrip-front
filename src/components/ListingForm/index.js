@@ -1,4 +1,5 @@
 import ListingLocation from '../ListingLocation';
+import ListingPriceSegmentation from '../ListingPriceSegmentation'
 
 import './listingForm.scss'
 
@@ -9,6 +10,7 @@ const ListingForm = () => {
       <div className='listing-form'>
         <div className='container'> 
           <ListingLocation />
+          <ListingPriceSegmentation />
         </div>
       </div>
     )
