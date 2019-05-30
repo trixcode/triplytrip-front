@@ -43,6 +43,34 @@
   }
 
  }
+
+ .search-form__places, .search-form__location {
+    select {
+    width: 100%;
+    height: 55px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 1px white solid;
+    padding: 0;
+    color: #000;
+    padding-left: 10px;
+    padding-right: 55px;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: none;
+    &:hover {
+      cursor: text;
+    }
+    @media screen and (max-width: 768px) {
+      margin-bottom: 5px;
+    }
+   }
+ }
+
 .search-form__input{
   width: 100%;
   height: 55px;
