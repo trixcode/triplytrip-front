@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
+
+.listing-form {
+  width: 100%;
+  @include displayFlexOnCenter;
+  background-color: rgb(236, 236, 236);
+}

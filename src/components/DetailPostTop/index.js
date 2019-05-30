@@ -11,7 +11,7 @@ const DetailPostTop = (props) => {
       <div className='detail-post-top_image_wrapper'>
         <img
           className='detail-post-top_image'
-          src='https://img1.goodfon.com/original/4368x2912/8/cd/interer-stil-dizayn-terrasa-2974.jpg'
+          src='https://img5.goodfon.com/original/1680x1050/3/67/ulitsa-doma-maiami-florida-ssha-ocean-drive.jpg'
           alt='hotel' />
       </div>
       <div className='detail-post-top-place'>
