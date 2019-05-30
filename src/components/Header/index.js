@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import './header.scss';
-
+import BurgerMenu from '../BurgerMenu'
 
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
               <h2 className="header-brand__title">TryplyTrip</h2>
             </a>
           </Link>
-
+          <BurgerMenu />
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
@@ -57,24 +57,8 @@ const Header = () => {
               <a className="header-actions-link" href="#">icon</a>
             </div>
           </nav>
-          <div className="menu-toggle" id="menuToggle">
-
-            <input
-             type="checkbox"
-              />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu" className="header-hamburger-list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Listings</a></li>
-              <li><a href="#">Destinations</a></li>
-              <li><a href="#">Pages</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-
+          
+       
         </div>
 
       </div>
