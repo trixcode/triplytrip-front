@@ -43,7 +43,7 @@ const ListingPriceSegmentation = (props) => {
               className='price-segmentation-form__input'
               name="max-price"
               component="input"
-              type="namber"
+              type="number"
             />
           </div>
         </div>
