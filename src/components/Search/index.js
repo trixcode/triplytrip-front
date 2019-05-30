@@ -30,6 +30,7 @@ const Search = (props) => {
             <Field
             placeholder="keywords" 
             name="keywords"
+            className="search-form__input"
             component={customInputField}
             type="text">
             </Field>

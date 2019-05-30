@@ -10,6 +10,10 @@
   },
   "author": "",
   "license": "ISC",
+  "nodemonConfig": {
+    "ignore": ["src/*", "pages/*", ".nextc"],
+    "delay": "2500"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.2",

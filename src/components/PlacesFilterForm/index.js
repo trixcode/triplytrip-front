@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
-
-import Router from 'next/router'
+import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames'
 
 import './filterform.scss';
-import { get } from 'https';
+import { customInputField } from '../CustomFields';
 
-const FilterForm = props => {
-
-  console.log(Router)
-
+const PlacesFilterForm = props => {
+  const { router, handleSubmit, changeFormValue } = props;
+  console.log(router)
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
+
+  useEffect(() => {
+    changeFormValue('keywords', router.query.keywords)
+    changeFormValue('location', router.query.location)
+  }, []);
 
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
     'coffe', 'ckin care', 'spa', 'parking street',
@@ -27,18 +30,20 @@ const FilterForm = props => {
       <div className='container'>
 
         <form className='filter-form-wrapper'>
-          <input
+          <Field 
             placeholder='Keywords'
-            value={Router.router.query.keywords}
             className='filter-form__input keywords__input'
             type="text"
-            id="keywords" />
-          <input
+            name="keywords"
+            component={customInputField}
+          />
+          <Field 
             placeholder='Location'
-            value={Router.router.query.location}
             className='filter-form__input'
             type="text"
-            id="location" />
+            name="location"
+            component={customInputField}
+          />
           <input
             placeholder='Price'
             className='filter-form__input'
@@ -140,4 +145,4 @@ const FilterForm = props => {
   )
 }
 
-export default FilterForm;
+export default PlacesFilterForm;

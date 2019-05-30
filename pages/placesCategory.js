@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Header from '../src/components/Header';
 import PagesTopTitle from '../src/components/PagesTopTitle';
-import FilterForm from '../src/components/FilterForm';
+import PlacesFilterFormContainer from '../src/containers/PlacesFilterForm';
 import PlacesFilterResult from '../src/components/PlacesFilterResult';
 import Footer from '../src/components/Footer';
 import "../src/assets/styles/main.scss";
@@ -16,7 +16,7 @@ const PlacesCategory = () => {
       <PagesTopTitle 
         title='Add Listing'
         link={['HOME', 'category', 'bishkek']}/>
-      <FilterForm />
+      <PlacesFilterFormContainer />
       <PlacesFilterResult places={placesArr} />
         <Footer text="Footer"/>
     </Fragment>
