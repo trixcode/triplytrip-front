@@ -4,59 +4,82 @@ import './header.scss';
 
 
 const Header = () => {
-
+  
   return (
     <header className="header">
       <div className="container">
-        <div className="header-wrapper">
+      <div className="header-wrapper">
           <Link href="/">
             <a className="header-brand">
               <img src='/static/mainIcon.png' className="header-brand__logo" alt="logo" />
               <h2 className="header-brand__title">TryplyTrip</h2>
             </a>
           </Link>
+
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Home
+                Home
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Explore
+                Explore
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Listings
+                Listings
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Destinations
+                Destinations
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Pages
+                Pages
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                  Blog
+                Blog
                 </a>
               </li>
               <li className="header-navigation-list">|</li>
             </ul>
+
             <div className="header-actions">
               <button className="header-actions-button">+ Add Listing</button>
               <a className="header-actions-link" href="#">icon</a>
               <a className="header-actions-link" href="#">icon</a>
             </div>
           </nav>
+          <div className="menu-toggle" id="menuToggle">
+
+            <input
+             type="checkbox"
+              />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu" className="header-hamburger-list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Listings</a></li>
+              <li><a href="#">Destinations</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
         </div>
+
       </div>
+
+
     </header>
   )
 }
