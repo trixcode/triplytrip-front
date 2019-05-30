@@ -52,6 +52,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Individual item */
@@ -68,6 +71,45 @@ Note: Beware of modifying this element as it can break the animations - you shou
   top: 0;
   left: 0;
   display: none;
+}
+.header-burger-bar{
+  
+}
+.header-burger-list{
+  color: #d994e1;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.header-burger-link{
+  text-decoration: none;
+  color: #fff;
+}
+.header-burger-link:hover{
+  color: #e03e53;
+}
+.header-burger-actions{
+  height: 30%;
+}
+.header-burger-button{
+  width: 160px;
+  height: 43px;
+  border: #fff 1px solid;
+  border-radius: 3px;
+  background: none;
+  color: #fff;
+  font-family: 'Krona One', sans-serif;
+}
+.header-burger-button:hover{
+  border-color: #e03e53;
+  color: #e03e53;
+  cursor: pointer;
+}
+.header-burger-button:focus{
+  outline: none;
+  }
+.header-burger-list__reg{
+  margin-top: 15px;
 }
 @media (max-width: 960px){
   .burger{
