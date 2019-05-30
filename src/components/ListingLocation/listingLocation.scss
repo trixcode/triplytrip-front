@@ -30,7 +30,12 @@
       width: 100%;
       height: 50px;
       background-color: white;
-      color: gray;
+
+      &__select__value {
+        text-transform: capitalize;
+        font-size: 1.5em;
+        color: gray;
+      }
     }
   }
 

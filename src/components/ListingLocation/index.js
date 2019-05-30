@@ -24,11 +24,14 @@ const ListingLocation = props => {
         <div className='listing-location-form'>
           <label className='listing-location-form__title'>listing categories</label>
           <div >
-            <Field name="categories" component="select" className='listing-location-form__input'>
-            <option />
-            <option value="hotel">hotel</option>
-            <option value="cafe">cafe</option>
-            <option value="restaurant">restaurant</option>
+            <Field 
+              name="categories" 
+              component="select" 
+              className='listing-location-form__input'>
+              <option />
+              <option className='listing-location-form__input__select__value' value="hotel">hotel</option>
+              <option className='listing-location-form__input__select__value' value="cafe">cafe</option>
+              <option className='listing-location-form__input__select__value' value="restaurant">restaurant</option>
           </Field>
           </div>
         </div>
@@ -40,7 +43,7 @@ const ListingLocation = props => {
               name="email"
               component="input"
               type="email"
-              placeholder="Email"
+              placeholder="Bishkek"
             />
           </div>
         </div>
