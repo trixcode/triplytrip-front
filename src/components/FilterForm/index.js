@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Router from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames'
@@ -8,6 +9,8 @@ import './filterform.scss';
 import { get } from 'https';
 
 const FilterForm = props => {
+
+  console.log(Router)
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
@@ -26,11 +29,13 @@ const FilterForm = props => {
         <form className='filter-form-wrapper'>
           <input
             placeholder='Keywords'
+            value={Router.router.query.keywords}
             className='filter-form__input keywords__input'
             type="text"
             id="keywords" />
           <input
             placeholder='Location'
+            value={Router.router.query.location}
             className='filter-form__input'
             type="text"
             id="location" />
