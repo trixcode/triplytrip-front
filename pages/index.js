@@ -5,7 +5,7 @@ import LatestNewsContainer from '../src/containers/LatestNews';
 
 import Header from '../src/components/Header';
 import HomeCategory from '../src/components/HomeCategory'
-import Search from '../src/components/Search'
+import SearchContainer from '../src/containers/Search'
 import PlacesContainer from '../src/containers/Places'
 import Subscribe from '../src/components/Subscribe/index'
 import TopContent from '../src/components/TopContent'
@@ -28,7 +28,7 @@ function Home() {
 
       <HomeCategory />
       <hr className="category-border" />
-      <Search />
+      <SearchContainer />
       <DiscoverContainer />
       <PlacesContainer />
       <UpcommingEventsContainer />
