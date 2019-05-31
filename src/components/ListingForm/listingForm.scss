@@ -2,8 +2,239 @@
 @import '../../assets/styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
-.listing-form {
+.listing {
   width: 100%;
   @include displayFlexOnCenter;
   background-color: rgb(236, 236, 236);
+
+  .container {
+    background-color: #FFFFFF;
+    padding: 60px 60px;
+  }
+   
+  &__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+  &-forms {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  &-form {
+    margin-bottom: 30px;
+
+    &__title {
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: capitalize;
+     
+    }
+
+    &__input {
+      padding-left: 10px;
+      margin-top: 10px;
+      width: 100%;
+      height: 50px;
+      background-color: white;
+      color: gray;
+      font-size: 1.2em;
+
+      &__select__value {
+        text-transform: capitalize;
+        font-size: 1em;
+        color: gray;
+      }
+    }
+  }
+
+  &-google-map {
+    border: 3px solid #6586FC;
+    width: 45%;
+    height: 360px;
+    background-color: rgb(195, 195, 195);
+    position: relative;
+
+    &__arrow {
+      z-index: 1;
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      border: 20px solid transparent;	border-right: 20px solid #6586FC;;
+      left: -40px;
+      top: 210px;
+    }
+  }
+
+  &-location {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  } 
+
+  &-row-inputs {
+
+    &-forms {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    &-form {
+      width: 32%;
+    }
+  }
+
+  &-image-logo__wrapper {
+    background-color: #F8F8F8;
+    border: 1px dashed #C1C1C1;
+    width: 170px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 110px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-image__icon {
+    color: #C1C1C1;
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+  }
+
+  &-featured-image {
+    background-color: #F8F8F8;
+    border: 1px dashed #C1C1C1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 150px;
+    margin-bottom: 110px;
+    &__text {
+      font-size: 1.3em;
+      color: #C1C1C1;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  &-content {
+
+    &__wysiwyg {
+      background-color: #F8F8F8;
+      border: 1px dashed #C1C1C1;
+      width: 1000px;
+      height: 460px;
+      margin-bottom: 50px;
+    }
+  }
+  &__information__text {
+    color: rgb(165, 165, 165);
+    margin-bottom: 30px;
+  }
+
+  &-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      margin-bottom: 30px;
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+
+
+    }
+    &__icon__wrapper {
+      border: 1px solid #C1C1C1;
+      border-right: none; 
+      margin-top: 10px;
+      height: 100%;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__icon {
+      font-size: 1.3em;
+
+      &__instagram {
+        color: rgb(240, 124, 182);
+      }
+      &__twitter {
+        color: #37CCFD;
+      }
+      &__facebook {
+        color: #405A9A;
+      }
+      &__linkedin{
+        color: #74B2D3
+      }
+      &__whatsapp{
+        color: #54D179;
+      }
+      &__tumblr {
+        color: #39495D;
+      }
+      &__pinterest{
+        color: #DD1819;
+      }
+      &__vimeo {
+        color: #38CDFE;
+      }
+      &__google-plus {
+        color: #EC5240;
+      }
+      &__youtube {
+        color: #CB2625;
+      }
+      &__flickr {
+        color: #FD02B4;
+      }
+    }
+  
+  }
+
+  
 }
+
+
+
+
+
+
+
+
+
