@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 
+import Router from 'next/router'
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
 import './search.scss';
@@ -13,8 +14,7 @@ const Search = (props) => {
   const { handleSubmit } = props;
   const onSubmitHandle = (formValues) => {
     console.log(formValues)
-    sessionStorage.setItem('category', formValues.category)
-    sessionStorage.setItem('city', formValues.city)
+    Router.push(`/placesCategory?location=${formValues.city}&keywords=${formValues.keywords}`)
   }
 
   useEffect(() => {
@@ -28,14 +28,11 @@ const Search = (props) => {
         <form className="search-form" onSubmit={handleSubmit(onSubmitHandle)}>
           <div className="search-form__places">
             <Field
-            placeholder="Выберите категорию" 
-            name="category"
-            component="select"
+            placeholder="keywords" 
+            name="keywords"
+            className="search-form__input"
+            component={customInputField}
             type="text">
-              <option/>
-              {categories.map(category => (
-                <option key={category.id}>{category.name}</option>
-              ))}
             </Field>
 
             {<FontAwesomeIcon
@@ -45,14 +42,10 @@ const Search = (props) => {
           </div>
           <div className="search-form__location">
           <Field
-            placeholder="город" 
+            placeholder="location" 
             name="city"
-            component="select"
+            component={customInputField}
             type="text">
-              <option/>
-              {cities.map(city => (
-                <option key={city.id}>{city.name}</option>
-              ))}
             </Field>
             {<FontAwesomeIcon
             className='search-form__icon-map'

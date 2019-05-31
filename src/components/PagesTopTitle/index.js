@@ -1,41 +1,28 @@
 import './PagesTopTitle.scss'
 
 const PagesTopTitle = props => {
-
+	const { title, link } = props;
+	console.log(link)
 	return (
 		<div className='pages-top-subheader'>
 			<div className='container'>
 				<div className='pages-top-subheader-wrapper'>
 					<h1
 						className='pages-top-subheader__title'>
-						Places in London
+						{title}
 					</h1>
 					<ul className='pages-top-subheader__list'>
-						<li>
+						{link.map((linkItem)=>(
+							<li key={linkItem}>
 							<a
 								href='#'
 								className='pages-top-subheader__link'>
-								home
-							</a>
-						</li>
-
-						<li>
+							  {linkItem}
 							<span> >> </span>
-							<a
-								href='#'
-								className='pages-top-subheader__link'>
-								category
 							</a>
 						</li>
-
-						<li>
-							<span> >> </span>
-							<a
-								href='#'
-								className='pages-top-subheader__link'>
-								london
-							</a>
-						</li>
+						))}
+						
 
 					</ul>
 				</div>
