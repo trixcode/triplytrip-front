@@ -11,7 +11,11 @@
   "author": "",
   "license": "ISC",
   "nodemonConfig": {
-    "ignore": ["src/*", "pages/*", ".nextc"],
+    "ignore": [
+      "src/*",
+      "pages/*",
+      ".nextc"
+    ],
     "delay": "2500"
   },
   "dependencies": {
