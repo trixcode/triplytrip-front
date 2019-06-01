@@ -5,14 +5,17 @@ import { withRouter } from 'next/router'
 
 import PlacesFilterForm from '../../components/PlacesFilterForm';
 import { getPlaceDetailByIdStart } from '../../store/actions';
+import {getPlacesStart} from '../../store/actions';
 
 const formConfig = {
     form: 'PlacesFilterForm',
 }
 const mapStateToProps = (store) => ({
+    places: store.places,
 })
 const mapDispatchToProps = (dispatch) => ({
     changeFormValue: (field, value) => dispatch(change('PlacesFilterForm', field, value)),
+    getPlacesStart: (requestParams='') => dispatch(getPlacesStart(requestParams)),
 })
 const PlacesFilterFormContainer = (props) => <PlacesFilterForm {...props} />;
 export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(withRouter(PlacesFilterFormContainer)));

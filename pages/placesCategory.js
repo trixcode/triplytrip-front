@@ -6,18 +6,15 @@ import PlacesFilterResult from '../src/components/PlacesFilterResult';
 import Footer from '../src/components/Footer';
 import "../src/assets/styles/main.scss";
 
-import hotels from '../src/components/Places/hotels.json';
 
 const PlacesCategory = () => {
-  const placesArr = hotels.hotels
   return (
     <Fragment>
       <Header />
       <PagesTopTitle 
-        title='Add Listing'
+        title='London'
         link={['HOME', 'category', 'bishkek']}/>
       <PlacesFilterFormContainer />
-      <PlacesFilterResult places={placesArr} />
         <Footer text="Footer"/>
     </Fragment>
   )

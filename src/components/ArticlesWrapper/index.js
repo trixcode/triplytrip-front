@@ -10,6 +10,7 @@ const ArticlesWrapper = () => {
 
   return (
     <div className='articles-wrapper'>
+      <div className='container'>
         <div className='articles-wrapper-main-content'>
           <div className='articles-wrapper-list'>
             <Article />
@@ -36,6 +37,7 @@ const ArticlesWrapper = () => {
             <ArticleAside />
           </div>
         </div>
+      </div>
     </div>
   )
 }
