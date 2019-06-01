@@ -16,31 +16,31 @@ const PlacesFilterForm = props => {
 
   const checkCity = () => {
     if (router.query.location === 'bishkek' || 'Bishkek') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=1')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=1&q=${router.query.keywords}`)
     }
     if (router.query.location === 'osh' || 'Osh') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=2')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=2&q=${router.query.keywords}`)
     }
     if (router.query.location === 'kant' || 'Kant') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=3')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=3&q=${router.query.keywords}`)
     }
     if (router.query.location === 'karakol' || 'Karakol') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=4')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=4&q=${router.query.keywords}`)
     }
     if (router.query.location === 'jalal-abad' || 'Jalal-abad') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=5')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=5&q=${router.query.keywords}`)
     } 
     if (router.query.location === 'batken' || 'Batken') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=6')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=6&q=${router.query.keywords}`)
     } 
     if (router.query.location === 'tokmok' || 'Tokmot') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=7')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=7&q=${router.query.keywords}`)
     } 
     if (router.query.location === 'naryn' || 'Naryn') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=8')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=8&q=${router.query.keywords}`)
     } 
     if (router.query.location === 'talas' || 'Talas') {
-      getPlacesStart('isOpen=true&_limit=12&citiesId=9')
+      getPlacesStart(`isOpen=true&_limit=12&citiesId=9&q=${router.query.keywords}`)
     }    
     else {
       getPlacesStart('isOpen=true&_limit=12')

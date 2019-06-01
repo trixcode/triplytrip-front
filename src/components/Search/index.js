@@ -32,7 +32,7 @@ const Search = (props) => {
             name="keywords"
             className="search-form__input"
             component={customInputField}
-            autocomplete="off"
+            autoComplete="off"
             list="keywords-categories"
             type="text">
               <datalist id="keywords-categories">
@@ -52,7 +52,7 @@ const Search = (props) => {
             placeholder="location" 
             name="city"
             className="search-form__input"
-            autocomplete="off"
+            autoComplete="off"
             component={customInputField}
             type="text">
             </Field>
