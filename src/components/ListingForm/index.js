@@ -11,7 +11,6 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 
 import './listingForm.scss'
 
-
 const ListingForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props;
   const socialsArray = [faTwitter, faInstagram, faFacebook, faPinterest,
@@ -43,9 +42,15 @@ const ListingForm = (props) => {
                     component="select"
                     className='listing-form__input'>
                     <option />
-                    <option className='listing-form__input__select__value' value="hotel">hotel</option>
-                    <option className='listing-form__input__select__value' value="cafe">cafe</option>
-                    <option className='listing-form__input__select__value' value="restaurant">restaurant</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="hotel">hotel</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="cafe">cafe</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="restaurant">restaurant</option>
                   </Field>
                 </div>
               </div>
@@ -108,9 +113,15 @@ const ListingForm = (props) => {
                     name="segmentation"
                     component="select"
                     className='listing-form__input'>
-                    <option className='listing-form__input__select__value' value="KGS">KGS</option>
-                    <option className='listing-form__input__select__value' value="USD">USD</option>
-                    <option className='listing-form__input__select__value' value="EUR">EUR</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="KGS">KGS</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="USD">USD</option>
+                    <option
+                      className='listing-form__input__select__value'
+                      value="EUR">EUR</option>
                   </Field>
                 </div>
               </div>
@@ -203,7 +214,9 @@ const ListingForm = (props) => {
               </div>
               <div className='listing-social'>
                 {socialsArray.map((iconIndex) => (
-                  <div key={iconIndex.iconName} className='listing-social-wrapper'>
+                  <div
+                    key={iconIndex.iconName}
+                    className='listing-social-wrapper'>
                     <label className='listing-form__title'>{iconIndex.iconName}</label>
                     <div className='listing-social-form'>
                       <span className='listing-social__icon__wrapper'>
@@ -232,9 +245,15 @@ const ListingForm = (props) => {
                   component="select"
                   className='listing-form__input'>
                   <option />
-                  <option className='listing-form__input__select__value' value="tag">tag</option>
-                  <option className='listing-form__input__select__value' value="tag">tag</option>
-                  <option className='listing-form__input__select__value' value="tag">tag</option>
+                  <option
+                    className='listing-form__input__select__value'
+                    value="tag">tag</option>
+                  <option
+                    className='listing-form__input__select__value'
+                    value="tag">tag</option>
+                  <option
+                    className='listing-form__input__select__value'
+                    value="tag">tag</option>
                 </Field>
               </div>
             </div>
