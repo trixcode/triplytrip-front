@@ -16,6 +16,15 @@
     width: 83%;
     background-color: #FFFFFF;
     padding: 50px 60px;
+
+     @media screen and (max-width: 991px) {
+      width: 100%;
+      padding: 50px 60px;
+    }
+
+    @media screen and (max-width: 575px) {
+      padding: 50px 30px;
+    }
   }
    
   &__title {
@@ -33,10 +42,21 @@
     align-items: center;
     margin-bottom: 60px;
 
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+   
+
+    
+
     &-forms {
       display: flex;
       flex-direction: column;
       width: 45%;
+      @media screen and (max-width: 991px) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
     }
   
   } 
@@ -80,6 +100,9 @@
     height: 360px;
     background-color: rgb(195, 195, 195);
     position: relative;
+    @media screen and (max-width: 991px) {
+      width: 100%;
+    }
 
     &__arrow {
       z-index: 1;
@@ -89,6 +112,10 @@
       border: 20px solid transparent;	border-right: 20px solid #6586FC;;
       left: -40px;
       top: 210px;
+
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
     }
   }
 
@@ -99,11 +126,19 @@
       justify-content: space-between;
       flex-direction: row;
       width: 100%;
+
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+      }
     }
 
     &-form {
       width: 32%;
       margin-bottom: 30px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
     }
   }
 
@@ -139,8 +174,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1000px;
+    width: 90%;
     height: 150px;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+    }
+
     &__text {
       font-size: 1.3em;
       color: #C1C1C1;
@@ -155,8 +195,11 @@
     &__wysiwyg {
       background-color: #F8F8F8;
       border: 1px dashed #C1C1C1;
-      width: 1000px;
+      width: 90%;
       height: 460px;
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
     }
   }
   &__information__text {
@@ -176,12 +219,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
 
     &-wrapper {
       display: flex;
       flex-direction: column;
       width: 48%;
       margin-bottom: 30px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
     }
 
     &-form {
@@ -255,6 +305,13 @@
       color: white;
       font-size: 1.3em;
       background-color: #E03E53;
+
+      @media screen and (max-width: 767px) {
+        width: 50%;
+      }
+      @media screen and (max-width: 575px) {
+        width: 100%;
+      }
       &:hover {
         cursor: pointer;
       }
