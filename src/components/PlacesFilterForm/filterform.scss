@@ -5,6 +5,7 @@
     width: 100%;
     @include displayFlexCenter;
     align-items: center;
+    margin-top: 80px;
 
     &-wrapper {
         display: flex;

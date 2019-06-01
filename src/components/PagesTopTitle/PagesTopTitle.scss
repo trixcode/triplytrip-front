@@ -3,13 +3,21 @@
 
 
 .pages-top-subheader {
-    margin-bottom: 60px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #895FCD;
+    background-color: rgb(81, 51, 177);
     box-shadow: -10px 7px 20px rgba(85, 85, 85, 0.5);
+
+    &__img {
+        position: absolute;
+        opacity: 0.3;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 
     &-wrapper {
         height: 260px;
@@ -34,6 +42,7 @@
     }
 
     &__link {
+        font-weight: bold;
         font-size: 0.8em;
         text-transform: uppercase;
         color: rgb(211, 196, 238);

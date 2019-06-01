@@ -11,6 +11,7 @@ import Subscribe from '../src/components/Subscribe/index'
 import TopContent from '../src/components/TopContent'
 import UpcommingEventsContainer from '../src/containers/UpcommingEvents';
 import Footer from '../src/components/Footer';
+
 import "../src/assets/styles/main.scss";
 import "../src/components/Header/header.scss";
 
