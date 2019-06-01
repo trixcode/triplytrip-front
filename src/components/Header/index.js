@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import './header.scss';
 import BurgerMenu from '../BurgerMenu'
+import ModalWindow from '../ModalWindow';
+
 
 
 const Header = () => {
@@ -53,8 +55,8 @@ const Header = () => {
 
             <div className="header-actions">
               <button className="header-actions-button">+ Add Listing</button>
-              <a className="header-actions-link" href="#">icon</a>
-              <a className="header-actions-link" href="#">icon</a>
+              <ModalWindow />
+              
             </div>
           </nav>
           
