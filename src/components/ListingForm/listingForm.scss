@@ -78,12 +78,14 @@
     }
 
     &__input {
+      border: 1px solid rgb(200, 200, 200);
       padding-left: 10px;
       width: 100%;
       height: 50px;
       background-color: white;
       color: gray;
       font-size: 1.2em;
+      
 
       &__select__value {
         text-transform: capitalize;
@@ -327,9 +329,15 @@
 }
 
 
+input:focus {
+  border: 1px solid rgb(173, 2, 253);
+}
 
-
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 
 
