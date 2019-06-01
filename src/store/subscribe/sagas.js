@@ -8,7 +8,7 @@ import * as actionTypes from './actionTypes';
 
 export function* createSubscribesRequest(requestParams) {
   try {
-    const response = yield call(api.POST, 'subscribes', {params: requestParams});
+    const response = yield call(api.POST, 'subscribes', requestParams);
     yield put(actions.createSubscribesSuccess(response));
   } catch (responseError) {
     yield put(actions.createSubscribesFailure(responseError));
