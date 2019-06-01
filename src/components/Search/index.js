@@ -19,7 +19,7 @@ const Search = (props) => {
 
   useEffect(() => {
     getCategoriesStart();
-    getCitiesStart()
+    getCitiesStart();
   }, []);
 
   return (

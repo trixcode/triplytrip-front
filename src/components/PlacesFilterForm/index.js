@@ -15,31 +15,31 @@ const PlacesFilterForm = props => {
   const [distanceValue, setValue] = useState(10)
 
   const checkCity = () => {
-    if (router.query.location === 'bishkek') {
+    if (router.query.location === 'bishkek' || 'Bishkek') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=1')
     }
-    if (router.query.location === 'osh') {
+    if (router.query.location === 'osh' || 'Osh') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=2')
     }
-    if (router.query.location === 'kant') {
+    if (router.query.location === 'kant' || 'Kant') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=3')
     }
-    if (router.query.location === 'karakol') {
+    if (router.query.location === 'karakol' || 'Karakol') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=4')
     }
-    if (router.query.location === 'jalal-abad') {
+    if (router.query.location === 'jalal-abad' || 'Jalal-abad') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=5')
     } 
-    if (router.query.location === 'batken') {
+    if (router.query.location === 'batken' || 'Batken') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=6')
     } 
-    if (router.query.location === 'tokmok') {
+    if (router.query.location === 'tokmok' || 'Tokmot') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=7')
     } 
-    if (router.query.location === 'naryn') {
+    if (router.query.location === 'naryn' || 'Naryn') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=8')
     } 
-    if (router.query.location === 'talas') {
+    if (router.query.location === 'talas' || 'Talas') {
       getPlacesStart('isOpen=true&_limit=12&citiesId=9')
     }    
     else {
