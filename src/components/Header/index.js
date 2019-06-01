@@ -52,7 +52,9 @@ const Header = () => {
             </ul>
 
             <div className="header-actions">
-              <button className="header-actions-button">+ Add Listing</button>
+              <Link href={`/addListing/`}>
+                <button className="header-actions-button">+ Add Listing</button>
+              </Link>
               <a className="header-actions-link" href="#">icon</a>
               <a className="header-actions-link" href="#">icon</a>
             </div>

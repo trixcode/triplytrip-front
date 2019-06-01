@@ -66,16 +66,16 @@ const DetailPostTop = (props) => {
                   </div>
                 </div>
               </div>
-              <div className='detail-post-top-place-interactive'>
+              <ul className='detail-post-top-place-interactive'>
                 {interactiveIconsArr.map(key => (
-                  <p
+                  <li
                     key={key.iconName}
                     className={'detail-post-top-place-interactive__icon' + ` interactive__icon__${key.iconName}`}>
                     <FontAwesomeIcon
                     icon={key} />
-                  </p>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
