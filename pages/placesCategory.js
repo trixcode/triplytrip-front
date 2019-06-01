@@ -12,7 +12,7 @@ const PlacesCategory = () => {
     <Fragment>
       <Header />
       <PagesTopTitle 
-        title='Add Listing'
+        title='London'
         link={['HOME', 'category', 'bishkek']}/>
       <PlacesFilterFormContainer />
         <Footer text="Footer"/>
