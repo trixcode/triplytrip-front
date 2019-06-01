@@ -54,19 +54,14 @@ const Header = () => {
             </ul>
 
             <div className="header-actions">
-              <Link href={`/addListing/`}>
+              <Link href={`/addListing`}>
                 <button className="header-actions-button">+ Add Listing</button>
               </Link>
               <ModalWindow />
             </div>
           </nav>
-          
-       
         </div>
-
       </div>
-
-
     </header>
   )
 }

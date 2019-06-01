@@ -93,10 +93,10 @@ const ListingForm = (props) => {
                 }}
                 defaultZoom={11}>
                 {/* <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          /> */}
+                  lat={59.955413}
+                  lng={30.337844}
+                  text="My Marker"
+                /> */}
               </GoogleMapReact>
             </div>
           </div>
@@ -167,10 +167,20 @@ const ListingForm = (props) => {
 
           <div className='listing-forms-wrapper'>
             <h3 className='listing__title'>listing content</h3>
-            <Field
-              className='listing-content__wysiwyg'
-              name="wysiwyg"
-              component="textarea" />
+            <div className='listing-form'>
+              <label className='listing-form__title'>short description</label>
+              <Field
+                className='listing-content__wysiwyg listing-content__wysiwyg_short'
+                name="extraDescription"
+                component="textarea" />
+            </div>
+            <div className='listing-form'>
+              <label className='listing-form__title'>full description</label>
+              <Field
+                className='listing-content__wysiwyg'
+                name="description"
+                component="textarea" />
+            </div>
           </div>
 
           <div className='listing-forms-wrapper'>
