@@ -14,7 +14,7 @@ const PlacesCategory = () => {
     <Fragment>
       <Header />
       <PagesTopTitle 
-        title='Add Listing'
+        title='London'
         link={['HOME', 'category', 'bishkek']}/>
       <PlacesFilterFormContainer />
       <PlacesFilterResult places={placesArr} />

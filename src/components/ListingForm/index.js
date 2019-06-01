@@ -21,8 +21,9 @@ const ListingForm = (props) => {
   return (
     <form onSubmit={handleSubmit} className='listing'>
       <div className='container'>
+        <div className='listing-wrapper'>
 
-        <div className='listing-location'>
+         <div className='listing-location'>
           <div className='listing-location-forms'>
             <div className='listing-form'>
               <label className='listing-form__title'>listing title</label>
@@ -306,7 +307,8 @@ const ListingForm = (props) => {
             Preview
           </button>
         </div>
-
+        
+        </div>
       </div>
     </form>
   )

@@ -4,7 +4,11 @@ const PagesTopTitle = props => {
 	const { title, link } = props;
 	return (
 		<div className='pages-top-subheader'>
-			<div className='container'>
+			<img 
+				src='https://img3.goodfon.com/original/1920x1200/5/5f/balcony-sky-bench-resort.jpg' 
+				alt='hotel' 
+				className='pages-top-subheader__img'/>
+				<div className='container'>
 				<div className='pages-top-subheader-wrapper'>
 					<h1
 						className='pages-top-subheader__title'>
