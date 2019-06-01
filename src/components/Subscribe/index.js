@@ -1,4 +1,5 @@
 import './subscribe.scss'
+import SubscribeFormContainer from '../../containers/SubscribeForm'
 
 const Subscribe = () => {
     return (
@@ -28,17 +29,7 @@ const Subscribe = () => {
                         </p>
                     </div>
                 </div>
-                <form className='subscribe-form'>
-                    <input
-                        placeholder='Your Name'
-                        className='subscribe-form__input subscribe-form__input_name' />
-                    <input
-                        placeholder='Your Email'
-                        className='subscribe-form__input subscribe-form__input_email' />
-                    <button className='subscribe-form__button'>
-                        Subscribe Now
-                    </button>
-                </form>
+                <SubscribeFormContainer />
             </div>
         </section>
     );
