@@ -2,11 +2,14 @@
 import { Field, reduxForm } from 'redux-form';
 import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faInstagram, faFacebook, faPinterest,
-         faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
-         faTumblr, faFlickr, faWikipediaW, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faImage } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTwitter, faInstagram, faFacebook, faPinterest,
+  faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
+  faTumblr, faFlickr, faWikipediaW, faYoutube
+} from '@fortawesome/free-brands-svg-icons';
+import { faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Dropzone from 'react-dropzone';
+import React, { useState, useEffect } from 'react';
 
 
 import './listingForm.scss'
@@ -17,9 +20,14 @@ const ListingForm = (props) => {
     faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
     faTumblr, faFlickr, faWikipediaW, faYoutube,];
 
-  const handleDrob = (acceptedFiles) => {
-    console.log(acceptedFiles)
-  } 
+  const [logoImage, onDropLogo] = useState(null);
+  const [imageFiles, onDropImages] = useState([]);
+
+  const handleDrob = (logoFile) => {
+    onDropLogo(logoFile)
+
+    console.log(imageFiles)
+  }
 
   return (
     <form onSubmit={handleSubmit} className='listing'>
@@ -84,7 +92,7 @@ const ListingForm = (props) => {
               </div>
             </div>
             <div className='listing-google-map'>
-              <div className='listing-google-map__arrow' />
+
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: 'AIzaSyCUKPCvf0qLNJDOZipKnFGPOM-x-dAKKOg',
@@ -156,38 +164,76 @@ const ListingForm = (props) => {
 
           <div className='listing-forms-wrapper'>
             <h3 className='listing__title'>logo</h3>
-            <Dropzone onDrop={(acceptedFiles)=> handleDrob(acceptedFiles)}>
-              {({getRootProps, getInputProps}) => (
-               <div  
-                  className='listing-image-load listing-image-load__logo' 
+
+            <Dropzone
+              multiple={false}
+              noClick={logoImage ? true : false}
+              accept="image/*"
+              onDrop={(logoFile) => onDropLogo(logoFile)}>
+              {({ getRootProps, getInputProps }) => (
+                <div
+                  className='listing-image-load listing-image-load__logo'
                   {...getRootProps()}>
+                  <span
+                    onClick={() => onDropLogo(null)}
+                    style={{ display: !logoImage ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon_delet'> X </span>
                   <input
                     className='listing__drop__input'
                     name="logoDrop"
                     {...getInputProps()} />
+                  {logoImage && <img src={URL.createObjectURL(logoImage[0])} alt='logo' className='listing-image__logo' />}
                   <FontAwesomeIcon
-                    className='listing-image__icon'
+                    style={{ display: logoImage ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon'
                     icon={faImage} />
                 </div>
               )}
             </Dropzone>
 
-            <Dropzone onDrop={(acceptedFiles)=> handleDrob(acceptedFiles)}>
-              {({getRootProps, getInputProps}) => (
-               <div  
-                  className='listing-featured-image' 
+            
+           
+            
+            <Dropzone
+              noClick={true}
+              onDrop={(images) => onDropImages(imageFiles.concat(...images))}>
+              {({ getRootProps, getInputProps }) => (
+                <div 
+                  className='listing-featured-image'
                   {...getRootProps()}>
-                  <input
-                    className='listing__drop__input'
-                    name="logoDrop"
-                    {...getInputProps()} />
-                  <FontAwesomeIcon
-                    className='listing-image__icon'
-                    icon={faImage} />
-                  <span className='listing-featured-image__text'>Featured Image</span>
+                  
+                  {imageFiles.length > 0 && imageFiles.map((file, index) =>
+                    <div
+                      key={file.name}
+                      className='listing-image__files'>
+                      <span
+                        onClick={() => { imageFiles.splice(index, 1) }}
+                        className='listing-image__logo__icon_delet'> X </span>
+                      <img
+                        src={URL.createObjectURL(file)}
+                        alt='image'
+                        className='listing-image__files__file' />
+                    </div>
+                  )}
+                  <div 
+                    className='listing-featured__icon__wrapper'
+                    {...getRootProps()}>
+              
+                    <input
+                      className='listing__drop__input'
+                      name="logoDrop"
+                      {...getInputProps()} />
+                    <FontAwesomeIcon
+                      className='listing-image__files__icon '
+                      icon={faImage} />
+                    <span className='listing-featured-image__text'>Featured Image</span>
+                  </div>
                 </div>
               )}
-            </Dropzone>
+              </Dropzone>
+            
+
+
           </div>
 
           <div className='listing-forms-wrapper'>
