@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Header from '../src/components/Header';
+import HeaderContainer from '../src/containers/Header';
 import PagesTopTitle from '../src/components/PagesTopTitle';
 import PlacesFilterFormContainer from '../src/containers/PlacesFilterForm';
 import PlacesFilterResult from '../src/components/PlacesFilterResult';
@@ -10,7 +10,7 @@ import "../src/assets/styles/main.scss";
 const PlacesCategory = () => {
   return (
     <Fragment>
-      <Header />
+      <HeaderContainer />
       <PagesTopTitle 
         title='London'
         link={['HOME', 'category', 'bishkek']}/>

@@ -14,7 +14,16 @@ export default (state = initialState, action) => {
         ...state,
         events: action.response,
       };
-   
+      case actionTypes.GET_CATEGORIES_SUCCESS:
+      return {
+        ...state,
+        categories: action.response,
+      };
+    case actionTypes.GET_CITIES_SUCCESS:
+      return {
+        ...state,
+        cities: action.response,
+      };
     default:
       return state;
   }

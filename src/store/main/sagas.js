@@ -22,6 +22,37 @@ export function* watchGetTopDestinationsRequest() {
   }
 }
 
+export function* getCategoriesRequest(requestParams) {
+  try {
+    const response = yield call(api.GET, 'categories', {params: requestParams});
+    yield put(actions.getCategoriesSuccess(response));
+  } catch (responseError) {
+    yield put(actions.getCategoriesFailure(responseError));
+  }
+}
+export function* watchGetCategoriesRequest() {
+  while (true) {
+    const { requestParams } = yield take(actionTypes.GET_CATEGORIES_START);
+    yield call(getCategoriesRequest, requestParams);
+  }
+}
+
+export function* getCitiesRequest(requestParams) {
+  try {
+    const response = yield call(api.GET, 'cities', {params: requestParams});
+    yield put(actions.getCitiesSuccess(response));
+  } catch (responseError) {
+    yield put(actions.getCitiesFailure(responseError));
+  }
+}
+export function* watchGetCitiesRequest() {
+  while (true) {
+    const { requestParams } = yield take(actionTypes.GET_CITIES_START);
+    yield call(getCitiesRequest, requestParams);
+  }
+}
 export default function* () {
   yield fork(watchGetTopDestinationsRequest);
+  yield fork(watchGetCategoriesRequest);
+  yield fork(watchGetCitiesRequest);
 }

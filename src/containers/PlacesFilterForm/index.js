@@ -12,6 +12,8 @@ const formConfig = {
 }
 const mapStateToProps = (store) => ({
     places: store.places,
+    cities: store.main.cities,
+    categories: store.main.categories
 })
 const mapDispatchToProps = (dispatch) => ({
     changeFormValue: (field, value) => dispatch(change('PlacesFilterForm', field, value)),

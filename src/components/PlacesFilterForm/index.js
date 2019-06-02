@@ -8,50 +8,24 @@ import './filterform.scss';
 import { customInputField } from '../CustomFields';
 
 const PlacesFilterForm = props => {
-  const { router, handleSubmit, changeFormValue, getPlacesStart, places } = props;
-  console.log(router)
+  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
-  const [distanceValue, setValue] = useState(10)
+  const [distanceValue, setValue, useLayoutEffect] = useState(10)
+
+  const { keywords, location } = router.query
 
   const checkCity = () => {
-    if (router.query.location === 'bishkek' || 'Bishkek') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=1&q=${router.query.keywords}`)
-    }
-    if (router.query.location === 'osh' || 'Osh') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=2&q=${router.query.keywords}`)
-    }
-    if (router.query.location === 'kant' || 'Kant') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=3&q=${router.query.keywords}`)
-    }
-    if (router.query.location === 'karakol' || 'Karakol') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=4&q=${router.query.keywords}`)
-    }
-    if (router.query.location === 'jalal-abad' || 'Jalal-abad') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=5&q=${router.query.keywords}`)
-    } 
-    if (router.query.location === 'batken' || 'Batken') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=6&q=${router.query.keywords}`)
-    } 
-    if (router.query.location === 'tokmok' || 'Tokmot') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=7&q=${router.query.keywords}`)
-    } 
-    if (router.query.location === 'naryn' || 'Naryn') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=8&q=${router.query.keywords}`)
-    } 
-    if (router.query.location === 'talas' || 'Talas') {
-      getPlacesStart(`isOpen=true&_limit=12&citiesId=9&q=${router.query.keywords}`)
-    }    
-    else {
-      getPlacesStart('isOpen=true&_limit=12')
-    }
+    const currentLocation = location.charAt(0).toUpperCase() + location.slice(1)
+    const citiId = cities.find(city => city.name === currentLocation ? city.id : '')
+    getPlacesStart(`isOPen=true&_limit=12&citiesId=${citiId && citiId.id}&q=${keywords === 'undefined' ? '' : keywords}`)
   }
 
   useEffect(() => {
-    changeFormValue('keywords', router.query.keywords)
-    changeFormValue('location', router.query.location)
+    changeFormValue('keywords', keywords)
+    changeFormValue('location', location)
     checkCity()
-  }, []);
+  });
 
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
     'coffe', 'ckin care', 'spa', 'parking street',

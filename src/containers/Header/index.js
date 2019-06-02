@@ -1,15 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
 
 import {getCategoriesStart, getCitiesStart} from '../../store/actions';
-import Search from '../../components/Search';
+import Header from '../../components/Header'
 
-const SearchContainer = (props) => <Search {...props} />;
-
-const formConfig = {
-  form: 'Search',
-}
+const HeaderContainer = (props) => <Header {...props} />
 
 const mapStateToProps = (store) => ({
     categories: store.main.categories,
@@ -21,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   getCitiesStart: (requestParams='') => dispatch(getCitiesStart(requestParams))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(SearchContainer))
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)
