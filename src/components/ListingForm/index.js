@@ -22,6 +22,7 @@ const ListingForm = (props) => {
 
   const [logoImage, onDropLogo] = useState(null);
   const [imageFiles, onDropImages] = useState([]);
+  const [removed, onRemove] = useState([])
 
   const handleDrob = (logoFile) => {
     onDropLogo(logoFile)
@@ -164,7 +165,6 @@ const ListingForm = (props) => {
 
           <div className='listing-forms-wrapper'>
             <h3 className='listing__title'>logo</h3>
-
             <Dropzone
               multiple={false}
               noClick={logoImage ? true : false}
@@ -191,23 +191,17 @@ const ListingForm = (props) => {
               )}
             </Dropzone>
 
-            
-           
-            
             <Dropzone
-              noClick={true}
+              accept="image/*"
               onDrop={(images) => onDropImages(imageFiles.concat(...images))}>
               {({ getRootProps, getInputProps }) => (
-                <div 
-                  className='listing-featured-image'
-                  {...getRootProps()}>
-                  
+                <div className='listing-featured-image'>
                   {imageFiles.length > 0 && imageFiles.map((file, index) =>
                     <div
-                      key={file.name}
+                      key={index}
                       className='listing-image__files'>
                       <span
-                        onClick={() => { imageFiles.splice(index, 1) }}
+                        onClick={() => onRemove(imageFiles.splice(index, 1))}
                         className='listing-image__logo__icon_delet'> X </span>
                       <img
                         src={URL.createObjectURL(file)}
@@ -215,10 +209,9 @@ const ListingForm = (props) => {
                         className='listing-image__files__file' />
                     </div>
                   )}
-                  <div 
-                    className='listing-featured__icon__wrapper'
-                    {...getRootProps()}>
-              
+                  <div
+                    {...getRootProps()}
+                    className='listing-featured__icon__wrapper'>
                     <input
                       className='listing__drop__input'
                       name="logoDrop"
@@ -230,10 +223,7 @@ const ListingForm = (props) => {
                   </div>
                 </div>
               )}
-              </Dropzone>
-            
-
-
+            </Dropzone>
           </div>
 
           <div className='listing-forms-wrapper'>
