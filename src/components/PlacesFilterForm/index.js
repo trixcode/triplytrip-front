@@ -2,30 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames'
 import PlaceCard from '../PlaceCard'
 import './filterform.scss';
 import { customInputField } from '../CustomFields';
 
 const PlacesFilterForm = props => {
-  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities } = props;
+  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities, myValues } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
-  const [distanceValue, setValue, useLayoutEffect] = useState(10)
+  const [distanceValue, setValue] = useState(10)
 
   const { keywords, location } = router.query
 
+  const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords
+  const locationChanged = myValues.location === undefined ? '' : myValues.location
+
   const checkCity = () => {
-    const currentLocation = location.charAt(0).toUpperCase() + location.slice(1)
-    const citiId = cities.find(city => city.name === currentLocation ? city.id : '')
-    getPlacesStart(`isOPen=true&_limit=12&citiesId=${citiId && citiId.id}&q=${keywords === 'undefined' ? '' : keywords}`)
+    const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
+    const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : '')
+    getPlacesStart(`isOPen=true&_limit=12&${citiId === undefined ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`}&q=${keywordsChanged}`)
   }
 
   useEffect(() => {
-    changeFormValue('keywords', keywords)
-    changeFormValue('location', location)
     checkCity()
   });
+  useEffect(() => {
+    changeFormValue('keywords', keywords)
+    changeFormValue('location', location)
+  }, [])
+
 
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
     'coffe', 'ckin care', 'spa', 'parking street',
@@ -149,7 +154,7 @@ const PlacesFilterForm = props => {
           )}
         <div
           className='place-cards-wrapper'>
-          {places.places.slice(0, 8).map(placeObj => {
+          {places.places.map(placeObj => {
             return (
               <PlaceCard
                 key={placeObj.id}

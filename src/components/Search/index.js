@@ -13,8 +13,9 @@ const Search = (props) => {
 
   const { handleSubmit } = props;
   const onSubmitHandle = (formValues) => {
-    console.log(formValues)
-    Router.push(`/placesCategory?location=${formValues.city}&keywords=${formValues.keywords}`)
+    const emptyKeywords = formValues.keywords === undefined ? '' : formValues.keywords
+    const emptyCity = formValues.city === undefined ? '' : formValues.city
+    Router.push(`/placesCategory?location=${emptyCity}&keywords=${emptyKeywords}`)
   }
 
   useEffect(() => {
