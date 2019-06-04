@@ -449,8 +449,8 @@
         }
         &-subscribe {
             button {
-                bottom: 17px;
-                right: 17px;
+                bottom: 12px;
+                right: 25px;
             }
         }
     }
@@ -621,7 +621,7 @@
         }
         &-subscribe {
             button {
-                bottom: 28px;
+                bottom: 12px;
                 right: 35px;
             }
         }
@@ -633,10 +633,6 @@
         justify-content: space-between;
         .sidebars-form-wrapper {
             width: 48%;
-            div {
-                input {
-                }
-            }
         }
         &-map {
             height: 300px;

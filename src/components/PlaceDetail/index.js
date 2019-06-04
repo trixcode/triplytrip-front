@@ -1,10 +1,12 @@
 import './placeDetail.scss';
 import { useState, useEffect } from 'react';
+import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 import PlaceDetailContactFormContainer from '../../containers/PlaceDetailContactForm';
+
 function isEmpty(obj) {
   for(var key in obj) {
       if(obj.hasOwnProperty(key))
@@ -169,8 +171,7 @@ const PlaceDetail = (props) => {
             <div className="sidebars-title">
               <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Subscribe</h5>
             </div>
-            <span>Subscribe us and never miss our new<br /> articles</span><br />
-            <input type="email" placeholder="Enter Your Email" /><button><FontAwesomeIcon icon={faTelegramPlane} /></button>
+           <SubscribeArticlesContainer />
           </div>
         </aside>
       </div>

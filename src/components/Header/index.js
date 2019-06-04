@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import Link from 'next/link'
 import './header.scss';
 import BurgerMenu from '../BurgerMenu'
@@ -5,8 +7,15 @@ import ModalWindow from '../ModalWindow';
 
 
 
-const Header = () => {
+const Header = (props) => {
   
+  const {getCategoriesStart, getCitiesStart, cities, categories} = props
+
+  useEffect(() => {
+    getCategoriesStart()
+    getCitiesStart()
+  }, []);
+
   return (
     <header className="header">
       <div className="container">

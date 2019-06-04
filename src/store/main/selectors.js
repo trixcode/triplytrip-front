@@ -1,6 +1,7 @@
 export const initialState = {
   topDestinations: [],
-  events: [],
+  categories: [],
+  cities: [],
 };
 
 export const getState = (state = initialState) => state || initialState;

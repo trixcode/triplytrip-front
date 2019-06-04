@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import DiscoverContainer from '../src/containers/Discover';
 import LatestNewsContainer from '../src/containers/LatestNews';
 
-import Header from '../src/components/Header';
+import HeaderContainer from '../src/containers/Header';
 import HomeCategory from '../src/components/HomeCategory'
 import SearchContainer from '../src/containers/Search'
 import PlacesContainer from '../src/containers/Places'
@@ -21,7 +21,7 @@ import "../src/components/Header/header.scss";
 function Home() {
   return (
     <Fragment>
-      <Header />
+      <HeaderContainer />
       <div className="header-gradient-wrapper">
         <hr className="header-border" />
         <TopContent />
