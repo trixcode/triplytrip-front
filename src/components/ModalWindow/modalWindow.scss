@@ -129,13 +129,27 @@
     font-size: 24px;
     font-weight: 400;
   }
-  .modal-tabs--button:focus,
-  .modal-tabs--button:hover{
-    // border-color: currentColor;
-    background: none;
+  // .modal-tabs--button:focus,
+  // .modal-tabs--button:hover{
+  //   // border-color: currentColor;
+  //   background: none;
+  //   color: #6585fd;
+  // }
+  .modal-tabs__sign-in{
     color: #6585fd;
+  background: #ffffff;
+  }
+  .modal-tabs__sign-up:hover,
+  .moda-tabs__sign-up:focus{
+    color: #6585fd;
+  background: #ffffff;
   }
 }
+// .modal-tabs__sign-in:focus,
+// .modal-tabs__sign-in:hover{
+//   color: #6585fd;
+//   background: #ffffff;
+// }
 
 .modal-extra{
   width: 100%;
