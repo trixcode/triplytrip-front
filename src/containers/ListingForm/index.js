@@ -13,7 +13,6 @@ const validate = createValidator({
     categoriesId: [required],
     address: [required],
     citiesId: [required],
-    phone: [required, phone],
 });
 const formConfig = {
     form: 'ListingForm',

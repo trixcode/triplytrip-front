@@ -24,7 +24,7 @@ const ListingForm = (props) => {
   const [logoImage, onDropLogo] = useState(null);
   const [imageFiles, onDropImages] = useState([]);
   const [removed, onRemove] = useState([])
-  const [listingGallery, onDropGallery ] = useState(null)
+  const [listingGallery, onDropGallery] = useState(null)
 
   const handleCreate = (formValues) => {
     console.log(formValues, 'dadfssssssssssss')
@@ -94,7 +94,7 @@ const ListingForm = (props) => {
               </div>
             </div>
             <div className='listing-google-map'>
-{/* 
+              {/* 
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: 'AIzaSyCUKPCvf0qLNJDOZipKnFGPOM-x-dAKKOg',
@@ -181,13 +181,13 @@ const ListingForm = (props) => {
                     className='listing-image__logo__icon_delet'> X </span>
                   <Field
                     name="mainImage"
-                    component="label"> 
+                    component="label">
                     <input
                       className='listing__drop__input'
                       name="mainImage"
-                      {...getInputProps()} /> 
-                    </Field>
-                  
+                      {...getInputProps()} />
+                  </Field>
+
                   {logoImage && <img src={URL.createObjectURL(logoImage[0])} alt='logo' className='listing-image__logo' />}
                   <FontAwesomeIcon
                     style={{ display: logoImage ? 'none' : 'flex' }}
@@ -220,7 +220,7 @@ const ListingForm = (props) => {
                     className='listing-featured__icon__wrapper'>
                     <Field
                       name="images"
-                      component="label"> 
+                      component="label">
                       <input
                         className='listing__drop__input'
                         name="images"
@@ -256,7 +256,7 @@ const ListingForm = (props) => {
                 /> */}
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg'
-                name="Description"
+                name="description"
                 component="textarea" />
             </div>
           </div>
@@ -348,34 +348,34 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-          <label className='listing-form__title'>listing gallery</label>
+            <label className='listing-form__title'>listing gallery</label>
             <Dropzone
-                multiple={false}
-                noClick={listingGallery ? true : false}
-                accept="image/*"
-                onDrop={(logoFile) => onDropGallery(logoFile)}>
-                {({ getRootProps, getInputProps }) => (
-                  <div
-                    className='listing-image-load'
-                    {...getRootProps()}>
-                    <span
-                      onClick={() => onDropGallery(null)}
-                      style={{ display: !listingGallery ? 'none' : 'flex' }}
-                      className='listing-image__logo__icon_delet'> X </span>
-                    <input
-                      className='listing__drop__input'
-                      name="logoDrop"
-                      {...getInputProps()} />
-                    {listingGallery && <img src={URL.createObjectURL(listingGallery[0])} alt='logo' className='listing-image__logo' />}
-                    <FontAwesomeIcon
-                      style={{ display: listingGallery ? 'none' : 'flex' }}
-                      className='listing-image__logo__icon'
-                      icon={faImage} />
-                  </div>
-                )}
-              </Dropzone>
-           </div>
-          
+              multiple={false}
+              noClick={listingGallery ? true : false}
+              accept="image/*"
+              onDrop={(logoFile) => onDropGallery(logoFile)}>
+              {({ getRootProps, getInputProps }) => (
+                <div
+                  className='listing-image-load'
+                  {...getRootProps()}>
+                  <span
+                    onClick={() => onDropGallery(null)}
+                    style={{ display: !listingGallery ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon_delet'> X </span>
+                  <input
+                    className='listing__drop__input'
+                    name="logoDrop"
+                    {...getInputProps()} />
+                  {listingGallery && <img src={URL.createObjectURL(listingGallery[0])} alt='logo' className='listing-image__logo' />}
+                  <FontAwesomeIcon
+                    style={{ display: listingGallery ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon'
+                    icon={faImage} />
+                </div>
+              )}
+            </Dropzone>
+          </div>
+
 
           <div className='listing-forms-wrapper'>
             <h3 className='listing__title'>open table</h3>
