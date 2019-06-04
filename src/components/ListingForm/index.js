@@ -329,7 +329,7 @@ const ListingForm = (props) => {
               <label className='listing-form__title'>Listing tags</label>
               <div >
                 <Field
-                  name="Listing-tags"
+                  name="listingTags"
                   component="select"
                   className='listing-form__input'>
                   <option />
@@ -376,7 +376,6 @@ const ListingForm = (props) => {
             </Dropzone>
           </div>
 
-
           <div className='listing-forms-wrapper'>
             <h3 className='listing__title'>open table</h3>
             <div className='listing-row-inputs-form'>
@@ -384,7 +383,7 @@ const ListingForm = (props) => {
               <div >
                 <Field
                   className='listing-form__input'
-                  name="restaurant-name"
+                  name="restaurantName"
                   component="input"
                   type="text" />
               </div>
@@ -399,7 +398,7 @@ const ListingForm = (props) => {
                 <div >
                   <Field
                     className='listing-form__input'
-                    name="description"
+                    name="couponDescription"
                     component="input"
                     type="text" />
                 </div>
@@ -409,7 +408,7 @@ const ListingForm = (props) => {
                 <div >
                   <Field
                     className='listing-form__input'
-                    name="Coupon-code"
+                    name="couponCode"
                     component="input"
                     type="text" />
                 </div>
@@ -419,7 +418,7 @@ const ListingForm = (props) => {
                 <div >
                   <Field
                     className='listing-form__input'
-                    name="referral-link"
+                    name="referralLink"
                     component="input"
                     type="text" />
                 </div>
