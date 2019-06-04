@@ -1,45 +1,34 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import { Field } from 'redux-form';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-import './modalWindow.scss';
+import { setDefaultResponseStatuses } from '../../store/actions';
+import './successModal.scss';
 
 
-const SuccessModal = (props) => {
-  const [showModal, setIsShowModal] = useState(false);
-  
-
+const SuccessModal = ({responseStatuses, setDefaultResponseStatusesAction}) => {
   return (
-
-    <div className="modal">
-
-
-      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}><FontAwesomeIcon
-        className='model-open__user'
-        icon={faUser} /></button>
-
-      {/* <Field 
-            placeholder='Email Address'
-            className='modal-form__input'
-            type="text"
-          /> */}
-      <Modal
-        className="modal-container"
-        isOpen={showModal}
-        // contentLabel="onRequestClose Example"
-        onRequestClose={() => setIsShowModal(!showModal)}
-        overlayClassName="Overlay"
-      >
-
-        <button className="modal-close-button" onClick={() => setIsShowModal(!showModal)}>Close Modal</button>
-      
-          <div>a</div>
-      </Modal>
-    </div>
+    <Modal
+      className="modal-container"
+      isOpen={responseStatuses.isOpen}
+      // contentLabel="onRequestClose Example"
+      onRequestClose={setDefaultResponseStatusesAction}
+      overlayClassName="Overlay"
+    >
+      <button
+        className="modal-close-button"
+        onClick={setDefaultResponseStatusesAction}>
+        Close Modal
+      </button>
+    </Modal>
   )
 }
-
-export default SuccessModal;
+const mapStateToProps = (store) => ({
+  responseStatuses: store.main.responseStatuses,
+})
+const mapDispatchToProps = (dispatch) => ({
+  setDefaultResponseStatusesAction: () => dispatch(setDefaultResponseStatuses()),
+})
+export default connect(mapStateToProps, mapDispatchToProps)(SuccessModal);

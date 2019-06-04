@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
+import SuccessModal from '../SuccessModal';
 
 const SubscribeForm = (props) => {
   const { createSubscribesStart, handleSubmit } = props;
@@ -12,6 +13,7 @@ const SubscribeForm = (props) => {
     createSubscribesStart(formValues)
   }
   return (
+    <>
     <form className='subscribe-form' onSubmit={handleSubmit(onSubmitHandle)}>
         <Field
           name="name"
@@ -31,6 +33,8 @@ const SubscribeForm = (props) => {
         Subscribe Now
     </button>
     </form>
+    <SuccessModal />
+    </>
   )
 }
 
