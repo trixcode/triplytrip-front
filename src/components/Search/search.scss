@@ -6,61 +6,64 @@
 .search-wrapper{
   background: rgb(94,136,233);
   background: linear-gradient(90deg, rgba(94,136,233,1) 0%, rgba(55,202,224,1) 100%);
-  height: 90px;
   display: flex;
   justify-content: center;
   @media screen and (max-width: 768px) {
-  height: 135px;
+  height: 250px;
   }
       
 }
 .search-form{
     display: flex;
     justify-content: space-around;
+    padding: 20px;
     width: 100%;
     @media screen and (max-width: 768px) {
     flex-direction: column;
-    height: 30px;
+    padding: 0;
   }
 }
 .search-form__places{
   position: relative;
   width: 100%;
   margin-right: 10px;
-  margin-bottom: 1
+  margin-bottom: 15px;
 
  }
  .search-form__location{
   position: relative;
-  height: 55px;
   width: 100%;
   margin-right: 10px;
+  margin-bottom: 15px;
 
  }
 .search-form__input{
   width: 100%;
-  height: 55px;
   background: none;
   border: 1px white solid;
-  padding: 0;
+  padding: 15px;
   color: #fff;
   padding-left: 10px;
   font-size: 18px;
 
   @media screen and (max-width: 768px) {
-    height: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    padding: 12px;
   }
 }
 .search-form__input::placeholder{
 color: #ffffff;
 font-family: "Varela Round";
 font-weight: 400;
+
+@media screen and (max-width: 768px) {
+  flex-direction: column;
+}
 }
 .search-form__button{
   vertical-align: middle;
-  width: 170px;
-  height: 54px;
+  width: 350px;
+  margin-bottom: 15px;
   background-color: #e03e53;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
@@ -68,15 +71,17 @@ font-weight: 400;
   font-weight: bold;
   text-transform: uppercase;
   border: #e03e53 1px solid;
+
   @media screen and (max-width: 768px) {
     width: 100%;
+    padding: 12px;
   }
 }
 
 .search-form__icon-search{
   position: absolute;
   right: 20px;
-  bottom: 15px;
+  bottom: 13px;
   height: 26px;
   opacity: 0.5;
   color: #ffffff;
@@ -85,15 +90,13 @@ font-weight: 400;
   line-height: 83.33px;
 
   @media screen and (max-width: 768px) {
-    font-size: 15px;
-    bottom: 10px;
-  height: 15px;
+    bottom: 22px;
   }
 }
 .search-form__icon-map{
   position: absolute;
   right: 20px;
-  bottom: 15px;
+  bottom: 13px;
   height: 26px;
   opacity: 0.5;
   color: #ffffff;
@@ -102,8 +105,6 @@ font-weight: 400;
   line-height: 83.33px;
 
   @media screen and (max-width: 768px) {
-    font-size: 15px;
-    bottom: 10px;
-    height: 15px;
+    bottom: 22px;
   }
 }
