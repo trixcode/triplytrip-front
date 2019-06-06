@@ -24,7 +24,7 @@ const HomeCategory = (props) => {
             </p>
             <span className="category-block__name">Hotel</span>
           </div>
-          <div className="category-block" onClick={() => pushToCategories('restauran')}>
+          <div className="category-block" onClick={() => pushToCategories('restaurant')}>
             <p className="category-block__icon__wrapper category__icon_hamburger">
               {<FontAwesomeIcon
                 className="category__icon"
