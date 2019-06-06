@@ -11,13 +11,13 @@ export function* createSubscribesRequest(requestParams) {
     const response = yield call(api.POST, 'subscribes', requestParams);
     yield put(actions.createSubscribesSuccess(response));
     yield put(mainActions.setResponseSuccessStatuses({
-      title: 'Bugaga',
-      message: 'Vse budet kruto!!!'
+      title: 'success!',
+      message: 'Your account has been created.'
     }));
   } catch (responseError) {
     yield put(actions.createSubscribesFailure(responseError));
     yield put(mainActions.setResponseFailureStatuses({
-      title: 'ERROR',
+      title: 'Error!',
       message: responseError.message
     }));
   }

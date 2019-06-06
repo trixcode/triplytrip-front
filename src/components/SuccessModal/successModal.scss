@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .modal-content__title {
@@ -36,6 +37,9 @@
   color: #32be21;
   margin-top: 60px;
 }
+.error {
+  color: #d94c3c;
+}
 
 .modal-content-button {
   width: 210px;
@@ -57,9 +61,13 @@
   position: absolute;
   right: 15px;
   top: 15px;
+  cursor: pointer;
   &__icon {
     font-size: 20px;
     color: #747474;
     opacity: 0.3;
   }
+}
+.try {
+  background-color: #d94c3c;
 }
