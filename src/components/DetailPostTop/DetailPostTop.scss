@@ -1,0 +1,191 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
+
+.detail-post-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 170px;
+  @media screen and (max-width: 575px) { 
+    margin-bottom: 240px;
+  }
+
+  &_image_wrapper {
+    width: 100%;
+    height: 515px;
+  }
+
+  &_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &-place {
+    width: 100%;
+    top: 430px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 991px) { 
+      top: 400px;
+    }
+    @media screen and (max-width: 575px) { 
+      top: 370px;
+    }
+    
+    &__name {
+      font-size: 2.2em;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 575px) { 
+        font-size: 1.7em;
+      }
+    }
+
+    &-wrapper {
+      box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.178);
+      background-color: rgb(255, 255, 255);
+      padding: 30px 32px;
+      min-width: 200px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media screen and (max-width: 575px) { 
+        padding: 20px 20px;
+      }
+    }
+
+    &-content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    
+      @media screen and (max-width: 991px) { 
+        flex-direction: column;
+      }
+    }
+    &-info {     
+      display: flex;
+      flex-direction: row;
+      
+      @media screen and (max-width: 575px) { 
+        flex-direction: column;
+      }
+      @media screen and (max-width: 991px) { 
+        margin-bottom: 20px;
+        justify-content: space-around;
+      }
+
+      &__text {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__detail {
+        color: rgb(146, 146, 146);
+        font-weight: 600;
+      }
+      &__rating {
+        display: flex;
+        align-items: center;
+
+        &__icons {
+          display: flex;
+          flex-direction: row;
+        }
+        &__icon {
+        width: 15px;
+        height: 15px;
+        color: rgb(182, 182, 182)
+        }
+        &__number {
+          margin-left: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          border-radius: 50%;
+          height: 25px;
+          width: 25px;
+          background-color: $placeCardYellow;
+        }
+      }
+      &__wrapper {
+        width: 120px;
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 991px) { 
+          align-items: flex-start;
+          width: 100%;
+        }
+        @media screen and (max-width: 575px) { 
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &-interactive {
+      display: flex;
+
+      &__icon {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        font-size: 1.4em;
+        justify-content: center;
+        align-items: center;        
+        background-color:#EBEBEB;
+        margin-right: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media screen and (max-width: 767px) { 
+          width: 40px;
+          height: 40px;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+.wrapper_right_line {
+  border-right: 1px solid #EBEBEB;
+  margin-right: 15px; 
+  @media screen and (max-width: 575px) { 
+    margin-right: 0px; 
+    border: none;
+  }
+}
+.interactive__icon {
+  &__user {
+    color: #7EAB4D;
+  }
+  &__user-friends {
+    color: #3FB0EC;
+  }
+  &__exclamation-triangle {
+    color: #FFBB01;
+  }
+  &__share-alt {
+    color: #A48BEE;
+  }
+  &__heart {
+    color: #F95454;
+  }
+  &__envelope {
+    color: #D8A889;
+  } 
+}

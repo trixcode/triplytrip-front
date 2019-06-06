@@ -17,9 +17,9 @@ export function* getArticleDetailRequest(articleList) {
 }
 
 
-export function* getArticleDetailByIdRequest(articleDetail) {
+export function* getArticleDetailByIdRequest(articleId) {
   try {
-    const response = yield call(api.GET, `articles/${articleDetail}`);
+    const response = yield call(api.GET, `articles/${articleId}`);
     yield put(actions.getArticleDetailByIdSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticleDetailByIdFailure(responseError));
@@ -38,8 +38,8 @@ export function* watchGetArticleDetailRequest() {
 
 export function* watchGetArticleDetailByIdRequest() {
   while (true) {
-    const { articleDetail } = yield take(actionTypes.GET_ARTICLE_DETAIL_BY_ID_START);
-    yield call(getArticleDetailByIdRequest, articleDetail);
+    const { articleId } = yield take(actionTypes.GET_ARTICLE_DETAIL_BY_ID_START);
+    yield call(getArticleDetailByIdRequest, articleId);
   }
 }
 

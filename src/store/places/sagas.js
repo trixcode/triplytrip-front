@@ -21,6 +21,21 @@ import {
     }
   }
 
+  export function* getPlaceDetailByIdRequest(placeId) {
+    try {
+      const response = yield call(api.GET, `places/${placeId}`, {params: '_expand=user'});
+      yield put(actions.getPlaceDetailByIdSuccess(response));
+    } catch (responseError) {
+      yield put(actions.getPlaceDetailByIdFailure(responseError));
+    }
+  }
+  export function* watchGetPlaceDetailByIdRequest() {
+    while (true) {
+      const { placeId } = yield take(actionTypes.GET_PLACE_DETAIL_BY_ID_START);
+      yield call(getPlaceDetailByIdRequest, placeId);
+    }
+  }
   export default function* () {
     yield fork(watchGetPlacesRequest);
+    yield fork(watchGetPlaceDetailByIdRequest);
   }

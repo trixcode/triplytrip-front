@@ -15,9 +15,9 @@ export const getArticleDetailFailure = (responseError) => ({
 });
 
 
-export const getArticleDetailByIdStart = (articleDetail) => ({
+export const getArticleDetailByIdStart = (articleId) => ({
   type: actionTypes.GET_ARTICLE_DETAIL_BY_ID_START,
-  articleDetail,
+  articleId,
 });
 export const getArticleDetailByIdSuccess = (response) => ({
   type: actionTypes.GET_ARTICLE_DETAIL_BY_ID_SUCCESS,

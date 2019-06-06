@@ -54,6 +54,7 @@
       .news-card__image {
         width: 100%;
         height: 239px;
+        object-fit: cover;
       }
       .news-card__date {
         position: absolute;
@@ -88,7 +89,7 @@
       }
     }
     .news-card-footer {
-      width: 330px;
+      width: 100%;
       height: 201px;
       .news-card__title {
         color: #232323;
@@ -113,7 +114,7 @@
       }
       .news-card__description {
         & p {
-          width: 320px;
+          width: 100%;
           height: 60px;
           color: #949494;
           font-family: 'Montserrat';
@@ -134,10 +135,14 @@
         border-radius: 20px;
         text-transform: uppercase;
         font-family: 'Montserrat';
-        }
+      }
+        .news-card-button:focus{
+          outline: none;
+         }
         .news-card-button:hover {
           border: 2px solid #e03e53;
           color: #e03e53;
+          cursor: pointer;
       }
     }
   }
@@ -150,6 +155,7 @@
     justify-content: center;
     .news-card {
       margin-bottom: 50px;
+      width: 300px;
     }
   }
 }

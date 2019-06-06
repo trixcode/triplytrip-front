@@ -8,6 +8,11 @@ export default (state = initialState, action) => {
           ...state,
           places: action.response,
         };
+      case actionTypes.GET_PLACE_DETAIL_BY_ID_SUCCESS:
+        return {
+          ...state,
+          placeDetail: action.response,
+        };
       default:
         return state;
     }

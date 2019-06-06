@@ -1,7 +1,7 @@
 import './articleSidebar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
 
 const ArticleSidebar = (props) => {
   return (
@@ -38,7 +38,7 @@ const ArticleSidebar = (props) => {
           <h4 className='article-sidebar-title__name'>latest news</h4>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
@@ -47,7 +47,7 @@ const ArticleSidebar = (props) => {
           </div>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
@@ -56,7 +56,7 @@ const ArticleSidebar = (props) => {
           </div>
         </div>
         <div className='article-sidebar-latest__news'>
-          <img className='article-sidebar-latest__news--image' src='static/latesNews.png' alt='' />
+          <img className='article-sidebar-latest__news--image' src='/static/latesNews.png' alt='' />
           <div className='article-sidebar-latest__news-text'>
             <a href='#' className='article-sidebar-latest__news-text--description'>
               15 restaurants in london and new york
@@ -71,13 +71,7 @@ const ArticleSidebar = (props) => {
           <div className='article-sidebar-title__boxSecond'></div>
           <h4 className='article-sidebar-title__name'>newsletter</h4>
         </div>
-        <span className='article-sidebar-newsletter__text'>
-          Subscribe us and never miss our new articles
-          </span>
-        <div className='article-sidebar-newsletter__input'>
-          <input className='article-sidebar-newsletter__input--email' placeholder='email address' />
-          <FontAwesomeIcon className='telegram-icon' icon={faTelegramPlane} />
-        </div>
+          <SubscribeArticlesContainer />
       </div>
     </aside>
   )

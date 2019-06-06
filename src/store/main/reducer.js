@@ -14,7 +14,46 @@ export default (state = initialState, action) => {
         ...state,
         events: action.response,
       };
-   
+    case actionTypes.GET_CATEGORIES_SUCCESS:
+      return {
+        ...state,
+        categories: action.response,
+      };
+    case actionTypes.GET_CITIES_SUCCESS:
+      return {
+        ...state,
+        cities: action.response,
+      };
+    case actionTypes.SET_DEFAULT_STATUSES:
+      return {
+        ...state,
+        responseStatuses: {
+          isSuccess: false,
+          isModalOpen: false,
+          message: '',
+          title: '',
+        },
+      };
+    case actionTypes.SET_RESPONSE_SUCCESS_STATUSES:
+      return {
+        ...state,
+        responseStatuses: {
+          isSuccess: true,
+          isOpen: true,
+          title: action.responseStatuses.title,
+          message: action.responseStatuses.message,
+        },
+      };
+    case actionTypes.SET_RESPONSE_FAILURE_STATUSES:
+      return {
+        ...state,
+        responseStatuses: {
+          isSuccess: false,
+          isOpen: true,
+          title: action.responseStatuses.title,
+          message: action.responseStatuses.message,
+        },
+      };
     default:
       return state;
   }

@@ -4,8 +4,7 @@ import './articleDescription.scss'
 
 
 const ArticleDescription = (props) => {
-  const { articleDetail, getArticleDetailByIdStartAction } = props;
-  console.log(articleDetail.tags)
+  const { articleDetail } = props;
   return (
     <section className='section-article-desctiption'>
       <div className='article-description-header'>
@@ -24,7 +23,7 @@ const ArticleDescription = (props) => {
         <span className='article-description-footer__tags'>
           <span className='bold'>Tags :</span>
           {articleDetail.tags && articleDetail.tags.map(tag => (
-            tag + ' '
+            ' ' + tag
           ))}
         
         </span>
