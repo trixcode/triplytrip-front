@@ -12,12 +12,12 @@ export function* createSubscribesRequest(requestParams) {
     yield put(actions.createSubscribesSuccess(response));
     yield put(mainActions.setResponseSuccessStatuses({
       title: 'success!',
-      message: 'Your account has been created.'
+      message: 'Your account has been subcribe.'
     }));
   } catch (responseError) {
     yield put(actions.createSubscribesFailure(responseError));
     yield put(mainActions.setResponseFailureStatuses({
-      title: 'Error!',
+      title: 'ooops!',
       message: responseError.message
     }));
   }

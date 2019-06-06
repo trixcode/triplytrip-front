@@ -12,22 +12,22 @@ import './successModal.scss';
 const SuccessModal = ({ responseStatuses, setDefaultResponseStatusesAction }) => {
   return (
     <Modal
-      className="modal-container"
+      className="modalSuccess-container"
       isOpen={responseStatuses.isOpen}
       onRequestClose={setDefaultResponseStatusesAction}
       overlayClassName="Overlay"
     >
-      <div className='modal-content'>
+      <div className='modalSuccess-content'>
         <button
-          className="modal-close"
+          className="modalSuccess-close"
           onClick={setDefaultResponseStatusesAction}>
           <FontAwesomeIcon
-            className='modal-close__icon'
+            className='modalSuccess-close__icon'
             icon={faTimes}
           />
         </button>
-        <h3 className='modal-content__title'>{responseStatuses.title}</h3>
-        <p className='modal-content__description'>
+        <h3 className='modalSuccess-content__title'>{responseStatuses.title}</h3>
+        <p className='modalSuccess-content__description'>
           {responseStatuses.message}
         </p>
         <div>
@@ -35,14 +35,14 @@ const SuccessModal = ({ responseStatuses, setDefaultResponseStatusesAction }) =>
             responseStatuses.isSuccess ?
               (
                 <FontAwesomeIcon
-                  className='modal-content__icon'
+                  className='modalSuccess-content__icon'
                   icon={faCheckCircle}
                 />
               )
               :
               (
                 <FontAwesomeIcon
-                  className='modal-content__icon error'
+                  className='modalSuccess-content__icon error'
                   icon={faTimesCircle}
                 />
               )
@@ -51,7 +51,7 @@ const SuccessModal = ({ responseStatuses, setDefaultResponseStatusesAction }) =>
         {responseStatuses.isSuccess ?
           (
             <button
-              className="modal-content-button"
+              className="modalSuccess-content-button"
               onClick={setDefaultResponseStatusesAction}>
               continue
             </button>
@@ -59,9 +59,9 @@ const SuccessModal = ({ responseStatuses, setDefaultResponseStatusesAction }) =>
           :
           (
             <button
-              className="modal-content-button try"
+              className="modalSuccess-content-button try"
               onClick={setDefaultResponseStatusesAction}>
-              try again
+              close
             </button>
           )
         }

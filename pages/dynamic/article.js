@@ -1,12 +1,11 @@
 import { Fragment } from 'react';
 import { useEffect } from 'react';
 import { withRouter } from 'next/router'
-
+import { connect } from 'react-redux';
 
 import ArticleDetailContainer from '../../src/containers/ArticleDetail';
-import DetailTitleContainer from '../../src/containers/DetailTitle';
 
-import { connect } from 'react-redux';
+import SuccessModal from '../../src/components/SuccessModal';
 import ArticleSidebar from '../../src/components/ArticleSidebar';
 import HeaderContainer from '../../src/containers/Header';
 import { getArticleDetailByIdStart } from '../../src/store/actions';
@@ -26,6 +25,7 @@ function ArticleDetail(props) {
         <div className="container article-container">
           <ArticleDetailContainer />
           <ArticleSidebar />
+          <SuccessModal />
         </div>
       </div>
     </Fragment>

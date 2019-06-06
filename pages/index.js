@@ -8,6 +8,7 @@ import HomeCategory from '../src/components/HomeCategory'
 import SearchContainer from '../src/containers/Search'
 import PlacesContainer from '../src/containers/Places'
 import Subscribe from '../src/components/Subscribe/index'
+import SuccessModal from '../src/components/SuccessModal';
 import TopContent from '../src/components/TopContent'
 import UpcommingEventsContainer from '../src/containers/UpcommingEvents';
 import Footer from '../src/components/Footer';
@@ -35,6 +36,7 @@ function Home() {
       <UpcommingEventsContainer />
       <LatestNewsContainer />
       <Subscribe />
+      <SuccessModal />
       <Footer text="Footer" />
     </Fragment>
   )

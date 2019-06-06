@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import HeaderContainer from '../../src/containers/Header';
 import PlaceDetailContainer from '../../src/containers/PlaceDetail';
 import DetailPostTop from '../../src/components/DetailPostTop'
+import SuccessModal from '../../src/components/SuccessModal';
 
 function Detail() {
   
@@ -10,6 +11,7 @@ function Detail() {
       <HeaderContainer />
       <DetailPostTop />
       <PlaceDetailContainer />
+      <SuccessModal />
     </Fragment>
   )
 }
