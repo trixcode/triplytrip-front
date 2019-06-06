@@ -17,11 +17,16 @@ const PlacesFilterForm = props => {
 
   const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords
   const locationChanged = myValues.location === undefined ? '' : myValues.location
+  const categoryChanged = myValues.categoriesForm
 
   const checkCity = () => {
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
     const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : null)
-    getPlacesStart(`isOPen=true&_limit=12&${!citiId ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`}&q=${keywordsChanged}`)
+    const categoryId = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : categories.find(category => category.name === categoryChanged ? category.id : '')
+    
+    const idOfCategory = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : `&categoriesId=${categoryId && categoryId.id}`
+    const idOfCity = !citiId ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`
+    getPlacesStart(`isOPen=true&_limit=12&${idOfCity}&q=${keywordsChanged}${idOfCategory}`)
   }
   const debouncedSearchTerm = useDebounce(myValues, 500);
 
@@ -34,6 +39,7 @@ const PlacesFilterForm = props => {
   useEffect(() => {
     changeFormValue('keywords', keywords)
     changeFormValue('location', location)
+    changeFormValue('categoriesForm', category)
   }, [])
 
 
@@ -79,7 +85,7 @@ const PlacesFilterForm = props => {
           <Field
             className='filter-form__select'
             component="select"
-            name="categorieslForm"
+            name="categoriesForm"
             >
             <option value="all categories">All categories</option>
             {categories.map(categories => (
