@@ -20,13 +20,17 @@ const PlacesFilterForm = props => {
 
   const checkCity = () => {
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
-    const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : '')
-    getPlacesStart(`isOPen=true&_limit=12&${citiId === undefined ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`}&q=${keywordsChanged}`)
+    const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : null)
+    getPlacesStart(`isOPen=true&_limit=12&${!citiId ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`}&q=${keywordsChanged}`)
   }
+  const debouncedSearchTerm = useDebounce(myValues, 500);
 
   useEffect(() => {
-    checkCity()
-  });
+    if (debouncedSearchTerm) {
+      checkCity()
+    }
+  }, [debouncedSearchTerm]);
+
   useEffect(() => {
     changeFormValue('keywords', keywords)
     changeFormValue('location', location)
