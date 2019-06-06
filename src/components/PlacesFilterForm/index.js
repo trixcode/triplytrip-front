@@ -5,14 +5,15 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import PlaceCard from '../PlaceCard'
 import './filterform.scss';
 import { customInputField } from '../CustomFields';
+import useDebounce from '../customHooks/useDebounce';
 
 const PlacesFilterForm = props => {
-  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities, myValues } = props;
+  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities, myValues, categories } = props;
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
 
-  const { keywords, location } = router.query
+  const { keywords, location, category } = router.query
 
   const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords
   const locationChanged = myValues.location === undefined ? '' : myValues.location
@@ -71,16 +72,16 @@ const PlacesFilterForm = props => {
             <option value="bbbb">bbbb</option>
             <option value="cccc">cccc</option>
           </select>
-          <select
+          <Field
             className='filter-form__select'
-            id="categorieslist"
-            form="categorieslform">
+            component="select"
+            name="categorieslForm"
+            >
             <option value="all categories">All categories</option>
-            <option value="hotels">Hotels</option>
-            <option value="restaurants">Restaurants</option>
-            <option value="bars">Bars</option>
-            <option value="clubs">Clubs</option>
-          </select>
+            {categories.map(categories => (
+              <option key={categories.id}>{categories.name}</option>
+            )) }
+          </Field>
         </form>
         <div className='filter-form-radius'>
           <div className='filter-form-radius__text__wrapper'>
