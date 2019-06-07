@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import Modal from 'react-modal';
 import { Field } from 'redux-form';
@@ -15,6 +15,12 @@ const ModalWindow = (props) => {
   const [isSignIn, setSignIn] = useState(true);
   const [isSignUp, setSignUp] = useState(false);
 
+
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
+
+
   const selectedClass = 'main-info-tabs__tab_selected'
   const defaultClass = ''
   return (
@@ -30,7 +36,7 @@ const ModalWindow = (props) => {
       <Modal
         className="modal-container"
         isOpen={showModal}
-        // contentLabel="onRequestClose Example"
+        contentLabel="onRequestClose Example"
         onRequestClose={() => setIsShowModal(!showModal)}
         overlayClassName="Overlay"
       >
