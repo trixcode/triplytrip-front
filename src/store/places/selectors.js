@@ -1,6 +1,10 @@
 export const initialState = {
     places: [],
-    placeDetail: {},
+    placeDetail: {
+      user: {
+        firstName: ''
+      }
+    },
   };
   
   export const getState = (state = initialState) => state || initialState;
