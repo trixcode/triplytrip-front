@@ -54,15 +54,17 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
   .footer-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @media screen and (max-width: 768px) { 
+
+    @media screen and (max-width: 768px) {
       display: flex;
       flex-direction: column;
       align-items: center;
-  }
+    }
   }
 }
 
@@ -85,19 +87,25 @@
   }
 }
 
-.footer-social-item{
+.footer-social-item {
   display: flex;
+
   .footer-social__list {
     .footer-social__icon {
       color: #ffffff;
       font-size: 45px;
       padding: 12px;
       float: right;
-      :hover {
-        color: red;
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
   }
-}
+  .footer-social__link {
+    width: 100%;
+    height: 100%;
+
+    :hover {
+      color: red;
+    }
+   }
+  }
 

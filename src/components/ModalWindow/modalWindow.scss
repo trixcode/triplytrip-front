@@ -40,8 +40,10 @@
 .modal-container {
   position: absolute;
   top: 16%;
-  left: 30%;
+  left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
   height: 76%;
   width: 40%;
   bottom: 51px;
