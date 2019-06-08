@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import Modal from 'react-modal';
 import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-
+import LoginFormContainer from '../../containers/LoginForm'
 import './modalWindow.scss';
+import RegisterFormContainer from '../../containers/RegisterForm';
 
 
 const ModalWindow = (props) => {
   const [showModal, setIsShowModal] = useState(false);
   const [isActive, setActive] = useState(false);
-  
+  const [isSignIn, setSignIn] = useState(true);
+  const [isSignUp, setSignUp] = useState(false);
 
+
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
+
+
+  const selectedClass = 'main-info-tabs__tab_selected'
+  const defaultClass = ''
   return (
 
     <div className="modal">
@@ -22,15 +32,11 @@ const ModalWindow = (props) => {
         className='model-open__user'
         icon={faUser} /></button>
 
-      {/* <Field 
-            placeholder='Email Address'
-            className='modal-form__input'
-            type="text"
-          /> */}
+
       <Modal
         className="modal-container"
         isOpen={showModal}
-        // contentLabel="onRequestClose Example"
+        contentLabel="onRequestClose Example"
         onRequestClose={() => setIsShowModal(!showModal)}
         overlayClassName="Overlay"
       >
@@ -39,57 +45,23 @@ const ModalWindow = (props) => {
         <div className="modal-wrapper">
           <div className="modal-tabs">
             <button
-              className="modal-tabs__sign-in modal-tabs--button"
+              className="modal-tabs--button"
               onClick={() => setActive(!isActive)}
+              classNames
             >
               Sign In</button>
             <button
-              className="modal-tabs__sign-up modal-tabs--button"
+              className="modal-tabs--button"
               onClick={() => setActive(!isActive)}
             >Sign Up</button>
           </div>
           {
             !isActive ? (
-              <div className="modal-sign-in">
-                <div className="modal-form-wrapper">
-                  <form className="modal-form">
-                    <span className="modal-form__input-name">Email Address <span className="modal-from__input-star">*</span></span>
-                    <input className="modal-form__input"></input>
-                    <span className="modal-form__input-name">Username<span className="modal-from__input-star">*</span></span>
-                    <input className="modal-form__input"></input>
-                    <span className="modal-form__input-name">Password<span className="modal-from__input-star">*</span></span>
-                    <input className="modal-form__input" type="password"></input>
-                    <button className="modal-form__button">Sign In</button>
-                  </form>
-
-                </div>
-                <span className="modal-extra">
-                  <span className="modal-extra__account modal-extra--button">Already have an account?</span>
-                  <span className="modal-extra__sign-in modal-extra--button">Sign In</span>
-                </span>
-              </div>
+              <LoginFormContainer />
             ) : (
-                <div className="modal-sign-up">
-                  <div className="modal-form-wrapper">
-                    <form className="modal-form">
-                      <span className="modal-form__input-name">Email Address <span className="modal-from__input-star">*</span></span>
-                      <input className="modal-form__input"></input>
-                      <span className="modal-form__input-name">Username<span className="modal-from__input-star">*</span></span>
-                      <input className="modal-form__input"></input>
-                      <span className="modal-form__input-name">Password<span className="modal-from__input-star">*</span></span>
-                      <input className="modal-form__input" type="password"></input>
-                      <button className="modal-form__button">Sign Up</button>
-                    </form>
-
-                  </div>
-                  <span className="modal-extra">
-                    <span className="modal-extra__account modal-extra--button">Already have an account?</span>
-                    <span className="modal-extra__sign-in modal-extra--button">Sign Up</span>
-                  </span>
-                </div>
-              )
+              <RegisterFormContainer />
+            )
           }
-
         </div>
 
       </Modal>

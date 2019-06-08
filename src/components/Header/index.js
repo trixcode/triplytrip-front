@@ -44,19 +44,10 @@ const Header = (props) => {
                 Listings
                 </a>
               </li>
-              <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Destinations
-                </a>
-              </li>
+              
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
                 Pages
-                </a>
-              </li>
-              <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Blog
                 </a>
               </li>
               <li className="header-navigation-list">|</li>

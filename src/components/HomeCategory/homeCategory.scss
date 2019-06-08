@@ -31,7 +31,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    &:hover {
+      cursor: pointer;
+    }
     &__icon__wrapper {
       height: 50px;
       width: 50px;

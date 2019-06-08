@@ -1,13 +1,7 @@
 node_modules
 .next
 build
-<<<<<<< HEAD
 .idea
 .DS_Store
-=======
-<<<<<<< HEAD
-.DS_Store
-=======
-.idea
->>>>>>> dev
->>>>>>> 2bcba3dbe80a01abdaa3b19417f879a3e247994b
+
+

@@ -4,14 +4,11 @@ import { customInputField } from '../CustomFields';
 
 const SubscribeForm = (props) => {
   const { createSubscribesStart, handleSubmit } = props;
-  // useEffect(() => {
-  //   createSubscribesStart();
-  // }, []);
   const onSubmitHandle = (formValues) => {
-    console.log(formValues)
     createSubscribesStart(formValues)
   }
   return (
+    <>
     <form className='subscribe-form' onSubmit={handleSubmit(onSubmitHandle)}>
         <Field
           name="name"
@@ -31,6 +28,7 @@ const SubscribeForm = (props) => {
         Subscribe Now
     </button>
     </form>
+    </>
   )
 }
 
