@@ -19,7 +19,7 @@ const PlaceDetail = (props) => {
   useEffect(() => {
     getPlaceDetailByIdStart(router.query.placeId)
   }, []);
-  // console.log(placeDetail)
+  console.log(placeDetail)
   const [isOverviewClicked, setOverview] = useState(true)
   const [isContactClicked, setContact] = useState(false)
   const [isReviewsClicked, setReview] = useState(false)
@@ -134,9 +134,9 @@ const PlaceDetail = (props) => {
           </div>
           <div className="sidebar-owner-contacts">
             <ul className="sidebar-owner-contacts-info">
-              <li><FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon" />Montana, USA</li>
+              <li><FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon" />Osh, Kyrgyzstan </li>
               <li><FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-owner-contacts-info__icon" />http://masttbigbreakfast.com/</li>
-              <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />+1234 567 8910</li>
+              <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />+996550951472</li>
             </ul>
             <ul className="sidebar-owner-contacts-networks">
               <li><div className="sidebar-facebook"><FontAwesomeIcon icon={faFacebookF} className="owner-contact-icon" /></div></li>
@@ -150,7 +150,7 @@ const PlaceDetail = (props) => {
             <div className="sidebars-title">
               <div><FontAwesomeIcon icon={faDollarSign} /></div><h5>Price Range</h5>
             </div>
-            <span>Price: </span><span className="sidebar-price__price"> $100 - $300</span>
+            <span>Price: </span><span className="sidebar-price__price"> $783 </span>
           </div>
           <div className="sidebar-contact-me">
             <div className="sidebars-title">
