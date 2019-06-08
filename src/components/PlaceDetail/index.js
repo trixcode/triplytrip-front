@@ -19,6 +19,7 @@ const PlaceDetail = (props) => {
   useEffect(() => {
     getPlaceDetailByIdStart(router.query.placeId)
   }, []);
+  // console.log(placeDetail)
   const [isOverviewClicked, setOverview] = useState(true)
   const [isContactClicked, setContact] = useState(false)
   const [isReviewsClicked, setReview] = useState(false)

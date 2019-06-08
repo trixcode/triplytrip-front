@@ -87,9 +87,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 .header-burger-actions{
   height: 30%;
+  width: 80%;
 }
 .header-burger-button{
-  width: 160px;
+  width: 100%;
+  margin-bottom: 10px;
   height: 43px;
   border: #fff 1px solid;
   border-radius: 3px;

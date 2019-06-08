@@ -7,7 +7,7 @@ import {
   faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
   faTumblr, faFlickr, faWikipediaW, faYoutube
 } from '@fortawesome/free-brands-svg-icons';
-import { faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faImage, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Dropzone from 'react-dropzone';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
@@ -16,23 +16,30 @@ import { EditorState } from 'draft-js';
 import './listingForm.scss'
 
 const ListingForm = (props) => {
+
   const { handleSubmit, pristine, createListingStart, submitting } = props;
   const socialsArray = [faTwitter, faInstagram, faFacebook, faPinterest,
     faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
     faTumblr, faFlickr, faWikipediaW, faYoutube,];
 
-  const [logoImage, onDropLogo] = useState(null);
-  const [imageFiles, onDropImages] = useState([]);
-  const [removed, onRemove] = useState([])
-  const [listingGallery, onDropGallery] = useState(null)
+  const [logoState, onDropLogo] = useState(null);
+  const [imageState, onDropImages] = useState([]);
+  const [galleryState, onDropGallery] = useState(null)
 
-  const handleCreate = (formValues) => {
-    console.log(formValues, 'dadfssssssssssss')
+  const handleListingCreate = (formValues) => {
+    formValues.mainImage = logoState
+    formValues.images = imageState
+    formValues.galleryimage = galleryState
     createListingStart(formValues)
   }
+  const handleDropImages = (images) => imageState.concat(...images);
+
+  const deletImage = (index) => imageState.filter(img => img.name !== imageState[index].name);
 
   return (
-    <form onSubmit={handleSubmit(handleCreate)} className='listing'>
+    <form
+      onSubmit={handleSubmit(handleListingCreate)}
+      className='listing'>
       <div className='container'>
         <div className='listing-wrapper'>
 
@@ -168,7 +175,7 @@ const ListingForm = (props) => {
             <h3 className='listing__title'>logo</h3>
             <Dropzone
               multiple={false}
-              noClick={logoImage ? true : false}
+              noClick={logoState ? true : false}
               accept="image/*"
               onDrop={(logoFile) => onDropLogo(logoFile)}>
               {({ getRootProps, getInputProps }) => (
@@ -177,38 +184,44 @@ const ListingForm = (props) => {
                   {...getRootProps()}>
                   <span
                     onClick={() => onDropLogo(null)}
-                    style={{ display: !logoImage ? 'none' : 'flex' }}
-                    className='listing-image__logo__icon_delet'> X </span>
-                  <Field
+                    style={{ display: !logoState ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon_delet'>
+                    <FontAwesomeIcon
+                      className='listing-image__files__icon_delet'
+                      icon={faTimes} />
+                  </span>
+                  <input
+                    className='listing__drop__input'
                     name="mainImage"
-                    component="label">
-                    <input
-                      className='listing__drop__input'
-                      name="mainImage"
-                      {...getInputProps()} />
-                  </Field>
-
-                  {logoImage && <img src={URL.createObjectURL(logoImage[0])} alt='logo' className='listing-image__logo' />}
+                    {...getInputProps()} />
+                  {logoState &&
+                    <img
+                      src={URL.createObjectURL(logoState[0])}
+                      alt='logo'
+                      className='listing-image__logo' />}
                   <FontAwesomeIcon
-                    style={{ display: logoImage ? 'none' : 'flex' }}
+                    style={{ display: logoState ? 'none' : 'flex' }}
                     className='listing-image__logo__icon'
                     icon={faImage} />
                 </div>
               )}
             </Dropzone>
-
             <Dropzone
               accept="image/*"
-              onDrop={(images) => onDropImages(imageFiles.concat(...images))}>
+              onDrop={(images) => onDropImages(handleDropImages(images))}>
               {({ getRootProps, getInputProps }) => (
                 <div className='listing-featured-image'>
-                  {imageFiles.length > 0 && imageFiles.map((file, index) =>
+                  {imageState.length > 0 && imageState.map((file, index) =>
                     <div
                       key={index}
                       className='listing-image__files'>
                       <span
-                        onClick={() => onRemove(imageFiles.splice(index, 1))}
-                        className='listing-image__logo__icon_delet'> X </span>
+                        onClick={() => onDropImages(deletImage(index))}
+                        className='listing-image__logo__icon_delet'>
+                        <FontAwesomeIcon
+                          className='listing-image__files__icon_delet'
+                          icon={faTimes} />
+                      </span>
                       <img
                         src={URL.createObjectURL(file)}
                         alt='image'
@@ -218,14 +231,10 @@ const ListingForm = (props) => {
                   <div
                     {...getRootProps()}
                     className='listing-featured__icon__wrapper'>
-                    <Field
+                    <input
+                      className='listing__drop__input'
                       name="images"
-                      component="label">
-                      <input
-                        className='listing__drop__input'
-                        name="images"
-                        {...getInputProps()} />
-                    </Field>
+                      {...getInputProps()} />
                     <FontAwesomeIcon
                       className='listing-image__files__icon '
                       icon={faImage} />
@@ -351,7 +360,7 @@ const ListingForm = (props) => {
             <label className='listing-form__title'>listing gallery</label>
             <Dropzone
               multiple={false}
-              noClick={listingGallery ? true : false}
+              noClick={galleryState ? true : false}
               accept="image/*"
               onDrop={(logoFile) => onDropGallery(logoFile)}>
               {({ getRootProps, getInputProps }) => (
@@ -360,15 +369,23 @@ const ListingForm = (props) => {
                   {...getRootProps()}>
                   <span
                     onClick={() => onDropGallery(null)}
-                    style={{ display: !listingGallery ? 'none' : 'flex' }}
-                    className='listing-image__logo__icon_delet'> X </span>
+                    style={{ display: !galleryState ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon_delet'>
+                    <FontAwesomeIcon
+                      className='listing-image__files__icon_delet'
+                      icon={faTimes} />
+                  </span>
                   <input
                     className='listing__drop__input'
                     name="logoDrop"
                     {...getInputProps()} />
-                  {listingGallery && <img src={URL.createObjectURL(listingGallery[0])} alt='logo' className='listing-image__logo' />}
+                  {galleryState &&
+                    <img
+                      src={URL.createObjectURL(galleryState[0])}
+                      alt='logo'
+                      className='listing-image__logo' />}
                   <FontAwesomeIcon
-                    style={{ display: listingGallery ? 'none' : 'flex' }}
+                    style={{ display: galleryState ? 'none' : 'flex' }}
                     className='listing-image__logo__icon'
                     icon={faImage} />
                 </div>
@@ -431,7 +448,7 @@ const ListingForm = (props) => {
               className='listing-preview__button'
               type="Submit"
               disabled={pristine || submitting}>
-              Preview
+              Submit
           </button>
           </div>
 
