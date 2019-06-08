@@ -75,7 +75,7 @@ img, svg{
 
     &-navigation {
     	display: flex;
-      justify-content: space-around;
+      justify-content: flex-end;
       align-items: center;
       width: 66%;
         &-bar {
@@ -163,9 +163,7 @@ img, svg{
   .header-navigation-list{
     font-size: 12px;
   } 
-  .header-navigation-list:first-child{
-    // margin-left: 10px;
-  }
+  
 }
 @media (max-width: 960px){
  

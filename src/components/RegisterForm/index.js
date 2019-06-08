@@ -35,10 +35,7 @@ const RegisterForm = (props) => {
           <button className="modal-form__button">Зарегистрироваться</button>
         </form>
       </div>
-      {/* <span className="modal-extra">
-        <span className="modal-extra__account modal-extra--button">Already have an account?</span>
-        <span className="modal-extra__sign-in modal-extra--button">Sign Up</span>
-      </span> */}
+      
     </div>
   )
 }

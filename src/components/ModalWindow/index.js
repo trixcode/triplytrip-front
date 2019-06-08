@@ -10,6 +10,9 @@ const ModalWindow = (props) => {
   const [showModal, setIsShowModal] = useState(false);
   const [ isLoginOpen , setLoginOpen ] = useState(true);
   const [ isRegisterOpen, setRegisterOpen ] = useState(false);
+  const [ isOpenLoginModal, setLoginModal ] = useState(true);
+  const [ isOpenRegisterModal, setRegisterModal ] = useState(false);
+
 
   const switchTabs =(a, b) => {
     a(true)

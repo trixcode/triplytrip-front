@@ -19,7 +19,7 @@ const DetailPostTop = (props) => {
           <div className='detail-post-top-place-wrapper'>
             <h2
               className='detail-post-top-place__name'>
-              the hoxton hotel
+              KOFFEE
             </h2>
             <div className='detail-post-top-place-content'>
               <div className='detail-post-top-place-info'>
@@ -30,7 +30,7 @@ const DetailPostTop = (props) => {
                   </span>
                   <span
                     className='detail-post-top-place-info__detail'>
-                    May 09 2017
+                    2014-04-17 17:22:33 -06:00
                   </span>
                 </div>
                 <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
@@ -54,14 +54,14 @@ const DetailPostTop = (props) => {
                       {[1, 2, 3, 4, 5].map(iconIndex => (
                         <FontAwesomeIcon
                           key={iconIndex}
-                          style={{ color: iconIndex <= 3 && '#ffba00' }}
+                          style={{ color: iconIndex <= 2 && '#ffba00' }}
                           className='detail-post-top-place-info__rating__icon'
                           icon={faStar} />
                       ))}
                     </div>
                     <p
                       className='detail-post-top-place-info__rating__number'>
-                      3
+                      2
                     </p>
                   </div>
                 </div>
