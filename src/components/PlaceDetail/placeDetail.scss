@@ -392,9 +392,18 @@
         position: absolute;
         background: none;
         border: none;
-        right: 35px;
-        bottom: 28px;
+        right: 25px;
+        top: 106px;
         outline: none;
+        @media (max-width: 576px) {
+            top: 122px;
+        }
+        @media (min-width: 992px) {
+            top: 122px;
+        }
+        @media (min-width: 1200px) { 
+            top: 106px;
+        }
         svg {
             font-size: 30px;
             height: 30px;
@@ -445,12 +454,6 @@
         &-contact-me-input-block {
             input {
                 width: 100%;
-            }
-        }
-        &-subscribe {
-            button {
-                bottom: 12px;
-                right: 25px;
             }
         }
     }
@@ -617,12 +620,6 @@
         &-contact-me-input-block {
             input {
                 width: 290px;
-            }
-        }
-        &-subscribe {
-            button {
-                bottom: 12px;
-                right: 35px;
             }
         }
     }

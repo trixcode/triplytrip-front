@@ -48,10 +48,6 @@
     flex-direction: column;
     width: 330px;
     height: 470px;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.2);
-    &:hover {
-      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      }
     .news-card-header {
       position: relative;
       margin-bottom: 20px;
