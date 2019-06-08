@@ -82,10 +82,11 @@ img, svg{
             list-style: none;
             .header-navigation-list {
             	display: inline;
-                margin-left: 20px;
+                margin-right: 20px;
                 color: #d994e1;
-                font-size: 12px;
+                font-size: 15px;
                 font-family: 'Krona One', sans-serif;
+                font-weight: bold;
                 .header-navigation-link {
                   text-decoration: none;
                   color: #fff;
@@ -96,14 +97,13 @@ img, svg{
                 }
             }
             .header-actions {
-              display: flex;
-              flex-direction: row;
-              width: 25%;
-              justify-content: space-around;
+              // display: flex;
+              // flex-direction: row;
+              // justify-content: space-around;
                 .header-actions-button{
-                  	margin-left: 20px;
-                    width: 130px;
-                	  height: 33px;
+                  	// margin-left: 20px;
+                      width: 130px;
+                      height: 33px;
                     border: #fff 1px solid;
                     border-radius: 3px;
                     background: none;
@@ -140,7 +140,9 @@ img, svg{
 // Mobile
 @media (max-width: 1140px){
   .header-navigation{
-
+    .header-navigation-bar{
+      margin-right: 10px;
+    }
     li{
       font-size: 10px;
     }
@@ -153,7 +155,11 @@ img, svg{
     display: flex;
     flex-direction: column;
   }
- 
+  .header-navigation-list{
+    font-size: 12px;
+  } 
+  .header-navigation-link:first-child{
+  }
 }
 @media (max-width: 960px){
  
@@ -167,6 +173,7 @@ img, svg{
   .header-navigation-link{
     color: white;
   }
+  
   .header-navigation-link:hover{
     color: #e03e53;
   

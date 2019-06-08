@@ -9,7 +9,7 @@ import ModalWindow from '../ModalWindow';
 
 const Header = (props) => {
   
-  const {getCategoriesStart, getCitiesStart, cities, categories} = props
+  const {getCategoriesStart, getCitiesStart} = props
 
   useEffect(() => {
     getCategoriesStart()
@@ -31,26 +31,25 @@ const Header = (props) => {
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                Home
+                Домашняя страница
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                Explore
+                Категории
                 </a>
               </li>
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                Listings
+                Статьи
                 </a>
               </li>
               
               <li className="header-navigation-list">
                 <a className="header-navigation-link" href="#">
-                Pages
+                Контакты
                 </a>
               </li>
-              <li className="header-navigation-list">|</li>
             </ul>
 
             <div className="header-actions">

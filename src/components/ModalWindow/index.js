@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import Modal from 'react-modal';
-import { Field } from 'redux-form';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames'
 import LoginFormContainer from '../../containers/LoginForm'
 import './modalWindow.scss';
 import RegisterFormContainer from '../../containers/RegisterForm';
@@ -11,27 +8,29 @@ import RegisterFormContainer from '../../containers/RegisterForm';
 
 const ModalWindow = (props) => {
   const [showModal, setIsShowModal] = useState(false);
-  const [isActive, setActive] = useState(false);
-  const [isSignIn, setSignIn] = useState(true);
-  const [isSignUp, setSignUp] = useState(false);
+  const [ isLoginOpen , setLoginOpen ] = useState(true);
+  const [ isRegisterOpen, setRegisterOpen ] = useState(false);
 
+  const switchTabs =(a, b) => {
+    a(true)
+    b(false)
+  }
 
   useEffect(() => {
     Modal.setAppElement('body');
   }, []);
 
 
-  const selectedClass = 'main-info-tabs__tab_selected'
-  const defaultClass = ''
+  const selectedClass = 'modal-tabs--button_selected'
+  const defaultClass = 'modal-tabs--button'
+
   return (
 
     <div className="modal">
 
 
-      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}><FontAwesomeIcon
-        className='model-open__user'
-        icon={faUser} /></button>
-
+      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Войти</button>
+      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Регистрация</button>
 
       <Modal
         className="modal-container"
@@ -41,27 +40,25 @@ const ModalWindow = (props) => {
         overlayClassName="Overlay"
       >
 
-        {/* <button className="modal-close-button" onClick={() => setIsShowModal(!showModal)}>Close Modal</button> */}
+        
         <div className="modal-wrapper">
           <div className="modal-tabs">
             <button
-              className="modal-tabs--button"
-              onClick={() => setActive(!isActive)}
-              classNames
-            >
-              Sign In</button>
+               onClick={() =>
+                switchTabs(setLoginOpen, setRegisterOpen)}
+                className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
+                Войти</button>
             <button
-              className="modal-tabs--button"
-              onClick={() => setActive(!isActive)}
-            >Sign Up</button>
+              // className="modal-tabs--button"
+              onClick={() =>
+                switchTabs(setRegisterOpen, setLoginOpen)}
+                className={isRegisterOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
+                Регистрация
+            </button>
           </div>
-          {
-            !isActive ? (
-              <LoginFormContainer />
-            ) : (
-              <RegisterFormContainer />
-            )
-          }
+          {isLoginOpen ? <LoginFormContainer /> : ''}
+          {isRegisterOpen ? <RegisterFormContainer /> : ''}
+          
         </div>
 
       </Modal>
