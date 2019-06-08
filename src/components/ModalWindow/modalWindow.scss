@@ -9,11 +9,15 @@
 .modal-open__button{
   background: none;
   border: none;
-  cursor: pointer;
+  // cursor: pointer;
   color: white;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 600;
   margin-top: 5px;
+}
+.modal-open__button:hover{
+  color: #e03e53;
+
 }
 .model-open__user{
   background: none;
