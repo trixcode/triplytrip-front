@@ -2,39 +2,31 @@
 import { Field, reduxForm } from 'redux-form';
 import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faTwitter, faInstagram, faFacebook, faPinterest,
-  faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
-  faTumblr, faFlickr, faWikipediaW, faYoutube
-} from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faFacebook, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faImage, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Dropzone from 'react-dropzone';
 import React, { useState } from 'react';
-import { Editor } from 'react-draft-wysiwyg';
-import { EditorState } from 'draft-js';
 
 import './listingForm.scss'
 
 const ListingForm = (props) => {
-
   const { handleSubmit, pristine, createListingStart, submitting } = props;
-  const socialsArray = [faTwitter, faInstagram, faFacebook, faPinterest,
-    faLinkedin, faVimeo, faWhatsapp, faGooglePlus,
-    faTumblr, faFlickr, faWikipediaW, faYoutube,];
 
-  const [logoState, onDropLogo] = useState(null);
-  const [imageState, onDropImages] = useState([]);
-  const [galleryState, onDropGallery] = useState(null)
-
+  const [logoState, dropLogo] = useState(null);
+  const [galleryState, dropMainImage] = useState(null)
+  const [imageState, dropImages] = useState([]);
+  
   const handleListingCreate = (formValues) => {
     formValues.mainImage = logoState
     formValues.images = imageState
     formValues.galleryimage = galleryState
     createListingStart(formValues)
   }
-  const handleDropImages = (images) => imageState.concat(...images);
-
+  const handleDropImages = (images) => dropImages(imageState.concat(...images));
+  
   const deletImage = (index) => imageState.filter(img => img.name !== imageState[index].name);
+  
+  const socialsArray = [ faInstagram, faFacebook, faWhatsapp, faYoutube ];
 
   return (
     <form
@@ -177,13 +169,13 @@ const ListingForm = (props) => {
               multiple={false}
               noClick={logoState ? true : false}
               accept="image/*"
-              onDrop={(logoFile) => onDropLogo(logoFile)}>
+              onDrop={(logoFile) => dropLogo(logoFile)}>
               {({ getRootProps, getInputProps }) => (
                 <div
                   className='listing-image-load listing-image-load__logo'
                   {...getRootProps()}>
                   <span
-                    onClick={() => onDropLogo(null)}
+                    onClick={() => dropLogo(null)}
                     style={{ display: !logoState ? 'none' : 'flex' }}
                     className='listing-image__logo__icon_delet'>
                     <FontAwesomeIcon
@@ -208,7 +200,7 @@ const ListingForm = (props) => {
             </Dropzone>
             <Dropzone
               accept="image/*"
-              onDrop={(images) => onDropImages(handleDropImages(images))}>
+              onDrop={(images) => handleDropImages(images)}>
               {({ getRootProps, getInputProps }) => (
                 <div className='listing-featured-image'>
                   {imageState.length > 0 && imageState.map((file, index) =>
@@ -216,7 +208,7 @@ const ListingForm = (props) => {
                       key={index}
                       className='listing-image__files'>
                       <span
-                        onClick={() => onDropImages(deletImage(index))}
+                        onClick={() => dropImages(deletImage(index))}
                         className='listing-image__logo__icon_delet'>
                         <FontAwesomeIcon
                           className='listing-image__files__icon_delet'
@@ -362,13 +354,13 @@ const ListingForm = (props) => {
               multiple={false}
               noClick={galleryState ? true : false}
               accept="image/*"
-              onDrop={(logoFile) => onDropGallery(logoFile)}>
+              onDrop={(logoFile) => dropMainImage(logoFile)}>
               {({ getRootProps, getInputProps }) => (
                 <div
                   className='listing-image-load'
                   {...getRootProps()}>
                   <span
-                    onClick={() => onDropGallery(null)}
+                    onClick={() => dropMainImage(null)}
                     style={{ display: !galleryState ? 'none' : 'flex' }}
                     className='listing-image__logo__icon_delet'>
                     <FontAwesomeIcon
