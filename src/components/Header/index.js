@@ -8,8 +8,8 @@ import ModalWindow from '../ModalWindow';
 
 
 const Header = (props) => {
-  
-  const {getCategoriesStart, getCitiesStart, cities, categories} = props
+
+  const { getCategoriesStart, getCitiesStart } = props
 
   useEffect(() => {
     getCategoriesStart()
@@ -19,7 +19,7 @@ const Header = (props) => {
   return (
     <header className="header">
       <div className="container">
-      <div className="header-wrapper">
+        <div className="header-wrapper">
           <Link href="/">
             <a className="header-brand">
               <img src='/static/mainIcon.png' className="header-brand__logo" alt="logo" />
@@ -30,27 +30,20 @@ const Header = (props) => {
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Home
+                <Link href={`/placesCategory`}>
+                  <a className="header-navigation-link" href="#">
+                    Заведения
                 </a>
+                </Link>
               </li>
               <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Explore
+                <Link href={`/articles`}>
+                  <a className="header-navigation-link" href="#">
+                    Статьи
                 </a>
+                </Link>
               </li>
-              <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Listings
-                </a>
-              </li>
-              
-              <li className="header-navigation-list">
-                <a className="header-navigation-link" href="#">
-                Pages
-                </a>
-              </li>
-              <li className="header-navigation-list">|</li>
+
             </ul>
 
             <div className="header-actions">

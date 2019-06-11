@@ -122,14 +122,14 @@
       text-transform: capitalize;
       padding-left: 14px;
     }
-    button {
+    &--button {
       position: absolute;
       right: 20px;
-      bottom: 13px;
+      top: 12px;
       width: 24px;
       height: 24px;
       border: none;
-      background-color: white;
+      background-color: inherit;
       .telegram-icon {
         color: #232323;
         font-size: 24px;

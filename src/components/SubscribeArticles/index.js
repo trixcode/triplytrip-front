@@ -23,7 +23,7 @@ const SubscribeArticles = (props) => {
           placeholder='Your Email'
           className='article-sidebar-newsletter__input--email'
         />
-        <button>
+        <button className='article-sidebar-newsletter__input--button'>
         <FontAwesomeIcon className='telegram-icon' icon={faTelegramPlane} />
         </button>
       </div>
