@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-
+import { withRouter } from 'react-router'
 import {getCategoriesStart, getCitiesStart} from '../../store/actions';
 import Search from '../../components/Search';
 
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
   getCitiesStart: (requestParams='') => dispatch(getCitiesStart(requestParams))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(SearchContainer))
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(withRouter(SearchContainer)))

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import moment from 'moment';
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import React from 'react'
 
 import SectionTitle from '../SectionTitle';
 
@@ -10,7 +11,7 @@ const Articles = (props) => {
   const { latestNewsList, getLatestNewsStart } = props;
   useEffect(() => {
     getLatestNewsStart()
-  }, []);
+  }, [getLatestNewsStart]);
   return (
     <section className='section-news'>
       <div className='container'>
@@ -38,7 +39,7 @@ const Articles = (props) => {
                     <span className='icon'>Comments</span>
                   </div>
                   <div dangerouslySetInnerHTML={{ __html: latestnews.description }} className='news-card__description'></div>
-                  <Link href={`article/${latestnews.id}`}>
+                  <Link to={`article/${latestnews.id}`}>
                     <button className='news-card-button'>read more</button>
                   </Link>
                 </div>

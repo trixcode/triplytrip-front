@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-
+import React from 'react'
 import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
 import './places.scss'

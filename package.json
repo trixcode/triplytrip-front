@@ -1,59 +1,58 @@
 {
-  "name": "triplytrip-front",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "next start",
-    "build": "next build"
-  },
-  "author": "",
-  "license": "ISC",
-  "nodemonConfig": {
-    "ignore": [
-      "src/*",
-      "pages/*",
-      ".nextc"
-    ],
-    "delay": "2500"
-  },
+  "name": "triplytrip-front-react",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/free-regular-svg-icons": "^5.9.0",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@zeit/next-sass": "^1.0.1",
-    "babel-polyfill": "^6.26.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "classnames": "^2.2.6",
     "draft-js": "^0.10.5",
-    "express": "^4.17.0",
     "google-map-react": "^1.1.4",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "next": "^8.1.0",
-    "next-redux-saga": "^4.0.1",
-    "next-redux-wrapper": "^3.0.0-alpha.2",
-    "node-sass": "^4.11.0",
-    "query-string": "^6.5.0",
+    "node-sass": "^4.12.0",
+    "query-string": "^6.7.0",
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
+    "react-draft-wysiwyg": "^1.13.2",
     "react-dropzone": "^10.1.5",
     "react-modal": "^3.8.1",
-    "react-motion-drawer": "^3.1.0",
     "react-redux": "^7.0.3",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
     "redux": "^4.0.1",
-    "redux-form": "^8.2.1",
+    "redux-form": "^8.2.3",
     "redux-saga": "^1.0.2",
     "validator": "^11.0.0"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.19.0",
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "redux-logger": "^3.0.6"
   }
 }

@@ -1,21 +1,21 @@
 import { Fragment } from 'react';
 import { useEffect } from 'react';
-import { withRouter } from 'next/router'
+import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
+import React from 'react'
+import ArticleDetailContainer from '../../containers/ArticleDetail';
 
-import ArticleDetailContainer from '../../src/containers/ArticleDetail';
-
-import SuccessModal from '../../src/components/SuccessModal';
-import ArticleSidebar from '../../src/components/ArticleSidebar';
-import HeaderContainer from '../../src/containers/Header';
-import { getArticleDetailByIdStart } from '../../src/store/actions';
-import DetailPostTop from '../../src/components/DetailPostTop';
+import SuccessModal from '../../components/SuccessModal';
+import ArticleSidebar from '../../components/ArticleSidebar';
+import HeaderContainer from '../../containers/Header';
+import { getArticleDetailByIdStart } from '../../store/actions';
+import DetailPostTop from '../../components/DetailPostTop';
 
 
 function ArticleDetail(props) {
-  const { getArticleDetailByIdStartAction, router } = props;
+  const { getArticleDetailByIdStartAction, history } = props;
   useEffect(() => {
-    getArticleDetailByIdStartAction(router.query.articleId)
+    getArticleDetailByIdStartAction(history.location.search.articleId)
   }, [])
   return (
     <Fragment>

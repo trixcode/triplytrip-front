@@ -1,5 +1,5 @@
 import './componentTitle.scss';
-
+import React from 'react'
 const SectionTitle = props => {
   const { name, text } = props;
   return (

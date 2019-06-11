@@ -1,5 +1,5 @@
 import moment from 'moment';
-
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { } from '@fortawesome/free-brands-svg-icons';

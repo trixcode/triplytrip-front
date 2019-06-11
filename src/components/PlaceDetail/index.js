@@ -1,5 +1,5 @@
 import './placeDetail.scss';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,9 +15,9 @@ function isEmpty(obj) {
   return true;
 }
 const PlaceDetail = (props) => {
-  const { getPlaceDetailByIdStart, router, placeDetail } = props;
+  const { getPlaceDetailByIdStart, history, placeDetail } = props;
   useEffect(() => {
-    getPlaceDetailByIdStart(router.query.placeId)
+    getPlaceDetailByIdStart(history.location.search.placeId)
   }, []);
   console.log(placeDetail)
   const [isOverviewClicked, setOverview] = useState(true)

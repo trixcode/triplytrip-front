@@ -1,7 +1,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-
+import React from 'react'
 import PlaceCard from '../PlaceCard';
 import './placesFilterResult.scss'
 

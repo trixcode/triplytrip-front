@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import Link from 'next/link'
+import {Link} from 'react-router-dom'
 import './header.scss';
 import BurgerMenu from '../BurgerMenu'
 import ModalWindow from '../ModalWindow';
@@ -20,7 +20,7 @@ const Header = (props) => {
     <header className="header">
       <div className="container">
         <div className="header-wrapper">
-          <Link href="/">
+          <Link to="/">
             <a className="header-brand">
               <img src='/static/mainIcon.png' className="header-brand__logo" alt="logo" />
               <h2 className="header-brand__title">TryplyTrip</h2>
@@ -30,14 +30,14 @@ const Header = (props) => {
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
-                <Link href={`/placesCategory`}>
+                <Link to={`/placesCategory`}>
                   <a className="header-navigation-link" href="#">
                     Заведения
                 </a>
                 </Link>
               </li>
               <li className="header-navigation-list">
-                <Link href={`/articles`}>
+                <Link to={`/articles`}>
                   <a className="header-navigation-link" href="#">
                     Статьи
                 </a>
@@ -47,7 +47,7 @@ const Header = (props) => {
             </ul>
 
             <div className="header-actions">
-              <Link href={`/addListing`}>
+              <Link to={`/addListing`}>
                 <button className="header-actions-button">+ Add Listing</button>
               </Link>
               <ModalWindow />

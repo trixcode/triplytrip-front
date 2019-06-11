@@ -1,6 +1,6 @@
 import './subscribe.scss'
 import SubscribeFormContainer from '../../containers/SubscribeForm'
-
+import React from 'react'
 const Subscribe = () => {
     return (
         <section className='subscribe'>
@@ -9,6 +9,7 @@ const Subscribe = () => {
             <div className='subscribe-container container'>
                 <div className='subscribe-mail'>
                     <img
+                        alt=""
                         src='static/subscribemail.png'
                         className='subscribe-mail__icon'
                     />

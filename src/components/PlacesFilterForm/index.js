@@ -8,13 +8,14 @@ import { customInputField } from '../CustomFields';
 import useDebounce from '../customHooks/useDebounce';
 
 const PlacesFilterForm = props => {
-  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities, myValues, categories } = props;
+  const { history, changeFormValue, getPlacesStart, places, cities, myValues, categories } = props;
+  console.log(history)
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
 
-  const { keywords, location, category } = router.query
-
+  const { keywords, location, category } = history.location.search
+  
   const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords
   const locationChanged = myValues.location === undefined ? '' : myValues.location
   const categoryChanged = myValues.categoriesForm
@@ -22,7 +23,8 @@ const PlacesFilterForm = props => {
   const checkCity = () => {
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
     const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : null)
-    const categoryId = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : categories.find(category => category.name === categoryChanged ? category.id : '')
+    const categoryId = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : 
+    categories.find(category => category.name === categoryChanged ? category.id : '')
     
     const idOfCategory = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : `&categoriesId=${categoryId && categoryId.id}`
     const idOfCity = !citiId ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`

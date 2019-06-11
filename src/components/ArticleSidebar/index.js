@@ -2,6 +2,7 @@ import './articleSidebar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
+import React from 'react'
 
 const ArticleSidebar = (props) => {
   return (
