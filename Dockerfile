@@ -1,8 +1,9 @@
-FROM node:10-alpine
+FROM node:10
 
-WORKDIR /var/www/
+RUN mkdir -p /var/www/triplytrip
+WORKDIR /var/www/triplytrip
 
-COPY . .
+COPY ./package.json .
 
 RUN npm i
 
