@@ -10,7 +10,7 @@ const PlaceDetailContactForm = (props) => {
   return (
     <form className="sidebars-form-wrapper" onSubmit={handleSubmit(onSubmitHandle)}>
       <div className="sidebar-contact-me-input-block">
-        <span>Your Name</span>
+        <span>Ваше имя</span>
         <Field
           name="name"
           component={customInputField}
@@ -18,7 +18,7 @@ const PlaceDetailContactForm = (props) => {
         />
       </div>
       <div className="sidebar-contact-me-input-block">
-        <span>Your Email</span>
+        <span>Ваш Email</span>
         <Field
           name="email"
           component={customInputField}
@@ -26,7 +26,7 @@ const PlaceDetailContactForm = (props) => {
         />
       </div>
       <div className="sidebar-contact-me-input-block">
-        <span>Subject</span>
+        <span>Tема</span>
         <Field
           name="subject"
           component={customInputField}
@@ -34,14 +34,14 @@ const PlaceDetailContactForm = (props) => {
         />
       </div>
       <div className="sidebar-contact-me-input-block">
-        <span>Your Message</span>
+        <span>Ваше сообщение </span>
         <Field
           name="message"
           component={customInputField}
           type="text"
         />
       </div>
-      <button type="submit" className="sidebars-button">Submit</button>
+      <button type="submit" className="sidebars-button">Отправить</button>
     </form>
   )
 }

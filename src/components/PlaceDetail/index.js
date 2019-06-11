@@ -51,27 +51,27 @@ const PlaceDetail = (props) => {
       <div className="contact">
         <div className= "sidebars-form-wrapper">
             <div>
-                <span>Your Name</span>
+                <span>Ваше имя</span>
                 <input type="text" />
               </div>
               <div>
-                <span>Your Email</span>
+                <span>Ваш Email</span>
                 <input type="email" />
               </div>
               <div>
-                <span>Subject</span>
+                <span>Tема</span>
                 <input type="text" />
               </div>
               <div>
-                <span>Your Message</span>
+                <span>Вашe сообщениe</span>
                 <input type="text" />
               </div>
-              <button className="sidebars-button">Submit</button>
+              <button className="sidebars-button">Отправить</button>
         </div>
         <div className="contact-map">There must be a map here</div>
       </div>
 
-  const reviews = <h2>Reviews</h2>
+  const reviews = <h2>Отзывы</h2>
 
   const video = 
       <div className="video">
@@ -88,22 +88,22 @@ const PlaceDetail = (props) => {
             <button id="overview" onClick={() =>
               switchTabs(setOverview, setVideo, setReview, setContact)}
               className={isOverviewClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
-              Overview
+              Oбзор
             </button>
             <button id="contact" onClick={() =>
               switchTabs(setContact, setOverview, setReview, setVideo)}
               className={isContactClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
-              Contact
+              Kонтакты
             </button>
             <button id="reviews" onClick={() =>
               switchTabs(setReview, setVideo, setOverview, setContact)}
               className={isReviewsClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
-              Reviews & Rating
+              Отзывы и рейтинги
             </button>
             <button id="video" onClick={() =>
               switchTabs(setVideo, setOverview, setReview, setContact)}
               className={isVideoClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
-              Video
+              Видео
             </button>
           </div>
           {isOverviewClicked ? overview : ''}
@@ -118,25 +118,27 @@ const PlaceDetail = (props) => {
             <span className="sidebar-owner-info__name">
               {`${placeDetail.user.firstName} ${placeDetail.user.lastName}`}
             </span>
-            <span className="sidebar-owner-info__status">Editor</span>
+            <span className="sidebar-owner-info__status">Pедактор</span>
             <div className="sidebar-owner-info__followers">
               <div>
-                <span>Followers</span>
+                <span>Подписчики</span>
                 <span>120</span>
               </div>
               <div>
-                <span>Following</span>
+                <span>Подписки</span>
                 <span>10</span>
               </div>
             </div>
-            <span className="sidebar-owner-info__follow">Follow<FontAwesomeIcon icon={faWifi} /></span>
+            <span className="sidebar-owner-info__follow">
+              Cледить<FontAwesomeIcon icon={faWifi} /></span>
 
           </div>
           <div className="sidebar-owner-contacts">
             <ul className="sidebar-owner-contacts-info">
               <li><FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon" />Osh, Kyrgyzstan </li>
               <li><FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-owner-contacts-info__icon" />http://masttbigbreakfast.com/</li>
-              <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />+996550951472</li>
+              <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />+(996) 550 951 472</li>
+              {/* <span className='sidebar-owner-contacts-info__icon'>{moment(createdDate).format('+(996) 550 951 472')}</span> */}
             </ul>
             <ul className="sidebar-owner-contacts-networks">
               <li><div className="sidebar-facebook"><FontAwesomeIcon icon={faFacebookF} className="owner-contact-icon" /></div></li>
@@ -144,33 +146,33 @@ const PlaceDetail = (props) => {
               <li><div className="sidebar-google"><FontAwesomeIcon icon={faGooglePlusG} className="owner-contact-icon" /></div></li>
               <li><div className="sidebar-insta"><FontAwesomeIcon icon={faInstagram} className="owner-contact-icon" /></div></li>
             </ul>
-            <div className="sidebars-button">Visit Website</div>
+            <div className="sidebars-button">Посетить сайты</div>
           </div>
           <div className="sidebar-price">
             <div className="sidebars-title">
-              <div><FontAwesomeIcon icon={faDollarSign} /></div><h5>Price Range</h5>
+              <div><FontAwesomeIcon icon={faDollarSign} /></div><h5>Ценовой диапазон</h5>
             </div>
-            <span>Price: </span><span className="sidebar-price__price"> $783 </span>
+            <span>Цена: </span><span className="sidebar-price__price"> $783 </span>
           </div>
           <div className="sidebar-contact-me">
             <div className="sidebars-title">
-              <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Contact Me</h5>
+              <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Свяжитесь с нами</h5>
             </div>
             <PlaceDetailContactFormContainer />
           </div>
           <div className="sidebar-map">
             <div className="sidebars-title">
-              <div><FontAwesomeIcon icon={faMapMarkerAlt} /></div><h5>Map</h5>
+              <div><FontAwesomeIcon icon={faMapMarkerAlt} /></div><h5>Kарта</h5>
             </div>
           </div>
           <div className="sidebar-gallery">
             <div className="sidebars-title">
-              <div><FontAwesomeIcon icon={faCameraRetro} /></div><h5>Gallery</h5>
+              <div><FontAwesomeIcon icon={faCameraRetro} /></div><h5>Галерея</h5>
             </div>
           </div>
           <div className="sidebar-subscribe">
             <div className="sidebars-title">
-              <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Subscribe</h5>
+              <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Подписаться</h5>
             </div>
            <SubscribeArticlesContainer />
           </div>
