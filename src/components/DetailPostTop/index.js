@@ -26,27 +26,27 @@ const DetailPostTop = (props) => {
                 <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
                   <span
                     className='detail-post-top-place-info__text'>
-                    Posted on
+                    Oпубликовано
                   </span>
                   <span
                     className='detail-post-top-place-info__detail'>
-                    2014-04-17 17:22:33 -06:00
-                  </span>
+                      Июль 17 2017
+                    </span>
                 </div>
                 <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
                   <span
                     className='detail-post-top-place-info__text'>
-                    Category
+                     Kатегория
                   </span>
                   <span
                     className='detail-post-top-place-info__detail'>
-                    Hotel
+                     Hotel
                   </span>
                 </div>
                 <div className='detail-post-top-place-info__wrapper'>
                   <span
                     className='detail-post-top-place-info__text'>
-                    Rating
+                     Рейтинг
                   </span>
                   <div className='detail-post-top-place-info__rating'>
                     <div

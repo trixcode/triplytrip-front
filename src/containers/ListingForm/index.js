@@ -8,11 +8,18 @@ import { createValidator, email, required } from '../../services/validations';
 
 
 const validate = createValidator({
-    // name: [required],
-    // email: [required, email],
-    // categoriesId: [required],
-    // address: [required],
-    // citiesId: [required],
+    name: [required],
+    email: [required, email],
+    categoriesId: [required],
+    address: [required],
+    citiesId: [required],
+    phone: [required],
+    categoriesId: [required],
+    segmentation: [required],
+    minPrice: [required],
+    maxPrice: [required],
+    mainImage: [required],
+    website: [required],
 });
 const formConfig = {
     form: 'ListingForm',
