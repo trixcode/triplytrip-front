@@ -1,12 +1,14 @@
 
-import { Field, reduxForm } from 'redux-form';
+import React, { useState } from 'react';
+import { Field } from 'redux-form';
 import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faImage, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Dropzone from 'react-dropzone';
-import React, { useState } from 'react';
 
+import { customInputField } from '../CustomFields';
+import { richEditor } from '../CustomEditor'
 import './listingForm.scss'
 
 const ListingForm = (props) => {
@@ -22,11 +24,12 @@ const ListingForm = (props) => {
     formValues.galleryimage = galleryState
     createListingStart(formValues)
   }
+  //the handleDropImages add images to state dropImages from input for images
   const handleDropImages = (images) => dropImages(imageState.concat(...images));
-  
-  const deletImage = (index) => imageState.filter(img => img.name !== imageState[index].name);
-  
-  const socialsArray = [ faInstagram, faFacebook, faWhatsapp, faYoutube ];
+  //the deletImage delete images from state imageState
+  const deletImage = (index) => dropImages(imageState.filter(img => img.name !== imageState[index].name));
+  //the socialsArray is array for creating social input
+  const socialsArray = [faInstagram, faFacebook, faWhatsapp, faYoutube];
 
   return (
     <form
@@ -43,7 +46,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="name"
-                    component="input"
+                    component={customInputField}
                     type="text" />
                 </div>
               </div>
@@ -52,9 +55,11 @@ const ListingForm = (props) => {
                 <div >
                   <Field
                     name="categoriesId"
-                    component="select"
-                    className='listing-form__input'>
-                    <option />
+                    component={customInputField}
+                    autoComplete="on"
+                    className="listing-form__input"
+                    list="categoriesName" />
+                  <datalist id='categoriesName'>
                     <option
                       className='listing-form__input__select__value'
                       value="hotel">hotel</option>
@@ -64,7 +69,7 @@ const ListingForm = (props) => {
                     <option
                       className='listing-form__input__select__value'
                       value="restaurant">restaurant</option>
-                  </Field>
+                  </datalist>
                 </div>
               </div>
               <div className='listing-form'>
@@ -73,7 +78,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input '
                     name="citiesId"
-                    component="input"
+                    component={customInputField}
                     type="text"
                     placeholder="Bishkek"
                   />
@@ -85,7 +90,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="address"
-                    component="input"
+                    component={customInputField}
                     type="text"
                     placeholder="Listing address"
                   />
@@ -93,10 +98,9 @@ const ListingForm = (props) => {
               </div>
             </div>
             <div className='listing-google-map'>
-              {/* 
-              <GoogleMapReact
+              {/* <GoogleMapReact
                 bootstrapURLKeys={{
-                  key: 'AIzaSyCUKPCvf0qLNJDOZipKnFGPOM-x-dAKKOg',
+                  key: '',
                   language: 'ru',
                   region: 'kg',
                 }}
@@ -105,11 +109,6 @@ const ListingForm = (props) => {
                   lng: 74.56
                 }}
                 defaultZoom={11}>
-                <AnyReactComponent
-                  lat={59.955413}
-                  lng={30.337844}
-                  text="My Marker"
-                />
               </GoogleMapReact> */}
             </div>
           </div>
@@ -124,18 +123,21 @@ const ListingForm = (props) => {
                 <div >
                   <Field
                     name="segmentation"
-                    component="select"
-                    className='listing-form__input'>
+                    component={customInputField}
+                    className='listing-form__input'
+                    autoComplete='on'
+                    list="curencyName" />
+                  <datalist id='curencyName'>
                     <option
                       className='listing-form__input__select__value'
-                      value="KGS">KGS</option>
+                      value="KGS">сом</option>
                     <option
                       className='listing-form__input__select__value'
-                      value="USD">USD</option>
+                      value="USD">доллар</option>
                     <option
                       className='listing-form__input__select__value'
-                      value="EUR">EUR</option>
-                  </Field>
+                      value="EUR">евро</option>
+                  </datalist>
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
@@ -144,7 +146,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="minPrice"
-                    component="input"
+                    component={customInputField}
                     type="number"
                   />
                 </div>
@@ -155,16 +157,15 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="maxPrice"
-                    component="input"
-                    type="number"
-                  />
+                    component={customInputField}
+                    type="number" />
                 </div>
               </div>
             </div>
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>logo</h3>
+            <label className='listing-form__title'>logo</label>
             <Dropzone
               multiple={false}
               noClick={logoState ? true : false}
@@ -198,6 +199,43 @@ const ListingForm = (props) => {
                 </div>
               )}
             </Dropzone>
+
+            <label className='listing-form__title'>main image</label>
+            <Dropzone
+              multiple={false}
+              noClick={galleryState ? true : false}
+              accept="image/*"
+              onDrop={(logoFile) => dropMainImage(logoFile)}>
+              {({ getRootProps, getInputProps }) => (
+                <div
+                  className='listing-image-load listing-image-load__logo'
+                  {...getRootProps()}>
+                  <span
+                    onClick={() => dropMainImage(null)}
+                    style={{ display: !galleryState ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon_delet'>
+                    <FontAwesomeIcon
+                      className='listing-image__files__icon_delet'
+                      icon={faTimes} />
+                  </span>
+                  <input
+                    className='listing__drop__input'
+                    name="logoDrop"
+                    {...getInputProps()} />
+                  {galleryState &&
+                    <img
+                      src={URL.createObjectURL(galleryState[0])}
+                      alt='logo'
+                      className='listing-image__logo' />}
+                  <FontAwesomeIcon
+                    style={{ display: galleryState ? 'none' : 'flex' }}
+                    className='listing-image__logo__icon'
+                    icon={faImage} />
+                </div>
+              )}
+            </Dropzone>
+
+            <label className='listing-form__title'>images</label>
             <Dropzone
               accept="image/*"
               onDrop={(images) => handleDropImages(images)}>
@@ -208,7 +246,7 @@ const ListingForm = (props) => {
                       key={index}
                       className='listing-image__files'>
                       <span
-                        onClick={() => dropImages(deletImage(index))}
+                        onClick={() => deletImage(index)}
                         className='listing-image__logo__icon_delet'>
                         <FontAwesomeIcon
                           className='listing-image__files__icon_delet'
@@ -244,17 +282,10 @@ const ListingForm = (props) => {
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg_short'
                 name="extraDescription"
-                component="textarea" />
+                component={richEditor} />
             </div>
             <div className='listing-form'>
               <label className='listing-form__title'>full description</label>
-              {/* <Editor
-               editorState={editorState}
-                toolbarClassName="toolbarClassName"
-                wrapperClassName="wrapperClassName"
-                editorClassName="editorClassName"
-                onEditorStateChange={onEditorStateChange}
-                /> */}
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg'
                 name="description"
@@ -275,9 +306,8 @@ const ListingForm = (props) => {
                     <Field
                       className='listing-form__input'
                       name="phone"
-                      component="input"
-                      type="text"
-                      placeholder="Rather not say" />
+                      component={customInputField}
+                      type="number" />
                   </div>
                 </div>
                 <div className='listing-row-inputs-form'>
@@ -286,7 +316,7 @@ const ListingForm = (props) => {
                     <Field
                       className='listing-form__input'
                       name="website"
-                      component="input"
+                      component={customInputField}
                       type="text" />
                   </div>
                 </div>
@@ -296,7 +326,7 @@ const ListingForm = (props) => {
                     <Field
                       className='listing-form__input'
                       name="email"
-                      component="input"
+                      component={customInputField}
                       type="text" />
                   </div>
                 </div>
@@ -316,85 +346,11 @@ const ListingForm = (props) => {
                       <Field
                         className='listing-form__input'
                         name={iconIndex.iconName}
-                        component="input"
+                        component={customInputField}
                         type="text" />
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-
-          <div className='listing-forms-wrapper'>
-            <div className='listing-row-inputs-form'>
-              <label className='listing-form__title'>Listing tags</label>
-              <div >
-                <Field
-                  name="listingTags"
-                  component="select"
-                  className='listing-form__input'>
-                  <option />
-                  <option
-                    className='listing-form__input__select__value'
-                    value="tag">tag</option>
-                  <option
-                    className='listing-form__input__select__value'
-                    value="tag">tag</option>
-                  <option
-                    className='listing-form__input__select__value'
-                    value="tag">tag</option>
-                </Field>
-              </div>
-            </div>
-          </div>
-
-          <div className='listing-forms-wrapper'>
-            <label className='listing-form__title'>listing gallery</label>
-            <Dropzone
-              multiple={false}
-              noClick={galleryState ? true : false}
-              accept="image/*"
-              onDrop={(logoFile) => dropMainImage(logoFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <div
-                  className='listing-image-load'
-                  {...getRootProps()}>
-                  <span
-                    onClick={() => dropMainImage(null)}
-                    style={{ display: !galleryState ? 'none' : 'flex' }}
-                    className='listing-image__logo__icon_delet'>
-                    <FontAwesomeIcon
-                      className='listing-image__files__icon_delet'
-                      icon={faTimes} />
-                  </span>
-                  <input
-                    className='listing__drop__input'
-                    name="logoDrop"
-                    {...getInputProps()} />
-                  {galleryState &&
-                    <img
-                      src={URL.createObjectURL(galleryState[0])}
-                      alt='logo'
-                      className='listing-image__logo' />}
-                  <FontAwesomeIcon
-                    style={{ display: galleryState ? 'none' : 'flex' }}
-                    className='listing-image__logo__icon'
-                    icon={faImage} />
-                </div>
-              )}
-            </Dropzone>
-          </div>
-
-          <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>open table</h3>
-            <div className='listing-row-inputs-form'>
-              <label className='listing-form__title'>restaurant name</label>
-              <div >
-                <Field
-                  className='listing-form__input'
-                  name="restaurantName"
-                  component="input"
-                  type="text" />
               </div>
             </div>
           </div>
@@ -408,7 +364,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="couponDescription"
-                    component="input"
+                    component={customInputField}
                     type="text" />
                 </div>
               </div>
@@ -418,7 +374,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="couponCode"
-                    component="input"
+                    component={customInputField}
                     type="text" />
                 </div>
               </div>
@@ -428,7 +384,7 @@ const ListingForm = (props) => {
                   <Field
                     className='listing-form__input'
                     name="referralLink"
-                    component="input"
+                    component={customInputField}
                     type="text" />
                 </div>
               </div>
