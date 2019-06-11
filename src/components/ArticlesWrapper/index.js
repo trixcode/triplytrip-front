@@ -1,4 +1,4 @@
-
+import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,16 +6,18 @@ import Article from '../Article'
 import ArticleAside from '../ArticleAside'
 import './articlesWrapper.scss';
 
-const ArticlesWrapper = () => {
-
+const ArticlesWrapper = (props) => {
+  const { getArticlesByPageStart, articlePaginate } = props;
+  useEffect(() => {
+    getArticlesByPageStart(3)
+  }, []);
+  console.log(articlePaginate)
   return (
     <div className='articles-wrapper'>
       <div className='container'>
         <div className='articles-wrapper-main-content'>
           <div className='articles-wrapper-list'>
-            <Article />
-            <Article />
-            <Article />
+            <Article articlePaginate={articlePaginate} />
             <div className="pages-numbers">
               {[1, 2, 3, 4, 5].map(key => (
                 <button

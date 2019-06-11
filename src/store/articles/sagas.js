@@ -26,6 +26,14 @@ export function* getArticleDetailByIdRequest(articleId) {
   }
 }
 
+export function* getArticlesByPageRequest(articlePage) {
+  try {
+    const response = yield call(api.GET, `/articles?_limit=3&_page=${articlePage}`);
+    yield put(actions.getArticlesByPageSuccess(response));
+  } catch (responseError) {
+    yield put(actions.getArticlesByPageFailure(responseError));
+  }
+}
 
 
 export function* watchGetArticleDetailRequest() {
@@ -43,7 +51,17 @@ export function* watchGetArticleDetailByIdRequest() {
   }
 }
 
+
+export function* watchGetArticlesByPageRequest() {
+  while (true) {
+    const { articlePage } = yield take(actionTypes.GET_ARTICLES_BY_PAGE_START);
+    yield call(getArticlesByPageRequest, articlePage);
+  }
+}
+
+
 export default function* () {
   yield fork(watchGetArticleDetailRequest);
   yield fork(watchGetArticleDetailByIdRequest);
+  yield fork(watchGetArticlesByPageRequest);
 }

@@ -4,17 +4,18 @@ import { faUser, faFolder, faComments, faArrowRight, faSearch, faPaperPlane } fr
 
 import './article.scss'
 const Article = (props) => {
+  const { articlePaginate } = props;
   return (
-    <div className='article'>
+    <div className='article' >
       <div className='article-img-wrapper'>
         <div className='article-img__date'>
           <h3
             className='article-img__date__day'>
-            22
+            {/* {moment(articlePaginate.createdDate).format('DD')} */}
           </h3>
           <p
             className='article-img__date__month'>
-            jun
+            {/* {moment(articlePaginate.createdDate).format('MM')} */}
           </p>
         </div>
         <img
