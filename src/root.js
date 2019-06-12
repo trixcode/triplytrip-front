@@ -9,13 +9,14 @@ import detail from './pages/dynamic/detail'
 import article from './pages/dynamic/article'
 
 function AppRouter() {
+  
     return (
       <BrowserRouter>
         <Route path="/" exact component={HomePage} />
         <Route path="/addListing" component={addListing} />
         <Route path="/articles" component={articles} />
         <Route path="/placesCategory" component={placesCategory} />
-        <Route path="/detail" component={detail} />
+        <Route path="/detail/:number" component={detail} />
         <Route path="/article" component={article} />
       </BrowserRouter>
     );
