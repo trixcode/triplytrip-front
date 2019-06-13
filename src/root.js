@@ -16,7 +16,7 @@ function AppRouter() {
         <Route path="/articles" component={articles} />
         <Route path="/placesCategory" component={placesCategory} />
         <Route path="/detail" component={detail} />
-        <Route path="/article" component={article} />
+        <Route path="/article/:articleId" component={article} />
       </BrowserRouter>
     );
   }
