@@ -11,16 +11,12 @@ const BurgerMenu = () => {
         <ul className="header-burger-bar">
           <li className="header-burger-list">
             <Link to={`/placesCategory`}>
-              <a className="header-burger-link" href="#">
                 Заведения
-                </a>
             </Link>
           </li>
           <li className="header-burger-list">
             <Link to={`/articles`}>
-              <a className="header-burger-link" href="#">
                 Статьи
-                </a>
             </Link>
           </li>
 
