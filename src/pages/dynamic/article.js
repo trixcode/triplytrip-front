@@ -13,10 +13,11 @@ import DetailPostTop from '../../components/DetailPostTop';
 
 
 function ArticleDetail(props) {
-  const { getArticleDetailByIdStartAction, history } = props;
+  const { getArticleDetailByIdStartAction } = props;
   useEffect(() => {
-    getArticleDetailByIdStartAction(history.location.search.articleId)
+    getArticleDetailByIdStartAction(props.match.params.articleId)
   }, [])
+  console.log(props.match.params.articleId)
   return (
     <Fragment>
       <HeaderContainer />

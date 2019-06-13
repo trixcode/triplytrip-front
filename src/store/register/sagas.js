@@ -37,7 +37,9 @@ export function* watchCreateLoginRequest() {
 }
 
 
+
 export default function* () {
   yield fork(watchCreateRegisterRequest);
   yield fork(watchCreateLoginRequest);
+
 }

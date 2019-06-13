@@ -4,15 +4,17 @@ import classNames from 'classnames'
 import LoginFormContainer from '../../containers/LoginForm'
 import './modalWindow.scss';
 import RegisterFormContainer from '../../containers/RegisterForm';
+import { select } from '@redux-saga/core/effects';
 
 
 const ModalWindow = (props) => {
   const [showModal, setIsShowModal] = useState(false);
   const [ isLoginOpen , setLoginOpen ] = useState(true);
   const [ isRegisterOpen, setRegisterOpen ] = useState(false);
-  const [ isOpenLoginModal, setLoginModal ] = useState(true);
-  const [ isOpenRegisterModal, setRegisterModal ] = useState(false);
+  const [ isLoginOpenModal, setLoginOpenModal ] = useState(true);
+  const [ isRegisterOpenModal, setRegisterOpenModal ] = useState(true);
 
+  const {isOpenRegisterModal, isOpenLoginModal} = props;
 
   const switchTabs =(a, b) => {
     a(true)
@@ -22,49 +24,91 @@ const ModalWindow = (props) => {
   useEffect(() => {
     Modal.setAppElement('body');
   }, []);
-
-
+  
   const selectedClass = 'modal-tabs--button_selected'
   const defaultClass = 'modal-tabs--button'
 
   return (
 
+    
+
     <div className="modal">
 
 
-      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Войти</button>
+      <button className="modal-open__button"  onClick={() => setIsShowModal(!showModal)}>Войти</button>
+      
       <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Регистрация</button>
-
-      <Modal
-        className="modal-container"
-        isOpen={showModal}
-        contentLabel="onRequestClose Example"
-        onRequestClose={() => setIsShowModal(!showModal)}
-        overlayClassName="Overlay"
-      >
-
-        
-        <div className="modal-wrapper">
-          <div className="modal-tabs">
-            <button
-               onClick={() =>
-                switchTabs(setLoginOpen, setRegisterOpen)}
-                className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
-                Войти</button>
-            <button
-              // className="modal-tabs--button"
-              onClick={() =>
-                switchTabs(setRegisterOpen, setLoginOpen)}
-                className={isRegisterOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
-                Регистрация
-            </button>
-          </div>
-          {isLoginOpen ? <LoginFormContainer /> : ''}
-          {isRegisterOpen ? <RegisterFormContainer /> : ''}
+      {
+        isOpenLoginModal && (
+          <Modal
+          className="modal-container"
+          isOpen={showModal}
+          contentLabel="onRequestClose Example"
+          onRequestClose={() => setIsShowModal(!showModal)}
+          overlayClassName="Overlay"
+        >
+  
           
-        </div>
+          <div className="modal-wrapper">
+            <div className="modal-tabs">
+              <button
+                 onClick={() =>
+                  switchTabs(setLoginOpen, setRegisterOpen)}
+                  className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  Войтиss</button>
+              <button
+                // className="modal-tabs--button"
+                onClick={() =>
+                  switchTabs(setRegisterOpen, setLoginOpen)}
+                  className={isRegisterOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  Регистрация
+              </button>
+            </div>
+            {isLoginOpen ? <LoginFormContainer /> : ''}
+            {isRegisterOpen ? <RegisterFormContainer /> : ''}
+            
+          </div>
+  
+        </Modal>
+        )
+        } 
+        { isOpenRegisterModal && (
+          <Modal
+          className="modal-container"
+          isOpen={showModal}
+          contentLabel="onRequestClose Example"
+          onRequestClose={() => setIsShowModal(!showModal)}
+          overlayClassName="Overlay"
+        >
+  
+          
+          <div className="modal-wrapper">
+            <div className="modal-tabs">
+              <button
+                 onClick={() =>
+                  switchTabs(setLoginOpen, setRegisterOpen)}
+                  className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}
+                  >
 
-      </Modal>
+                  Войтиs</button>
+              <button
+                // className="modal-tabs--button"
+                onClick={() =>
+                  switchTabs(setRegisterOpen, setLoginOpen)}
+                  className={isRegisterOpen ? classNames(defaultClass, selectedClass): defaultClass} 
+                  >
+                  Регистрация
+              </button>
+            </div>
+            {isLoginOpen ? <LoginFormContainer /> : ''}
+            {isRegisterOpen ? <RegisterFormContainer /> : ''}
+            
+          </div>
+  
+        </Modal>
+        )
+      }
+     
     </div>
   )
 }
