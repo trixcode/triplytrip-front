@@ -17,7 +17,7 @@ function isEmpty(obj) {
 const PlaceDetail = (props) => {
   const { getPlaceDetailByIdStart, placeDetail } = props;
   useEffect(() => {
-    getPlaceDetailByIdStart(props.match.params.number)
+    getPlaceDetailByIdStart(props.match.params.placeId)
   }, []);
 
   const [isOverviewClicked, setOverview] = useState(true)
