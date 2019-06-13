@@ -14,7 +14,6 @@ const validate = createValidator({
     address: [required],
     citiesId: [required],
     phone: [required],
-    categoriesId: [required],
     segmentation: [required],
     minPrice: [required],
     maxPrice: [required],

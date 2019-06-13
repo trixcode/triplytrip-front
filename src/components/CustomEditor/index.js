@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React from 'react';
 import {Editor, EditorState, RichUtils, getDefaultKeyBinding} from 'draft-js';
 import './style.scss'
 
@@ -6,7 +6,7 @@ export class richEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {editorState: EditorState.createEmpty()};
-
+    
     this.focus = () => this.editor.focus();
     this.onChange = (editorState) => this.setState({editorState});
 
@@ -26,6 +26,7 @@ export class richEditor extends React.Component {
   }
 
   _mapKeyToEditorCommand(e) {
+    // eslint-disable-next-line default-case
     switch (e.keyCode) {
       case 9: // TAB
         const newEditorState = RichUtils.onTab(
@@ -88,7 +89,6 @@ export class richEditor extends React.Component {
             handleKeyCommand={this.handleKeyCommand}
             keyBindingFn={this.mapKeyToEditorCommand}
             onChange={this.onChange}
-            placeholder="Short description"
             ref={(ref) => this.editor = ref}
             spellCheck={true}
           />
