@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,26 +8,38 @@ import './articlesWrapper.scss';
 
 const ArticlesWrapper = (props) => {
   const { getArticlesByPageStart, articlePaginate } = props;
+  const [Initialpage, setPageClicked] = useState(1);
+
   useEffect(() => {
-    getArticlesByPageStart(3)
-  }, []);
-  console.log(articlePaginate)
+    getArticlesByPageStart(Initialpage)
+  }, [Initialpage]);
+
+  console.log('asdasd', articlePaginate)
   return (
     <div className='articles-wrapper'>
       <div className='container'>
         <div className='articles-wrapper-main-content'>
           <div className='articles-wrapper-list'>
-            <Article articlePaginate={articlePaginate} />
+            {/* {articlePaginate.map(articlePaginate => (
+              <Article articlePaginate={articlePaginate}
+                key={articlePaginate.id}
+              />
+            ))} */}
             <div className="pages-numbers">
-              {[1, 2, 3, 4, 5].map(key => (
+              {[1, 2, 3, 4, 5, 6, 7].map(page => (
                 <button
-                  key={key}
-                  className="pages-numbers__button">
-                  {key}
+                  key={page}
+                  value={page}
+                  className="pages-numbers__button"
+                  onClick={event => setPageClicked(event.target.value)}
+                >
+                  {page}
                 </button>
               ))}
-              <button 
-                className="pages-numbers__button">
+              <button
+                className="pages-numbers__button"
+                onClick={() => setPageClicked(Initialpage - (-1))}
+              >
                 Next
                 <FontAwesomeIcon
                   className='pages-numbers__button__icon'
