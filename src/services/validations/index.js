@@ -3,7 +3,7 @@ import isInt from 'validator/lib/isInt';
 import isIn from 'validator/lib/isIn';
 import isURL from 'validator/lib/isURL';
 
-const isEmpty = (value) => value === undefined || value === null || value === '';
+const isEmpty = (value) => value === undefined || value === null || value === '' ;
 const join = (rules) => (value, data) =>
   rules.map((rule) => rule(value, data)).filter((error) => !!error)[0];
 
@@ -13,6 +13,14 @@ export const email = (value) =>
 export const url = (value) => !isEmpty(value) && !isURL(value) && 'Invalid URL';
 
 export const required = (value) => isEmpty(value) && 'Обязательное поле';
+
+export const draftRequired = (value) => {
+  if (isEmpty(value)) {
+   return 'Обязательное поле'
+  } else if (!isEmpty(value) && value === "<p></p>") {
+    return 'Обязательное поле'
+  }
+}  
 
 export const minLength = (min) => (value) =>
   !isEmpty(value) && value.length < min && `Must be at least ${min} characters`;
