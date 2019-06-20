@@ -14,14 +14,6 @@ export const url = (value) => !isEmpty(value) && !isURL(value) && 'Invalid URL';
 
 export const required = (value) => isEmpty(value) && 'Обязательное поле';
 
-export const draftRequired = (value) => {
-  if (isEmpty(value)) {
-   return 'Обязательное поле'
-  } else if (!isEmpty(value) && value === "<p></p>") {
-    return 'Обязательное поле'
-  }
-}  
-
 export const minLength = (min) => (value) =>
   !isEmpty(value) && value.length < min && `Must be at least ${min} characters`;
 
