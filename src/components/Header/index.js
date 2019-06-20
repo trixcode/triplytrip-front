@@ -22,20 +22,26 @@ const Header = (props) => {
       <div className="container">
         <div className="header-wrapper">
           <Link to="/">
+            <div className="header-brand">
               <img src={Logo} className="header-brand__logo" alt="logo" />
               <h2 className="header-brand__title">TryplyTrip</h2>
+            </div>
           </Link>
           <BurgerMenu />
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
                 <Link to={`/placesCategory`}>
+                  <span className="header-navigation-link">
                     Заведения
+                  </span>
                 </Link>
               </li>
               <li className="header-navigation-list">
                 <Link to={`/articles`}>
+                  <span className="header-navigation-link">
                     Статьи
+                  </span>
                 </Link>
               </li>
 
