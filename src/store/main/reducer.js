@@ -54,6 +54,17 @@ export default (state = initialState, action) => {
           message: action.responseStatuses.message,
         },
       };
+      case actionTypes.SET_LOGINED:
+      return {
+        ...state,
+          isLogined: true,
+      };
+      case actionTypes.SET_NOT_LOGINED:
+      return {
+        ...state,
+          isLogined: false,
+      };
+
     default:
       return state;
   }

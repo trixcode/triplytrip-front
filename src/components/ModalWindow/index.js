@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Modal from 'react-modal';
 import classNames from 'classnames'
 import LoginFormContainer from '../../containers/LoginForm'
@@ -14,7 +14,7 @@ const ModalWindow = (props) => {
   const [ isLoginOpenModal, setLoginOpenModal ] = useState(true);
   const [ isRegisterOpenModal, setRegisterOpenModal ] = useState(true);
 
-  const {isOpenRegisterModal, isOpenLoginModal} = props;
+  const {isOpenRegisterModal, isOpenLoginModal, setNotLogined, isLogined, loginUserSuccess} = props;
 
   const switchTabs =(a, b) => {
     a(true)
@@ -28,16 +28,23 @@ const ModalWindow = (props) => {
   const selectedClass = 'modal-tabs--button_selected'
   const defaultClass = 'modal-tabs--button'
 
-  return (
+  const exitFromAcc = () => {
+    loginUserSuccess(null)
+    setNotLogined()
+    localStorage.setItem('token', '')
+  }
 
-    
+  return (
 
     <div className="modal">
 
-
-      <button className="modal-open__button"  onClick={() => setIsShowModal(!showModal)}>Войти</button>
-      
-      <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Регистрация</button>
+      {
+        isLogined ? (<button className="modal-open__button" onClick={exitFromAcc}>Выйти</button>) :
+        (<Fragment>
+          <button className="modal-open__button"  onClick={() => setIsShowModal(!showModal)}>Войти</button>
+          <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Регистрация</button>
+        </Fragment>)
+      }
       {
         isOpenLoginModal && (
           <Modal
@@ -55,7 +62,7 @@ const ModalWindow = (props) => {
                  onClick={() =>
                   switchTabs(setLoginOpen, setRegisterOpen)}
                   className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}>
-                  Войтиss</button>
+                  Войти</button>
               <button
                 // className="modal-tabs--button"
                 onClick={() =>
@@ -90,7 +97,7 @@ const ModalWindow = (props) => {
                   className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}
                   >
 
-                  Войтиs</button>
+                  Войти</button>
               <button
                 // className="modal-tabs--button"
                 onClick={() =>

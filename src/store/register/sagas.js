@@ -8,7 +8,7 @@ import * as actionTypes from './actionTypes';
 
 export function* createRegisterRequest(requestParams) {
   try {
-    const response = yield call(api.POST, 'register', requestParams);
+    const response = yield call(api.POST, 'auth/register', requestParams);
     yield put(actions.createRegisterSuccess(response));
   } catch (responseError) {
     yield put(actions.createRegisterFailure(responseError));

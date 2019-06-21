@@ -10,12 +10,18 @@ import Logo from '../../assets/mainIcon.png'
 
 const Header = (props) => {
 
-  const { getCategoriesStart, getCitiesStart } = props
+  const { getCategoriesStart, getCitiesStart, setNotLogined, setLogined } = props
 
   useEffect(() => {
     getCategoriesStart()
     getCitiesStart()
+    checkIsAuth()
   }, []);
+  
+  const checkIsAuth = () => {
+    const token = localStorage.getItem('token')
+    token === '' ? setNotLogined() : setLogined()
+  }
 
   return (
     <header className="header">
