@@ -3,12 +3,8 @@ export const initialState = {
   articleDetail: {
     tags: []
   },
-  articlePaginate : {
-    id: '',
-    createdDate: '',
-    title: '',
-    extraDescription: '',
-  },
-};
+  articlePaginate : [],
+}
+
 
 export const getState = (state = initialState) => state || initialState;

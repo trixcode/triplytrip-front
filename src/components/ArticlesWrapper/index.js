@@ -14,17 +14,16 @@ const ArticlesWrapper = (props) => {
     getArticlesByPageStart(Initialpage)
   }, [Initialpage]);
 
-  console.log('asdasd', articlePaginate)
   return (
     <div className='articles-wrapper'>
       <div className='container'>
         <div className='articles-wrapper-main-content'>
           <div className='articles-wrapper-list'>
-            {/* {articlePaginate.map(articlePaginate => (
+            {articlePaginate.map(articlePaginate => (
               <Article articlePaginate={articlePaginate}
                 key={articlePaginate.id}
               />
-            ))} */}
+            ))}
             <div className="pages-numbers">
               {[1, 2, 3, 4, 5, 6, 7].map(page => (
                 <button
