@@ -393,16 +393,16 @@
         background: none;
         border: none;
         right: 25px;
-        top: 106px;
+        top: 5px;
         outline: none;
         @media (max-width: 576px) {
-            top: 122px;
+            top: 5px;
         }
         @media (min-width: 992px) {
-            top: 122px;
+            top: 5px;
         }
         @media (min-width: 1200px) { 
-            top: 106px;
+            top: 5px;
         }
         svg {
             font-size: 30px;
