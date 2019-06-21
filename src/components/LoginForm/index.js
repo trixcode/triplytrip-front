@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
 
