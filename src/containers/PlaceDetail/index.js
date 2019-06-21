@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'next/router'
+import { withRouter } from 'react-router'
 
 import PlaceDetail from '../../components/PlaceDetail';
 import { fromPlaces } from '../../store/selectors';

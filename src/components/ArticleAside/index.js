@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,18 +26,22 @@ const ArticleAside = (props) => {
         </div>
         <ul className='article-aside-box__list'>
             <a 
+              href="#"
               className='article-aside-box__link'>
               coffee
             </a>
             <a 
+              href="#"
               className='article-aside-box__link'>
               news
             </a>
             <a 
+              href="#"
               className='article-aside-box__link'>
               tips & tricks
             </a>
             <a 
+              href="#"
               className='article-aside-box__link'>
               uncategorized
             </a>
@@ -53,6 +57,7 @@ const ArticleAside = (props) => {
         <div className='article-aside-box__news'>
           <div className='article-aside-box__news__img__wrapper'>
             <img
+              alt='cafe'
               src='https://img3.goodfon.com/original/1440x900/2/29/cafe-terrace-old-fashioned.jpg'
               className='article-aside-box__news__img' />
           </div>
@@ -68,6 +73,7 @@ const ArticleAside = (props) => {
         <div className='article-aside-box__news'>
           <div className='article-aside-box__news__img__wrapper'>
             <img
+              alt='cafe'  
               src='https://img3.goodfon.com/original/1440x900/2/29/cafe-terrace-old-fashioned.jpg'
               className='article-aside-box__news__img' />
           </div>
@@ -83,6 +89,7 @@ const ArticleAside = (props) => {
         <div className='article-aside-box__news'>
           <div className='article-aside-box__news__img__wrapper'>
             <img
+              alt='cafe'
               src='https://img3.goodfon.com/original/1440x900/2/29/cafe-terrace-old-fashioned.jpg'
               className='article-aside-box__news__img' />
           </div>
@@ -117,6 +124,7 @@ const ArticleAside = (props) => {
       </div>
       <div className='article-aside-box__ad'>
         <img
+          alt='cafe'
           src='https://img1.goodfon.com/original/640x960/b/3d/sinister-2-clown-panic.jpg'
           className='article-aside-box__ad__link' />
       </div>

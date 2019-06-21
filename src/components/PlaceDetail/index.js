@@ -1,10 +1,10 @@
 import './placeDetail.scss';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faGooglePlusG, faTumblr, faInstagram, faLinkedinIn, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, faGooglePlusG, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import PlaceDetailContactFormContainer from '../../containers/PlaceDetailContactForm';
 
 function isEmpty(obj) {
@@ -15,11 +15,11 @@ function isEmpty(obj) {
   return true;
 }
 const PlaceDetail = (props) => {
-  const { getPlaceDetailByIdStart, router, placeDetail } = props;
+  const { getPlaceDetailByIdStart, placeDetail } = props;
   useEffect(() => {
-    getPlaceDetailByIdStart(router.query.placeId)
+    getPlaceDetailByIdStart(props.match.params.placeId)
   }, []);
-  console.log(placeDetail)
+
   const [isOverviewClicked, setOverview] = useState(true)
   const [isContactClicked, setContact] = useState(false)
   const [isReviewsClicked, setReview] = useState(false)

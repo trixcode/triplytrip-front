@@ -1,21 +1,29 @@
-import React, {Fragment, useState} from 'react';
-import {Editor, EditorState, RichUtils, getDefaultKeyBinding} from 'draft-js';
+import React from 'react';
+import {Editor, EditorState, RichUtils, getDefaultKeyBinding, convertFromHTML, convertToRaw} from 'draft-js';
+import   draftToHtml  from 'draftjs-to-html';
 import './style.scss'
 
 export class richEditor extends React.Component {
   constructor(props) {
+    
     super(props);
+    this.input = this.props.input;
     this.state = {editorState: EditorState.createEmpty()};
-
+    if (props.input.value) {
+      this.state.editorState = EditorState.createWithContent(convertFromHTML(props.input.value));
+      }
     this.focus = () => this.editor.focus();
-    this.onChange = (editorState) => this.setState({editorState});
+    this.onChange = (editorState) =>  {
+      this.setState({editorState})
+      this.input.onChange(draftToHtml(convertToRaw(editorState.getCurrentContent())));
+    };
 
     this.handleKeyCommand = this._handleKeyCommand.bind(this);
     this.mapKeyToEditorCommand = this._mapKeyToEditorCommand.bind(this);
     this.toggleBlockType = this._toggleBlockType.bind(this);
     this.toggleInlineStyle = this._toggleInlineStyle.bind(this);
   }
-
+  
   _handleKeyCommand(command, editorState) {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
@@ -26,6 +34,7 @@ export class richEditor extends React.Component {
   }
 
   _mapKeyToEditorCommand(e) {
+    // eslint-disable-next-line default-case
     switch (e.keyCode) {
       case 9: // TAB
         const newEditorState = RichUtils.onTab(
@@ -82,13 +91,13 @@ export class richEditor extends React.Component {
         />
         <div className={className} onClick={this.focus}>
           <Editor
+            {...this.input}
             blockStyleFn={getBlockStyle}
             customStyleMap={styleMap}
             editorState={editorState}
             handleKeyCommand={this.handleKeyCommand}
             keyBindingFn={this.mapKeyToEditorCommand}
             onChange={this.onChange}
-            placeholder="Short description"
             ref={(ref) => this.editor = ref}
             spellCheck={true}
           />
@@ -196,4 +205,4 @@ const InlineStyleControls = (props) => {
       )}
     </div>
   );
-};
+}

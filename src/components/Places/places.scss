@@ -27,9 +27,7 @@
         font-size: 19px;
         &_selected {
             color: white;
-            background: -moz-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
-            background: -webkit-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
-            background: linear-gradient(left, #5884e8 0%, #2cc7de 100%);
+            background: linear-gradient(90deg, #5884e8 0%, #2cc7de 100%);
         }
         @media screen and (max-width: 768px) { 
             padding: 5px;
@@ -40,9 +38,7 @@
     .places__tag:hover {
         cursor: pointer;
         color: white;
-        background: -moz-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
-        background: -webkit-linear-gradient(left, #5884e8 0%, #2cc7de 100%);
-        background: linear-gradient(left, #5884e8 0%, #2cc7de 100%);
+        background: linear-gradient(90deg, #5884e8 0%, #2cc7de 100%);
     }
     
 }

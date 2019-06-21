@@ -45,6 +45,7 @@
         height: 213px;
         width: 100%;
         position: relative;
+        margin-bottom: 20px;
         .place__card__images {
             height: 100%;
             width: 100%;
@@ -68,6 +69,7 @@
     }
     &__name{
         font-size: 0.97em;
+        color: black;
     }
     &__price  {
         font-size: 0.85em;

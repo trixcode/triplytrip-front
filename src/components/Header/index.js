@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 
-import Link from 'next/link'
+import {Link} from 'react-router-dom'
 import './header.scss';
 import BurgerMenu from '../BurgerMenu'
-import ModalWindow from '../ModalWindow';
+import ModalWindowContainer from '../../containers/Modal';
+import Logo from '../../assets/mainIcon.png'
 
 
 
@@ -20,37 +21,37 @@ const Header = (props) => {
     <header className="header">
       <div className="container">
         <div className="header-wrapper">
-          <Link href="/">
-            <a className="header-brand">
-              <img src='/static/mainIcon.png' className="header-brand__logo" alt="logo" />
+          <Link to="/">
+            <div className="header-brand">
+              <img src={Logo} className="header-brand__logo" alt="logo" />
               <h2 className="header-brand__title">TryplyTrip</h2>
-            </a>
+            </div>
           </Link>
           <BurgerMenu />
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
-                <Link href={`/placesCategory`}>
-                  <a className="header-navigation-link" href="#">
+                <Link to={`/placesCategory`}>
+                  <span className="header-navigation-link">
                     Заведения
-                </a>
+                  </span>
                 </Link>
               </li>
               <li className="header-navigation-list">
-                <Link href={`/articles`}>
-                  <a className="header-navigation-link" href="#">
+                <Link to={`/articles`}>
+                  <span className="header-navigation-link">
                     Статьи
-                </a>
+                  </span>
                 </Link>
               </li>
 
             </ul>
 
             <div className="header-actions">
-              <Link href={`/addListing`}>
+              <Link to={`/addListing`}>
                 <button className="header-actions-button">+ Add Listing</button>
               </Link>
-              <ModalWindow />
+              <ModalWindowContainer />
             </div>
           </nav>
         </div>

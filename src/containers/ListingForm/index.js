@@ -4,7 +4,7 @@ import { reduxForm } from 'redux-form';
 
 import ListingForm from '../../components/ListingForm';
 import { createListingStart } from '../../store/actions';
-import { createValidator, email, required } from '../../services/validations';
+import { createValidator, email, required, draftRequired } from '../../services/validations';
 
 
 const validate = createValidator({
@@ -14,12 +14,13 @@ const validate = createValidator({
     address: [required],
     citiesId: [required],
     phone: [required],
-    categoriesId: [required],
     segmentation: [required],
     minPrice: [required],
     maxPrice: [required],
     mainImage: [required],
     website: [required],
+    extraDescription: [draftRequired],
+    description: [draftRequired],
 });
 const formConfig = {
     form: 'ListingForm',

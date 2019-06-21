@@ -1,19 +1,26 @@
-import Link from 'next/link'
+import { withRouter } from 'react-router'
 import { Fragment } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 import './PlaceCard.scss';
 
 const PlaceCard = props => {
-  const { place } = props;
+
+  const { place, history } = props;
+
+  const pushToDetail = () => {
+    history.push(`/detail/${place.id}`)
+  }
+
   const like = () => {
     console.log('liked!')
   }
+
   return (
     <div className='place-card-container'>
-      <Link href={`/detail/${place.id}`}>
-        <Fragment>
+        <div onClick={pushToDetail}>
           <div className='place-card-image-wrapper'>
             <img
               src={place.mainImage ? place.mainImage : "https://cdn3.wpbeginner.com/wp-content/uploads/2018/03/httperrorwpuploads-1.png"}
@@ -75,8 +82,7 @@ const PlaceCard = props => {
               </span>
             </div>
           </div>
-        </Fragment>
-      </Link>
+        </div>
       <div className='place-card-button-wrapper'>
         <button
           className='place-card__button place-card__button_detail'>
@@ -105,4 +111,4 @@ const PlaceCard = props => {
   )
 }
 
-export default PlaceCard
+export default withRouter(PlaceCard)

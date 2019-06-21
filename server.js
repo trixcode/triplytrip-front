@@ -1,9 +1,9 @@
 const express = require('express')
-const next = require('next')
+const react = require('react')
 
 const port = parseInt(process.env.PORT, 10) || 4000
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
+const app = react({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {

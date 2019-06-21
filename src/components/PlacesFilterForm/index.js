@@ -7,24 +7,31 @@ import './filterform.scss';
 import { customInputField } from '../CustomFields';
 import useDebounce from '../customHooks/useDebounce';
 
+
 const PlacesFilterForm = props => {
-  const { router, handleSubmit, changeFormValue, getPlacesStart, places, cities, myValues, categories } = props;
+  const { changeFormValue, getPlacesStart, places, cities, myValues, categories, location } = props;
+  
+  let params = new URLSearchParams(location.search)
+
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [distanceUnit, setUnit] = useState('km');
   const [distanceValue, setValue] = useState(10)
 
-  const { keywords, location, category } = router.query
-
-  const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords
-  const locationChanged = myValues.location === undefined ? '' : myValues.location
-  const categoryChanged = myValues.categoriesForm
-
+  const reqLocation = params.get('location')
+  const keywords = params.get('keywords')
+  const category = params.get('category')
+  
+  const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords === null ? '' : myValues.keywords
+  const locationChanged = myValues.location === undefined ? '' : myValues.location === null ? '' : myValues.location
+  const categoryChanged = myValues.categoriesForm 
+  
   const checkCity = () => {
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
     const citiId = currentLocation === '' ? {id: 0} : cities.find(city => city.name === currentLocation ? city.id : null)
-    const categoryId = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : categories.find(category => category.name === categoryChanged ? category.id : '')
+    const categoryId = categoryChanged === null ? '' : categoryChanged === 'all categories' ? '' : 
+    categories.find(category => category.name === categoryChanged ? category.id : '')
     
-    const idOfCategory = categoryChanged === undefined ? '' : categoryChanged === 'all categories' ? '' : `&categoriesId=${categoryId && categoryId.id}`
+    const idOfCategory = categoryChanged === null ? '' : categoryChanged === 'all categories' ? '' : `&categoriesId=${categoryId && categoryId.id}`
     const idOfCity = !citiId ? 'citiesId=10' : citiId.id === 0 ? '' : citiId === '' ? '' : `citiesId=${citiId && citiId.id}`
     getPlacesStart(`isOPen=true&_limit=12&${idOfCity}&q=${keywordsChanged}${idOfCategory}`)
   }
@@ -38,10 +45,10 @@ const PlacesFilterForm = props => {
 
   useEffect(() => {
     changeFormValue('keywords', keywords)
-    changeFormValue('location', location)
+    changeFormValue('location', reqLocation)
     changeFormValue('categoriesForm', category)
   }, [])
-
+  
 
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
     'coffe', 'ckin care', 'spa', 'parking street',

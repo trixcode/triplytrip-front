@@ -1,13 +1,14 @@
-import Router from 'next/router'
-
+import {withRouter} from 'react-router'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHotel, faHamburger, faMapMarkedAlt, faCoffee, faBeer } from '@fortawesome/free-solid-svg-icons';
 import './homeCategory.scss';
 
 const HomeCategory = (props) => {
 
+  const {history} = props
   const pushToCategories = (category) => {
-    Router.push(`/placesCategory?category=${category}`)
+    history.push(`/placesCategory?category=${category}`)
   }
 
   return (
@@ -67,4 +68,4 @@ const HomeCategory = (props) => {
   )
 }
 
-export default HomeCategory;
+export default withRouter(HomeCategory);

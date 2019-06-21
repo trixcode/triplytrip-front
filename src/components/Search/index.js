@@ -1,6 +1,5 @@
 import {useEffect} from 'react'
-
-import Router from 'next/router'
+import React from 'react'
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
 import './search.scss';
@@ -9,13 +8,13 @@ import { faSearch, faMapMarkerAlt  } from '@fortawesome/free-solid-svg-icons';
 
 const Search = (props) => {
 
-  const {getCategoriesStart, categories, getCitiesStart, cities} = props
+  const {getCategoriesStart, categories, getCitiesStart, history} = props
 
   const { handleSubmit } = props;
   const onSubmitHandle = (formValues) => {
     const emptyKeywords = formValues.keywords === undefined ? '' : formValues.keywords
     const emptyCity = formValues.city === undefined ? '' : formValues.city
-    Router.push(`/placesCategory?location=${emptyCity}&keywords=${emptyKeywords}`)
+    history.push(`/placesCategory?location=${emptyCity}&keywords=${emptyKeywords}`)
   }
 
   useEffect(() => {

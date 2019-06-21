@@ -254,7 +254,7 @@ const ListingForm = (props) => {
                       </span>
                       <img
                         src={URL.createObjectURL(file)}
-                        alt='image'
+                        alt='hotel'
                         className='listing-image__files__file' />
                     </div>
                   )}
@@ -289,7 +289,7 @@ const ListingForm = (props) => {
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg'
                 name="description"
-                component="textarea" />
+                component={richEditor}  />
             </div>
           </div>
 

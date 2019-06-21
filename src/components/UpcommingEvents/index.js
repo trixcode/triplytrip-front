@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import moment from 'moment';
-
+import React from 'react'
 import SectionTitle from '../SectionTitle';
 import './upcommingEvents.scss'
 
@@ -8,7 +8,7 @@ const UpcommingEvents = (props) => {
   const { currentEvents, getEventsStart } = props;
   useEffect(() => {
     getEventsStart('isOpen=true&_sort=dateTimeStart&_limit=2')
-  }, []);
+  }, [getEventsStart]);
   return (
     <section className="upcomming-events">
     <div className="container">
