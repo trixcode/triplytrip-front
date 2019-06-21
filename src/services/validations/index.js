@@ -3,7 +3,7 @@ import isInt from 'validator/lib/isInt';
 import isIn from 'validator/lib/isIn';
 import isURL from 'validator/lib/isURL';
 
-const isEmpty = (value) => value === undefined || value === null || value === '';
+const isEmpty = (value) => value === undefined || value === null || value === '' ;
 const join = (rules) => (value, data) =>
   rules.map((rule) => rule(value, data)).filter((error) => !!error)[0];
 

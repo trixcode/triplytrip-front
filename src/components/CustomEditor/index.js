@@ -1,5 +1,5 @@
 import React from 'react';
-import {Editor, EditorState, RichUtils, getDefaultKeyBinding, convertFromHTML, convertToRaw, convertFromRaw} from 'draft-js';
+import {Editor, EditorState, RichUtils, getDefaultKeyBinding, convertFromHTML, convertToRaw} from 'draft-js';
 import   draftToHtml  from 'draftjs-to-html';
 import './style.scss'
 

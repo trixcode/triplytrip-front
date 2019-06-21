@@ -19,6 +19,7 @@ const validate = createValidator({
     maxPrice: [required],
     mainImage: [required],
     website: [required],
+
 });
 const formConfig = {
     form: 'ListingForm',
