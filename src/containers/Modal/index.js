@@ -8,7 +8,6 @@ const ModalWindowContainer = (props) => <ModalWindow {...props} />;
 
 const mapStateToProps = (store) => ({
   isOpenRegisterModal: store.register.isOpenRegisterModal,
-  isOpenLoginModal: store.register.isOpenLoginModal,
   isLogined: store.main.isLogined
 })
  const mapDispatchToProps = (dispatch) => ({
