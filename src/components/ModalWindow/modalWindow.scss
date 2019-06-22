@@ -177,7 +177,7 @@
 
 .modal-sign-up{
   height: 70%;
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -193,6 +193,26 @@
 
 @media (max-width: 960px){
   .modal-container{
-    left: 110px;
+    left: 0px;
+  }
+}
+@media (max-width: 768px) { 
+  .modal-tabs{
+    .modal-tabs--button {
+    font-size: 20px;
+    }
+  }
+  .modal-container {
+    width: 60%;
+  }
+}
+@media (max-width: 576px) { 
+  .modal-tabs{
+    .modal-tabs--button {
+    font-size: 17px;
+    }
+  }
+  .modal-container {
+    width: 90%;
   }
 }

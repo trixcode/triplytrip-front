@@ -45,8 +45,8 @@ const ModalWindow = (props) => {
       {
         isLogined ?  <button className="modal-open__button" onClick={exitFromAcc}>Выйти</button> :
         (<Fragment>
-          <button className="modal-open__button"  onClick={() => setIsShowModal(!showModal)}>Войти</button>
-          <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)}>Регистрация</button>
+          <button className="modal-open__button"  onClick={() => setIsShowModal(!showModal) + switchTabs(setLoginOpen, setRegisterOpen)}>Войти</button>
+          <button className="modal-open__button" onClick={() => setIsShowModal(!showModal)+switchTabs(setRegisterOpen, setLoginOpen)}>Регистрация</button>
         </Fragment>)
       }
         { (

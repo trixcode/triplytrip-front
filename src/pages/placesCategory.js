@@ -10,9 +10,6 @@ const PlacesCategory = () => {
   return (
     <Fragment>
       <HeaderContainer />
-      <PagesTopTitle 
-        title='London'
-        link={['HOME', 'category', 'bishkek']}/>
       <PlacesFilterFormContainer />
         <Footer text="Footer"/>
     </Fragment>

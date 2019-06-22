@@ -2,6 +2,7 @@ import './PagesTopTitle.scss'
 import React from 'react'
 const PagesTopTitle = props => {
 	const { title, link } = props;
+	let href = '#'
 	return (
 		<div className='pages-top-subheader'>
 			<img 

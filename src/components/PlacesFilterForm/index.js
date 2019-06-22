@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import PlaceCard from '../PlaceCard'
 import './filterform.scss';
 import { customInputField } from '../CustomFields';
 import useDebounce from '../customHooks/useDebounce';
+import PlagesTopTitle from '../PagesTopTitle'
 
 
 const PlacesFilterForm = props => {
@@ -47,6 +48,7 @@ const PlacesFilterForm = props => {
     changeFormValue('keywords', keywords)
     changeFormValue('location', reqLocation)
     changeFormValue('categoriesForm', category)
+    window.scrollTo(0, 0)
   }, [])
   
 
@@ -56,6 +58,8 @@ const PlacesFilterForm = props => {
     'massage therapy', 'venues', 'jewellery', 'fashion']
 
   return (
+    <Fragment>
+    <PlagesTopTitle title={locationChanged || categoryChanged} link={['home', 'search']}/>
     <div
       className='filter-form'>
       <div className='container'>
@@ -184,6 +188,7 @@ const PlacesFilterForm = props => {
         </div>
       </div>
     </div>
+    </Fragment>
   )
 }
 
