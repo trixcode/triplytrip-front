@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFolder, faComments, faArrowRight, faSearch, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -6,10 +7,18 @@ import { faUser, faFolder, faComments, faArrowRight, faSearch, faPaperPlane } fr
 import './article.scss'
 
 const Article = (props) => {
-  const { articlePaginate } = props;
+
+  const { articlePaginate, history } = props;
+
+  const pushToDetailArticle = () => {
+    history.push(`/article/${articlePaginate._id}`)
+  }
+
   return (
     <div className='article' >
-      <div className='article-img-wrapper'>
+      <div 
+      onClick={pushToDetailArticle}
+      className='article-img-wrapper' >
         <div className='article-img__date'>
           <h3
             className='article-img__date__day'>
@@ -21,7 +30,7 @@ const Article = (props) => {
           </p>
         </div>
         <img
-          src='https://img4.badfon.ru/original/1920x1080/0/72/more-basseyny-otel-princesa.jpg'
+          src={articlePaginate.mainImage}
           alt='holet'
           className='article__img' />
       </div>
@@ -57,7 +66,8 @@ const Article = (props) => {
         </div>
         <span className='article-description__text' 
         dangerouslySetInnerHTML={{ __html:articlePaginate.extraDescription}}/>
-        <button className='article-description__button'>
+        <button className='article-description__button'
+        >
           read more
           <FontAwesomeIcon
             className='article-description__button__arrow'
@@ -68,4 +78,4 @@ const Article = (props) => {
   )
 }
 
-export default Article;
+export default withRouter(Article);

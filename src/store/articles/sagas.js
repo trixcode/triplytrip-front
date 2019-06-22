@@ -9,7 +9,7 @@ import * as actionTypes from './actionTypes';
 
 export function* getArticleDetailRequest(articleList) {
   try {
-    const response = yield call(api.GET, 'articles', articleList);
+    const response = yield call(api.GET, 'Articles', articleList);
     yield put(actions.getArticleDetailSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticleDetailFailure(responseError));
@@ -19,7 +19,7 @@ export function* getArticleDetailRequest(articleList) {
 
 export function* getArticleDetailByIdRequest(articleId) {
   try {
-    const response = yield call(api.GET, `articles/${articleId}`);
+    const response = yield call(api.GET, `Articles/${articleId}`);
     yield put(actions.getArticleDetailByIdSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticleDetailByIdFailure(responseError));
@@ -28,7 +28,7 @@ export function* getArticleDetailByIdRequest(articleId) {
 
 export function* getArticlesByPageRequest(articlePage) {
   try {
-    const response = yield call(api.GET, `articles?_limit=3&_page=${articlePage}`);
+    const response = yield call(api.GET, `Articles?_limit=3&_page=${articlePage}`);
     yield put(actions.getArticlesByPageSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticlesByPageFailure(responseError));

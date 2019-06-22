@@ -8,7 +8,7 @@ import * as actionTypes from './actionTypes';
 
 export function* getLatestNewsRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'articles?_limit=4', requestParams);
+    const response = yield call(api.GET, 'Articles', requestParams);
     yield put(actions.getLatestNewsSuccess(response));
   } catch (responseError) {
     yield put(actions.getLatestNewsFailure(responseError));
