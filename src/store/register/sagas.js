@@ -19,7 +19,7 @@ import {
         yield put(actions.registerSuccess(response));
         yield put(mainActions.setResponseSuccessStatuses({
         title: 'success!',
-        message: 'Вы вошли в свой аккаунт!'
+        message: 'Вы успешно зарегистрировались!'
         }));
       }
       
