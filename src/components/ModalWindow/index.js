@@ -17,10 +17,11 @@ const ModalWindow = (props) => {
     a(true)
     b(false)
   }
-
+  console.log(isLogined, 'ssss')
   useEffect(() => {
     Modal.setAppElement('body');
-  }, []);
+    lolka()
+  },);
   
   const selectedClass = 'modal-tabs--button_selected'
   const defaultClass = 'modal-tabs--button'
@@ -29,6 +30,12 @@ const ModalWindow = (props) => {
     loginUserSuccess(null)
     setNotLogined()
     localStorage.removeItem('token')
+  }
+
+  const lolka = () => {
+    if (isLogined === true) {
+      setIsShowModal(false)
+    }
   }
 
   return (
