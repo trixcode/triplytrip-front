@@ -2,27 +2,28 @@ import React from 'react';
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
 
-// import './registerForm.scss';
-
 
 const LoginForm = (props) => {
-  const {  handleSubmit, createLoginStart } = props;
+  const {  handleSubmit, loginUserStart, token, isLogined, setNotLogined, setLogined } = props;
   const onSubmitHandle = (formValues) => {
-    console.log(formValues)
-    createLoginStart(formValues)
+    loginUserStart(formValues)
   }
+  
+  if (token !== null) {
+    setLogined()
+    console.log(isLogined)
+    localStorage.setItem('token', token.token)
+  } else {
+    setNotLogined()
+    console.log(isLogined)
+  }
+  
   return (
     <div className="modal-sign-in">
       <div className="modal-form-wrapper">
         <form className="modal-form" onSubmit={handleSubmit(onSubmitHandle)}>
-          <span className="modal-form__input-name">Электронный адрес<span className="modal-from__input-star">*</span></span>
-          <Field name="email"
-          component={customInputField}
-          type="text"
-          className='modal-form__input'
-          />
           <span className="modal-form__input-name">Логин<span className="modal-from__input-star">*</span></span>
-          <Field name="name"
+          <Field name="username"
           component={customInputField}
           type="text"
           className='modal-form__input'

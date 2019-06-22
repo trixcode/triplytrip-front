@@ -10,7 +10,6 @@ import './successModal.scss';
 
 
 const SuccessModal = ({ responseStatuses, setDefaultResponseStatusesAction }) => {
-  console.log(responseStatuses)
   return (
     <Modal
       className="modalSuccess-container"

@@ -35,7 +35,7 @@ export const parseSettings = (
       body: data instanceof FormData ? data : JSON.stringify(data),
       method,
       headers,
-      credentials: 'include',
+      //credentials: 'include',
     },
     otherSettings
   );

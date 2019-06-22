@@ -7,7 +7,8 @@ export const initialState = {
     isModalOpen: false,
     message: '',
     title: '',
-  }
+  },
+  isLogined: false
 };
 
 export const getState = (state = initialState) => state || initialState;

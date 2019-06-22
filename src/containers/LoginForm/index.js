@@ -2,13 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoginForm from '../../components/LoginForm';
-import { createLoginStart } from '../../store/actions';
-import { createValidator, email, required } from '../../services/validations';
+import { loginUserStart, setLogined, setNotLogined } from '../../store/actions';
+import { createValidator, required } from '../../services/validations';
 
 
 const validate = createValidator({
-    name: [required],
-    email: [required, email],
+    username: [required],
     password: [required],
 });
 const formConfig = {
@@ -17,7 +16,15 @@ const formConfig = {
 }
 
 const LoginFormContainer = (props) => <LoginForm {...props} />;
+
+const mapStoreToProps = (store) => ({
+    token: store.login.token,
+    isLogined: store.main.isLogined
+})
+
 const mapDispatchToProps = (dispatch) => ({
-    createLoginStart: (formValues) => dispatch(createLoginStart(formValues))
+    loginUserStart: (formValue) => dispatch(loginUserStart(formValue)),
+    setLogined: (isLogined) => dispatch(setLogined(true)),
+    setNotLogined: (isLogined) => dispatch(setNotLogined(false))
 }) 
-export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(LoginFormContainer));
+export default connect(mapStoreToProps, mapDispatchToProps)(reduxForm(formConfig)(LoginFormContainer));

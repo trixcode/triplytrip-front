@@ -6,7 +6,6 @@ import { customInputField } from '../CustomFields';
 const RegisterForm = (props) => {
   const { handleSubmit, createRegisterStart } = props;
   const onSubmitHandle = (formValues) => {
-    console.log(formValues)
     createRegisterStart(formValues)
   }
 
