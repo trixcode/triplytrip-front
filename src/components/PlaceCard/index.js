@@ -11,7 +11,7 @@ const PlaceCard = props => {
   const { place, history } = props;
 
   const pushToDetail = () => {
-    history.push(`/detail/${place.id}`)
+    history.push(`/detail/${place._id}`)
   }
 
   const like = () => {

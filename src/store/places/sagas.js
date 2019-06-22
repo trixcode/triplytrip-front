@@ -8,7 +8,7 @@ import {
 
   export function* getPlacesRequest(requestParams) {
     try {
-      const response = yield call(api.GET, 'places', {params: requestParams});
+      const response = yield call(api.GET, 'Place', {params: requestParams});
       yield put(actions.getPlacesSuccess(response));
     } catch (responseError) {
       yield put(actions.getPlacesFailure(responseError));
@@ -23,7 +23,7 @@ import {
 
   export function* getPlaceDetailByIdRequest(placeId) {
     try {
-      const response = yield call(api.GET, `places/${placeId}`, {params: '_expand=user'});
+      const response = yield call(api.GET, `Place/${placeId}`, {params: '_expand=user'});
       yield put(actions.getPlaceDetailByIdSuccess(response));
     } catch (responseError) {
       yield put(actions.getPlaceDetailByIdFailure(responseError));
