@@ -8,7 +8,8 @@ import './articlesWrapper.scss';
 
 const ArticlesWrapper = (props) => {
   const { getArticlesByPageStart, articlePaginate } = props;
-  const [Initialpage, setPageClicked] = useState(1);
+  const firstPage = 1;
+  const [Initialpage, setPageClicked] = useState(firstPage);
 
   useEffect(() => {
     getArticlesByPageStart(Initialpage)
