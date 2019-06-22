@@ -20,7 +20,7 @@ const Header = (props) => {
   
   const checkIsAuth = () => {
     const token = localStorage.getItem('token')
-    token === '' ? setNotLogined() : setLogined()
+    token === null ? setNotLogined() : setLogined()
   }
 
   return (
