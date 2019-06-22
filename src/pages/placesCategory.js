@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import HeaderContainer from '../containers/Header';
-import PagesTopTitle from '../components/PagesTopTitle';
+import SuccessModal from '../components/SuccessModal';
 import PlacesFilterFormContainer from '../containers/PlacesFilterForm';
 import Footer from '../components/Footer';
 import "../assets/styles/main.scss";
@@ -12,6 +12,7 @@ const PlacesCategory = () => {
       <HeaderContainer />
       <PlacesFilterFormContainer />
         <Footer text="Footer"/>
+        <SuccessModal />
     </Fragment>
   )
 }

@@ -24,7 +24,7 @@ export function* watchGetTopDestinationsRequest() {
 
 export function* getCategoriesRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'categories', {params: requestParams});
+    const response = yield call(api.GET, 'category_place', {params: requestParams});
     yield put(actions.getCategoriesSuccess(response));
   } catch (responseError) {
     yield put(actions.getCategoriesFailure(responseError));

@@ -1,6 +1,6 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
-import ModalWindow from '../ModalWindow';
+import ModalWindowContainer from '../../containers/Modal';
 import {Link} from 'react-router-dom'
 import './burgerMenu.scss'
 
@@ -30,7 +30,7 @@ const BurgerMenu = () => {
           <Link to={`/addListing`}>
             <button className="header-burger-button">+ Add Listing</button>
           </Link>
-          <ModalWindow />
+          <ModalWindowContainer />
         </div>
       </Menu>
 

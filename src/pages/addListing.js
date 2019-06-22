@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
 import HeaderContainer from '../containers/Header';
+import SuccessModal from '../components/SuccessModal';
 import Footer from '../components/Footer';
 import ListingFormContainer from '../containers/ListingForm';
 import PagesTopTitle from '../components/PagesTopTitle';
@@ -19,6 +20,7 @@ const AddListing = () => {
         link={['HOME', 'add listing']}/>
       <ListingFormContainer />
       <Footer text="Footer"/>
+      <SuccessModal/>
     </Fragment>
   )
 }
