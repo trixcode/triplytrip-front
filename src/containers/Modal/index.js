@@ -7,7 +7,6 @@ import { setNotLogined, loginUserSuccess } from '../../store/actions';
 const ModalWindowContainer = (props) => <ModalWindow {...props} />;
 
 const mapStateToProps = (store) => ({
-  isOpenRegisterModal: store.register.isOpenRegisterModal,
   isLogined: store.main.isLogined
 })
  const mapDispatchToProps = (dispatch) => ({

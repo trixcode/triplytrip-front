@@ -11,7 +11,6 @@ import {
     try {
       const response = yield call(api.POST, 'auth/login', requestParams);
       if (response.error) {
-        setNotLogined(false)
         yield put(actions.loginUserFailure());
         yield put(mainActions.setResponseFailureStatuses({
           title: 'ooops!',
@@ -19,7 +18,6 @@ import {
         }));
       } else {
         yield put(actions.loginUserSuccess(response));
-        setLogined(true)
         yield put(mainActions.setResponseSuccessStatuses({
         title: 'success!',
         message: 'Вы вошли в свой аккаунт!'

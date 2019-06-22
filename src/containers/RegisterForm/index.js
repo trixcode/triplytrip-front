@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import RegisterForm from '../../components/RegisterForm';
-import { createRegisterStart } from '../../store/actions';
 import { createValidator, email, required } from '../../services/validations';
+import { registerStart, setLogined, setNotLogined } from '../../store/actions.js'
 
 
 const validate = createValidator({
@@ -17,7 +17,14 @@ const formConfig = {
 }
 
 const RegisterFormContainer = (props) => <RegisterForm {...props} />;
+
+const mapStateToProps = (store) => ({
+    userData: store.register.userData
+})
+
 const mapDispatchToProps = (dispatch) => ({
-    createRegisterStart: (formValues) => dispatch(createRegisterStart(formValues))
+    registerStart: (formValue) => dispatch(registerStart(formValue)),
+    setLogined: (isLogined) => dispatch(setLogined(true)),
+    setNotLogined: (isLogined) => dispatch(setNotLogined(false))
 }) 
-export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(RegisterFormContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(RegisterFormContainer));

@@ -4,11 +4,19 @@ import './registerForm.scss';
 import { customInputField } from '../CustomFields';
 
 const RegisterForm = (props) => {
-  const { handleSubmit, createRegisterStart } = props;
+  const { handleSubmit, registerStart, userData, setNotLogined, setLogined } = props;
   const onSubmitHandle = (formValues) => {
-    createRegisterStart(formValues)
+    registerStart(formValues)
   }
+  console.log(userData)
 
+  if (userData !== null) {
+    setLogined()
+    localStorage.setItem('token', userData.token)
+  } else {
+    setNotLogined()
+  }
+  
   return (
     <div className="modal-sign-up">
       <div className="modal-form-wrapper">
@@ -20,7 +28,7 @@ const RegisterForm = (props) => {
             className='modal-form__input'
           />
           <span className="modal-form__input-name">Логин<span className="modal-from__input-star">*</span></span>
-          <Field name="name"
+          <Field name="username"
             component={customInputField}
             type="text"
             className='modal-form__input'

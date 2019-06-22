@@ -11,11 +11,9 @@ const LoginForm = (props) => {
   
   if (token !== null) {
     setLogined()
-    console.log(isLogined)
     localStorage.setItem('token', token.token)
   } else {
     setNotLogined()
-    console.log(isLogined)
   }
   
   return (
