@@ -3,6 +3,8 @@ export const initialState = {
   articleDetail: {
     tags: []
   },
-};
+  articlePaginate : [],
+}
+
 
 export const getState = (state = initialState) => state || initialState;

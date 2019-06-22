@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import React from 'react'
 import HeaderContainer from '../containers/Header';
 import Footer from '../components/Footer';
-import ArticlesWrapper from '../components/ArticlesWrapper'
+import ArticlesContainer from '../containers/Articles'
 import "../assets/styles/main.scss";
 
 const Articles = () => {
@@ -10,7 +10,7 @@ const Articles = () => {
   return (
     <Fragment>
       <HeaderContainer />
-      <ArticlesWrapper />
+      <ArticlesContainer />
       <Footer text="Footer"/>
     </Fragment>
   )

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Field } from 'redux-form'
 import { customInputField } from '../CustomFields';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

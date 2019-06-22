@@ -15,6 +15,11 @@ export default (state = initialState, action) => {
         ...state,
         articleDetail: action.response,
       };
+      case actionTypes.GET_ARTICLES_BY_PAGE_SUCCESS:
+        return {
+          ...state,
+          articlePaginate: action.response,
+        };
     default:
       return state;
   }

@@ -17,6 +17,7 @@ const checkStatus = (response) => {
   return response.json();
 };
 
+const token = localStorage.getItem('token');
 
 export const parseSettings = (
     { method = 'GET', data, locale, ...otherSettings } = {}
@@ -24,6 +25,7 @@ export const parseSettings = (
   const headers = {
     Accept: 'application/json',
     'Content-type': 'application/json',
+    'token' : `token ${token}`
   };
   if (otherSettings.removeContentType) {
     delete headers['Content-type'];
