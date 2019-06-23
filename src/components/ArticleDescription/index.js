@@ -13,11 +13,11 @@ const ArticleDescription = (props) => {
       </div>
       <div className='article-description-middle'>
         <h2 className='article-description-middle__title'>
-          Heading - Pellentesque gravida fermentum
+          {articleDetail.title}
             </h2>
-        <div className='article-description-middle__image'>
-          Deleate
-            </div>
+        <img
+          src={articleDetail.mainImage}
+          className='article-description-middle__image' />
       </div>
       <div className='article-description-footer'>
         <div dangerouslySetInnerHTML={{ __html: articleDetail.extraDescription }} className='article-description-footer__text'></div>
@@ -26,7 +26,7 @@ const ArticleDescription = (props) => {
           {articleDetail.tags && articleDetail.tags.map(tag => (
             ' ' + tag
           ))}
-        
+
         </span>
       </div>
       <div className='article-description-buttons'>

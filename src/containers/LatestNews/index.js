@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fromArticles } from '../../store/selectors';
 
 import Articles from '../../components/Articles';
-import { getLatestNewsStart } from '../../store/actions';
+import { getArticlesByIdStart } from '../../store/actions'
+
+import { getLatestNewsStart, getLatestNewsByIdStart } from '../../store/actions';
 
 
 const LatestNewsContainer = (props) => <Articles {...props} />;
 
-const mapStateToProps = (store) => ({
-  latestNewsList: store.latestNews.latestNewsList,
-})
+
 const mapDispatchToProps = (dispatch) => ({
-  getLatestNewsStart: (requestParams='') => dispatch(getLatestNewsStart(requestParams)),
+  getArticlesByIdStart: (articlePaginate) => dispatch(getArticlesByIdStart(articlePaginate)),
 })
-  
+
+const mapStateToProps = (store) => ({
+    articlePaginate: fromArticles.getState(store).articlePaginate,
+  })
 export default connect(mapStateToProps, mapDispatchToProps)(LatestNewsContainer);

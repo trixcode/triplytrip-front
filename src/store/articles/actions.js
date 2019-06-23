@@ -41,3 +41,16 @@ export const getArticlesByPageFailure = (responseError) => ({
   type: actionTypes.GET_ARTICLES_BY_PAGE_FAILURE,
   responseError,
 });
+
+export const getArticlesByIdStart = (articlePage) => ({
+  type: actionTypes.GET_ARTICLES_BY_ID_START,
+  articlePage,
+});
+export const getArticlesByIdSuccess = (response) => ({
+  type: actionTypes.GET_ARTICLES_BY_ID_SUCCESS,
+  response,
+});
+export const getArticlesByIdFailure = (responseError) => ({
+  type: actionTypes.GET_ARTICLES_BY_ID_FAILURE,
+  responseError,
+});

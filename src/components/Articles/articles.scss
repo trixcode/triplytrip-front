@@ -46,11 +46,11 @@
   .news-card {
     display: flex;
     flex-direction: column;
-    width: 330px;
-    height: 470px;
+    width: 265px;
+    // height: 470px;
     .news-card-header {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       .news-card__image {
         width: 100%;
         height: 239px;
@@ -99,6 +99,7 @@
         font-weight: 500;
         overflow: hidden;
         margin-bottom: 16px;
+        text-align: center;
       }
       .news-card__tag {
         width: 60%;
@@ -124,7 +125,13 @@
           margin-bottom: 38px;
           text-overflow: ellipsis;
           overflow: hidden;
+          text-align: center;
         }
+      }
+      .news-card-button-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
       .news-card-button {
         width: 184px;
@@ -147,10 +154,17 @@
     }
   }
 }
+.news-card:focus,
+.news-card:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 1px 0px 15px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 15px 1px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 15px 1px rgba(0,0,0,0.75);
+}
 
 //MEDIA//
 
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .news-cards-wrapper {
     justify-content: center;
     .news-card {
@@ -159,7 +173,7 @@
     }
   }
 }
-@media (min-width: 576px) { 
+@media (max-width: 576px) { 
   .news-cards-wrapper {
     justify-content: center;
     .news-card {
@@ -167,28 +181,40 @@
     }
   }
 }
-@media (min-width: 768px) { 
+@media (max-width: 768px) { 
+  .news-card-button {
+    width: 80%;
+  }
   .news-cards-wrapper {
-    justify-content: space-around;
+    justify-content: space-evenly;
     .news-card {
       margin-bottom: 50px;
       width: 250px;
       .news-card-footer {
         .news-card__description {
           p {
-            width: 250px;
+            width: 80%;
           }
         }
       }
     }
   }
-}
-@media (min-width: 992px) { 
   
 }
-@media (min-width: 1200px) { 
-
+@media (max-width: 992px) { 
+  
+  
+  
 }
-@media (min-width: 1440px) { 
+@media (max-width: 1200px) { 
+  .news-cards-wrapper{
+    justify-content: space-evenly;
+    .news-card {
+      width: 320px;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media (max-width: 1440px) { 
   
 }
