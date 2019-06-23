@@ -14,6 +14,7 @@ const ArticlesWrapper = (props) => {
   useEffect(() => {
     getArticlesByPageStart(Initialpage)
   }, [Initialpage]);
+  console.log(articlePaginate)
   return (
     <div className='articles-wrapper'>
       <div className='container'>
@@ -21,7 +22,7 @@ const ArticlesWrapper = (props) => {
           <div className='articles-wrapper-list'>
             {articlePaginate.map(articlePaginate => (
               <Article articlePaginate={articlePaginate}
-                key={articlePaginate.id}
+                key={articlePaginate._id}
               />
             ))}
             <div className="pages-numbers">

@@ -28,7 +28,7 @@ export function* getArticleDetailByIdRequest(articleId) {
 
 export function* getArticlesByPageRequest(articlePage) {
   try {
-    const response = yield call(api.GET, `Articles?_limit=3&_page=${articlePage}`);
+    const response = yield call(api.GET, `Articles?limit=3&skip=${articlePage}`);
     yield put(actions.getArticlesByPageSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticlesByPageFailure(responseError));
