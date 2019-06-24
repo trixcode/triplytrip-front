@@ -5,6 +5,7 @@ import './header.scss';
 import BurgerMenu from '../BurgerMenu'
 import ModalWindowContainer from '../../containers/Modal';
 import Logo from '../../assets/mainIcon.png'
+import SuccessModal from '../SuccessModal/'
 
 
 
@@ -62,6 +63,7 @@ const Header = (props) => {
           </nav>
         </div>
       </div>
+      <SuccessModal/>
     </header>
   )
 }

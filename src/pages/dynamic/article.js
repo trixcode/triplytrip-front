@@ -4,8 +4,6 @@ import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
 import React from 'react'
 import ArticleDetailContainer from '../../containers/ArticleDetail';
-
-import SuccessModal from '../../components/SuccessModal';
 import ArticleSidebar from '../../components/ArticleSidebar';
 import HeaderContainer from '../../containers/Header';
 import { getArticleDetailByIdStart } from '../../store/actions';
@@ -26,7 +24,6 @@ function ArticleDetail(props) {
         <div className="container article-container">
           <ArticleDetailContainer />
           <ArticleSidebar />
-          <SuccessModal />
         </div>
       </div>
     </Fragment>

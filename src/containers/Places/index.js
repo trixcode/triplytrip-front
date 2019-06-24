@@ -8,6 +8,7 @@ const PlacesContainer = (props) => <Places {...props} />;
 
 const mapStateToProps = (store) => ({
     places: store.places,
+    categories: store.main.categories
   })
 const mapDispatchToProps = (dispatch) => ({
   getPlacesStart: (requestParams='') => dispatch(getPlacesStart(requestParams)),
