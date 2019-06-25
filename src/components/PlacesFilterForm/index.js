@@ -19,33 +19,33 @@ const PlacesFilterForm = props => {
   const [distanceValue, setValue] = useState(10)
 
   const reqLocation = params.get('location')
-  const keywords = params.get('keywords')
+  const keywords = params.get('search')
   const category = params.get('category')
   
   const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords === null ? '' : myValues.keywords
   const locationChanged = myValues.location === undefined ? '' : myValues.location === null ? '' : myValues.location
   const categoryChanged = myValues.categoriesForm 
   
-  const checkCity = () => {
+  const search = () => {
     //FIND BY CATEGORY
     const categoryId = categoryChanged === null ? '' : categoryChanged === 'all categories' ? '' : 
     categories.find(category => category.name === categoryChanged ? category._id : '')
-    const idOfCategory = categoryChanged === null ? '' : categoryChanged === 'all categories' ? '' : `&category=${categoryId && categoryId._id}`
+    const idOfCategory = categoryId === '' ? '' : `category=${categoryId && categoryId._id}`
     //FIND BY LOCATION
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1)
     const cityId =  currentLocation === '' ? '' : 
     cities.find(city => city.name === currentLocation ? city._id : '')
-    const ifOfCity =  currentLocation === '' ? '' : `&cities=${cityId && cityId._id}` 
+    const ifOfCity = cityId === '' ? '' : cityId === undefined ? '&cities=therisnocity' : `&cities=${cityId && cityId._id}` 
     //FIND BY KEYWORDS
+    const keyword = keywordsChanged === '' ? '' : `&search=${keywordsChanged}`
 
-
-    getPlacesStart(`${idOfCategory}${ifOfCity}`)
+    getPlacesStart(`${idOfCategory}${ifOfCity}${keyword}`)
   }
-  const debouncedSearchTerm = useDebounce(myValues, 500);
+  const debouncedSearchTerm = useDebounce(myValues, 550);
 
   useEffect(() => {
     if (debouncedSearchTerm) {
-      checkCity()
+      search()
     }
   }, [debouncedSearchTerm]);
 
