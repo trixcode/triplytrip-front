@@ -8,7 +8,7 @@ import * as actionTypes from './actionTypes';
 
 export function* getTopDestinationsRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'top-destinations', requestParams);
+    const response = yield call(api.GET, 'discovery?limit=4', requestParams);
     yield put(actions.getTopDestinationsSuccess(response));
   } catch (responseError) {
     yield put(actions.getTopDestinationsFailure(responseError));

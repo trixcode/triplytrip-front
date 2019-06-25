@@ -14,14 +14,13 @@
   @media (min-width: 768px) { 
     max-width: 720px;
   }
-  @media (min-width: 992px) { 
-    max-width: 960px;
-  }
+  // @media (min-width: 992px) { 
+  //   max-width: 960px;
+  // }
   .article-description-header {
     margin-bottom: 70px;
     &__text {
       color: #444444;
-      font-family: "Varela Round";
       font-size: 16px;
       font-weight: 400;
       line-height: 28px;
@@ -52,7 +51,6 @@
     margin-bottom: 57px;
     &__text {
       color: #444444;
-      font-family: "Varela Round";
       font-size: 16px;
       font-weight: 400;
       line-height: 28px;
@@ -60,7 +58,6 @@
     }
     &__tags {
       color: #666666;
-      font-family: "Varela Round";
       font-size: 16px;
       font-weight: 400;
       .bold {

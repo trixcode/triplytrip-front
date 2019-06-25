@@ -8,7 +8,7 @@ import {
 
   export function* getEventsRequest(requestParams) {
     try {
-      const response = yield call(api.GET, 'events', {params: requestParams});
+      const response = yield call(api.GET, 'events?limit=2', requestParams);
       yield put(actions.getEventsSuccess(response));
     } catch (responseError) {
       yield put(actions.getEventsFailure(responseError));

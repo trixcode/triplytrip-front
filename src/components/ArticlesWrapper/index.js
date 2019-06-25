@@ -13,6 +13,7 @@ const ArticlesWrapper = (props) => {
 
   useEffect(() => {
     getArticlesByPageStart(Initialpage)
+      window.scrollTo(0, 0)
   }, [Initialpage]);
   console.log(articlePaginate)
   return (

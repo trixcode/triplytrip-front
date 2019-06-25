@@ -19,11 +19,11 @@ const UpcommingEvents = (props) => {
       <div className="upcomming-events-wrapper">
       {currentEvents.map(currentEvent=> (
         <div className="event-card" key={currentEvent.id}>
-        <img className="event-card-image" src={currentEvent.imageUrl} />
+        <img className="event-card-image" src={currentEvent.mainImage} />
         <div className="event-card-info">
-          <h5 className="event-card-info__name">{currentEvent.name}</h5>
+          <h5 className="event-card-info__name">{currentEvent.title}</h5>
           <div className="event-card-info-block">
-            <span className="info-block__location">Fest</span>
+            <span className="info-block__location">{currentEvent.eventTypes.name}</span>
             <span className="info-block__price">{currentEvent.price}$</span>
             <span className="info-block__open">{currentEvent.isOpen}</span>
           </div>

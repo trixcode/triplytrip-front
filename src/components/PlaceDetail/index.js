@@ -18,6 +18,7 @@ const PlaceDetail = (props) => {
   const { getPlaceDetailByIdStart, placeDetail } = props;
   useEffect(() => {
     getPlaceDetailByIdStart(props.match.params.placeId)
+    window.scrollTo(0, 0)
   }, []);
 
   const [isOverviewClicked, setOverview] = useState(true)

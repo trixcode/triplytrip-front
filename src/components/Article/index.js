@@ -17,9 +17,10 @@ const Article = (props) => {
 
 
   return (
-    <div className='article' >
+    <div className='article' 
+    onClick={pushToDetailArticle}
+    >
       <div 
-      onClick={pushToDetailArticle}
       className='article-img-wrapper' >
         <div className='article-img__date'>
           <h3
@@ -69,6 +70,7 @@ const Article = (props) => {
         <span className='article-description__text' 
         dangerouslySetInnerHTML={{ __html:articlePaginate.extraDescription}}/>
         <button className='article-description__button'
+        onClick={pushToDetailArticle}
         >
           read more
           <FontAwesomeIcon

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
 import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,7 +30,9 @@ const ListingForm = (props) => {
   const deletImage = (index) => dropImages(imageState.filter(img => img.name !== imageState[index].name));
   //the socialsArray is array for creating social input
   const socialsArray = [faInstagram, faFacebook, faWhatsapp, faYoutube];
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (
     <form
       onSubmit={handleSubmit(handleListingCreate)}
