@@ -11,7 +11,7 @@ const ModalWindow = (props) => {
   const [ isLoginOpen , setLoginOpen ] = useState(true);
   const [ isRegisterOpen, setRegisterOpen ] = useState(false);
 
-  const { setNotLogined, isLogined, loginUserSuccess} = props;
+  const { setNotLogined, isLogined, loginUserSuccess, registerSuccess} = props;
 
   const switchTabs =(a, b) => {
     a(true)
@@ -28,6 +28,7 @@ const ModalWindow = (props) => {
 
   const exitFromAcc = () => {
     loginUserSuccess(null)
+    registerSuccess(null)
     setNotLogined()
     localStorage.removeItem('token')
   }
