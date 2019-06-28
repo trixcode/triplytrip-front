@@ -5,7 +5,6 @@ import { withRouter } from "react-router";
 import { formValueSelector } from 'redux-form'
 
 import PlacesFilterForm from '../../components/PlacesFilterForm';
-import { getPlaceDetailByIdStart } from '../../store/actions';
 import {getPlacesStart} from '../../store/actions';
 
 const formConfig = {

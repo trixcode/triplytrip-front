@@ -17,7 +17,6 @@ const ModalWindow = (props) => {
     a(true)
     b(false)
   }
-  console.log(isLogined, 'ssss')
   useEffect(() => {
     Modal.setAppElement('body');
     closeModal()

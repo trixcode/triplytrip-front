@@ -2,9 +2,10 @@
 @import '../../assets/styles/variables';
 
 .footer {
-  background: -moz-linear-gradient(left, #2a385d 0%, #370c2e 100%);
-  background: -webkit-linear-gradient(left, #2a385d 0%, #370c2e 100%);
-  background: linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  // background: -moz-linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  // background: -webkit-linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  // background: linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  background-image: linear-gradient(to right, #2a385d 0%, #370c2e 100%);
   width: 100%;
   display: flex;
   justify-content: center;

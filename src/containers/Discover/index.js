@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import Discover from '../../components/Discover';
 import {getTopDestinationsStart} from '../../store/actions';
-import { fromMain } from '../../store/selectors';
 
 
 const DiscoverContainer = (props) => <Discover {...props} />;

@@ -4,7 +4,7 @@ import { customInputField } from '../CustomFields';
 
 
 const LoginForm = (props) => {
-  const {  handleSubmit, loginUserStart, token, isLogined, setNotLogined, setLogined } = props;
+  const {  handleSubmit, loginUserStart, token, setNotLogined, setLogined } = props;
   const onSubmitHandle = (formValues) => {
     loginUserStart(formValues)
   }

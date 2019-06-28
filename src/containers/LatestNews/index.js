@@ -5,7 +5,6 @@ import { fromArticles } from '../../store/selectors';
 import Articles from '../../components/Articles';
 import { getArticlesByIdStart } from '../../store/actions'
 
-import { getLatestNewsStart, getLatestNewsByIdStart } from '../../store/actions';
 
 
 const LatestNewsContainer = (props) => <Articles {...props} />;

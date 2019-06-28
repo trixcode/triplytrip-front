@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faFolder, faComments, faArrowRight, faSearch, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faFolder, faComments, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import './article.scss'
 

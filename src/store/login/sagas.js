@@ -5,7 +5,7 @@ import {
   import * as actions from './actions';
   import * as actionTypes from './actionTypes';
   import * as mainActions from '../main/actions';
-  import { setLogined, setNotLogined } from '../actions';
+  // import { setLogined, setNotLogined } from '../actions';
   
   export function* loginUserRequest(requestParams) {
     try {
