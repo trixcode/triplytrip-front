@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ModalWindow from '../../components/ModalWindow';
-import { setNotLogined, loginUserSuccess } from '../../store/actions';
+import { setNotLogined, loginUserSuccess, registerSuccess} from '../../store/actions';
 
 const ModalWindowContainer = (props) => <ModalWindow {...props} />;
 
@@ -11,6 +11,7 @@ const mapStateToProps = (store) => ({
 })
  const mapDispatchToProps = (dispatch) => ({
   loginUserSuccess: (formValue) => dispatch(loginUserSuccess(formValue)),
+  registerSuccess: (formValue) => dispatch(registerSuccess(formValue)),
   setNotLogined: (isLogined) => dispatch(setNotLogined(false))
 })
 

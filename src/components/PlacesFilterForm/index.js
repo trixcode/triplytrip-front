@@ -19,7 +19,7 @@ const PlacesFilterForm = props => {
   const [distanceValue, setValue] = useState(10)
 
   const reqLocation = params.get('location')
-  const keywords = params.get('search')
+  const keywords = params.get('keywords')
   const category = params.get('category')
   
   const keywordsChanged = myValues.keywords === undefined ? '' : myValues.keywords === null ? '' : myValues.keywords
