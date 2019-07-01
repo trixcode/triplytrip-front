@@ -18,7 +18,7 @@ const UpcommingEvents = (props) => {
       />
       <div className="upcomming-events-wrapper">
       {currentEvents.map(currentEvent=> (
-        <div className="event-card" key={currentEvent.id}>
+        <div className="event-card" key={currentEvent._id}>
         <img className="event-card-image" src={currentEvent.mainImage} alt="event" />
         <div className="event-card-info">
           <h5 className="event-card-info__name">{currentEvent.title}</h5>

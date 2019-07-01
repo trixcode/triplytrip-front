@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import Article from '../Article'
-import ArticleAside from '../ArticleAside'
+import ArticleAsideContainer from '../../containers/ArticleAside'
 import './articlesWrapper.scss';
 
 const ArticlesWrapper = (props) => {
@@ -15,7 +15,6 @@ const ArticlesWrapper = (props) => {
     getArticlesByPageStart(Initialpage)
       window.scrollTo(0, 0)
   }, [Initialpage]);
-  console.log(articlePaginate)
   return (
     <div className='articles-wrapper'>
       <div className='container'>
@@ -49,7 +48,7 @@ const ArticlesWrapper = (props) => {
             </div>
           </div>
           <div className='articles-wrapper-aside'>
-            <ArticleAside />
+            <ArticleAsideContainer />
           </div>
         </div>
       </div>

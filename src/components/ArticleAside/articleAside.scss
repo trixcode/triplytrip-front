@@ -119,11 +119,12 @@
     &__news {
       margin-bottom: 25px;
       display: flex;
+      flex-direction: column;
       
       &__description {
         display: flex;
         flex-direction: column;
-        
+        justify-content: space-around;
         @media screen and (max-width: 991px) {
           font-size: 0.9em;
         }
@@ -179,4 +180,9 @@
     cursor: pointer;
   }
   }
+}
+.article-aside-box__wrapper{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
 }

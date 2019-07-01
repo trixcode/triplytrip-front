@@ -35,16 +35,16 @@ const ArticleDescription = (props) => {
       </div>
       <div className='article-description-buttons'>
         <div className='article-description-buttons__block'>
-          <button className='button'>previos article</button>
-          <FontAwesomeIcon className='button-icon-less' icon={faLessThan} />
+          <button className='button'>Прошлая статья</button>
+          {/* <FontAwesomeIcon className='button-icon-less' icon={faLessThan} /> */}
         </div>
         <div className='article-description-buttons__block'>
-          <button className='button'>next article</button>
-          <FontAwesomeIcon className='button-icon-greater' icon={faGreaterThan} />
+          <button className='button'>Следующая статья</button>
+          {/* <FontAwesomeIcon className='button-icon-greater' icon={faGreaterThan} /> */}
         </div>
       </div>
       <div className='article-description-advertising'>
-        Deleate
+        Delete
       </div>
     </section>
   )

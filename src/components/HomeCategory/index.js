@@ -10,7 +10,9 @@ const HomeCategory = (props) => {
   const pushToCategories = (category) => {
     history.push(`/placesCategory?category=${category}`)
   }
-
+  const pushToPlaces = (category) => {
+    history.push(`/placesCategory`)
+  }
   return (
 
     <section className="category-wrapper">
@@ -23,7 +25,7 @@ const HomeCategory = (props) => {
                 icon={faHotel}
               />}
             </p>
-            <span className="category-block__name">Hotel</span>
+            <span className="category-block__name">Отель</span>
           </div>
           <div className="category-block" onClick={() => pushToCategories('restaurant')}>
             <p className="category-block__icon__wrapper category__icon_hamburger">
@@ -32,16 +34,16 @@ const HomeCategory = (props) => {
                 icon={faHamburger}
               />}
             </p>
-            <span className="category-block__name" >Dinner</span>
+            <span className="category-block__name" >Ресторан</span>
           </div>
-          <div className="category-block">
+          <div className="category-block" onClick={pushToPlaces}>
             <p className="category-block__icon__wrapper category__icon_map">
               {<FontAwesomeIcon
                 className="category__icon"
                 icon={faMapMarkedAlt}
               />}
             </p>
-            <span className="category-block__name">Destination</span>
+            <span className="category-block__name">Заведения</span>
           </div>
           <div className="category-block" onClick={() => pushToCategories('cafe')}>
             <p className="category-block__icon__wrapper category__icon_coffee">
@@ -50,16 +52,16 @@ const HomeCategory = (props) => {
                 icon={faCoffee}
               />}
             </p>
-            <span className="category-block__name">Coffee</span>
+            <span className="category-block__name">Кафе</span>
           </div>
-          <div className="category-block">
+          <div className="category-block" onClick={() => pushToCategories('night club')}>
             <p className="category-block__icon__wrapper category__icon_beer">
               {<FontAwesomeIcon
                 className="category__icon"
                 icon={faBeer}
               />}
             </p>
-            <span className="category-block__name last_name">Club and Bear</span>
+            <span className="category-block__name last_name">Ночные Клубы</span>
           </div>
         </div>
       </div>

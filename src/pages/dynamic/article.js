@@ -4,10 +4,11 @@ import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
 import React from 'react'
 import ArticleDetailContainer from '../../containers/ArticleDetail';
-import ArticleSidebar from '../../components/ArticleSidebar';
+import ArticleAsideContainer from '../../containers/ArticleAside';
+
 import HeaderContainer from '../../containers/Header';
 import { getArticleDetailByIdStart } from '../../store/actions';
-import DetailPostTop from '../../components/DetailPostTop';
+import DetailPostTopContainer from '../../containers/DetailPostTop'
 
 
 function ArticleDetail(props) {
@@ -15,15 +16,15 @@ function ArticleDetail(props) {
   useEffect(() => {
     getArticleDetailByIdStartAction(props.match.params.articleId)
   }, [])
-  console.log(props.match.params.articleId)
   return (
     <Fragment>
       <HeaderContainer />
-      <DetailPostTop />
+      <DetailPostTopContainer />
       <div className='article-wrapper'>
         <div className="container article-container">
           <ArticleDetailContainer />
-          <ArticleSidebar />
+          <ArticleAsideContainer />
+
         </div>
       </div>
     </Fragment>

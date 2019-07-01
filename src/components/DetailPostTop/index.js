@@ -6,7 +6,6 @@ import './DetailPostTop.scss';
 
 const DetailPostTop = (props) => {
   const interactiveIconsArr = [faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope];
-
   return (
     <div className='detail-post-top'>
       <div className='detail-post-top_image_wrapper'>

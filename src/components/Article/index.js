@@ -13,7 +13,6 @@ const Article = (props) => {
   const pushToDetailArticle = () => {
     history.push(`/article/${articlePaginate._id}`)
   }
-  console.log(articlePaginate, 'af')
 
 
   return (

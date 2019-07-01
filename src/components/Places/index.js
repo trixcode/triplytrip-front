@@ -91,7 +91,7 @@ const Places = props => {
           {places.places.slice(0, 8).map(placeObj => {
             return (
               <PlaceCard
-                key={placeObj.id}
+                key={placeObj._id}
                 place={placeObj}
               />
             )

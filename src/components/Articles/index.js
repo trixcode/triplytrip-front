@@ -23,7 +23,7 @@ const Articles = (props) => {
         <div className='news-cards-wrapper'>
           {articlePaginate.map(articlePaginate => (
             <ArticlesMainPage  articlePaginate={articlePaginate}
-              key={articlePaginate.id}
+              key={articlePaginate._id}
             />
           ))}
         </div>
