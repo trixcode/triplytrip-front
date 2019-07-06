@@ -12,7 +12,7 @@ const Articles = (props) => {
 
   useEffect(() => {
     getArticlesByIdStart()
-  }, []);
+  }, [getArticlesByIdStart]);
   return (
     <section className='section-news'>
       <div className='container'>

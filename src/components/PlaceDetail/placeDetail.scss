@@ -204,7 +204,6 @@
             display: flex;
             align-content: center;
             align-items: center;
-            position: relative;
         }
         li:last-child {
             margin-bottom: 0;
@@ -213,8 +212,7 @@
             font-size: 20px;
             height: 20px;
             width: 20px;
-            position: absolute;
-            right: 220px;
+            margin: 0 10px;
         }
     }
     &-networks {

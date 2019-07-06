@@ -33,7 +33,7 @@ const Places = props => {
   }
   useEffect(() => {
     getPlacesStart('isOpen=true&_limit=8')
-  }, []);
+  }, [getPlacesStart]);
 
     return (
     <section className='section-places'>

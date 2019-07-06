@@ -8,7 +8,7 @@ const Discover = (props) => {
   const { topDestinations, getTopDestinationsStart } = props;
   useEffect(() => {
     getTopDestinationsStart()
-  }, []);
+  }, [getTopDestinationsStart]);
   return (
     <section className='section-discover'>
       <div className='container'>

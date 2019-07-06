@@ -13,16 +13,16 @@ const Header = (props) => {
 
   const { getCategoriesStart, getCitiesStart, setNotLogined, setLogined } = props
 
+  const checkIsAuth = () => {
+    const token = localStorage.getItem('token')
+    token === null ? setNotLogined() : setLogined()
+  }
+
   useEffect(() => {
     getCategoriesStart()
     getCitiesStart()
     checkIsAuth()
   }, []);
-  
-  const checkIsAuth = () => {
-    const token = localStorage.getItem('token')
-    token === null ? setNotLogined() : setLogined()
-  }
 
   return (
     <header className="header">

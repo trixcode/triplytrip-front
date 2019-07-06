@@ -20,7 +20,7 @@ const Search = (props) => {
   useEffect(() => {
     getCategoriesStart();
     getCitiesStart();
-  }, []);
+  }, [getCategoriesStart, getCitiesStart]);
 
   return (
     <section className="search-wrapper">

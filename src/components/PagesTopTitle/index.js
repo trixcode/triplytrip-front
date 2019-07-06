@@ -2,7 +2,7 @@ import './PagesTopTitle.scss'
 import React from 'react'
 const PagesTopTitle = props => {
 	const { title, link } = props;
-	// let href = '#'
+	
 	return (
 		<div className='pages-top-subheader'>
 			<img 
@@ -19,7 +19,7 @@ const PagesTopTitle = props => {
 						{link.map((linkItem) => (
 							<li key={linkItem}>
 								<a
-									href='#'
+									href='/'
 									className='pages-top-subheader__link'>
 									{linkItem}
 									<span> >> </span>

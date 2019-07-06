@@ -12,19 +12,19 @@ const Footer = () => {
             <span>The Highights</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Dinner</a>
+            <a className="footer-list__link" href="/">Dinner</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Restarounts</a>
+            <a className="footer-list__link" href="/">Restarounts</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Hotel</a>
+            <a className="footer-list__link" href="/">Hotel</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Coffee</a>
+            <a className="footer-list__link" href="/">Coffee</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Club & bar</a>
+            <a className="footer-list__link" href="/">Club & bar</a>
           </li>
         </ul>
 
@@ -33,19 +33,19 @@ const Footer = () => {
             <span href="#">Events</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Low Read live</a>
+            <a className="footer-list__link" href="/">Low Read live</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Kick of Friday</a>
+            <a className="footer-list__link" href="/">Kick of Friday</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">30 Plus Club Classics Dance</a>
+            <a className="footer-list__link" href="/">30 Plus Club Classics Dance</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">We Will Rock You</a>
+            <a className="footer-list__link" href="/">We Will Rock You</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Baseball Champs</a>
+            <a className="footer-list__link" href="/">Baseball Champs</a>
           </li>
         </ul>
 
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
           <ul className="footer-social-item">
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faFacebook}
@@ -68,7 +68,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faTwitter}
@@ -76,7 +76,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faInstagram}

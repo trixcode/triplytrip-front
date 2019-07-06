@@ -28,22 +28,22 @@ const ArticleAside = (props) => {
         </div>
         <ul className='article-aside-box__list'>
           <a
-            href="#"
+            href="/"
             className='article-aside-box__link'>
             Кафе
             </a>
           <a
-            href="#"
+            href="/"
             className='article-aside-box__link'>
             Новости
             </a>
           <a
-            href="#"
+            href="/"
             className='article-aside-box__link'>
             Советы и хитрости
             </a>
           <a
-            href="#"
+            href="/"
             className='article-aside-box__link'>
             Безкатегории
             </a>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
-import GoogleMapReact from 'google-map-react';
+//import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faImage, faTimes } from '@fortawesome/free-solid-svg-icons';

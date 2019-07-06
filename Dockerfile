@@ -5,7 +5,7 @@ WORKDIR /var/www/triplytrip
 
 COPY ./package.json .
 
-RUN npm i
+RUN npm i 
 
 EXPOSE 4000
 
