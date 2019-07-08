@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import HeaderContainer from '../containers/Header';
-import Footer from '../components/Footer';
+import FooterContainer from '../containers/Footer'
 import ListingFormContainer from '../containers/ListingForm';
 import PagesTopTitle from '../components/PagesTopTitle';
 import React from 'react'
@@ -18,7 +18,7 @@ const AddListing = () => {
         title='Add Listing'
         link={['HOME', 'add listing']}/>
       <ListingFormContainer />
-      <Footer text="Footer"/>
+      <FooterContainer text="Footer"/>
     </Fragment>
   )
 }

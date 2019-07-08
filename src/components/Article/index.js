@@ -46,7 +46,7 @@ const Article = (props) => {
               className='article-description-interactive__icon'
               icon={faUser} />
             <span className='article-description-interactive__name'>
-              johan larson
+              Йохан Ларсен
             </span>
           </div>
           <div className='article-description-interactive__wrapper'>
@@ -54,7 +54,7 @@ const Article = (props) => {
               className='article-description-interactive__icon'
               icon={faFolder} />
             <span className='article-description-interactive__name'>
-              travel
+              путешествие
             </span>
           </div>
           <div className='article-description-interactive__wrapper'>
@@ -62,7 +62,7 @@ const Article = (props) => {
               className='article-description-interactive__icon'
               icon={faComments} />
             <span className='article-description-interactive__name'>
-              0 comments
+              0 комментариев
             </span>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Article = (props) => {
         <button className='article-description__button'
         onClick={pushToDetailArticle}
         >
-          read more
+          Подробнее
           <FontAwesomeIcon
             className='article-description__button__arrow'
             icon={faArrowRight} />

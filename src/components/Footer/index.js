@@ -1,52 +1,58 @@
+import { withRouter } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faInstagram, faFacebook,  } from '@fortawesome/free-brands-svg-icons';
-import React from 'react'
+import { faTwitter, faInstagram, faFacebook, } from '@fortawesome/free-brands-svg-icons';
+import React, { useEffect } from 'react'
 import './footer.scss';
 
-const Footer = () => {
+const Footer = (props) => {
+  const { history, getArticlesToFooterStart, footerArticle } = props;
+
+  const pushToCategories = (category) => {
+    history.push(`/placesCategory?category=${category}`)
+  }
+
+  const pushToArticleDetail = () => {
+    history.push(`/articles`)
+  }
+  useEffect(() => {
+    getArticlesToFooterStart()
+  }, []);
+
   return (
     <footer className="footer">
       <div className="container footer-container">
         <ul className="footer-list">
           <li className="footer-list__item">
-            <span>The Highights</span>
+            <span>Заведения</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Dinner</a>
+            <a className="footer-list__link" href="#" onClick={() => pushToCategories('hotel')}>Отели</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Restarounts</a>
+            <a className="footer-list__link" href="#" onClick={() => pushToCategories('restaurant')}>Рестораны</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Hotel</a>
+            <a className="footer-list__link" href="#" onClick={() => pushToCategories('cafe')}>Кафе</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Coffee</a>
+            <a className="footer-list__link" href="#" onClick={() => pushToCategories('guest house')}>Гостевые дома</a>
           </li>
           <li>
-            <a className="footer-list__link" href="#">Club & bar</a>
+            <a className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</a>
           </li>
         </ul>
 
         <ul className="footer-list">
           <li>
-            <span href="#">Events</span>
+            <span href="#">Статьи</span>
           </li>
-          <li>
-            <a className="footer-list__link" href="#">Low Read live</a>
-          </li>
-          <li>
-            <a className="footer-list__link" href="#">Kick of Friday</a>
-          </li>
-          <li>
-            <a className="footer-list__link" href="#">30 Plus Club Classics Dance</a>
-          </li>
-          <li>
-            <a className="footer-list__link" href="#">We Will Rock You</a>
-          </li>
-          <li>
-            <a className="footer-list__link" href="#">Baseball Champs</a>
-          </li>
+          {footerArticle.map(footerArticle => (
+            <li key={footerArticle._id}>
+              <a className="footer-list__link" href="#"
+               onClick={pushToArticleDetail}
+              >{footerArticle.title}</a>
+            </li>
+          ))}
         </ul>
 
       </div>
@@ -90,4 +96,4 @@ const Footer = () => {
     </footer >
   )
 }
-export default Footer;
+export default withRouter(Footer);

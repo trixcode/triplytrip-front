@@ -13,8 +13,8 @@ const Discover = (props) => {
     <section className='section-discover'>
       <div className='container'>
         <SectionTitle 
-          name="discover your dream places"
-          text="All the pathos and irony of leaving one’s youth behind is thus implicit in every joyous moment of travel: one knows that the first joy can never be recovered, and the wise traveler learns not to repeat successes but tries new places all the time."
+          name="откройте для себя места своей мечты"
+          text="Уникальное кочевое наследие и захватывающая история Великого Шелкового пути привлекают как искателей приключений, так и любителей культуры"
         />
         <div className='discover-cards-wrapper'>
           {topDestinations.map(topDestinations=>(
@@ -36,7 +36,7 @@ const Discover = (props) => {
                   <span 
                     className='discover-card__info-destination-name'>
                     {topDestinations.countDestinations + ' '} 
-                     Destinations
+                     Мест
                   </span>
                 </div>
               </div>

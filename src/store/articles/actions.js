@@ -54,3 +54,16 @@ export const getArticlesByIdFailure = (responseError) => ({
   type: actionTypes.GET_ARTICLES_BY_ID_FAILURE,
   responseError,
 });
+
+export const getArticlesToFooterStart = (articlePage) => ({
+  type: actionTypes.GET_ARTICLES_TO_FOOTER_START,
+  articlePage,
+});
+export const getArticlesToFooterSuccess = (response) => ({
+  type: actionTypes.GET_ARTICLES_TO_FOOTER_SUCCESS,
+  response,
+});
+export const getArticlesToFooterFailure = (responseError) => ({
+  type: actionTypes.GET_ARTICLES_TO_FOOTER_FAILURE,
+  responseError,
+});

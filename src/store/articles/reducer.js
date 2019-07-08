@@ -25,6 +25,11 @@ export default (state = initialState, action) => {
         ...state,
         articlePaginate: action.response,
       };
+    case actionTypes.GET_ARTICLES_TO_FOOTER_SUCCESS:
+      return {
+        ...state,
+        footerArticle: action.response,
+      };
     default:
       return state;
   }

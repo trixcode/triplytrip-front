@@ -4,6 +4,7 @@ export const initialState = {
     tags: []
   },
   articlePaginate : [],
+  footerArticle: [],
 }
 
 

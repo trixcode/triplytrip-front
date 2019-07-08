@@ -26,7 +26,7 @@ const ArticlesMainPage = (props) => {
         </div> */}
         <div dangerouslySetInnerHTML={{ __html: articlePaginate.description }} className='news-card__description'></div>
         <div className="news-card-button-wrapper">
-          <button className='news-card-button'>read more</button>
+          <button className='news-card-button'>подробнее</button>
         </div>
       </div>
     </div>

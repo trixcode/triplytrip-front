@@ -73,6 +73,14 @@
         }
     }
 }
+.overview__image{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    object-fit: cover;
+}
 
 .contact {
     width: 100%;
@@ -393,17 +401,17 @@
         background: none;
         border: none;
         right: 25px;
-        top: 5px;
+        top: 120px;
         outline: none;
-        @media (max-width: 576px) {
-            top: 5px;
-        }
-        @media (min-width: 992px) {
-            top: 5px;
-        }
-        @media (min-width: 1200px) { 
-            top: 5px;
-        }
+        // @media (max-width: 576px) {
+        //     top: 5px;
+        // }
+        // @media (min-width: 992px) {
+        //     top: 5px;
+        // }
+        // @media (min-width: 1200px) { 
+        //     top: 5px;
+        // }
         svg {
             font-size: 30px;
             height: 30px;

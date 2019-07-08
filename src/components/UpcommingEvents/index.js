@@ -13,8 +13,8 @@ const UpcommingEvents = (props) => {
     <section className="upcomming-events">
     <div className="container">
       <SectionTitle 
-        name="Upcomming Events"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasselus aliquam retrum"
+        name="ближайшие события"
+        text="Самые интересные события этого месяца в Кыргызстане."
       />
       <div className="upcomming-events-wrapper">
       {currentEvents.map(currentEvent=> (
@@ -32,9 +32,9 @@ const UpcommingEvents = (props) => {
           <table className="event-card-table">
           <tbody>
             <tr>
-              <th>Address</th>
-              <th>From</th>
-              <th>To</th>
+              <th>Адрес</th>
+              <th>От</th>
+              <th>До</th>
             </tr>
             <tr><td>{currentEvent.address}</td>
             <td>{moment(currentEvent.dateTimeStart).format('DD MMM YYYY')}<br />{moment(currentEvent.dateTimeStart).format('HH:mm')}</td>

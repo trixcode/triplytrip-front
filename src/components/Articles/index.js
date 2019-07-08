@@ -17,8 +17,8 @@ const Articles = (props) => {
     <section className='section-news'>
       <div className='container'>
         <SectionTitle
-          name="daily news tips"
-          text="the best places to see autumn colours"
+          name="лучшие статьи о кыргызстане."
+          text="Здесь вы можете найти лучшие статьи о разных заведениях и местах в Кыргызстана."
         />
         <div className='news-cards-wrapper'>
           {articlePaginate.map(articlePaginate => (

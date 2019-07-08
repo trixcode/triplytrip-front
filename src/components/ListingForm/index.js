@@ -87,7 +87,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-form'>
-                <label className='listing-form__title'>google address</label>
+                <label className='listing-form__title'>google адрес</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -116,12 +116,12 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>price segmentation</h3>
+            <h3 className='listing__title'>ценовой сегмент</h3>
             <div
               className='listing-row-inputs-forms'
               onSubmit={handleSubmit}>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>segmentation</label>
+                <label className='listing-form__title'>сегментация</label>
                 <div >
                   <Field
                     name="segmentation"
@@ -143,7 +143,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>minimum price</label>
+                <label className='listing-form__title'>минимальная цена</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -154,7 +154,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>maximum price</label>
+                <label className='listing-form__title'>максимальная цена</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -167,7 +167,7 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <label className='listing-form__title'>logo</label>
+            <label className='listing-form__title'>логотип</label>
             <Dropzone
               multiple={false}
               noClick={logoState ? true : false}
@@ -202,7 +202,7 @@ const ListingForm = (props) => {
               )}
             </Dropzone>
 
-            <label className='listing-form__title'>main image</label>
+            <label className='listing-form__title'>основное изображение</label>
             <Dropzone
               multiple={false}
               noClick={galleryState ? true : false}
@@ -237,7 +237,7 @@ const ListingForm = (props) => {
               )}
             </Dropzone>
 
-            <label className='listing-form__title'>images</label>
+            <label className='listing-form__title'>изображение</label>
             <Dropzone
               accept="image/*"
               onDrop={(images) => handleDropImages(images)}>
