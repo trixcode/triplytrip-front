@@ -8,18 +8,16 @@ import ArticleAsideContainer from '../../containers/ArticleAside';
 
 import HeaderContainer from '../../containers/Header';
 import { getArticleDetailByIdStart } from '../../store/actions';
-import DetailPostTopContainer from '../../containers/DetailPostTop'
 
 
 function ArticleDetail(props) {
   const { getArticleDetailByIdStartAction } = props;
   useEffect(() => {
     getArticleDetailByIdStartAction(props.match.params.articleId)
-  }, [])
+  }, [getArticleDetailByIdStartAction, props.match.params.articleId])
   return (
     <Fragment>
       <HeaderContainer />
-      <DetailPostTopContainer />
       <div className='article-wrapper'>
         <div className="container article-container">
           <ArticleDetailContainer />

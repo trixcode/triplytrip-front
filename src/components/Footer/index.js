@@ -46,6 +46,7 @@ const Footer = (props) => {
           <li>
             <span href="#">Статьи</span>
           </li>
+         
           {footerArticle.map(footerArticle => (
             <li key={footerArticle._id}>
               <a className="footer-list__link" href="#"
@@ -66,7 +67,7 @@ const Footer = (props) => {
           </div>
           <ul className="footer-social-item">
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faFacebook}
@@ -74,7 +75,7 @@ const Footer = (props) => {
               </a>
             </li>
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faTwitter}
@@ -82,7 +83,7 @@ const Footer = (props) => {
               </a>
             </li>
             <li className="footer-social__list">
-              <a className="footer-social__link">
+              <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
                   className='footer-social__icon'
                   icon={faInstagram}

@@ -154,7 +154,7 @@ const PlacesFilterForm = props => {
             onClick={() => setIsFilterOpen(!isFilterOpen)}
             className='filter-form-checkboxs__title'>
             <span className='filter-form-checkboxs__title__text'>
-              Filter by Tags
+              Фильтр по Тэгам
 						</span>
             <FontAwesomeIcon
               className='filter-form-checkboxs__title__icon'

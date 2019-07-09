@@ -11,13 +11,5 @@ services:
     ports:
       - "4000:4000"
     command: npm start
-  db:
-    build:
-      context: .
-      dockerfile: ../triplytrip-backend/Dockerfile
-    volumes: 
-    - .:/var/www/triplytrip-backend
-    ports: 
-    - "8000:8000"
-    command: npm run dev
-
+   
+   

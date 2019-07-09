@@ -1,11 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { faStar, faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+import moment from 'moment';
 import './DetailPostTop.scss';
 
 const DetailPostTop = (props) => {
   const interactiveIconsArr = [faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope];
+
+  const { name, category, createDate, rate, categories } = props
+  
+  const findNameOfCategory = () => {
+    const nameOfCate = categories.find(categors => categors._id === category && categors.name)
+    const name = nameOfCate && nameOfCate.name
+    return name
+  }
+
   return (
     <div className='detail-post-top'>
       <div className='detail-post-top_image_wrapper'>
@@ -19,7 +28,7 @@ const DetailPostTop = (props) => {
           <div className='detail-post-top-place-wrapper'>
             <h2
               className='detail-post-top-place__name'>
-              KOFFEE
+              {name}
             </h2>
             <div className='detail-post-top-place-content'>
               <div className='detail-post-top-place-info'>
@@ -30,7 +39,7 @@ const DetailPostTop = (props) => {
                   </span>
                   <span
                     className='detail-post-top-place-info__detail'>
-                      Июль 17 2017
+                      {moment(createDate).format('DD MMM YYYY')}
                     </span>
                 </div>
                 <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
@@ -40,7 +49,7 @@ const DetailPostTop = (props) => {
                   </span>
                   <span
                     className='detail-post-top-place-info__detail'>
-                     Hotel
+                     {findNameOfCategory()}
                   </span>
                 </div>
                 <div className='detail-post-top-place-info__wrapper'>
@@ -54,14 +63,14 @@ const DetailPostTop = (props) => {
                       {[1, 2, 3, 4, 5].map(iconIndex => (
                         <FontAwesomeIcon
                           key={iconIndex}
-                          style={{ color: iconIndex <= 2 && '#ffba00' }}
+                          style={{ color: iconIndex <= rate && '#ffba00' }}
                           className='detail-post-top-place-info__rating__icon'
                           icon={faStar} />
                       ))}
                     </div>
                     <p
                       className='detail-post-top-place-info__rating__number'>
-                      2
+                      {rate}
                     </p>
                   </div>
                 </div>
@@ -70,7 +79,7 @@ const DetailPostTop = (props) => {
                 {interactiveIconsArr.map(key => (
                   <li
                     key={key.iconName}
-                    className={'detail-post-top-place-interactive__icon' + ` interactive__icon__${key.iconName}`}>
+                    className={`detail-post-top-place-interactive__icon interactive__icon__${key.iconName}`}>
                     <FontAwesomeIcon
                     icon={key} />
                   </li>

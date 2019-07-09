@@ -14,7 +14,7 @@ const ArticlesWrapper = (props) => {
   useEffect(() => {
     getArticlesByPageStart(Initialpage)
       window.scrollTo(0, 0)
-  }, [Initialpage]);
+  }, [Initialpage, getArticlesByPageStart]);
   return (
     <div className='articles-wrapper'>
       <div className='container'>

@@ -1,6 +1,4 @@
 import React, {useEffect} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan, faLessThan } from '@fortawesome/free-solid-svg-icons';
 import './articleDescription.scss'
 
 
@@ -21,6 +19,7 @@ const ArticleDescription = (props) => {
             </h2>
         <img
           src={articleDetail.mainImage}
+          alt=''
           className='article-description-middle__image' />
       </div>
       <div className='article-description-footer'>

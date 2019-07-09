@@ -1,5 +1,4 @@
 import 'isomorphic-fetch';
-import { stringify } from 'query-string';
 import merge from 'lodash/merge';
 import { apiUrl } from '../../config';
 import { FIRST_INDEX_OF_ARRAY, HTTP_INTERNAL_SERVER_ERROR_CODE } from '../constants';
