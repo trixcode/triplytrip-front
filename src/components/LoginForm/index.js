@@ -36,10 +36,6 @@ const LoginForm = (props) => {
         </form>
 
       </div>
-      <span className="modal-extra">
-        <span className="modal-extra__account modal-extra--button">У вас уже есть аккаут?</span>
-        <span className="modal-extra__sign-in modal-extra--button">Регистрация</span>
-      </span>
     </div>
   )
 }

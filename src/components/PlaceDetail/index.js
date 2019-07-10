@@ -17,9 +17,10 @@ function isEmpty(obj) {
 }
 const PlaceDetail = (props) => {
   const { getPlaceDetailByIdStart, placeDetail } = props;
+
   useEffect(() => {
     getPlaceDetailByIdStart(props.match.params.placeId)
-    window.scrollTo(0, 0)
+    window.scrollTo(400, 400)
   }, [getPlaceDetailByIdStart, props.match.params.placeId]);
 
   const [isOverviewClicked, setOverview] = useState(true)
@@ -32,7 +33,9 @@ const PlaceDetail = (props) => {
     b(false)
     c(false)
     d(false)
+    window.scrollTo(600, 600)
   }
+
   const selectedClass = 'main-info-tabs__tab_selected'
   const defaultClass = 'main-info-tabs__tab'
 
