@@ -17,16 +17,16 @@ const Subscribe = () => {
                         <h3 className='subscribe-mail__description__title'>
                             <span
                                 className='subscribe-description__title'>
-                                Subscribe
-                                <span className='subscribe-description__title
+                                Подпишитесь <span className='subscribe-description__title
                                 subscribe-description__title_bold'>
-                                    To Newsletter
+                                     На Наши Новости
                                 </span>
                             </span>
                         </h3>
                         <p
                             className='subscribe-description__text'>
-                            Please provide your email and let us send all  new happenings about your city.
+                            Пожалуйста, укажите свой адрес электронной почты и позвольте нам отправлять все новости о вашем городе.
+
                         </p>
                     </div>
                 </div>

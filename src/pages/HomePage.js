@@ -10,7 +10,7 @@ import PlacesContainer from '../containers/Places'
 import Subscribe from '../components/Subscribe/index'
 import TopContent from '../components/TopContent'
 import UpcommingEventsContainer from '../containers/UpcommingEvents';
-import Footer from '../components/Footer';
+import FooterContainer from '../containers/Footer';
 
 import "../assets/styles/main.scss";
 import "../components/Header/header.scss";
@@ -35,7 +35,7 @@ function Home() {
       <UpcommingEventsContainer />
       <LatestNewsContainer />
       <Subscribe />
-      <Footer text="Footer" />
+      <FooterContainer text="Footer" />
     </Fragment>
   )
 }

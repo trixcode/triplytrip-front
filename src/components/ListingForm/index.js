@@ -43,7 +43,7 @@ const ListingForm = (props) => {
           <div className='listing-location'>
             <div className='listing-location-forms'>
               <div className='listing-form'>
-                <label className='listing-form__title'>listing title</label>
+                <label className='listing-form__title'>Hазвание списка</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -53,7 +53,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-form'>
-                <label className='listing-form__title'>listing categories</label>
+                <label className='listing-form__title'>Список категорий</label>
                 <div >
                   <Field
                     name="categoriesId"
@@ -64,18 +64,18 @@ const ListingForm = (props) => {
                   <datalist id='categoriesName'>
                     <option
                       className='listing-form__input__select__value'
-                      value="hotel">hotel</option>
+                      value="hotel">Отель</option>
                     <option
                       className='listing-form__input__select__value'
-                      value="cafe">cafe</option>
+                      value="cafe">Кафе</option>
                     <option
                       className='listing-form__input__select__value'
-                      value="restaurant">restaurant</option>
+                      value="restaurant">Ресторан</option>
                   </datalist>
                 </div>
               </div>
               <div className='listing-form'>
-                <label className='listing-form__title'>listing location</label>
+                <label className='listing-form__title'>Местоположение</label>
                 <div >
                   <Field
                     className='listing-form__input '
@@ -87,7 +87,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-form'>
-                <label className='listing-form__title'>google address</label>
+                <label className='listing-form__title'>google адрес</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -116,12 +116,12 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>price segmentation</h3>
+            <h3 className='listing__title'>ценовой сегмент</h3>
             <div
               className='listing-row-inputs-forms'
               onSubmit={handleSubmit}>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>segmentation</label>
+                <label className='listing-form__title'>сегментация</label>
                 <div >
                   <Field
                     name="segmentation"
@@ -143,7 +143,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>minimum price</label>
+                <label className='listing-form__title'>минимальная цена</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -154,7 +154,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>maximum price</label>
+                <label className='listing-form__title'>максимальная цена</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -167,7 +167,7 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <label className='listing-form__title'>logo</label>
+            <label className='listing-form__title'>логотип</label>
             <Dropzone
               multiple={false}
               noClick={logoState ? true : false}
@@ -202,7 +202,7 @@ const ListingForm = (props) => {
               )}
             </Dropzone>
 
-            <label className='listing-form__title'>main image</label>
+            <label className='listing-form__title'>основное изображение</label>
             <Dropzone
               multiple={false}
               noClick={galleryState ? true : false}
@@ -237,7 +237,7 @@ const ListingForm = (props) => {
               )}
             </Dropzone>
 
-            <label className='listing-form__title'>images</label>
+            <label className='listing-form__title'>изображение</label>
             <Dropzone
               accept="image/*"
               onDrop={(images) => handleDropImages(images)}>
@@ -278,16 +278,16 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>listing content</h3>
+            <h3 className='listing__title'>Содержание списка</h3>
             <div className='listing-form'>
-              <label className='listing-form__title'>short description</label>
+              <label className='listing-form__title'>Краткое описание</label>
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg_short'
                 name="extraDescription"
                 component={richEditor} />
             </div>
             <div className='listing-form'>
-              <label className='listing-form__title'>full description</label>
+              <label className='listing-form__title'>Полное описание</label>
               <Field
                 className='listing-content__wysiwyg listing-content__wysiwyg'
                 name="description"
@@ -296,14 +296,14 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>listing information</h3>
+            <h3 className='listing__title'>Информация о списке</h3>
             <span className='listing__information__text'>
-              Skip this step if you want to display your profile information.
+            Пропустите этот шаг, если вы хотите отобразить информацию о своем профиле.
           </span>
             <div className='listing-information'>
               <div className='listing-row-inputs-forms'>
                 <div className='listing-row-inputs-form'>
-                  <label className='listing-form__title'>phone</label>
+                  <label className='listing-form__title'>Телефон</label>
                   <div >
                     <Field
                       className='listing-form__input'
@@ -313,7 +313,7 @@ const ListingForm = (props) => {
                   </div>
                 </div>
                 <div className='listing-row-inputs-form'>
-                  <label className='listing-form__title'>website</label>
+                  <label className='listing-form__title'>Вебсайт</label>
                   <div >
                     <Field
                       className='listing-form__input'
@@ -323,7 +323,7 @@ const ListingForm = (props) => {
                   </div>
                 </div>
                 <div className='listing-row-inputs-form'>
-                  <label className='listing-form__title'>email</label>
+                  <label className='listing-form__title'>Электронная почта</label>
                   <div >
                     <Field
                       className='listing-form__input'
@@ -358,10 +358,10 @@ const ListingForm = (props) => {
           </div>
 
           <div className='listing-forms-wrapper'>
-            <h3 className='listing__title'>coupon</h3>
+            <h3 className='listing__title'>Купон</h3>
             <div className='listing-row-inputs-forms'>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>description</label>
+                <label className='listing-form__title'>Описание</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -371,7 +371,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>Coupon code</label>
+                <label className='listing-form__title'>Код купона</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -381,7 +381,7 @@ const ListingForm = (props) => {
                 </div>
               </div>
               <div className='listing-row-inputs-form'>
-                <label className='listing-form__title'>referral link</label>
+                <label className='listing-form__title'>реферальная ссылка</label>
                 <div >
                   <Field
                     className='listing-form__input'
@@ -398,7 +398,7 @@ const ListingForm = (props) => {
               className='listing-preview__button'
               type="Submit"
               disabled={pristine || submitting}>
-              Submit
+              Отправить
           </button>
           </div>
 

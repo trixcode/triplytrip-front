@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import HeaderContainer from '../containers/Header';
 import PlacesFilterFormContainer from '../containers/PlacesFilterForm';
-import Footer from '../components/Footer';
+import FooterContainer from '../containers/Footer'
 import "../assets/styles/main.scss";
 import React from 'react'
 
@@ -10,7 +10,7 @@ const PlacesCategory = () => {
     <Fragment>
       <HeaderContainer />
       <PlacesFilterFormContainer />
-        <Footer text="Footer"/>
+      <FooterContainer text="Footer" />
     </Fragment>
   )
 }

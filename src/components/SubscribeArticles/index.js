@@ -13,7 +13,7 @@ const SubscribeArticles = (props) => {
   return (
     <form onSubmit={handleSubmit(onSubmitHandle)}>
       <span className='article-sidebar-newsletter__text'>
-        Subscribe us and never miss our new articles
+        Подпишитесь на нас и вы никогда не пропустите наши новые статьи
       </span>
       <div className='article-sidebar-newsletter__input'>
         <Field

@@ -85,7 +85,7 @@ const PlaceCard = props => {
       <div className='place-card-button-wrapper'>
         <button
           className='place-card__button place-card__button_detail'>
-          View Detail
+          Более подробно
         </button>
         <button
           className='place-card__button'>

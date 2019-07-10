@@ -71,21 +71,21 @@ const PlacesFilterForm = props => {
 
         <form className='filter-form-wrapper'>
           <Field 
-            placeholder='Keywords'
+            placeholder='Ключевое слово'
             className='filter-form__input keywords__input'
             type="text"
             name="keywords"
             component={customInputField}
           />
           <Field 
-            placeholder='Location'
+            placeholder='Местоположение'
             className='filter-form__input'
             type="text"
             name="location"
             component={customInputField}
           />
           <input
-            placeholder='Price'
+            placeholder='Цена'
             className='filter-form__input'
             type="text"
             id="price" />
@@ -93,7 +93,7 @@ const PlacesFilterForm = props => {
             className='filter-form__select'
             id="orderlist"
             form="orderform">
-            <option value="defaultoeders">Default Orders </option>
+            <option value="defaultoeders">Заказы по умолчанию</option>
             <option value="aaaa">aaaa</option>
             <option value="bbbb">bbbb</option>
             <option value="cccc">cccc</option>
@@ -103,7 +103,7 @@ const PlacesFilterForm = props => {
             component="select"
             name="categoriesForm"
             >
-            <option value="all categories">All categories</option>
+            <option value="all categories">Все категории</option>
             {categories.map(categories => (
               <option key={categories.id}>{categories.name}</option>
             )) }
@@ -111,7 +111,7 @@ const PlacesFilterForm = props => {
         </form>
         <div className='filter-form-radius'>
           <div className='filter-form-radius__text__wrapper'>
-            <span className='filter-form-radius__title'> Radius: </span>
+            <span className='filter-form-radius__title'> Радиус: </span>
             <p
               className='filter-form-radius__dictance__number'>
               {distanceUnit === 'm' ? distanceValue * 10 : distanceValue}
@@ -124,8 +124,8 @@ const PlacesFilterForm = props => {
               className='filter-form__select radius__select'
               name="categorieslist"
               form="categoriesform">
-              <option value="km">kilomerts</option>
-              <option value="m">meters</option>
+              <option value="км">километров</option>
+              <option value="м">метров</option>
             </select>
           </div>
           <div
@@ -154,7 +154,7 @@ const PlacesFilterForm = props => {
             onClick={() => setIsFilterOpen(!isFilterOpen)}
             className='filter-form-checkboxs__title'>
             <span className='filter-form-checkboxs__title__text'>
-              Filter by Tags
+              Фильтр по Тэгам
 						</span>
             <FontAwesomeIcon
               className='filter-form-checkboxs__title__icon'

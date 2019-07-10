@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import React from 'react'
 import HeaderContainer from '../containers/Header';
-import Footer from '../components/Footer';
+import FooterContainer from '../containers/Footer'
 import ArticlesContainer from '../containers/Articles'
 import "../assets/styles/main.scss";
 
@@ -11,7 +11,7 @@ const Articles = () => {
     <Fragment>
       <HeaderContainer />
       <ArticlesContainer />
-      <Footer text="Footer"/>
+      <FooterContainer text="Footer"/>
     </Fragment>
   )
 }

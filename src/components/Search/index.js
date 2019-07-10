@@ -28,7 +28,7 @@ const Search = (props) => {
         <form className="search-form" onSubmit={handleSubmit(onSubmitHandle)}>
           <div className="search-form__places">
             <Field
-            placeholder="keywords" 
+            placeholder="Ключевое слово" 
             name="keywords"
             className="search-form__input"
             component={customInputField}
@@ -37,7 +37,7 @@ const Search = (props) => {
             type="text">
               <datalist id="keywords-categories">
                 {categories.map(category =>(
-                  <option key={category.id} value={category.name}></option>
+                  <option key={category._id} value={category.name}></option>
                 ))}
               </datalist>
             </Field>
@@ -49,7 +49,7 @@ const Search = (props) => {
           </div>
           <div className="search-form__location">
           <Field
-            placeholder="location" 
+            placeholder="Местоположение" 
             name="city"
             className="search-form__input"
             autoComplete="off"
@@ -61,7 +61,7 @@ const Search = (props) => {
             icon={faMapMarkerAlt}
           />}
           </div>
-          <button className="search-form__button">search now</button>
+          <button className="search-form__button">Поиск</button>
         </form>
       </div>
     </section>

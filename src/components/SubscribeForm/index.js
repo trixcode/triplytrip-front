@@ -14,18 +14,18 @@ const SubscribeForm = (props) => {
           name="name"
           component={customInputField}
           type="text"
-          placeholder="Your Name"
+          placeholder="Ваше имя"
           className='subscribe-form__input subscribe-form__input_name'
         />
         <Field
           name="email"
           component={customInputField}
           type="text"
-          placeholder='Your Email'
+          placeholder='Электронная почта'
           className='subscribe-form__input subscribe-form__input_email'
         />
       <button className='subscribe-form__button'>
-        Subscribe Now
+        Подписаться
     </button>
     </form>
     </>
