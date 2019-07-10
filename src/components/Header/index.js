@@ -56,7 +56,7 @@ const Header = (props) => {
 
             <div className="header-actions">
               <Link to={`/addListing`}>
-                <button className="header-actions-button">+ Add Listing</button>
+                <button className="header-actions-button">+ Добавить Список</button>
               </Link>
               <ModalWindowContainer />
             </div>

@@ -39,11 +39,11 @@ const PlaceDetail = (props) => {
   const overview =
     <div className="overview">
 
-        <div className="overview__pics">
+      <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.description }} />
+      <h2 className="overview__title">{placeDetail.name}</h2>
+      <div className="overview__pics">
         <img className="overview__image" src={placeDetail.mainImage} />
-        </div>
-
-      <div className="overview__pics"></div>
+      </div>
 
       <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.extraDescription }} />
 
@@ -80,14 +80,14 @@ const PlaceDetail = (props) => {
     <div className="video">
       <div>There must be a video here</div>
     </div>
-    
+
   return (
     <Fragment>
-      <DetailPostTopContainer 
-      name={placeDetail.name} 
-      category={placeDetail.category} 
-      createDate={placeDetail.createDate} 
-      rate={placeDetail.rating}
+      <DetailPostTopContainer
+        name={placeDetail.name}
+        category={placeDetail.category}
+        createDate={placeDetail.createDate}
+        rate={placeDetail.rating}
       />
       <section className="place-detail">
         {
