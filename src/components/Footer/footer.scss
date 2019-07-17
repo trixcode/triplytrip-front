@@ -39,6 +39,13 @@
         color: white;
         font-weight: 900;
       }
+      .footer-list__link {
+        color: grey;
+        &:hover {
+          color:white;
+          cursor: pointer;
+        }
+      }
     }
 
     a {

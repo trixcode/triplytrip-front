@@ -16,7 +16,7 @@ const Footer = (props) => {
   }
   useEffect(() => {
     getArticlesToFooterStart()
-  }, []);
+  }, [getArticlesToFooterStart]);
 
   return (
     <footer className="footer">
@@ -26,32 +26,32 @@ const Footer = (props) => {
             <span>Заведения</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#" onClick={() => pushToCategories('hotel')}>Отели</a>
+            <span className="footer-list__link"  onClick={() => pushToCategories('hotel')}>Отели</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#" onClick={() => pushToCategories('restaurant')}>Рестораны</a>
+            <span className="footer-list__link" href="#" onClick={() => pushToCategories('restaurant')}>Рестораны</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#" onClick={() => pushToCategories('cafe')}>Кафе</a>
+            <span className="footer-list__link" href="#" onClick={() => pushToCategories('cafe')}>Кафе</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#" onClick={() => pushToCategories('guest house')}>Гостевые дома</a>
+            <span className="footer-list__link" href="#" onClick={() => pushToCategories('guest house')}>Гостевые дома</span>
           </li>
           <li>
-            <a className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</a>
+            <span className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</span>
           </li>
         </ul>
 
         <ul className="footer-list">
           <li>
-            <span href="#">Статьи</span>
+            <span>Статьи</span>
           </li>
          
           {footerArticle.map(footerArticle => (
             <li key={footerArticle._id}>
-              <a className="footer-list__link" href="#"
+              <span className="footer-list__link"
                onClick={pushToArticleDetail}
-              >{footerArticle.title}</a>
+              >{footerArticle.title}</span>
             </li>
           ))}
         </ul>

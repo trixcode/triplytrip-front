@@ -8,7 +8,7 @@ import ArticleAsideContainer from '../../containers/ArticleAside';
 
 import HeaderContainer from '../../containers/Header';
 import { getArticleDetailByIdStart } from '../../store/actions';
-
+import FooterContainer from '../../containers/Footer'
 
 function ArticleDetail(props) {
   const { getArticleDetailByIdStartAction } = props;
@@ -25,6 +25,7 @@ function ArticleDetail(props) {
 
         </div>
       </div>
+      <FooterContainer />
     </Fragment>
   )
 }

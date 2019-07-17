@@ -45,7 +45,7 @@ const PlaceDetail = (props) => {
       <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.description }} />
       <h2 className="overview__title">{placeDetail.name}</h2>
       <div className="overview__pics">
-        <img className="overview__image" src={placeDetail.mainImage} />
+        <img className="overview__image" alt={placeDetail.name} src={placeDetail.mainImage} />
       </div>
 
       <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.extraDescription }} />

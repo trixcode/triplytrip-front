@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import HeaderContainer from '../../containers/Header';
 import PlaceDetailContainer from '../../containers/PlaceDetail';
-
+import FooterContainer from '../../containers/Footer'
 
 function Detail() {
   
@@ -9,6 +9,7 @@ function Detail() {
     <Fragment>
       <HeaderContainer />
       <PlaceDetailContainer />
+      <FooterContainer />
     </Fragment>
   )
 }
