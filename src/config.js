@@ -14,7 +14,7 @@ const config = {
   production: {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || 8080,
-    apiUrl: 'http://localhost:8000/',
+    apiUrl: 'http://52.58.62.46/api/v1/',
   },
 };
 

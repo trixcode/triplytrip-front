@@ -82,7 +82,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy:prod": "rsync -avzhe ssh --progress ./build/*  ubuntu@ec2-52-58-62-46.eu-central-1.compute.amazonaws.com:/home/ubuntu/triplytrip.com"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -104,7 +105,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "rsync": "^0.6.1"
   },
   "jest": {
     "collectCoverageFrom": [
