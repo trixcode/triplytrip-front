@@ -1,34 +1,69 @@
-import Link from 'next/link'
+import React, { useEffect } from 'react';
 
+import {Link} from 'react-router-dom'
 import './header.scss';
+import BurgerMenu from '../BurgerMenu'
+import ModalWindowContainer from '../../containers/Modal';
+import Logo from '../../assets/mainIcon.png'
+import SuccessModal from '../SuccessModal/'
 
 
-const Header = () => {
+
+const Header = (props) => {
+
+  const { getCategoriesStart, getCitiesStart, setNotLogined, setLogined } = props
+
+  const checkIsAuth = () => {
+    const token = localStorage.getItem('token')
+    token === null ? setNotLogined() : setLogined()
+  }
+
+  useEffect(() => {
+    getCategoriesStart()
+    getCitiesStart()
+    checkIsAuth()
+  }, []);
+
   return (
     <header className="header">
-      <Link href="/">
-        <a className="header-brand">
-          <img src='static/mainIcon.png' className="header-brand__logo" alt="logo" />
-          <h2 className="header-brand__title">TryplyTrip</h2>
-        </a>
-      </Link>
-      <nav className="header-navigation">
-        <ul className="header-navigation-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Listings</a></li>
-          <li><a href="#">Destinations</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="#">Blog</a></li>
-          <li>|</li>
-        </ul>
+      <div className="container">
+        <div className="header-wrapper">
+          <Link to="/">
+            <div className="header-brand">
+              <img src={Logo} className="header-brand__logo" alt="logo" />
+              <h2 className="header-brand__title">TryplyTrip</h2>
+            </div>
+          </Link>
+          <BurgerMenu />
+          <nav className="header-navigation">
+            <ul className="header-navigation-bar">
+              <li className="header-navigation-list">
+                <Link to={`/placesCategory`}>
+                  <span className="header-navigation-link">
+                    Заведения
+                  </span>
+                </Link>
+              </li>
+              <li className="header-navigation-list">
+                <Link to={`/articles`}>
+                  <span className="header-navigation-link">
+                    Статьи
+                  </span>
+                </Link>
+              </li>
 
-        <div className="header-actions">
-          <button>+ Add Listing</button>
-          <a href="#">icon</a>
-          <a href="#">icon</a>
+            </ul>
+
+            <div className="header-actions">
+              <Link to={`/addListing`}>
+                <button className="header-actions-button">+ Добавить Список</button>
+              </Link>
+              <ModalWindowContainer />
+            </div>
+          </nav>
         </div>
-      </nav>
+      </div>
+      <SuccessModal/>
     </header>
   )
 }

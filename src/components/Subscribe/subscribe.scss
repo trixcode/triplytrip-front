@@ -3,75 +3,137 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Varela+Round');
 
 .subscribe {
-    width: 100%;
-    background-color: $subscribeBGcolor;
-    @include displayFlexCenter;
+  width: 100%;
+  background-color: $subscribeBGcolor;
+  align-items: center;
+  @include displayFlexCenter;
+  .subscribe-container { 
+    flex-direction: row;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
 }
 .subscribe-strip {
-    width: 100%;
-    height: 8px;
-    background: url('/static/strip.png') repeat;
+  width: 100%;
+  height: 8px;
+  background: url('/static/strip.png') repeat;
 }
-.subscribe-container { 
-    width: 100%;
+
+.subscribe-mail{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.subscribe__mail__icon {
+    width: 410px;
+    margin: 35px 0 35px;
+    @media screen and (max-width: 768px) { 
+      display: flex;
+      flex-direction: column;
+    }
+    @media screen and (max-width: 992px) { 
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .subscribe-mail__icon {
+    display: flex;
+    justify-content: center;
     width: 68px;
     height: 68px;
-    margin-right: 10px;
-    margin-bottom: 25px;
-}
-.subscribe-wrapper {
-    padding: 0px 15px;
-    box-sizing: border-box;
-    height: 140px;
-    width: 1440px;
-    @include displayFlexCardRow;
-}
-.subscribe-description {
-    width: 24.5%;
-    margin-bottom: 27px; 
-}
-.subscribe-description__title {
-    font-size: 1.54em;
-    font-weight: 900; 
-    color: #2a3250;
-    .subscribe-description__title_thin {
-        margin-right: 10px;
-        font-weight: 300;
-        font-size: 1em;
-        color: #2a3250;
+    margin-right: 26px;
+    @media screen and (max-width: 992px) { 
+      margin-right: 0;
     }
-}
-.subscribe-description__text {
-    font-size: 0.8em;
+  }
+  
+  .subscribe-mail__description {
+    margin-bottom: 27px; 
+  }
+  .subscribe-description__title {
+    font-size: 26px;
+    font-weight: 300; 
+    color: #2a3250;
+    margin-right: 10px;
+    @media screen and (max-width: 768px) { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media screen and (max-width: 992px) { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subscribe-description__title_bold {
+      margin-right: 10px;
+      font-weight: 900;
+      font-size: 26px;
+      color: #2a3250;   
+    }
+  }
+  
+  .subscribe-description__text {
+    font-size: 14px;
     font-weight: bold;
     font-family: 'Varela Round', sans-serif;
     color: #676e89;
-}
-.subscribe__input {
-    padding-left: 20px;
-    height: 50px;
-    border: 0;
-    background-color: rgb(255, 255, 255);
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.1em;
-    color: #9498a7;
-}
-.subscribe__input_email {
-    width: 19%;
-}
-.subscribe__input_name {
-    width: 27%;
-}
-.subscribe__button {
-    width: 12%;
-    height: 50px;
-    border: 0px;
-    background-color: #e03e53;
-    color: white;
-    font-size: 1.2em;
-}
+    @media screen and (max-width: 768px) { 
+      width: 230px;
+      text-align: center;
+    }
+    @media screen and (max-width: 992px) { 
+      width: 230px;
+      text-align: center;
+    }
+  }
+
+  
+  .subscribe-form{
+    display: flex;
+    width: calc(100% - 450px);
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 768px) { 
+      display: flex;
+      flex-direction: column;
+    }
+    @media screen and (max-width: 992px) { 
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0 10px;
+    }
+    .subscribe-form__input {
+      width: 100%;
+      padding-left: 20px;
+      height: 50px;
+      border: 0;
+      background-color: rgb(255, 255, 255);
+      font-family: 'Varela Round', sans-serif;
+      font-size: 16px;
+      color: #9498a7;
+      margin-right: 15px;
+      @media screen and (max-width: 768px) { 
+        width: 300px;
+      }
+      @media screen and (max-width: 992px) { 
+        margin: 10px;
+      }
+    }
+    .subscribe-form__button {
+      width: 60%;
+      height: 50px;
+      border: 0px;
+      background-color: #e03e53;
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+      @media screen and (max-width: 768px) { 
+        width: 150px;
+        margin-bottom: 20px;
+      }
+    }
+  }

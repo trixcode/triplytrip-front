@@ -4,38 +4,56 @@
 .category-border{
   height: 1px;
   background: linear-gradient(90deg, #597dcd 0%, #95d8e3 100%);
-  width: 100%;
   border: none;
   margin: 0;
 }
 
-
-
 .category-wrapper{
   background: rgb(98,140,233);
-  background: linear-gradient(90deg, rgba(98,140,233,1) 0%, rgba(49,200,223,1) 100%);
+  background: linear-gradient(60deg, #608AE9 30%, #2FC8DF 70%);
   height: 92px;
   display: flex;
   justify-content: center;
+  }
 
   .category-container {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 10%;
+    @media (max-width: 1199px) {
+      padding: 0px 0px;
+    }
 
-  }
   .category-block{
     display: flex;
     flex-direction: row;
     align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &__icon__wrapper {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 5px;
+    }
   }
   .category-block__name{
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
-  }
 
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
 }
 
 .category__icon_hotel{
@@ -58,6 +76,8 @@
   color: #ffffff;
   border-radius: 50%;
   font-size: 20px;
-  // padding: 12px;
-  margin-right: 5px;
+
+  @media (max-width: 992px) {
+    font-size: 25px;
+  }
 }

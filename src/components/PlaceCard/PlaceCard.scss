@@ -9,81 +9,133 @@
     justify-content: space-between;
     margin-bottom: 50px;
     font-weight: bold;
-    .place-card__text_grey  {
+    &:hover {
+        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.178);
+        cursor: pointer;
+    }
+   
+    @media screen and (max-width: 576px) { 
+        max-width: 300px;
+    }
+    @media screen and (max-width: 768px) { 
+        max-width: 300px;
+    }
+    @media screen and (max-width: 992px) { 
+        max-width: 300px;
+        .place-card-avatar-wrapper {
+            position: absolute;
+            left: 220px;
+            top: 190px;
+        }
+    }
+}
+.place-card {
+    &__info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 150px;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    &__text_grey  {
         color: $placeCardFontColor;   
     }
-}
-.place-card-image-wrapper {
-    height: 213px;
-    width: 100%;
-    position: relative;
-    .place__card__images {
-        height: 100%;
+    &-image-wrapper {
+        height: 213px;
         width: 100%;
-        object-fit: cover;
+        position: relative;
+        margin-bottom: 20px;
+        .place__card__images {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
-}
-.place-card-avatar-wrapper {
-    position: absolute;
-    left: 250px;
-    top: 190px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: solid 1px white;
-        .place-card__avatar {
+    &-avatar-wrapper {
+        position: absolute;
+        left: 250px;
+        top: 190px;
         height: 50px;
         width: 50px;
-        object-fit: cover;
         border-radius: 50%;
+        border: solid 1px white;
+            .place-card__avatar {
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            }
+    }
+    &__name{
+        font-size: 0.97em;
+        color: black;
+    }
+    &__price  {
+        font-size: 0.85em;
+        font-family: 'Varela Round';
+        font-weight: 400;
+    }
+    &__info {
+        margin-left: 10px;
+        font-size: 0.85em;   
+    }
+    &__icon {
+        width: 15px;
+        height: 15px;
+        color: $placeCardBlue;
+        font-size: 0.9em;
+    }
+
+    &-button-wrapper {
+        @include displayFlexCardRow;
+        width: 100%;
+        height: 47px;
+        .place-card__button {
+            font-weight: 500;
+            border: 0;
+            border-radius: 3px;
+            background-color: $placeCardButtonsColor;
+            width: 50px;
+            height: 100%;
+            @include displayFlexOnCenter;
+            &:hover {
+                cursor: pointer;
+            }
+            .card__button__icon {
+                width: 20px;
+                height: 19px;
+                font-size: 1.45em;
+            }
         }
+        .place-card__button_detail {
+            width: 160px;
+            font-size: 1em;
+        }
+    }
 }
-.place-card__name{
-    font-size: 0.97em;
+
+.like-button {
+    font-weight: 500;
+    border: 0;
+    border-radius: 3px;
+    background-color: $placeCardButtonsColor;
+    width: 50px;
+    height: 100%;
+    & .card__button__icon {
+        width: 20px;
+        height: 19px;
+        color: #000;
+        font-size: 1.45em;
+    }
+    &:hover {
+        cursor: pointer
+    }
 }
-.place-card__price  {
-    font-size: 0.85em;
-    font-family: 'Varela Round';
-    font-weight: 400;
-}
+
 .rate__star__icon {
     width: 15px;
     height: 15px;
     font-size: 0.85em;
-    color: $placeCardYellow;
+    color: rgb(182, 182, 182);
 }
-.place-card__info {
-    margin-left: 10px;
-    font-size: 0.85em;   
-}
-.place-card__icon {
-    width: 15px;
-    height: 15px;
-    color: $placeCardBlue;
-    font-size: 0.9em;
-}
-
-.place-card-button-wrapper {
-    @include displayFlexCardRow;
-    width: 100%;
-    height: 47px;
-    .place-card__button {
-        font-weight: 500;
-        border: 0;
-        border-radius: 3px;
-        background-color: $placeCardButtonsColor;
-        width: 50px;
-        height: 100%;
-        @include displayFlexOnCenter;
-        .card__button__icon {
-            width: 20px;
-            height: 19px;
-            font-size: 1.45em;
-        }
-    }
-    .place-card__button_detail {
-        width: 160px;
-        font-size: 1em;
-    }
-}
-

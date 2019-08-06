@@ -1,0 +1,118 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.footer {
+  // background: -moz-linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  // background: -webkit-linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  // background: linear-gradient(left, #2a385d 0%, #370c2e 100%);
+  background-image: linear-gradient(to right, #2a385d 0%, #370c2e 100%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .footer-container {
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 576px) { 
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .footer-list {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    li {
+      margin: 20px;
+
+      span {
+        color: white;
+        font-weight: 900;
+      }
+      .footer-list__link {
+        color: grey;
+        &:hover {
+          color:white;
+          cursor: pointer;
+        }
+      }
+    }
+
+    a {
+      color: grey;
+    }
+
+    a:hover {
+      color:white;
+    }
+  }
+}
+
+.sub-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+
+  .footer-copyright__text {
+    display: flex;
+    align-items: center;
+    color: grey;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+}
+  :hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.footer-social-item {
+  display: flex;
+
+  .footer-social__list {
+    .footer-social__icon {
+      color: #ffffff;
+      font-size: 45px;
+      padding: 12px;
+      float: right;
+      cursor: pointer;
+    }
+  }
+  .footer-social__link {
+    width: 100%;
+    height: 100%;
+
+    :hover {
+      color: red;
+    }
+   }
+  }

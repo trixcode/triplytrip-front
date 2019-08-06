@@ -6,8 +6,8 @@
 
 body, h1, h2, h3, ul {
     margin: 0
+  
 }
-
 
 .header-gradient-wrapper {
     background: rgb(140,163,246);
@@ -15,7 +15,12 @@ body, h1, h2, h3, ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
+    
+    & header {
+        justify-content: space-between;
+        flex-direction: row;
+    }
 }
 
 .header-border {
@@ -25,12 +30,34 @@ body, h1, h2, h3, ul {
     border: none;
     margin: 0;
 }
+.header-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+img, svg{
+  z-index: 0;
+}
+
 
 .header {
-  width: 1440px;
+  
   height: 70px;
+  position:-webkit-sticky;  
+  position:sticky;
+  top:0;
+  z-index: 9;
+  background: rgb(140,163,246);
+  background: linear-gradient(90deg, rgba(140,163,246,1) 0%, rgba(229,107,207,1) 100%);
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+  
+  -webkit-user-select: none;
+  user-select: none;
+  box-shadow: 0px 0px 20px -5px #000000;
   &-brand {
     align-items: center;
     height: 100%;
@@ -48,52 +75,121 @@ body, h1, h2, h3, ul {
 
     &-navigation {
     	display: flex;
-    	justify-content: space-between;
-        align-items: center;
-        &-list {
+      justify-content: flex-end;
+      align-items: center;
+      width: 66%;
+        &-bar {
             list-style: none;
-            li {
+            .header-navigation-list {
             	display: inline;
-                margin-left: 20px;
+                margin-right: 20px;
                 color: #d994e1;
-                font-size: 12px;
+                font-size: 15px;
                 font-family: 'Krona One', sans-serif;
-                a {
+                font-weight: bold;
+                .header-navigation-link {
                   text-decoration: none;
                   color: #fff;
                     }
-                a:hover {
+                .header-navigation-link:hover {
                     color: #e03e53;
                 }
                 }
             }
             .header-actions {
-                button {
-                  	margin-left: 20px;
-                    width: 130px;
-                	height: 33px;
+                .header-actions-button{
+                      width: 142px;
+                      height: 33px;
                     border: #fff 1px solid;
                     border-radius: 3px;
                     background: none;
                     color: #fff;
                     font-family: 'Krona One', sans-serif;
                     }
-                    button:hover {
+                    .header-actions-button:hover {
                         border-color: #e03e53;
                         color: #e03e53;
                         cursor: pointer;
                     }
-                    a {
+                    .header-actions-button:focus{
+                      outline: none;
+                      }
+                    .header-actions-link {
                     	text-decoration: none;
                         color: #fff;
                         margin-left: 20px;
                         font-family: 'Krona One', sans-serif;
                         font-size: 12px;
                       }
-                    a:hover {
+                    .header-actions-link:hover {
                         color: #e03e53;
                     }
             	}
         	}
     }
-                
+
+
+.menu-toggle{
+  display: none;
+}
+
+// Mobile
+@media (max-width: 1140px){
+  .header-navigation{
+    .header-navigation-bar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-right: 10px;
+    }
+    li{
+      font-size: 10px;
+    }
+  }
+  .header-brand__title{
+    font-size: 33px;
+    padding-right: 30px;
+  }
+  .header-actions {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-navigation-list{
+    font-size: 12px;
+  } 
+  
+}
+@media (max-width: 960px){
+ 
+  .header-navigation{
+    display: none;
+  }
+  .header-wrapper{
+    display: flex;
+    align-items: center;
+  }
+  .header-navigation-link{
+    color: white;
+  }
+  
+  .header-navigation-link:hover{
+    color: #e03e53;
+  
+  }
+
+}
+@media (max-width: 720px){
+  #menu{
+    width: 400px;
+  }
+}
+@media (max-width: 576px){
+  #menu{
+    width: 320px;
+  }
+  .header-brand__title{
+    font-size: 25px;
+  }
+}

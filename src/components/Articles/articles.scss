@@ -42,17 +42,19 @@
 .news-cards-wrapper{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .news-card {
     display: flex;
     flex-direction: column;
-    width: 330px;
-    height: 470px;
+    width: 265px;
+    // height: 470px;
     .news-card-header {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       .news-card__image {
         width: 100%;
         height: 239px;
+        object-fit: cover;
       }
       .news-card__date {
         position: absolute;
@@ -65,39 +67,39 @@
         width: 53px;
         height: 63px;
         .date__day {
-          width: 26px;
           height: 18px;
           color: #000000;
           font-family: 'Montserrat';
           font-size: 24px;
           text-transform: uppercase;
           font-weight: 400;
-          border-bottom: 1px solid #000000;
-          padding: 10px;
+          padding-bottom: 32px;
+          text-align: center
         } 
         .date__month {
-          width: 25px;
-          height: 9px;
           color: #000000;
           font-family: 'Montserrat';
-          font-size: 12px;
+          font-size: 15px;
           font-weight: 300;
           text-transform: uppercase;
-          padding: 5px;
+          padding-top: 5px;
+          text-align: center;
+          border-top: 1px solid #000000;
         }
       }
     }
     .news-card-footer {
-      width: 330px;
+      width: 100%;
       height: 201px;
       .news-card__title {
-        height: 45px;
         color: #232323;
         font-family: 'Montserrat';
+        text-transform: uppercase;
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 500;
         overflow: hidden;
-        margin-bottom: 13px;
+        margin-bottom: 16px;
+        text-align: center;
       }
       .news-card__tag {
         width: 60%;
@@ -112,14 +114,24 @@
         }
       }
       .news-card__description {
-        width: 320px;
-        height: 35px;
-        color: #949494;
-        font-family: 'Montserrat';
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 500;
-        margin-bottom: 25px;
+        & p {
+          width: 100%;
+          height: 60px;
+          color: #949494;
+          font-family: 'Montserrat';
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 500;
+          margin-bottom: 38px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          text-align: center;
+        }
+      }
+      .news-card-button-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
       .news-card-button {
         width: 184px;
@@ -130,11 +142,78 @@
         border-radius: 20px;
         text-transform: uppercase;
         font-family: 'Montserrat';
-        }
+      }
+        .news-card-button:focus{
+          outline: none;
+         }
         .news-card-button:hover {
           border: 2px solid #e03e53;
           color: #e03e53;
+          cursor: pointer;
       }
     }
   }
+}
+.news-card:focus,
+.news-card:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.178);
+  transform: scale(1.1);
+}
+
+//MEDIA//
+
+@media (max-width: 320px) {
+  .news-cards-wrapper {
+    justify-content: center;
+    .news-card {
+      margin-bottom: 50px;
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 576px) { 
+  .news-cards-wrapper {
+    justify-content: center;
+    .news-card {
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (max-width: 768px) { 
+  .news-card-button {
+    width: 80%;
+  }
+  .news-cards-wrapper {
+    justify-content: space-evenly;
+    .news-card {
+      margin-bottom: 50px;
+      width: 250px;
+      .news-card-footer {
+        .news-card__description {
+          p {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
+}
+@media (max-width: 992px) { 
+  
+  
+  
+}
+@media (max-width: 1200px) { 
+  .news-cards-wrapper{
+    justify-content: space-evenly;
+    .news-card {
+      width: 320px;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media (max-width: 1440px) { 
+  
 }

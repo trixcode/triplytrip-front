@@ -1,57 +1,97 @@
+import {useEffect, useState} from 'react';
+import React from 'react'
 import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
 import './places.scss'
 
-import hotels from './hotels.json';
-
 const Places = props => {
-  const places = hotels.hotels
-  return (
+
+  const { places, getPlacesStart, categories } = props;
+  
+  const [isAllSelected, setAllTab] = useState(true);
+  const [isHotelSelected, setHotelTab] = useState(false);
+  const [isRestaurantSelected, setRestaurantTab] = useState(false);
+  const [isCafeSelected, setCafeTab] = useState(false)
+  const [isClubSelected, setClubSelected] = useState(false)
+  const [isGuestSelected, setGuestSelected] = useState(false)
+  const [isHostelSelected, setHostelSelected] = useState(false)
+
+  const switchClassesOfTabs = (a,b,c,d,e,f,g) => {
+    a(true)
+    b(false)
+    c(false)
+    d(false)
+    e(false)
+    f(false)
+    g(false)
+  }
+
+  const getCategoryId = (name) => {
+    const category = categories.find(category => category.name === name ?  category._id : '')
+    const idOfCategory = category._id
+    getPlacesStart(`category=${idOfCategory}`)
+  }
+  useEffect(() => {
+    getPlacesStart('isOpen=true&_limit=8')
+  }, [getPlacesStart]);
+
+    return (
     <section className='section-places'>
       <div className='container' >
         <SectionTitle
-          name="Popular Thing To Do"
-          text="popular exclusive listings in our directory"
+          name="самые популярные места"
+          text="по Кыргызстану, где вы можете провести приятно время. Все это можете найти у нас в каталоге"
         />
         <div className='places-tags-wrapper'>
           <button
-            className='places__tag places__tag_all'
-            id='all'>
-            All
+            className={isAllSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            id='all' onClick={() => getPlacesStart('isOpen=true&_limit=8')
+            + switchClassesOfTabs(setAllTab,setHotelTab,setCafeTab,setRestaurantTab, setClubSelected,setGuestSelected,setHostelSelected)}>
+            Все
           </button>
           <button
-            id='hotels'
-            className='places__tag places__tag_hotel'>
-            Hotel
+            className={isHotelSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('hotel') 
+            + switchClassesOfTabs(setHotelTab,setAllTab,setCafeTab,setRestaurantTab, setClubSelected,setGuestSelected,setHostelSelected)}>
+            Отели
           </button>
           <button
-            id='restaraunts'
-            className='places__tag places__tag_restaurant'>
-            Restaurant
+            className={isRestaurantSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('restaurant')
+            + switchClassesOfTabs(setRestaurantTab,setAllTab,setCafeTab,setHotelTab, setClubSelected,setGuestSelected,setHostelSelected)}>
+            Рестораны
           </button>
           <button
-            className='places__tag places__tag_dinner'>
-            Dinner
+            className={isCafeSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('cafe')
+            + switchClassesOfTabs(setCafeTab,setAllTab,setHotelTab,setRestaurantTab, setClubSelected,setGuestSelected,setHostelSelected)}>
+            Кафе
           </button>
           <button
-            className='places__tag places__tag_clubbar'>
-            Club & Bar
+            className={isClubSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('night club')
+            + switchClassesOfTabs(setClubSelected,setCafeTab,setAllTab,setHotelTab,setRestaurantTab,setGuestSelected,setHostelSelected)}>
+            Ночные клубы
           </button>
           <button
-            className='places__tag places__tag_coffee'>
-            Coffee
+            className={isGuestSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('guest house')
+            + switchClassesOfTabs(setGuestSelected,setClubSelected,setCafeTab,setAllTab,setHotelTab,setRestaurantTab,setHostelSelected)}>
+            Гостевые дома
           </button>
           <button
-            className='places__tag places__tag_destinations'>
-            Destinations
+            className={isHostelSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('hostel')
+            + switchClassesOfTabs(setHostelSelected,setGuestSelected,setClubSelected,setCafeTab,setAllTab,setHotelTab,setRestaurantTab)}>
+            Хостел
           </button>
         </div>
         <div
           className='place-cards-wrapper'>
-          {places.slice(0, 8).map(placeObj => {
+          {places.places.slice(0, 8).map(placeObj => {
             return (
               <PlaceCard
-                key={placeObj.name}
+                key={placeObj._id}
                 place={placeObj}
               />
             )
