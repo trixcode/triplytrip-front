@@ -114,6 +114,9 @@
         }
       }
       .news-card__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         & p {
           width: 100%;
           height: 60px;

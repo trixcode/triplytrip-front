@@ -23,7 +23,6 @@ const Places = (props) => {
     f(false);
     g(false);
   };
-
   const getCategoryId = (name) => {
     const category = categories.find(categoryOf => (categoryOf.name === name ? categoryOf._id : ''));
     const idOfCategory = category._id;

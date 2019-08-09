@@ -14,7 +14,6 @@ const PlacesFilterForm = (props) => {
   const {
     changeFormValue, getPlacesStart, places, cities, myValues, categories, location,
   } = props;
-
   const params = new URLSearchParams(location.search);
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -32,12 +31,12 @@ const PlacesFilterForm = (props) => {
   const search = () => {
     // FIND BY CATEGORY
     const categoryId = categoryChanged === null ? '' : categoryChanged === 'all categories' ? ''
-      : categories.find(categoryOf => (categoryOf.name === categoryChanged ? categoryOf.id : ''));
-    const idOfCategory = categoryId === '' ? '' : `category=${categoryId && categoryId.id}`;
+      : categories.find(categoryOf => (categoryOf.name === categoryChanged ? categoryOf._id : ''));
+    const idOfCategory = categoryId === undefined ? '' : `category=${categoryId && categoryId._id}`;
     // FIND BY LOCATION
     const currentLocation = locationChanged && locationChanged.charAt(0).toUpperCase() + locationChanged.slice(1);
     const cityId = currentLocation === '' ? ''
-      : cities.find(city => (city.name === currentLocation ? city.id : ''));
+      : cities.find(city => (city.name === currentLocation ? city._id : ''));
     const ifOfCity = cityId === '' ? '' : cityId === undefined ? '&cities=therisnocity' : `&cities=${cityId && cityId.id}`;
     // FIND BY KEYWORDS
     const keyword = keywordsChanged === '' ? '' : `&search=${keywordsChanged}`;
@@ -111,7 +110,7 @@ const PlacesFilterForm = (props) => {
             >
               <option value="all categories">Все категории</option>
               {categories.map(categorie => (
-                <option key={categorie.id}>{categorie.name}</option>
+                <option key={categorie._id}>{categorie.name}</option>
               ))}
             </Field>
           </form>
@@ -203,7 +202,7 @@ const PlacesFilterForm = (props) => {
             >
               {places.places.map(placeObj => (
                 <PlaceCard
-                  key={placeObj.id}
+                  key={placeObj._id}
                   place={placeObj}
                 />
               ))}

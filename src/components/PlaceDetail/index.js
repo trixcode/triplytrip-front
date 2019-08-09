@@ -19,7 +19,6 @@ const PlaceDetail = (props) => {
 
   useEffect(() => {
     // eslint-disable-next-line no-console
-    console.log(match);
     getPlaceDetailByIdStart(match.params.placeId);
     window.scrollTo(400, 400);
   }, [getPlaceDetailByIdStart, match.params.placeId]);
