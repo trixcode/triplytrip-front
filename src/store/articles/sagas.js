@@ -6,7 +6,6 @@ import * as actions from './actions';
 import * as actionTypes from './actionTypes';
 
 
-
 export function* getArticleDetailRequest(articleList) {
   try {
     const response = yield call(api.GET, 'Articles', articleList);
@@ -37,7 +36,7 @@ export function* getArticlesByPageRequest(articlePage) {
 
 export function* getArticlesByIdRequest(articlePage) {
   try {
-    const response = yield call(api.GET, `Articles?limit=4`, articlePage);
+    const response = yield call(api.GET, 'Articles?limit=4', articlePage);
     yield put(actions.getArticlesByIdSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticlesByIdFailure(responseError));
@@ -45,14 +44,12 @@ export function* getArticlesByIdRequest(articlePage) {
 }
 export function* getArticlesToFooterRequest(articlePage) {
   try {
-    const response = yield call(api.GET, `Articles?limit=5`, articlePage);
+    const response = yield call(api.GET, 'Articles?limit=5', articlePage);
     yield put(actions.getArticlesToFooterSuccess(response));
   } catch (responseError) {
     yield put(actions.getArticlesToFooterFailure(responseError));
   }
 }
-
-
 
 
 export function* watchGetArticleDetailRequest() {
@@ -94,13 +91,10 @@ export function* watchGetArticlesToFooterRequest() {
 }
 
 
-
 export default function* () {
   yield fork(watchGetArticleDetailRequest);
   yield fork(watchGetArticleDetailByIdRequest);
   yield fork(watchGetArticlesByPageRequest);
   yield fork(watchGetArticlesByIdRequest);
   yield fork(watchGetArticlesToFooterRequest);
-
-
 }

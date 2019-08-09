@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react';
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './header.scss';
-import BurgerMenu from '../BurgerMenu'
+import BurgerMenu from '../BurgerMenu';
 import ModalWindowContainer from '../../containers/Modal';
-import Logo from '../../assets/mainIcon.png'
-import SuccessModal from '../SuccessModal/'
-
+import Logo from '../../assets/mainIcon.png';
+import SuccessModal from '../SuccessModal';
 
 
 const Header = (props) => {
-
-  const { getCategoriesStart, getCitiesStart, setNotLogined, setLogined } = props
+  const {
+    getCategoriesStart, getCitiesStart, setNotLogined, setLogined,
+  } = props;
 
   const checkIsAuth = () => {
-    const token = localStorage.getItem('token')
-    token === null ? setNotLogined() : setLogined()
-  }
+    const token = localStorage.getItem('token');
+    if (token === null) {
+      setNotLogined(false);
+    } else {
+      setLogined(true);
+    }
+  };
 
   useEffect(() => {
-    getCategoriesStart()
-    getCitiesStart()
-    checkIsAuth()
+    getCategoriesStart();
+    getCitiesStart();
+    checkIsAuth();
   }, []);
 
   return (
@@ -38,14 +42,14 @@ const Header = (props) => {
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
-                <Link to={`/placesCategory`}>
+                <Link to="/placesCategory">
                   <span className="header-navigation-link">
                     Заведения
                   </span>
                 </Link>
               </li>
               <li className="header-navigation-list">
-                <Link to={`/articles`}>
+                <Link to="/articles">
                   <span className="header-navigation-link">
                     Статьи
                   </span>
@@ -55,17 +59,17 @@ const Header = (props) => {
             </ul>
 
             <div className="header-actions">
-              <Link to={`/addListing`}>
-                <button className="header-actions-button">+ Добавить Список</button>
+              <Link to="/addListing">
+                <button type="button" className="header-actions-button">+ Добавить Список</button>
               </Link>
               <ModalWindowContainer />
             </div>
           </nav>
         </div>
       </div>
-      <SuccessModal/>
+      <SuccessModal />
     </header>
-  )
-}
+  );
+};
 
 export default Header;

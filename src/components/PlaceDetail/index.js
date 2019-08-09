@@ -1,59 +1,62 @@
 import './placeDetail.scss';
 import React, { useState, useEffect, Fragment } from 'react';
-import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
-import classNames from 'classnames'
+import classNames from 'classnames';
+import parse from 'html-react-parser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faGooglePlusG, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faMapMarkerAlt, faGlobeAmericas, faMobileAlt, faDollarSign, faEnvelope, faCameraRetro, faWifi,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF, faTwitter, faGooglePlusG, faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
 import PlaceDetailContactFormContainer from '../../containers/PlaceDetailContactForm';
-import DetailPostTopContainer from '../../containers/DetailPostTop'
+import DetailPostTopContainer from '../../containers/DetailPostTop';
+//  Need check
 
-function isEmpty(obj) {
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key))
-      return false;
-  }
-  return true;
-}
 const PlaceDetail = (props) => {
-  const { getPlaceDetailByIdStart, placeDetail } = props;
+  const { getPlaceDetailByIdStart, placeDetail, match } = props;
 
   useEffect(() => {
-    getPlaceDetailByIdStart(props.match.params.placeId)
-    window.scrollTo(400, 400)
-  }, [getPlaceDetailByIdStart, props.match.params.placeId]);
+    // eslint-disable-next-line no-console
+    console.log(match);
+    getPlaceDetailByIdStart(match.params.placeId);
+    window.scrollTo(400, 400);
+  }, [getPlaceDetailByIdStart, match.params.placeId]);
 
-  const [isOverviewClicked, setOverview] = useState(true)
-  const [isContactClicked, setContact] = useState(false)
-  const [isReviewsClicked, setReview] = useState(false)
-  const [isVideoClicked, setVideo] = useState(false)
+  const [isOverviewClicked, setOverview] = useState(true);
+  const [isContactClicked, setContact] = useState(false);
+  const [isReviewsClicked, setReview] = useState(false);
+  const [isVideoClicked, setVideo] = useState(false);
 
   const switchTabs = (a, b, c, d) => {
-    a(true)
-    b(false)
-    c(false)
-    d(false)
-    window.scrollTo(600, 600)
-  }
+    a(true);
+    b(false);
+    c(false);
+    d(false);
+    window.scrollTo(600, 600);
+  };
 
-  const selectedClass = 'main-info-tabs__tab_selected'
-  const defaultClass = 'main-info-tabs__tab'
+  const selectedClass = 'main-info-tabs__tab_selected';
+  const defaultClass = 'main-info-tabs__tab';
 
-  const overview =
+  const overview = (
     <div className="overview">
-
-      <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.description }} />
+      <div className="overview__text">
+        {parse(`${placeDetail.description}`)}
+      </div>
       <h2 className="overview__title">{placeDetail.name}</h2>
       <div className="overview__pics">
         <img className="overview__image" alt={placeDetail.name} src={placeDetail.mainImage} />
       </div>
-
-      <div className="overview__text" dangerouslySetInnerHTML={{ __html: placeDetail.extraDescription }} />
-
-      <div className="overview__save"></div>
+      <div className="overview__text">
+        {parse(`${placeDetail.extraDescription}`)}
+      </div>
+      <div className="overview__save" />
     </div>
+  );
 
-  const contact =
+  const contact = (
     <div className="contact">
       <div className="sidebars-form-wrapper">
         <div>
@@ -72,17 +75,19 @@ const PlaceDetail = (props) => {
           <span>Вашe сообщениe</span>
           <input type="text" />
         </div>
-        <button className="sidebars-button">Отправить</button>
+        <button type="submit" className="sidebars-button">Отправить</button>
       </div>
       <div className="contact-map">There must be a map here</div>
     </div>
+  );
 
-  const reviews = <h2>Отзывы</h2>
+  const reviews = <h2>Отзывы</h2>;
 
-  const video =
+  const video = (
     <div className="video">
       <div>There must be a video here</div>
     </div>
+  );
 
   return (
     <Fragment>
@@ -94,30 +99,42 @@ const PlaceDetail = (props) => {
       />
       <section className="place-detail">
         {
-          !isEmpty(placeDetail) && (
+          placeDetail && (
             <div className="place-detail-container container">
               <div className="main-info">
                 <div className="main-info-tabs">
-                  <button id="overview" onClick={() =>
-                    switchTabs(setOverview, setVideo, setReview, setContact)}
-                    className={isOverviewClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  <button
+                    type="button"
+                    id="overview"
+                    onClick={() => switchTabs(setOverview, setVideo, setReview, setContact)}
+                    className={isOverviewClicked ? classNames(defaultClass, selectedClass) : defaultClass}
+                  >
                     Oбзор
-            </button>
-                  <button id="contact" onClick={() =>
-                    switchTabs(setContact, setOverview, setReview, setVideo)}
-                    className={isContactClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  </button>
+                  <button
+                    type="button"
+                    id="contact"
+                    onClick={() => switchTabs(setContact, setOverview, setReview, setVideo)}
+                    className={isContactClicked ? classNames(defaultClass, selectedClass) : defaultClass}
+                  >
                     Kонтакты
-            </button>
-                  <button id="reviews" onClick={() =>
-                    switchTabs(setReview, setVideo, setOverview, setContact)}
-                    className={isReviewsClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  </button>
+                  <button
+                    type="button"
+                    id="reviews"
+                    onClick={() => switchTabs(setReview, setVideo, setOverview, setContact)}
+                    className={isReviewsClicked ? classNames(defaultClass, selectedClass) : defaultClass}
+                  >
                     Отзывы и рейтинги
-            </button>
-                  <button id="video" onClick={() =>
-                    switchTabs(setVideo, setOverview, setReview, setContact)}
-                    className={isVideoClicked ? classNames(defaultClass, selectedClass) : defaultClass}>
+                  </button>
+                  <button
+                    type="button"
+                    id="video"
+                    onClick={() => switchTabs(setVideo, setOverview, setReview, setContact)}
+                    className={isVideoClicked ? classNames(defaultClass, selectedClass) : defaultClass}
+                  >
                     Видео
-            </button>
+                  </button>
                 </div>
                 {isOverviewClicked ? overview : ''}
                 {isContactClicked ? contact : ''}
@@ -127,7 +144,7 @@ const PlaceDetail = (props) => {
 
               <aside className="sidebar">
                 <div className="sidebar-owner-info">
-                  <div className="sidebar-owner-info__avatar"></div>
+                  <div className="sidebar-owner-info__avatar" />
                   <span className="sidebar-owner-info__name">
                     {`${placeDetail.user.firstName} ${placeDetail.user.lastName}`}
                   </span>
@@ -143,14 +160,25 @@ const PlaceDetail = (props) => {
                     </div>
                   </div>
                   <span className="sidebar-owner-info__follow">
-                    Cледить<FontAwesomeIcon icon={faWifi} /></span>
+                    Cледить
+                    <FontAwesomeIcon icon={faWifi} />
+                  </span>
 
                 </div>
                 <div className="sidebar-owner-contacts">
                   <ul className="sidebar-owner-contacts-info">
-                    <li><FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon" />{placeDetail.address}</li>
-                    <li><FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-owner-contacts-info__icon" />{placeDetail.email}</li>
-                    <li><FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />{placeDetail.phone}</li>
+                    <li>
+                      <FontAwesomeIcon icon={faMapMarkerAlt} className="sidebar-owner-contacts-info__icon" />
+                      {placeDetail.address}
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-owner-contacts-info__icon" />
+                      {placeDetail.email}
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faMobileAlt} className="sidebar-owner-contacts-info__icon" />
+                      {placeDetail.phone}
+                    </li>
                   </ul>
                   <ul className="sidebar-owner-contacts-networks">
                     <li><div className="sidebar-facebook"><FontAwesomeIcon icon={faFacebookF} className="owner-contact-icon" /></div></li>
@@ -162,29 +190,40 @@ const PlaceDetail = (props) => {
                 </div>
                 <div className="sidebar-price">
                   <div className="sidebars-title">
-                    <div><FontAwesomeIcon icon={faDollarSign} /></div><h5>Ценовой диапазон</h5>
+                    <div><FontAwesomeIcon icon={faDollarSign} /></div>
+                    <h5>Ценовой диапазон</h5>
                   </div>
-                  <span>Цена: </span><span className="sidebar-price__price"> {placeDetail.price} сом</span>
+                  <span>Цена: </span>
+                  <span className="sidebar-price__price">
+                    {' '}
+                    {placeDetail.price}
+                    {' '}
+                    сом
+                  </span>
                 </div>
                 <div className="sidebar-contact-me">
                   <div className="sidebars-title">
-                    <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Свяжитесь с нами</h5>
+                    <div><FontAwesomeIcon icon={faEnvelope} /></div>
+                    <h5>Свяжитесь с нами</h5>
                   </div>
                   <PlaceDetailContactFormContainer />
                 </div>
                 <div className="sidebar-map">
                   <div className="sidebars-title">
-                    <div><FontAwesomeIcon icon={faMapMarkerAlt} /></div><h5>Kарта</h5>
+                    <div><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
+                    <h5>Kарта</h5>
                   </div>
                 </div>
                 <div className="sidebar-gallery">
                   <div className="sidebars-title">
-                    <div><FontAwesomeIcon icon={faCameraRetro} /></div><h5>Галерея</h5>
+                    <div><FontAwesomeIcon icon={faCameraRetro} /></div>
+                    <h5>Галерея</h5>
                   </div>
                 </div>
                 <div className="sidebar-subscribe">
                   <div className="sidebars-title">
-                    <div><FontAwesomeIcon icon={faEnvelope} /></div><h5>Подписаться</h5>
+                    <div><FontAwesomeIcon icon={faEnvelope} /></div>
+                    <h5>Подписаться</h5>
                   </div>
                   <SubscribeArticlesContainer />
                 </div>
@@ -195,7 +234,7 @@ const PlaceDetail = (props) => {
 
       </section>
     </Fragment>
-  )
-}
+  );
+};
 
-export default PlaceDetail
+export default PlaceDetail;

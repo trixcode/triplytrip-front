@@ -4,20 +4,20 @@ import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 
-import createStore from '../src/store/configure'
+import createStore from '../src/store/configure';
 
 class CustomApp extends App {
-  static async getInitialProps ({ Component, ctx }) {
-    let pageProps = {}
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
 
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps({ ctx })
+      pageProps = await Component.getInitialProps({ ctx });
     }
 
-    return { pageProps }
+    return { pageProps };
   }
 
-  render () {
+  render() {
     const { Component, pageProps, store } = this.props;
     return (
       <Container>
@@ -25,8 +25,8 @@ class CustomApp extends App {
           <Component {...pageProps} />
         </Provider>
       </Container>
-    )
+    );
   }
 }
 
-export default withRedux(createStore)(withReduxSaga(CustomApp))
+export default withRedux(createStore)(withReduxSaga(CustomApp));

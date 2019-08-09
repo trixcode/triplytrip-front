@@ -8,15 +8,15 @@ import SubscribeArticles from '../../components/SubscribeArticles';
 
 
 const validate = createValidator({
-    email: [required, email],
+  email: [required, email],
 });
 const formConfig = {
-    form: 'SubscribeArticles',
-    validate
-}
+  form: 'SubscribeArticles',
+  validate,
+};
 
-const SubscribeArticlesContainer = (props) => <SubscribeArticles {...props} />;
-const mapDispatchToProps = (dispatch) => ({
-    createSubscribesStart: (formValues) => dispatch(createSubscribesStart(formValues))
-}) 
+const SubscribeArticlesContainer = props => <SubscribeArticles {...props} />;
+const mapDispatchToProps = dispatch => ({
+  createSubscribesStart: formValues => dispatch(createSubscribesStart(formValues)),
+});
 export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(SubscribeArticlesContainer));

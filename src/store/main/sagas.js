@@ -24,7 +24,7 @@ export function* watchGetTopDestinationsRequest() {
 
 export function* getCategoriesRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'category_place', {params: requestParams});
+    const response = yield call(api.GET, 'category_place', { params: requestParams });
     yield put(actions.getCategoriesSuccess(response));
   } catch (responseError) {
     yield put(actions.getCategoriesFailure(responseError));
@@ -39,7 +39,7 @@ export function* watchGetCategoriesRequest() {
 
 export function* getCitiesRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'cities', {params: requestParams});
+    const response = yield call(api.GET, 'cities', { params: requestParams });
     yield put(actions.getCitiesSuccess(response));
   } catch (responseError) {
     yield put(actions.getCitiesFailure(responseError));

@@ -1,87 +1,103 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
-import { faStar, faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+import {
+  faStar, faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import './DetailPostTop.scss';
 
 const DetailPostTop = (props) => {
   const interactiveIconsArr = [faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope];
 
-  const { name, category, createDate, rate, categories } = props
-  
+  const {
+    name, category, createDate, rate, categories,
+  } = props;
+
   const findNameOfCategory = () => {
-    const nameOfCate = categories.find(categors => categors._id === category && categors.name)
-    const name = nameOfCate && nameOfCate.name
-    return name
-  }
+    const nameOfCate = categories.find(categors => categors.id === category && categors.name);
+    const nameOf = nameOfCate && nameOfCate.name;
+    return nameOf;
+  };
 
   return (
-    <div className='detail-post-top'>
-      <div className='detail-post-top_image_wrapper'>
+    <div className="detail-post-top">
+      <div className="detail-post-top_image_wrapper">
         <img
-          className='detail-post-top_image'
-          src='https://img5.goodfon.com/original/1680x1050/3/67/ulitsa-doma-maiami-florida-ssha-ocean-drive.jpg'
-          alt='hotel' />
+          className="detail-post-top_image"
+          src="https://img5.goodfon.com/original/1680x1050/3/67/ulitsa-doma-maiami-florida-ssha-ocean-drive.jpg"
+          alt="hotel"
+        />
       </div>
-      <div className='detail-post-top-place'>
-        <div className='container'>
-          <div className='detail-post-top-place-wrapper'>
+      <div className="detail-post-top-place">
+        <div className="container">
+          <div className="detail-post-top-place-wrapper">
             <h2
-              className='detail-post-top-place__name'>
+              className="detail-post-top-place__name"
+            >
               {name}
             </h2>
-            <div className='detail-post-top-place-content'>
-              <div className='detail-post-top-place-info'>
-                <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
+            <div className="detail-post-top-place-content">
+              <div className="detail-post-top-place-info">
+                <div className="detail-post-top-place-info__wrapper wrapper_right_line">
                   <span
-                    className='detail-post-top-place-info__text'>
+                    className="detail-post-top-place-info__text"
+                  >
                     Oпубликовано
                   </span>
                   <span
-                    className='detail-post-top-place-info__detail'>
-                      {moment(createDate).format('DD MMM YYYY')}
-                    </span>
+                    className="detail-post-top-place-info__detail"
+                  >
+                    {moment(createDate).format('DD MMM YYYY')}
+                  </span>
                 </div>
-                <div className='detail-post-top-place-info__wrapper wrapper_right_line'>
+                <div className="detail-post-top-place-info__wrapper wrapper_right_line">
                   <span
-                    className='detail-post-top-place-info__text'>
+                    className="detail-post-top-place-info__text"
+                  >
                      Kатегория
                   </span>
                   <span
-                    className='detail-post-top-place-info__detail'>
-                     {findNameOfCategory()}
+                    className="detail-post-top-place-info__detail"
+                  >
+                    {findNameOfCategory()}
                   </span>
                 </div>
-                <div className='detail-post-top-place-info__wrapper'>
+                <div className="detail-post-top-place-info__wrapper">
                   <span
-                    className='detail-post-top-place-info__text'>
+                    className="detail-post-top-place-info__text"
+                  >
                      Рейтинг
                   </span>
-                  <div className='detail-post-top-place-info__rating'>
+                  <div className="detail-post-top-place-info__rating">
                     <div
-                      className='detail-post-top-place-info__rating__icons'>
+                      className="detail-post-top-place-info__rating__icons"
+                    >
                       {[1, 2, 3, 4, 5].map(iconIndex => (
                         <FontAwesomeIcon
                           key={iconIndex}
                           style={{ color: iconIndex <= rate && '#ffba00' }}
-                          className='detail-post-top-place-info__rating__icon'
-                          icon={faStar} />
+                          className="detail-post-top-place-info__rating__icon"
+                          icon={faStar}
+                        />
                       ))}
                     </div>
                     <p
-                      className='detail-post-top-place-info__rating__number'>
+                      className="detail-post-top-place-info__rating__number"
+                    >
                       {rate}
                     </p>
                   </div>
                 </div>
               </div>
-              <ul className='detail-post-top-place-interactive'>
+              <ul className="detail-post-top-place-interactive">
                 {interactiveIconsArr.map(key => (
                   <li
                     key={key.iconName}
-                    className={`detail-post-top-place-interactive__icon interactive__icon__${key.iconName}`}>
+                    className={`detail-post-top-place-interactive__icon interactive__icon__${key.iconName}`}
+                  >
                     <FontAwesomeIcon
-                    icon={key} />
+                      icon={key}
+                    />
                   </li>
                 ))}
               </ul>
@@ -90,7 +106,7 @@ const DetailPostTop = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DetailPostTop
+export default DetailPostTop;

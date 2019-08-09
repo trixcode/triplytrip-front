@@ -1,5 +1,5 @@
 export const initialState = {
-  createSubscribe : {},
+  createSubscribe: {},
 };
 
 export const getState = (state = initialState) => state || initialState;

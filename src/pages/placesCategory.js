@@ -1,18 +1,15 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import HeaderContainer from '../containers/Header';
 import PlacesFilterFormContainer from '../containers/PlacesFilterForm';
-import FooterContainer from '../containers/Footer'
-import "../assets/styles/main.scss";
-import React from 'react'
+import FooterContainer from '../containers/Footer';
+import '../assets/styles/main.scss';
 
-const PlacesCategory = () => {
-  return (
-    <Fragment>
-      <HeaderContainer />
-      <PlacesFilterFormContainer />
-      <FooterContainer text="Footer" />
-    </Fragment>
-  )
-}
+const PlacesCategory = () => (
+  <Fragment>
+    <HeaderContainer />
+    <PlacesFilterFormContainer />
+    <FooterContainer text="Footer" />
+  </Fragment>
+);
 
 export default PlacesCategory;

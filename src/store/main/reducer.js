@@ -54,15 +54,15 @@ export default (state = initialState, action) => {
           message: action.responseStatuses.message,
         },
       };
-      case actionTypes.SET_LOGINED:
+    case actionTypes.SET_LOGINED:
       return {
         ...state,
-          isLogined: true,
+        isLogined: true,
       };
-      case actionTypes.SET_NOT_LOGINED:
+    case actionTypes.SET_NOT_LOGINED:
       return {
         ...state,
-          isLogined: false,
+        isLogined: false,
       };
 
     default:

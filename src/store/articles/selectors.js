@@ -1,11 +1,11 @@
 export const initialState = {
   articleList: [],
   articleDetail: {
-    tags: []
+    tags: [],
   },
-  articlePaginate : [],
+  articlePaginate: [],
   footerArticle: [],
-}
+};
 
 
 export const getState = (state = initialState) => state || initialState;

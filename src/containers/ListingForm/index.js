@@ -8,26 +8,26 @@ import { createValidator, email, required } from '../../services/validations';
 
 
 const validate = createValidator({
-    name: [required],
-    email: [required, email],
-    categoriesId: [required],
-    address: [required],
-    citiesId: [required],
-    phone: [required],
-    segmentation: [required],
-    minPrice: [required],
-    maxPrice: [required],
-    mainImage: [required],
-    website: [required],
+  name: [required],
+  email: [required, email],
+  categoriesId: [required],
+  address: [required],
+  citiesId: [required],
+  phone: [required],
+  segmentation: [required],
+  minPrice: [required],
+  maxPrice: [required],
+  mainImage: [required],
+  website: [required],
 
 });
 const formConfig = {
-    form: 'ListingForm',
-    validate
-}
+  form: 'ListingForm',
+  validate,
+};
 
-const ListingFormContainer = (props) => <ListingForm {...props} />;
-const mapDispatchToProps = (dispatch) => ({
-    createListingStart: (formValues) => dispatch(createListingStart(formValues))
-}) 
+const ListingFormContainer = props => <ListingForm {...props} />;
+const mapDispatchToProps = dispatch => ({
+  createListingStart: formValues => dispatch(createListingStart(formValues)),
+});
 export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(ListingFormContainer));

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Field } from 'redux-form'
-import { customInputField } from '../CustomFields';
+import { Field } from 'redux-form';
+import customInputField from '../CustomFields';
 
 const PlaceDetailContactForm = (props) => {
   const { handleSubmit } = props;
-  const onSubmitHandle = (formValues) => {
-    console.log(formValues)
-  } 
+  const onSubmitHandle = () => {
+  };
   return (
     <form className="sidebars-form-wrapper" onSubmit={handleSubmit(onSubmitHandle)}>
       <div className="sidebar-contact-me-input-block">
@@ -43,7 +42,7 @@ const PlaceDetailContactForm = (props) => {
       </div>
       <button type="submit" className="sidebars-button">Отправить</button>
     </form>
-  )
-}
+  );
+};
 
 export default PlaceDetailContactForm;

@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 
 import ArticlesWrapper from '../../components/ArticlesWrapper';
 import { fromArticles } from '../../store/selectors';
-import { getArticlesByPageStart } from '../../store/actions'
+import { getArticlesByPageStart } from '../../store/actions';
 
-const ArticlesContainer = (props) => <ArticlesWrapper {...props} />;
+const ArticlesContainer = props => <ArticlesWrapper {...props} />;
 
-const mapDispatchToProps = (dispatch) => ({
-  getArticlesByPageStart: (articlePaginate) => dispatch(getArticlesByPageStart(articlePaginate)),
-})
+const mapDispatchToProps = dispatch => ({
+  getArticlesByPageStart: articlePaginate => dispatch(getArticlesByPageStart(articlePaginate)),
+});
 
-const mapStateToProps = (store) => ({
-    articlePaginate: fromArticles.getState(store).articlePaginate,
-  })
+const mapStateToProps = store => ({
+  articlePaginate: fromArticles.getState(store).articlePaginate,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);

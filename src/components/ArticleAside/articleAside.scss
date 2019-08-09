@@ -46,11 +46,15 @@
       height: 50px;
    }
 
-    &__icon {
-      height: 20px;
-      width: 20px;
+    &__button {
       position: absolute;
       right: 15px;
+      border: none;
+      background-color: inherit; 
+    }
+
+    &__icon {
+      font-size: 17px;
     }
   }
 

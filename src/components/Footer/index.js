@@ -1,21 +1,21 @@
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faInstagram, faFacebook, } from '@fortawesome/free-brands-svg-icons';
-import React, { useEffect } from 'react'
+import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import React, { useEffect } from 'react';
 import './footer.scss';
 
 const Footer = (props) => {
   const { history, getArticlesToFooterStart, footerArticle } = props;
 
   const pushToCategories = (category) => {
-    history.push(`/placesCategory?category=${category}`)
-  }
+    history.push(`/placesCategory?category=${category}`);
+  };
 
   const pushToArticleDetail = () => {
-    history.push(`/articles`)
-  }
+    history.push('/articles');
+  };
   useEffect(() => {
-    getArticlesToFooterStart()
+    getArticlesToFooterStart();
   }, [getArticlesToFooterStart]);
 
   return (
@@ -26,19 +26,19 @@ const Footer = (props) => {
             <span>Заведения</span>
           </li>
           <li>
-            <span className="footer-list__link"  onClick={() => pushToCategories('hotel')}>Отели</span>
+            <span role="presentation" className="footer-list__link" onClick={() => pushToCategories('hotel')}>Отели</span>
           </li>
           <li>
-            <span className="footer-list__link" href="#" onClick={() => pushToCategories('restaurant')}>Рестораны</span>
+            <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('restaurant')}>Рестораны</span>
           </li>
           <li>
-            <span className="footer-list__link" href="#" onClick={() => pushToCategories('cafe')}>Кафе</span>
+            <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('cafe')}>Кафе</span>
           </li>
           <li>
-            <span className="footer-list__link" href="#" onClick={() => pushToCategories('guest house')}>Гостевые дома</span>
+            <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('guest house')}>Гостевые дома</span>
           </li>
           <li>
-            <span className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</span>
+            <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</span>
           </li>
         </ul>
 
@@ -46,30 +46,34 @@ const Footer = (props) => {
           <li>
             <span>Статьи</span>
           </li>
-         
-          {footerArticle.map(footerArticle => (
-            <li key={footerArticle._id}>
-              <span className="footer-list__link"
-               onClick={pushToArticleDetail}
-              >{footerArticle.title}</span>
+
+          {footerArticle.map(articleFooter => (
+            <li key={articleFooter._id}>
+              <span
+                className="footer-list__link"
+                onClick={pushToArticleDetail}
+                role="presentation"
+              >
+                {articleFooter.title}
+              </span>
             </li>
           ))}
         </ul>
 
       </div>
-      <br></br>
+      <br />
       <div className="sub-footer">
         <div className="container footer-wrapper">
           <div className="footer-copyright">
             <span className="footer-copyright__text">
-              Copyright © 2018 Listicle.com | Tel: +91 12343210
+              Copyright © 2019 Triplytrip.kg | Tel: +996 553-99-13-11
             </span>
           </div>
           <ul className="footer-social-item">
             <li className="footer-social__list">
               <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
-                  className='footer-social__icon'
+                  className="footer-social__icon"
                   icon={faFacebook}
                 />
               </a>
@@ -77,7 +81,7 @@ const Footer = (props) => {
             <li className="footer-social__list">
               <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
-                  className='footer-social__icon'
+                  className="footer-social__icon"
                   icon={faTwitter}
                 />
               </a>
@@ -85,16 +89,16 @@ const Footer = (props) => {
             <li className="footer-social__list">
               <a className="footer-social__link" href="/">
                 <FontAwesomeIcon
-                  className='footer-social__icon'
+                  className="footer-social__icon"
                   icon={faInstagram}
                 />
               </a>
             </li>
           </ul>
         </div>
-      </div >
+      </div>
 
-    </footer >
-  )
-}
+    </footer>
+  );
+};
 export default withRouter(Footer);

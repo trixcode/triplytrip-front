@@ -1,12 +1,11 @@
 import moment from 'moment';
-import React from 'react'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
-import { } from '@fortawesome/free-brands-svg-icons';
 import './detailTitle.scss';
 
 const DetailTitle = (props) => {
-  const { articleDetail, getArticleDetailByIdStartAction } = props;
+  const { articleDetail } = props;
   return (
     <section className="detail-title">
       <div className="container detail-title__container">
@@ -25,7 +24,7 @@ const DetailTitle = (props) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default DetailTitle;

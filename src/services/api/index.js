@@ -1,6 +1,7 @@
+/* eslint-disable */
 import 'isomorphic-fetch';
 import merge from 'lodash/merge';
-import { apiUrl } from '../../config';
+import  { apiUrl } from '../../config';
 import { FIRST_INDEX_OF_ARRAY, HTTP_INTERNAL_SERVER_ERROR_CODE } from '../constants';
 
 const checkStatus = (response) => {
@@ -9,7 +10,7 @@ const checkStatus = (response) => {
   }
   if (response.status >= HTTP_INTERNAL_SERVER_ERROR_CODE) {
     return {
-        errorMEssage:
+      errorMEssage:
           'Ошибка на сервере! Если ошибка не исчезнет в ближайшее время - обратитесь к администратору',
     };
   }
@@ -19,12 +20,14 @@ const checkStatus = (response) => {
 const token = localStorage.getItem('token');
 
 export const parseSettings = (
-    { method = 'GET', data, locale, ...otherSettings } = {}
-    ) => {
+  {
+    method = 'GET', data, locale, ...otherSettings
+  } = {},
+) => {
   const headers = {
     Accept: 'application/json',
     'Content-type': 'application/json',
-    'token' : `token ${token}`
+    token: `token ${token}`,
   };
   if (otherSettings.removeContentType) {
     delete headers['Content-type'];
@@ -34,9 +37,9 @@ export const parseSettings = (
       body: data instanceof FormData ? data : JSON.stringify(data),
       method,
       headers,
-      //credentials: 'include',
+      // credentials: 'include',
     },
-    otherSettings
+    otherSettings,
   );
   return settings;
 };
@@ -48,10 +51,7 @@ export const parseEndpoint = (endpoint, params) => {
 };
 
 const api = {};
-api.request = (endpoint, { params, ...settings } = {}) => {
-  return fetch(parseEndpoint(endpoint, params), parseSettings(settings)).then(checkStatus)
-}
-
+api.request = (endpoint, { params, ...settings } = {}) => fetch(parseEndpoint(endpoint, params), parseSettings(settings)).then(checkStatus);
 
 
 ['DELETE', 'GET'].forEach((method) => {

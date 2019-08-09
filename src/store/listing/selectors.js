@@ -1,5 +1,5 @@
 export const initialState = {
-  createListing : {},
+  createListing: {},
 };
 
 export const getState = (state = initialState) => state || initialState;

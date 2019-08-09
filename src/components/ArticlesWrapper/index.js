@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-import Article from '../Article'
-import ArticleAsideContainer from '../../containers/ArticleAside'
+import Article from '../Article';
+import ArticleAsideContainer from '../../containers/ArticleAside';
 import './articlesWrapper.scss';
 
 const ArticlesWrapper = (props) => {
@@ -12,22 +12,24 @@ const ArticlesWrapper = (props) => {
   const [Initialpage, setPageClicked] = useState(firstPage);
 
   useEffect(() => {
-    getArticlesByPageStart(Initialpage)
-      window.scrollTo(0, 0)
+    getArticlesByPageStart(Initialpage);
+    window.scrollTo(0, 0);
   }, [Initialpage, getArticlesByPageStart]);
   return (
-    <div className='articles-wrapper'>
-      <div className='container'>
-        <div className='articles-wrapper-main-content'>
-          <div className='articles-wrapper-list'>
-            {articlePaginate.map(articlePaginate => (
-              <Article articlePaginate={articlePaginate}
-                key={articlePaginate._id}
+    <div className="articles-wrapper">
+      <div className="container">
+        <div className="articles-wrapper-main-content">
+          <div className="articles-wrapper-list">
+            {articlePaginate.map(paginateArticle => (
+              <Article
+                articlePaginate={paginateArticle}
+                key={paginateArticle._id}
               />
             ))}
             <div className="pages-numbers">
               {[1, 2, 3, 4, 5, 6, 7].map(page => (
                 <button
+                  type="button"
                   key={page}
                   value={page}
                   className="pages-numbers__button"
@@ -37,23 +39,25 @@ const ArticlesWrapper = (props) => {
                 </button>
               ))}
               <button
+                type="button"
                 className="pages-numbers__button"
                 onClick={() => setPageClicked(Initialpage - (-1))}
               >
                 Next
                 <FontAwesomeIcon
-                  className='pages-numbers__button__icon'
-                  icon={faAngleRight} />
+                  className="pages-numbers__button__icon"
+                  icon={faAngleRight}
+                />
               </button>
             </div>
           </div>
-          <div className='articles-wrapper-aside'>
+          <div className="articles-wrapper-aside">
             <ArticleAsideContainer />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ArticlesWrapper;

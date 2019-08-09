@@ -2,8 +2,8 @@ export const initialState = {
   places: [],
   placeDetail: {
     user: {
-      firstName: ''
-    }
+      firstName: '',
+    },
   },
 };
 

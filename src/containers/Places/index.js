@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Places from '../../components/Places';
-import {getPlacesStart} from '../../store/actions';
+import { getPlacesStart } from '../../store/actions';
 
-const PlacesContainer = (props) => <Places {...props} />;
+const PlacesContainer = props => <Places {...props} />;
 
-const mapStateToProps = (store) => ({
-    places: store.places,
-    categories: store.main.categories
-  })
-const mapDispatchToProps = (dispatch) => ({
-  getPlacesStart: (requestParams='') => dispatch(getPlacesStart(requestParams)),
-})
+const mapStateToProps = store => ({
+  places: store.places,
+  categories: store.main.categories,
+});
+const mapDispatchToProps = dispatch => ({
+  getPlacesStart: (requestParams = '') => dispatch(getPlacesStart(requestParams)),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlacesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesContainer);

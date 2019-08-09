@@ -3,28 +3,28 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import RegisterForm from '../../components/RegisterForm';
 import { createValidator, email, required } from '../../services/validations';
-import { registerStart, setLogined, setNotLogined } from '../../store/actions.js'
+import { registerStart, setLogined, setNotLogined } from '../../store/actions';
 
 
 const validate = createValidator({
-    name: [required],
-    email: [required, email],
-    password: [required],
+  name: [required],
+  email: [required, email],
+  password: [required],
 });
 const formConfig = {
-    form: 'RegisterForm',
-    validate
-}
+  form: 'RegisterForm',
+  validate,
+};
 
-const RegisterFormContainer = (props) => <RegisterForm {...props} />;
+const RegisterFormContainer = props => <RegisterForm {...props} />;
 
-const mapStateToProps = (store) => ({
-    userData: store.register.userData
-})
+const mapStateToProps = store => ({
+  userData: store.register.userData,
+});
 
-const mapDispatchToProps = (dispatch) => ({
-    registerStart: (formValue) => dispatch(registerStart(formValue)),
-    setLogined: (isLogined) => dispatch(setLogined(true)),
-    setNotLogined: (isLogined) => dispatch(setNotLogined(false))
-}) 
+const mapDispatchToProps = dispatch => ({
+  registerStart: formValue => dispatch(registerStart(formValue)),
+  setLogined: isLogined => dispatch(setLogined(isLogined)),
+  setNotLogined: isLogined => dispatch(setNotLogined(isLogined)),
+});
 export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(RegisterFormContainer));
