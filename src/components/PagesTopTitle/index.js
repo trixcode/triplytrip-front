@@ -37,9 +37,12 @@ const PagesTopTitle = (props) => {
   );
 };
 
+PagesTopTitle.defaultProps = {
+  title: '',
+};
 
 PagesTopTitle.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   link: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
 };
 

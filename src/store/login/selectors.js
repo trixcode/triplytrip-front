@@ -1,5 +1,7 @@
 export const initialState = {
-  token: null,
+  token: {
+    token: '',
+  },
 };
 
 export const getState = (state = initialState) => state || initialState;

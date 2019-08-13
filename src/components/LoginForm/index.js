@@ -12,7 +12,7 @@ const LoginForm = (props) => {
     loginUserStart(formValues);
   };
 
-  if (token !== null) {
+  if (token.token) {
     setLogined(true);
     localStorage.setItem('token', token.token);
   } else {
