@@ -1,7 +1,8 @@
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import React, { useEffect } from 'react';
 import './footer.scss';
 
 const Footer = (props) => {
@@ -17,7 +18,6 @@ const Footer = (props) => {
   useEffect(() => {
     getArticlesToFooterStart();
   }, [getArticlesToFooterStart]);
-
   return (
     <footer className="footer">
       <div className="container footer-container">
@@ -101,4 +101,13 @@ const Footer = (props) => {
     </footer>
   );
 };
+
+Footer.propTypes = {
+  footerArticle: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    title: PropTypes.string,
+  })).isRequired,
+};
+
+
 export default withRouter(Footer);

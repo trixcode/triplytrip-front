@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -124,6 +125,15 @@ const ArticleAside = (props) => {
       </div>
     </aside>
   );
+};
+
+ArticleAside.propTypes = {
+  articlePaginate: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    mainImage: PropTypes.string,
+    createDate: PropTypes.string,
+    _id: PropTypes.string,
+  })).isRequired,
 };
 
 export default ArticleAside;

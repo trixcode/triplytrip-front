@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import SectionTitle from '../SectionTitle';
 
 import './discover.scss';
@@ -51,5 +52,15 @@ const Discover = (props) => {
     </section>
   );
 };
+
+Discover.propTypes = {
+  topDestinations: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    cities: PropTypes.object,
+    mainImage: PropTypes.string,
+    countDestinations: PropTypes.number,
+  })).isRequired,
+};
+
 
 export default Discover;

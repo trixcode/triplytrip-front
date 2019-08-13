@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   faStar, faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +19,6 @@ const DetailPostTop = (props) => {
     const nameOf = nameOfCate && nameOfCate.name;
     return nameOf;
   };
-
   return (
     <div className="detail-post-top">
       <div className="detail-post-top_image_wrapper">
@@ -107,6 +107,14 @@ const DetailPostTop = (props) => {
       </div>
     </div>
   );
+};
+
+DetailPostTop.propTypes = {
+  name: PropTypes.string,
+};
+
+DetailPostTop.defaultProps = {
+  name: '',
 };
 
 export default DetailPostTop;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import moment from 'moment';
 import parse from 'html-react-parser';
@@ -37,6 +38,16 @@ const ArticlesMainPage = (props) => {
       </div>
     </div>
   );
+};
+
+ArticlesMainPage.propTypes = {
+  articlePaginate: PropTypes.shape({
+    _id: PropTypes.string,
+    description: PropTypes.string,
+    title: PropTypes.string,
+    mainImage: PropTypes.string,
+    createDate: PropTypes.string,
+  }).isRequired,
 };
 
 export default withRouter(ArticlesMainPage);

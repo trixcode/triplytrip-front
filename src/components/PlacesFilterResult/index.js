@@ -1,12 +1,14 @@
 
+import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
 import PlaceCard from '../PlaceCard';
 import './placesFilterResult.scss';
 
 const PlacesFilterResult = (props) => {
   const { places } = props;
+  console.log(places);
   return (
     <div className="filter-result">
       <div className="container">
@@ -39,6 +41,12 @@ const PlacesFilterResult = (props) => {
       </div>
     </div>
   );
+};
+
+PlacesFilterResult.propTypes = {
+  places: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
 };
 
 export default PlacesFilterResult;

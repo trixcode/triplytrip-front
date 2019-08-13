@@ -1,11 +1,13 @@
-import moment from 'moment';
 import React from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import './detailTitle.scss';
 
 const DetailTitle = (props) => {
   const { articleDetail } = props;
+  console.log(articleDetail);
   return (
     <section className="detail-title">
       <div className="container detail-title__container">
@@ -26,5 +28,13 @@ const DetailTitle = (props) => {
     </section>
   );
 };
+
+DetailTitle.propTypes = {
+  articleDetail: PropTypes.shape({
+    title: PropTypes.string,
+    createDate: PropTypes.string,
+  }).isRequired,
+};
+
 
 export default DetailTitle;

@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
@@ -63,7 +64,6 @@ const PlacesFilterForm = (props) => {
     'coffe', 'ckin care', 'spa', 'parking street',
     'outdoor seating', 'wireless internet', 'park',
     'massage therapy', 'venues', 'jewellery', 'fashion'];
-
   return (
     <Fragment>
       <PlagesTopTitle title={locationChanged || categoryChanged} link={['home', 'search']} />
@@ -212,6 +212,20 @@ const PlacesFilterForm = (props) => {
       </div>
     </Fragment>
   );
+};
+
+PlacesFilterForm.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
+  places: PropTypes.shape({
+    _id: PropTypes.string,
+  }).isRequired,
 };
 
 export default PlacesFilterForm;

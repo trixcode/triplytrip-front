@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 import parse from 'html-react-parser';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +16,6 @@ const Article = (props) => {
   const pushToDetailArticle = () => {
     history.push(`/article/${articlePaginate._id}`);
   };
-
 
   return (
     <div
@@ -94,6 +94,15 @@ const Article = (props) => {
       </div>
     </div>
   );
+};
+
+Article.propTypes = {
+  articlePaginate: PropTypes.shape({
+    extraDescription: PropTypes.string,
+    title: PropTypes.string,
+    mainImage: PropTypes.string,
+    createDate: PropTypes.string,
+  }).isRequired,
 };
 
 export default withRouter(Article);

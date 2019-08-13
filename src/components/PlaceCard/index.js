@@ -1,11 +1,13 @@
-import { withRouter } from 'react-router';
 import React from 'react';
+import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMapMarkerAlt, faMobileAlt, faGlobeAmericas, faStar, faHeart, faExchangeAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import './PlaceCard.scss';
+import { prototype } from 'stream';
 
 const PlaceCard = (props) => {
   const { place, history } = props;
@@ -16,7 +18,6 @@ const PlaceCard = (props) => {
 
   const like = () => {
   };
-
   return (
     <div className="place-card-container">
       <div onClick={pushToDetail} role="presentation">
@@ -136,6 +137,19 @@ const PlaceCard = (props) => {
       </div>
     </div>
   );
+};
+
+PlaceCard.propTypes = {
+  place: PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    mainImage: PropTypes.string,
+    rating: PropTypes.number,
+    price: PropTypes.number,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+    address: prototype.string,
+  }).isRequired,
 };
 
 export default withRouter(PlaceCard);

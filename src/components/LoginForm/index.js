@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import customInputField from '../CustomFields';
 
@@ -17,7 +18,7 @@ const LoginForm = (props) => {
   } else {
     setNotLogined(false);
   }
-
+  console.log(token);
   return (
     <div className="modal-sign-in">
       <div className="modal-form-wrapper">
@@ -49,4 +50,11 @@ const LoginForm = (props) => {
     </div>
   );
 };
+
+LoginForm.propTypes = {
+  token: PropTypes.shape({
+    token: PropTypes.string,
+  }).isRequired,
+};
+
 export default LoginForm;

@@ -1,9 +1,9 @@
-import './PagesTopTitle.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
+import './PagesTopTitle.scss';
 
 const PagesTopTitle = (props) => {
   const { title, link } = props;
-
   return (
     <div className="pages-top-subheader">
       <img
@@ -35,6 +35,12 @@ const PagesTopTitle = (props) => {
       </div>
     </div>
   );
+};
+
+
+PagesTopTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  link: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
 };
 
 export default PagesTopTitle;

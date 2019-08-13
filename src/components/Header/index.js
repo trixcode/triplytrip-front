@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-
 import { Link } from 'react-router-dom';
-import './header.scss';
 import BurgerMenu from '../BurgerMenu';
 import ModalWindowContainer from '../../containers/Modal';
 import Logo from '../../assets/mainIcon.png';
 import SuccessModal from '../SuccessModal';
+import './header.scss';
 
 
 const Header = (props) => {
@@ -27,7 +26,6 @@ const Header = (props) => {
     getCitiesStart();
     checkIsAuth();
   }, []);
-
   return (
     <header className="header">
       <div className="container">

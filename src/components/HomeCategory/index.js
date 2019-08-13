@@ -1,5 +1,5 @@
-import { withRouter } from 'react-router';
 import React from 'react';
+import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHotel, faHamburger, faMapMarkedAlt, faCoffee, faBeer,
@@ -67,7 +67,6 @@ const HomeCategory = (props) => {
         </div>
       </div>
     </section>
-
   );
 };
 

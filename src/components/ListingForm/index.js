@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 // import GoogleMapReact from 'google-map-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -480,5 +481,9 @@ const ListingForm = (props) => {
   );
 };
 
+ListingForm.propTypes = {
+  pristine: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
 
 export default ListingForm;

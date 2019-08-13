@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import PlaceCard from '../PlaceCard';
 import SectionTitle from '../SectionTitle';
 import './places.scss';
@@ -31,7 +32,6 @@ const Places = (props) => {
   useEffect(() => {
     getPlacesStart('isOpen=true&_limit=8');
   }, [getPlacesStart]);
-
   return (
     <section className="section-places">
       <div className="container">
@@ -111,6 +111,13 @@ const Places = (props) => {
       </div>
     </section>
   );
+};
+
+Places.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
 };
 
 export default Places;

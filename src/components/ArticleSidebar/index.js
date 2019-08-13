@@ -1,8 +1,8 @@
-import './articleSidebar.scss';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
 import SubscribeArticlesContainer from '../../containers/SubscribeArticles';
+import './articleSidebar.scss';
 
 const ArticleSidebar = () => (
   <aside className="section-article-sidebar">

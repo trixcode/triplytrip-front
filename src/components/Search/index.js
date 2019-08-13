@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import './search.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,7 +22,6 @@ const Search = (props) => {
     getCategoriesStart();
     getCitiesStart();
   }, [getCategoriesStart, getCitiesStart]);
-
   return (
     <section className="search-wrapper">
       <div className="container">
@@ -68,5 +68,13 @@ const Search = (props) => {
     </section>
   );
 };
+
+Search.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
+};
+
 
 export default Search;

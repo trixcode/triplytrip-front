@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -58,6 +59,13 @@ const ArticlesWrapper = (props) => {
       </div>
     </div>
   );
+};
+
+
+ArticlesWrapper.propTypes = {
+  articlePaginate: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+  })).isRequired,
 };
 
 export default ArticlesWrapper;

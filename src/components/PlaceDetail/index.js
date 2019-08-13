@@ -1,5 +1,6 @@
 import './placeDetail.scss';
 import React, { useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import parse from 'html-react-parser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,7 +19,6 @@ const PlaceDetail = (props) => {
   const { getPlaceDetailByIdStart, placeDetail, match } = props;
 
   useEffect(() => {
-    // eslint-disable-next-line no-console
     getPlaceDetailByIdStart(match.params.placeId);
     window.scrollTo(400, 400);
   }, [getPlaceDetailByIdStart, match.params.placeId]);
@@ -234,6 +234,22 @@ const PlaceDetail = (props) => {
       </section>
     </Fragment>
   );
+};
+
+PlaceDetail.propTypes = {
+  placeDetail: PropTypes.shape({
+    description: PropTypes.string,
+    extraDescription: PropTypes.string,
+    name: PropTypes.string,
+    category: PropTypes.string,
+    mainImage: PropTypes.string,
+    rating: PropTypes.number,
+    createDate: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
+    address: PropTypes.string,
+    price: PropTypes.number,
+  }).isRequired,
 };
 
 export default PlaceDetail;

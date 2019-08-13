@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import SectionTitle from '../SectionTitle';
 import './upcommingEvents.scss';
@@ -59,6 +60,20 @@ const UpcommingEvents = (props) => {
       </div>
     </section>
   );
+};
+
+UpcommingEvents.propTypes = {
+  currentEvents: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    title: PropTypes.string,
+    mainImage: PropTypes.string,
+    price: PropTypes.number,
+    isOpen: PropTypes.bool,
+    rating: PropTypes.number,
+    dateTimeStart: PropTypes.string,
+    address: PropTypes.string,
+    eventTypes: PropTypes.string,
+  })).isRequired,
 };
 
 export default UpcommingEvents;
