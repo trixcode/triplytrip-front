@@ -29,14 +29,21 @@ customInputField.propTypes = {
     value: PropTypes.string,
   }).isRequired,
   type: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  autoComplete: PropTypes.string.isRequired,
-  list: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  autoComplete: PropTypes.string,
+  list: PropTypes.string,
   meta: PropTypes.shape({
     touched: PropTypes.bool,
     error: PropTypes.string,
   }).isRequired,
+};
+
+customInputField.defaultProps = {
+  className: '',
+  placeholder: '',
+  autoComplete: '',
+  list: '',
 };
 
 
