@@ -59,7 +59,6 @@ const PlacesFilterForm = (props) => {
     window.scrollTo(0, 0);
   }, []);
 
-
   const tagsName = ['shop', 'hotel', 'restaurant', 'kid', 'pizza',
     'coffe', 'ckin care', 'spa', 'parking street',
     'outdoor seating', 'wireless internet', 'park',
@@ -225,6 +224,16 @@ PlacesFilterForm.propTypes = {
   })).isRequired,
   places: PropTypes.shape({
     _id: PropTypes.string,
+  }).isRequired,
+  changeFormValue: PropTypes.func.isRequired,
+  getPlacesStart: PropTypes.func.isRequired,
+  myValues: PropTypes.shape({
+    keyword: PropTypes.string,
+    location: PropTypes.string,
+    categoriesForm: PropTypes.string,
+  }).isRequired,
+  location: PropTypes.shape({
+    search: PropTypes.string,
   }).isRequired,
 };
 

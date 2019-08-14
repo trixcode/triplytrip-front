@@ -66,6 +66,7 @@ ArticlesWrapper.propTypes = {
   articlePaginate: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string,
   })).isRequired,
+  getArticlesByPageStart: PropTypes.func.isRequired,
 };
 
 export default ArticlesWrapper;

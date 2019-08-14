@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const customInputField = ({
@@ -22,5 +23,21 @@ const customInputField = ({
     {touched && error && <span className="input-error">{error}</span>}
   </Fragment>
 );
+
+customInputField.propTypes = {
+  input: PropTypes.shape({
+    value: PropTypes.string,
+  }).isRequired,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  autoComplete: PropTypes.string.isRequired,
+  list: PropTypes.string.isRequired,
+  meta: PropTypes.shape({
+    touched: PropTypes.bool,
+    error: PropTypes.string,
+  }).isRequired,
+};
+
 
 export default customInputField;

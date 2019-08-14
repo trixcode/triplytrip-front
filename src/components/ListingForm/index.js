@@ -484,6 +484,8 @@ const ListingForm = (props) => {
 ListingForm.propTypes = {
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  createListingStart: PropTypes.func.isRequired,
 };
 
 export default ListingForm;

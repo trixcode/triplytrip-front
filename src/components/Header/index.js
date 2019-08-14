@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import BurgerMenu from '../BurgerMenu';
 import ModalWindowContainer from '../../containers/Modal';
 import Logo from '../../assets/mainIcon.png';
@@ -68,6 +69,13 @@ const Header = (props) => {
       <SuccessModal />
     </header>
   );
+};
+
+Header.propTypes = {
+  getCategoriesStart: PropTypes.func.isRequired,
+  getCitiesStart: PropTypes.func.isRequired,
+  setNotLogined: PropTypes.func.isRequired,
+  setLogined: PropTypes.func.isRequired,
 };
 
 export default Header;

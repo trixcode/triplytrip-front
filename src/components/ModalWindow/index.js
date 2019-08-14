@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import classNames from 'classnames';
 import LoginFormContainer from '../../containers/LoginForm';
@@ -91,6 +92,13 @@ const ModalWindow = (props) => {
 
     </div>
   );
+};
+
+ModalWindow.propTypes = {
+  setNotLogined: PropTypes.func.isRequired,
+  isLogined: PropTypes.bool.isRequired,
+  loginUserSuccess: PropTypes.func.isRequired,
+  registerSuccess: PropTypes.func.isRequired,
 };
 
 export default ModalWindow;

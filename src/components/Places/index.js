@@ -118,6 +118,10 @@ Places.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string,
   })).isRequired,
+  getPlacesStart: PropTypes.func.isRequired,
+  places: PropTypes.shape({
+    id: PropTypes.string,
+  }).isRequired,
 };
 
 export default Places;

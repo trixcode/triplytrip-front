@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ArticleDetailContainer from '../../containers/ArticleDetail';
 import ArticleAsideContainer from '../../containers/ArticleAside';
 
@@ -11,7 +12,7 @@ import FooterContainer from '../../containers/Footer';
 function ArticleDetail(props) {
   const { getArticleDetailByIdStartAction, match } = props;
   useEffect(() => {
-    getArticleDetailByIdStartAction(props.match.params.articleId);
+    getArticleDetailByIdStartAction(match.params.articleId);
   }, [getArticleDetailByIdStartAction, match.params.articleId]);
   return (
     <Fragment>
@@ -31,5 +32,14 @@ function ArticleDetail(props) {
 const mapDispatchToProps = dispatch => ({
   getArticleDetailByIdStartAction: articleDetail => dispatch(getArticleDetailByIdStart(articleDetail)),
 });
+
+ArticleDetail.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      articleId: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  getArticleDetailByIdStartAction: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(withRouter(ArticleDetail));

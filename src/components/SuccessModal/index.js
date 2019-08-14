@@ -1,6 +1,7 @@
 import React from 'react';
-import Modal from 'react-modal';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -77,4 +78,15 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   setDefaultResponseStatusesAction: () => dispatch(setDefaultResponseStatuses()),
 });
+
+SuccessModal.propTypes = {
+  setDefaultResponseStatusesAction: PropTypes.func.isRequired,
+  responseStatuses: PropTypes.shape({
+    isOpen: PropTypes.bool,
+    title: PropTypes.string,
+    message: PropTypes.string,
+    isSuccess: PropTypes.bool,
+  }).isRequired,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(SuccessModal);

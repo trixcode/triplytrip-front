@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -68,6 +69,12 @@ const HomeCategory = (props) => {
       </div>
     </section>
   );
+};
+
+HomeCategory.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 export default withRouter(HomeCategory);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
@@ -28,6 +29,11 @@ const SubscribeArticles = (props) => {
       </div>
     </form>
   );
+};
+
+SubscribeArticles.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  createSubscribesStart: PropTypes.func.isRequired,
 };
 
 export default SubscribeArticles;

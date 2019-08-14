@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import customInputField from '../CustomFields';
 
@@ -44,5 +45,10 @@ const PlaceDetailContactForm = (props) => {
     </form>
   );
 };
+
+PlaceDetailContactForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
+
 
 export default PlaceDetailContactForm;

@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Editor, EditorState, RichUtils, getDefaultKeyBinding, convertFromHTML, convertToRaw,
 } from 'draft-js';
@@ -12,7 +13,7 @@ export class richEditor extends React.Component {
     const { input } = this.props;
     this.input = input;
     this.state = { editorState: EditorState.createEmpty() };
-    if (props.input.value) {
+    if (input.value) {
       this.state.editorState = EditorState.createWithContent(convertFromHTML(props.input.value));
     }
     this.focus = () => this.editor.focus();
@@ -135,12 +136,13 @@ export class richEditor extends React.Component {
 // }
 
 class StyleButton extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { onToggle, style } = this.props;
     this.onToggle = (e) => {
       e.preventDefault();
       // eslint-disable-next-line react/destructuring-assignment
-      this.props.onToggle(this.props.style);
+      onToggle(style);
     };
   }
 
@@ -150,7 +152,6 @@ class StyleButton extends React.Component {
     if (active) {
       className += ' RichEditor-activeButton';
     }
-
     return (
       <span role="presentation" className={className} onMouseDown={this.onToggle}>
         {label}
@@ -173,13 +174,12 @@ const BLOCK_TYPES = [
 ];
 
 const BlockStyleControls = (props) => {
-  const { editorState } = props;
+  const { editorState, onToggle } = props;
   const selection = editorState.getSelection();
   const blockType = editorState
     .getCurrentContent()
     .getBlockForKey(selection.getStartKey())
     .getType();
-
   return (
     <div className="RichEditor-controls">
       {BLOCK_TYPES.map(type => (
@@ -187,7 +187,7 @@ const BlockStyleControls = (props) => {
           key={type.label}
           active={type.style === blockType}
           label={type.label}
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           style={type.style}
         />
       ))}
@@ -203,7 +203,7 @@ const INLINE_STYLES = [
 ];
 
 const InlineStyleControls = (props) => {
-  const { editorState } = props;
+  const { editorState, onToggle } = props;
   const currentStyle = editorState.getCurrentInlineStyle();
   return (
     <div className="RichEditor-controls">
@@ -212,10 +212,38 @@ const InlineStyleControls = (props) => {
           key={type.label}
           active={currentStyle.has(type.style)}
           label={type.label}
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           style={type.style}
         />
       ))}
     </div>
   );
+};
+
+
+richEditor.propTypes = {
+  input: PropTypes.shape({
+    value: PropTypes.string,
+  }).isRequired,
+};
+
+StyleButton.propTypes = {
+  active: PropTypes.bool.isRequired,
+  label: PropTypes.string.isRequired,
+  onToggle: PropTypes.func.isRequired,
+  style: PropTypes.string.isRequired,
+};
+
+BlockStyleControls.propTypes = {
+  editorState: PropTypes.shape({
+    getSelection: PropTypes.func,
+  }).isRequired,
+  onToggle: PropTypes.func.isRequired,
+};
+
+InlineStyleControls.propTypes = {
+  editorState: PropTypes.shape({
+    getCurrentInlineStyle: PropTypes.func,
+  }).isRequired,
+  onToggle: PropTypes.func.isRequired,
 };

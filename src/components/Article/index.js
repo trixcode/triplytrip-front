@@ -103,6 +103,9 @@ Article.propTypes = {
     mainImage: PropTypes.string,
     createDate: PropTypes.string,
   }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 export default withRouter(Article);

@@ -60,6 +60,7 @@ Discover.propTypes = {
     mainImage: PropTypes.string,
     countDestinations: PropTypes.number,
   })).isRequired,
+  getTopDestinationsStart: PropTypes.func.isRequired,
 };
 
 

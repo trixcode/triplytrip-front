@@ -107,6 +107,10 @@ Footer.propTypes = {
     _id: PropTypes.string,
     title: PropTypes.string,
   })).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  getArticlesToFooterStart: PropTypes.func.isRequired,
 };
 
 

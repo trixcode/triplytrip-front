@@ -36,6 +36,7 @@ Articles.propTypes = {
   articlePaginate: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string,
   })).isRequired,
+  getArticlesByIdStart: PropTypes.func.isRequired,
 };
 
 export default withRouter(Articles);

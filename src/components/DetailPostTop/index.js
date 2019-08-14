@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import {
   faStar, faUser, faUserFriends, faExclamationTriangle, faShareAlt, faHeart, faEnvelope,
@@ -111,10 +111,21 @@ const DetailPostTop = (props) => {
 
 DetailPostTop.propTypes = {
   name: PropTypes.string,
+  createDate: PropTypes.string,
+  category: PropTypes.string,
+  rate: PropTypes.number,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  })),
 };
 
 DetailPostTop.defaultProps = {
   name: '',
+  createDate: '',
+  category: '',
+  rate: 0,
+  categories: [],
 };
 
 export default DetailPostTop;

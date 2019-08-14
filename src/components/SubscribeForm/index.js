@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 import customInputField from '../CustomFields';
 
@@ -31,5 +32,11 @@ const SubscribeForm = (props) => {
     </>
   );
 };
+
+SubscribeForm.propTypes = {
+  createSubscribesStart: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
+
 
 export default SubscribeForm;

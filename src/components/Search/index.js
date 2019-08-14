@@ -8,10 +8,9 @@ import customInputField from '../CustomFields';
 
 const Search = (props) => {
   const {
-    getCategoriesStart, categories, getCitiesStart, history,
+    getCategoriesStart, categories, getCitiesStart, history, handleSubmit,
   } = props;
 
-  const { handleSubmit } = props;
   const onSubmitHandle = (formValues) => {
     const emptyKeywords = formValues.keywords === undefined ? '' : formValues.keywords;
     const emptyCity = formValues.city === undefined ? '' : formValues.city;
@@ -74,6 +73,12 @@ Search.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string,
   })).isRequired,
+  getCategoriesStart: PropTypes.func.isRequired,
+  getCitiesStart: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 

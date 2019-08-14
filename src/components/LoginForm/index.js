@@ -18,7 +18,6 @@ const LoginForm = (props) => {
   } else {
     setNotLogined(false);
   }
-  console.log(token);
   return (
     <div className="modal-sign-in">
       <div className="modal-form-wrapper">
@@ -55,6 +54,10 @@ LoginForm.propTypes = {
   token: PropTypes.shape({
     token: PropTypes.string,
   }).isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  loginUserStart: PropTypes.func.isRequired,
+  setNotLogined: PropTypes.func.isRequired,
+  setLogined: PropTypes.func.isRequired,
 };
 
 export default LoginForm;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import PropTypes from 'prop-types';
 import './registerForm.scss';
 import customInputField from '../CustomFields';
 
@@ -11,13 +12,12 @@ const RegisterForm = (props) => {
     registerStart(formValues);
   };
 
-  if (userData !== null) {
+  if (userData) {
     setLogined(true);
     localStorage.setItem('token', userData.token);
   } else {
     setNotLogined(false);
   }
-
   return (
     <div className="modal-sign-up">
       <div className="modal-form-wrapper">
@@ -59,4 +59,13 @@ const RegisterForm = (props) => {
     </div>
   );
 };
+
+RegisterForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  registerStart: PropTypes.func.isRequired,
+  userData: PropTypes.func.isRequired,
+  setNotLogined: PropTypes.func.isRequired,
+  setLogined: PropTypes.func.isRequired,
+};
+
 export default RegisterForm;

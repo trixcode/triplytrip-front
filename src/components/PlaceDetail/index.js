@@ -22,7 +22,6 @@ const PlaceDetail = (props) => {
     getPlaceDetailByIdStart(match.params.placeId);
     window.scrollTo(400, 400);
   }, [getPlaceDetailByIdStart, match.params.placeId]);
-
   const [isOverviewClicked, setOverview] = useState(true);
   const [isContactClicked, setContact] = useState(false);
   const [isReviewsClicked, setReview] = useState(false);
@@ -249,6 +248,12 @@ PlaceDetail.propTypes = {
     phone: PropTypes.string,
     address: PropTypes.string,
     price: PropTypes.number,
+  }).isRequired,
+  getPlaceDetailByIdStart: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      placeId: PropTypes.string,
+    }).isRequired,
   }).isRequired,
 };
 

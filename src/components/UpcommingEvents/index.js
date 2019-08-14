@@ -74,6 +74,7 @@ UpcommingEvents.propTypes = {
     address: PropTypes.string,
     eventTypes: PropTypes.string,
   })).isRequired,
+  getEventsStart: PropTypes.func.isRequired,
 };
 
 export default UpcommingEvents;
