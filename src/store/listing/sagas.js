@@ -8,7 +8,7 @@ import * as actionTypes from './actionTypes';
 
 export function* createListingRequest(requestParams) {
   try {
-    const response = yield call(api.POST, 'listing', requestParams);
+    const response = yield call(api.POST, 'place', requestParams);
     yield put(actions.createListingSuccess(response));
   } catch (responseError) {
     yield put(actions.createListingFailure(responseError));

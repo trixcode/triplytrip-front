@@ -28,7 +28,7 @@ customInputField.propTypes = {
   input: PropTypes.shape({
     value: PropTypes.string,
   }).isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   className: PropTypes.string,
   placeholder: PropTypes.string,
   autoComplete: PropTypes.string,
@@ -40,6 +40,7 @@ customInputField.propTypes = {
 };
 
 customInputField.defaultProps = {
+  type: '',
   className: '',
   placeholder: '',
   autoComplete: '',

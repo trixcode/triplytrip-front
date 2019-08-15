@@ -141,7 +141,6 @@ class StyleButton extends React.Component {
     const { onToggle, style } = this.props;
     this.onToggle = (e) => {
       e.preventDefault();
-      // eslint-disable-next-line react/destructuring-assignment
       onToggle(style);
     };
   }

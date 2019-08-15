@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -22,6 +23,22 @@ const ListingForm = (props) => {
   const [logoState, dropLogo] = useState(null);
   const [galleryState, dropMainImage] = useState(null);
   const [imageState, dropImages] = useState([]);
+
+  const hotel = '5d53ecb0cff49159e366cb59';
+  const restaurant = '5d53ecb0cff49159e366cb5d';
+  const guestHouse = '5d53ecb0cff49159e366cb5a';
+  const nightClub = '5d53ecb0cff49159e366cb5b';
+  const hostel = '5d53ecb0cff49159e366cb5e';
+  const chaihana = '5d53ecb0cff49159e366cb5f';
+  const cafe = '5d53ecb0cff49159e366cb5c';
+
+  const bishkek = '5d53ecb0cff49159e366cb52';
+  const osh = '5d53ecb0cff49159e366cb53';
+  const talas = '5d53ecb0cff49159e366cb56';
+  const naryn = '5d53ecb0cff49159e366cb54';
+  const karakol = '5d53ecb0cff49159e366cb55';
+  const jalalAbad = '5d53ecb0cff49159e366cb58';
+  const batken = '5d53ecb0cff49159e366cb57';
 
   const handleListingCreate = (formValues) => {
     const obj = {
@@ -75,21 +92,45 @@ const ListingForm = (props) => {
                   <datalist id="categoriesName">
                     <option
                       className="listing-form__input__select__value"
-                      value="hotel"
+                      value={hotel}
                     >
                       Отель
                     </option>
                     <option
                       className="listing-form__input__select__value"
-                      value="cafe"
+                      value={cafe}
                     >
                       Кафе
                     </option>
                     <option
                       className="listing-form__input__select__value"
-                      value="restaurant"
+                      value={restaurant}
                     >
                       Ресторан
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={chaihana}
+                    >
+                      Чайхана
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={hostel}
+                    >
+                      Хостел
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={nightClub}
+                    >
+                      Ночной Клуб
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={guestHouse}
+                    >
+                      Гостевой Дом
                     </option>
                   </datalist>
                 </div>
@@ -101,9 +142,53 @@ const ListingForm = (props) => {
                     className="listing-form__input "
                     name="citiesId"
                     component={customInputField}
-                    type="text"
-                    placeholder="Bishkek"
+                    autoComplete="on"
+                    list="citiesName"
                   />
+                  <datalist id="citiesName">
+                    <option
+                      className="listing-form__input__select__value"
+                      value={bishkek}
+                    >
+                      Бишкек
+                    </option>
+                    {/* <option
+                      className="listing-form__input__select__value"
+                      value={osh}
+                    >
+                      Ош
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={talas}
+                    >
+                      Талас
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={naryn}
+                    >
+                      Нарын
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={karakol}
+                    >
+                      Каракол
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={jalalAbad}
+                    >
+                      Джалал-Абад
+                    </option>
+                    <option
+                      className="listing-form__input__select__value"
+                      value={batken}
+                    >
+                      Баткен
+                    </option> */}
+                  </datalist>
                 </div>
               </div>
               <div className="listing-form">
