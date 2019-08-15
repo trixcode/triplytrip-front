@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -152,7 +151,7 @@ const ListingForm = (props) => {
                     >
                       Бишкек
                     </option>
-                    {/* <option
+                    <option
                       className="listing-form__input__select__value"
                       value={osh}
                     >
@@ -187,7 +186,7 @@ const ListingForm = (props) => {
                       value={batken}
                     >
                       Баткен
-                    </option> */}
+                    </option>
                   </datalist>
                 </div>
               </div>
