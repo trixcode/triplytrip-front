@@ -27,7 +27,13 @@ const formConfig = {
 };
 
 const ListingFormContainer = props => <ListingForm {...props} />;
+
+const mapStateToProps = store => ({
+  categories: store.main.categories,
+  cities: store.main.cities,
+});
+
 const mapDispatchToProps = dispatch => ({
   createListingStart: formValues => dispatch(createListingStart(formValues)),
 });
-export default connect(null, mapDispatchToProps)(reduxForm(formConfig)(ListingFormContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(formConfig)(ListingFormContainer));

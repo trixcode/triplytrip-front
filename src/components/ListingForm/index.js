@@ -16,28 +16,12 @@ import './listingForm.scss';
 
 const ListingForm = (props) => {
   const {
-    handleSubmit, pristine, createListingStart, submitting,
+    handleSubmit, pristine, createListingStart, submitting, categories, cities,
   } = props;
 
   const [logoState, dropLogo] = useState(null);
   const [galleryState, dropMainImage] = useState(null);
   const [imageState, dropImages] = useState([]);
-
-  const hotel = '5d53ecb0cff49159e366cb59';
-  const restaurant = '5d53ecb0cff49159e366cb5d';
-  const guestHouse = '5d53ecb0cff49159e366cb5a';
-  const nightClub = '5d53ecb0cff49159e366cb5b';
-  const hostel = '5d53ecb0cff49159e366cb5e';
-  const chaihana = '5d53ecb0cff49159e366cb5f';
-  const cafe = '5d53ecb0cff49159e366cb5c';
-
-  const bishkek = '5d53ecb0cff49159e366cb52';
-  const osh = '5d53ecb0cff49159e366cb53';
-  const talas = '5d53ecb0cff49159e366cb56';
-  const naryn = '5d53ecb0cff49159e366cb54';
-  const karakol = '5d53ecb0cff49159e366cb55';
-  const jalalAbad = '5d53ecb0cff49159e366cb58';
-  const batken = '5d53ecb0cff49159e366cb57';
 
   const handleListingCreate = (formValues) => {
     const obj = {
@@ -89,48 +73,15 @@ const ListingForm = (props) => {
                     list="categoriesName"
                   />
                   <datalist id="categoriesName">
-                    <option
-                      className="listing-form__input__select__value"
-                      value={hotel}
-                    >
-                      Отель
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={cafe}
-                    >
-                      Кафе
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={restaurant}
-                    >
-                      Ресторан
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={chaihana}
-                    >
-                      Чайхана
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={hostel}
-                    >
-                      Хостел
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={nightClub}
-                    >
-                      Ночной Клуб
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={guestHouse}
-                    >
-                      Гостевой Дом
-                    </option>
+                    {categories.map(category => (
+                      <option
+                        className="listing-form__input__select__value"
+                        key={category._id}
+                        value={category._id}
+                      >
+                        {category.name}
+                      </option>
+                    ))}
                   </datalist>
                 </div>
               </div>
@@ -145,48 +96,15 @@ const ListingForm = (props) => {
                     list="citiesName"
                   />
                   <datalist id="citiesName">
-                    <option
-                      className="listing-form__input__select__value"
-                      value={bishkek}
-                    >
-                      Бишкек
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={osh}
-                    >
-                      Ош
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={talas}
-                    >
-                      Талас
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={naryn}
-                    >
-                      Нарын
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={karakol}
-                    >
-                      Каракол
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={jalalAbad}
-                    >
-                      Джалал-Абад
-                    </option>
-                    <option
-                      className="listing-form__input__select__value"
-                      value={batken}
-                    >
-                      Баткен
-                    </option>
+                    {cities.map(city => (
+                      <option
+                        className="listing-form__input__select__value"
+                        key={city._id}
+                        value={city._id}
+                      >
+                        {city.name}
+                      </option>
+                    ))}
                   </datalist>
                 </div>
               </div>
@@ -570,6 +488,14 @@ ListingForm.propTypes = {
   submitting: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   createListingStart: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
 };
 
 export default ListingForm;
