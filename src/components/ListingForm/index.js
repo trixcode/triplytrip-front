@@ -25,13 +25,13 @@ const ListingForm = (props) => {
   const [galleryState, dropMainImage] = useState(null);
   const [imageState, dropImages] = useState([]);
 
-  // eslint-disable-next-line no-undef
-  const formData = new FormData();
 
   const handleListingCreate = (formValues) => {
     formValues.mainImage = logoState;
     formValues.images = imageState;
     formValues.galleryimage = galleryState;
+    // eslint-disable-next-line no-undef
+    const formData = new FormData();
     formData.append('name', formValues.name);
     formData.append('email', formValues.email);
     formData.append('categoriesId', formValues.categoriesId);
@@ -39,19 +39,20 @@ const ListingForm = (props) => {
     formData.append('citiesId', formValues.citiesId);
     formData.append('phone', formValues.phone);
     formData.append('segmentation', formValues.segmentation);
+    formData.append('website', formValues.website);
     formData.append('minPrice', formValues.minPrice);
     formData.append('maxPrice', formValues.maxPrice);
-    formData.append('website', formValues.website);
-    formData.append('mainImage', formValues.mainImage[0]);
+    if (formValues.mainImage === null) {
+      formValues.mainImage = '';
+    } else {
+      formData.append('mainImage', formValues.mainImage[0]);
+    }
+    for (let multi = 0; multi < formValues.images.length; multi += 1) {
+      formData.append('images', formValues.images[multi]);
+    }
     createListingStart(formData);
-    console.log(formData.getAll('mainImage'));
-    console.log(formData.getAll('name'));
-    console.log(formValues.mainImage);
-    console.log(formValues.mainImage[0]);
   };
-  // const eve = (event) => {
-  //   console.log(event.target.files[0]);
-  // };
+
   // the handleDropImages add images to state dropImages from input for images
   const handleDropImages = images => dropImages(imageState.concat(...images));
   // the deletImage delete images from state imageState
@@ -232,7 +233,6 @@ const ListingForm = (props) => {
               {({ getRootProps, getInputProps }) => (
                 <div
                   className="listing-image-load listing-image-load__logo"
-                  // onChange={eve}
                   {...getRootProps()}
                 >
                   <span
