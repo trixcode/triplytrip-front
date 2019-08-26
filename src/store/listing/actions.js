@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
 
-export const createListingStart = requestParams => ({
+export const createListingStart = formData => ({
   type: actionTypes.CREATE_LISTING_START,
-  requestParams,
+  formData,
 });
 export const createListingSuccess = response => ({
   type: actionTypes.CREATE_LISTING_SUCCESS,

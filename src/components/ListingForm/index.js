@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -16,6 +17,7 @@ import './listingForm.scss';
 
 const ListingForm = (props) => {
   const {
+    // eslint-disable-next-line no-unused-vars
     handleSubmit, pristine, createListingStart, submitting, categories, cities,
   } = props;
 
@@ -23,15 +25,33 @@ const ListingForm = (props) => {
   const [galleryState, dropMainImage] = useState(null);
   const [imageState, dropImages] = useState([]);
 
+  // eslint-disable-next-line no-undef
+  const formData = new FormData();
+
   const handleListingCreate = (formValues) => {
-    const obj = {
-      ...formValues,
-      mainImage: logoState,
-      images: imageState,
-      galleryimage: galleryState,
-    };
-    createListingStart(obj);
+    formValues.mainImage = logoState;
+    formValues.images = imageState;
+    formValues.galleryimage = galleryState;
+    formData.append('name', formValues.name);
+    formData.append('email', formValues.email);
+    formData.append('categoriesId', formValues.categoriesId);
+    formData.append('address', formValues.address);
+    formData.append('citiesId', formValues.citiesId);
+    formData.append('phone', formValues.phone);
+    formData.append('segmentation', formValues.segmentation);
+    formData.append('minPrice', formValues.minPrice);
+    formData.append('maxPrice', formValues.maxPrice);
+    formData.append('website', formValues.website);
+    formData.append('mainImage', formValues.mainImage[0]);
+    createListingStart(formData);
+    console.log(formData.getAll('mainImage'));
+    console.log(formData.getAll('name'));
+    console.log(formValues.mainImage);
+    console.log(formValues.mainImage[0]);
   };
+  // const eve = (event) => {
+  //   console.log(event.target.files[0]);
+  // };
   // the handleDropImages add images to state dropImages from input for images
   const handleDropImages = images => dropImages(imageState.concat(...images));
   // the deletImage delete images from state imageState
@@ -45,6 +65,7 @@ const ListingForm = (props) => {
     <form
       onSubmit={handleSubmit(handleListingCreate)}
       className="listing"
+      name="ListingForm"
     >
       <div className="container">
         <div className="listing-wrapper">
@@ -211,6 +232,7 @@ const ListingForm = (props) => {
               {({ getRootProps, getInputProps }) => (
                 <div
                   className="listing-image-load listing-image-load__logo"
+                  // onChange={eve}
                   {...getRootProps()}
                 >
                   <span

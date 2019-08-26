@@ -6,9 +6,9 @@ import * as actions from './actions';
 import * as actionTypes from './actionTypes';
 
 
-export function* createListingRequest(requestParams) {
+export function* createListingRequest(formData) {
   try {
-    const response = yield call(api.POST, 'place', requestParams);
+    const response = yield call(api.POST, 'place', formData, { removeContentType: true });
     yield put(actions.createListingSuccess(response));
   } catch (responseError) {
     yield put(actions.createListingFailure(responseError));
@@ -16,8 +16,8 @@ export function* createListingRequest(requestParams) {
 }
 export function* watchcreateListingRequest() {
   while (true) {
-    const { requestParams } = yield take(actionTypes.CREATE_LISTING_START);
-    yield call(createListingRequest, requestParams);
+    const { formData } = yield take(actionTypes.CREATE_LISTING_START);
+    yield call(createListingRequest, formData);
   }
 }
 export default function* () {
