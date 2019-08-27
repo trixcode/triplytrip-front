@@ -63,7 +63,7 @@ const RegisterForm = (props) => {
 RegisterForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   registerStart: PropTypes.func.isRequired,
-  userData: PropTypes.func.isRequired,
+  userData: PropTypes.string.isRequired,
   setNotLogined: PropTypes.func.isRequired,
   setLogined: PropTypes.func.isRequired,
 };
