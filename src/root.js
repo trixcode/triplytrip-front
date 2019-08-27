@@ -9,42 +9,28 @@ import articles from './pages/articles';
 import placesCategory from './pages/placesCategory';
 import detail from './pages/dynamic/detail';
 import article from './pages/dynamic/article';
-import { setLogined } from './store/actions';
 
-const mapStateToProps = store => ({
-  isLogined: store.main.isLogined,
-});
-const mapDispatchToProps = dispatch => ({
-  setLogined: isLogined => dispatch(setLogined(isLogined)),
-});
+function AppRouter(props) {
+  const { isLogined } = props;
 
-const isAuth = () => {
-  const token = localStorage.getItem('token');
-  if (token === null) {
-    return setLogined(false).isLogined;
+  function PrivateRoute({ component: Component, ...rest }) {
+    return (
+      <Route
+        {...rest}
+        render={() => (isLogined ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/',
+            }}
+          />
+        ))
+        }
+      />
+    );
   }
-  return setLogined(true).isLogined;
-};
 
-function PrivateRoute({ component: Component, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={props => (isAuth() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/',
-          }}
-        />
-      ))
-      }
-    />
-  );
-}
-
-function AppRouter() {
   return (
     <BrowserRouter>
       <Route path="/" exact component={HomePage} />
@@ -57,8 +43,15 @@ function AppRouter() {
   );
 }
 
-PrivateRoute.propTypes = {
+
+const mapStateToProps = store => ({
+  isLogined: store.main.isLogined,
+});
+
+AppRouter.propTypes = {
+  isLogined: PropTypes.bool.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   component: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppRouter);
+export default connect(mapStateToProps, null)(AppRouter);

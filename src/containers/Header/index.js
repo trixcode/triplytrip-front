@@ -11,6 +11,7 @@ const HeaderContainer = props => <Header {...props} />;
 const mapStateToProps = store => ({
   categories: store.main.categories,
   cities: store.main.cities,
+  isLogined: store.main.isLogined,
 });
 
 const mapDispatchToProps = dispatch => ({

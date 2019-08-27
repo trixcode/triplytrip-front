@@ -10,7 +10,7 @@ import './header.scss';
 
 const Header = (props) => {
   const {
-    getCategoriesStart, getCitiesStart, setNotLogined, setLogined,
+    getCategoriesStart, getCitiesStart, setNotLogined, setLogined, isLogined,
   } = props;
 
   const checkIsAuth = () => {
@@ -37,7 +37,7 @@ const Header = (props) => {
               <h2 className="header-brand__title">TryplyTrip</h2>
             </div>
           </Link>
-          <BurgerMenu />
+          <BurgerMenu isLogined={isLogined} />
           <nav className="header-navigation">
             <ul className="header-navigation-bar">
               <li className="header-navigation-list">
@@ -59,7 +59,9 @@ const Header = (props) => {
 
             <div className="header-actions">
               <Link to="/addListing">
-                <button type="button" className="header-actions-button">+ Добавить Список</button>
+                {isLogined ? (
+                  <button type="button" className="header-actions-button">+ Добавить Список</button>
+                ) : ''}
               </Link>
               <ModalWindowContainer />
             </div>
@@ -76,6 +78,7 @@ Header.propTypes = {
   getCitiesStart: PropTypes.func.isRequired,
   setNotLogined: PropTypes.func.isRequired,
   setLogined: PropTypes.func.isRequired,
+  isLogined: PropTypes.bool.isRequired,
 };
 
 export default Header;
