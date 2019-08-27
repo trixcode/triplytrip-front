@@ -98,13 +98,16 @@ img, svg{
             }
             .header-actions {
                 .header-actions-button{
-                      width: 142px;
-                      height: 33px;
+                    width: 142px;
+                    height: 33px;
                     border: #fff 1px solid;
                     border-radius: 3px;
                     background: none;
                     color: #fff;
                     font-family: 'Krona One', sans-serif;
+                    }
+                    .header-actions-button__hidden{
+                      width: 142px;
                     }
                     .header-actions-button:hover {
                         border-color: #e03e53;

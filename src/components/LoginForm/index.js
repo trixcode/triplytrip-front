@@ -13,6 +13,7 @@ const LoginForm = (props) => {
   };
 
   if (token.token) {
+    console.log(token.token);
     setLogined(true);
     localStorage.setItem('token', token.token);
   } else {

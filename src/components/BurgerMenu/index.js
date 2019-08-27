@@ -31,7 +31,7 @@ const BurgerMenu = ({ isLogined }) => (
           <Link to="/addListing">
             <button type="button" className="header-burger-button">+ Add Listing</button>
           </Link>
-        ) : ''}
+        ) : <div className="header-burger-button__hidden" />}
         <ModalWindowContainer />
       </div>
     </Menu>

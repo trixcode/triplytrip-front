@@ -61,7 +61,7 @@ const Header = (props) => {
               <Link to="/addListing">
                 {isLogined ? (
                   <button type="button" className="header-actions-button">+ Добавить Список</button>
-                ) : ''}
+                ) : <div className="header-actions-button__hidden" />}
               </Link>
               <ModalWindowContainer />
             </div>
