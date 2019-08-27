@@ -12,13 +12,13 @@ const LoginForm = (props) => {
     loginUserStart(formValues);
   };
 
-  if (token.token) {
-    console.log(token.token);
+  if (token && token.token !== '') {
     setLogined(true);
     localStorage.setItem('token', token.token);
   } else {
     setNotLogined(false);
   }
+
   return (
     <div className="modal-sign-in">
       <div className="modal-form-wrapper">
