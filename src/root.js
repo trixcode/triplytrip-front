@@ -45,7 +45,7 @@ function AppRouter(props) {
 
 
 const mapStateToProps = store => ({
-  isLogined: store.main.isLogined,
+  isLogined: store.login.isLogined,
 });
 
 AppRouter.propTypes = {

@@ -8,6 +8,24 @@ export default (state = initialState, action) => {
         ...state,
         token: action.response,
       };
+    case actionTypes.LOGOUT_USER_SUCCESS:
+      return {
+        ...state,
+        token: {
+          token: '',
+        },
+        isLogined: false,
+      };
+    case actionTypes.SET_LOGINED:
+      return {
+        ...state,
+        isLogined: true,
+      };
+    case actionTypes.SET_NOT_LOGINED:
+      return {
+        ...state,
+        isLogined: false,
+      };
     default:
       return state;
   }

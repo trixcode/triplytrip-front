@@ -52,12 +52,3 @@ export const setDefaultResponseStatuses = () => ({
   type: actionTypes.SET_DEFAULT_STATUSES,
 
 });
-
-export const setLogined = isLogined => ({
-  type: actionTypes.SET_LOGINED,
-  isLogined,
-});
-export const setNotLogined = isLogined => ({
-  type: actionTypes.SET_NOT_LOGINED,
-  isLogined,
-});

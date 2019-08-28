@@ -19,7 +19,7 @@ const LoginFormContainer = props => <LoginForm {...props} />;
 
 const mapStoreToProps = store => ({
   token: store.login.token,
-  isLogined: store.main.isLogined,
+  isLogined: store.login.isLogined,
 });
 
 const mapDispatchToProps = dispatch => ({

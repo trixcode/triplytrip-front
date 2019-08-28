@@ -13,7 +13,7 @@ const ModalWindow = (props) => {
   const [isRegisterOpen, setRegisterOpen] = useState(false);
 
   const {
-    setNotLogined, isLogined, loginUserSuccess, registerSuccess,
+    isLogined, logoutUserStart,
   } = props;
   const closeModal = () => {
     if (isLogined === true) {
@@ -33,9 +33,7 @@ const ModalWindow = (props) => {
   const defaultClass = 'modal-tabs--button';
 
   const exitFromAcc = () => {
-    loginUserSuccess(null);
-    registerSuccess(null);
-    setNotLogined(false);
+    logoutUserStart();
     localStorage.removeItem('token');
   };
 
@@ -53,7 +51,7 @@ const ModalWindow = (props) => {
             </Fragment>
           )
       }
-      { (
+      {(
         <Modal
           className="modal-container"
           isOpen={showModal}
@@ -71,14 +69,14 @@ const ModalWindow = (props) => {
                 className={isLoginOpen ? classNames(defaultClass, selectedClass) : defaultClass}
               >
 
-                  Войти
+                Войти
               </button>
               <button
                 type="button"
                 onClick={() => switchTabs(setRegisterOpen, setLoginOpen)}
                 className={isRegisterOpen ? classNames(defaultClass, selectedClass) : defaultClass}
               >
-                  Регистрация
+                Регистрация
               </button>
             </div>
             {isLoginOpen ? <LoginFormContainer /> : ''}
@@ -87,7 +85,7 @@ const ModalWindow = (props) => {
           </div>
 
         </Modal>
-        )
+      )
       }
 
     </div>
@@ -95,10 +93,8 @@ const ModalWindow = (props) => {
 };
 
 ModalWindow.propTypes = {
-  setNotLogined: PropTypes.func.isRequired,
   isLogined: PropTypes.bool.isRequired,
-  loginUserSuccess: PropTypes.func.isRequired,
-  registerSuccess: PropTypes.func.isRequired,
+  logoutUserStart: PropTypes.func.isRequired,
 };
 
 export default ModalWindow;

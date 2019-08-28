@@ -29,7 +29,7 @@ const BurgerMenu = ({ isLogined }) => (
       <div className="header-burger-actions">
         {isLogined ? (
           <Link to="/addListing">
-            <button type="button" className="header-burger-button">+ Add Listing</button>
+            <button type="button" className="header-burger-button">+ Добавить Список</button>
           </Link>
         ) : <div className="header-burger-button__hidden" />}
         <ModalWindowContainer />

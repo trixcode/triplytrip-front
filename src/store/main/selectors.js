@@ -8,7 +8,6 @@ export const initialState = {
     message: '',
     title: '',
   },
-  isLogined: false,
 };
 
 export const getState = (state = initialState) => state || initialState;
