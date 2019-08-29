@@ -8,12 +8,12 @@
   &__box {
     width: 8px;
     margin-right: 3px;
-    background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
+    background: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
   }
   &__boxSecond {
     margin-right: 13px;
     width: 3px;
-    background-image: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
+    background: linear-gradient(-235deg, #5884e8 0%, #2cc7de 100%);
   }
   &__name {
     display: flex;

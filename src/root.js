@@ -9,6 +9,7 @@ import articles from './pages/articles';
 import placesCategory from './pages/placesCategory';
 import detail from './pages/dynamic/detail';
 import article from './pages/dynamic/article';
+import user from './pages/user';
 
 function AppRouter(props) {
   const { isLogined } = props;
@@ -39,6 +40,7 @@ function AppRouter(props) {
       <Route path="/placesCategory" component={placesCategory} />
       <Route path="/detail/:placeId" component={detail} />
       <Route path="/article/:articleId" component={article} />
+      <Route path="/user" component={user} />
     </BrowserRouter>
   );
 }
