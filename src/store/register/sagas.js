@@ -9,19 +9,11 @@ import * as mainActions from '../main/actions';
 export function* registerRequest(requestParams) {
   try {
     const response = yield call(api.POST, 'auth/register', requestParams);
-    if (response.errors) {
-      yield put(actions.registerFailure());
-      yield put(mainActions.setResponseFailureStatuses({
-        title: 'ooops!',
-        message: response.message,
-      }));
-    } else {
-      yield put(actions.registerSuccess(response));
-      yield put(mainActions.setResponseSuccessStatuses({
-        title: 'success!',
-        message: 'Вы успешно зарегистрировались!',
-      }));
-    }
+    yield put(actions.registerSuccess(response));
+    yield put(mainActions.setResponseSuccessStatuses({
+      title: 'success!',
+      message: 'Вы успешно зарегистрировались!',
+    }));
   } catch (responseError) {
     yield put(actions.registerFailure(responseError));
     yield put(mainActions.setResponseFailureStatuses({

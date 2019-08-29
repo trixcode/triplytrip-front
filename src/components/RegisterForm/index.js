@@ -12,7 +12,7 @@ const RegisterForm = (props) => {
     registerStart(formValues);
   };
 
-  if (userData) {
+  if (userData.token) {
     setLogined(true);
     localStorage.setItem('token', userData.token);
   } else {
@@ -52,7 +52,7 @@ const RegisterForm = (props) => {
             type="password"
             className="modal-form__input"
           />
-          <button type="button" className="modal-form__button">Зарегистрироваться</button>
+          <button type="submit" className="modal-form__button">Зарегистрироваться</button>
         </form>
       </div>
 
@@ -61,9 +61,11 @@ const RegisterForm = (props) => {
 };
 
 RegisterForm.propTypes = {
+  userData: PropTypes.shape({
+    token: PropTypes.string,
+  }).isRequired,
   handleSubmit: PropTypes.func.isRequired,
   registerStart: PropTypes.func.isRequired,
-  userData: PropTypes.string.isRequired,
   setNotLogined: PropTypes.func.isRequired,
   setLogined: PropTypes.func.isRequired,
 };
