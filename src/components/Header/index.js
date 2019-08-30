@@ -54,7 +54,15 @@ const Header = (props) => {
                   </span>
                 </Link>
               </li>
-
+              <li className="header-navigation-list">
+                <Link to="/user">
+                  {isLogined ? (
+                    <span className="header-navigation-link">
+                      Пользователь
+                    </span>
+                  ) : ('')}
+                </Link>
+              </li>
             </ul>
 
             <div className="header-actions">

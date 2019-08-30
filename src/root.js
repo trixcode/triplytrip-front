@@ -35,12 +35,12 @@ function AppRouter(props) {
   return (
     <BrowserRouter>
       <Route path="/" exact component={HomePage} />
-      <PrivateRoute path="/addListing" component={addListing} />
       <Route path="/articles" component={articles} />
       <Route path="/placesCategory" component={placesCategory} />
       <Route path="/detail/:placeId" component={detail} />
       <Route path="/article/:articleId" component={article} />
-      <Route path="/user" component={user} />
+      <PrivateRoute path="/addListing" component={addListing} />
+      <PrivateRoute path="/user" component={user} />
     </BrowserRouter>
   );
 }

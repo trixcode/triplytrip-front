@@ -4,13 +4,16 @@
 .postTop-wrapper {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   background-color: aqua;
+  height: 265px;
   opacity: 0.8;
 }
 
 .postTop-wrapper-main-content {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 28px;
 }
 
 .postTop-wrapper-user {
@@ -63,6 +66,12 @@
         font-size: 14px;
         font-weight: 500;
       }
+    }
+    &--separation {
+      margin: 0 10px 0 10px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
     }
   }
   &__btn {

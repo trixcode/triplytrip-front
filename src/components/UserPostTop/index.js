@@ -26,6 +26,7 @@ const UserPostTop = () => {
                 <span className="postTop-wrapper-profile__status--follow-number">232</span>
                 <span className="postTop-wrapper-profile__status--follow-text">followers</span>
               </div>
+              <span className="postTop-wrapper-profile__status--separation">|</span>
               <div className="postTop-wrapper-profile__status--follow">
                 <span className="postTop-wrapper-profile__status--follow-number">123</span>
                 <span className="postTop-wrapper-profile__status--follow-text">following</span>

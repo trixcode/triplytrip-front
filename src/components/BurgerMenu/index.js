@@ -23,15 +23,24 @@ const BurgerMenu = ({ isLogined }) => (
             </p>
           </Link>
         </li>
+        <li className="header-burger-list">
+          <Link to="/user">
+            {isLogined ? (
+              <p className="header-burger-link" href="#">
+                Пользователь
+              </p>
+            ) : ('')}
+          </Link>
+        </li>
 
       </ul>
 
       <div className="header-burger-actions">
-        {isLogined ? (
-          <Link to="/addListing">
+        <Link to="/addListing">
+          {isLogined ? (
             <button type="button" className="header-burger-button">+ Добавить Список</button>
-          </Link>
-        ) : <div className="header-burger-button__hidden" />}
+          ) : <div className="header-burger-button__hidden" />}
+        </Link>
         <ModalWindowContainer />
       </div>
     </Menu>
