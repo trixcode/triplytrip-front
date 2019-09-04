@@ -17,7 +17,6 @@ import './listingForm.scss';
 
 const ListingForm = (props) => {
   const {
-    // eslint-disable-next-line no-unused-vars
     handleSubmit, pristine, createListingStart, submitting, categories, cities,
   } = props;
 

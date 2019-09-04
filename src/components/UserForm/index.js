@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { faHome, faUser, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserPostTop from '../UserPostTop';
@@ -7,7 +8,12 @@ import Listing from '../UserListing';
 import Profile from '../UserProfile';
 import './userForm.scss';
 
-const UserForm = () => {
+const UserForm = (props) => {
+  const { getUserListingStart, myListing } = props;
+  useEffect(() => {
+    getUserListingStart();
+  }, []);
+
   const [isDashboardClicked, setDashboard] = useState(true);
   const [isProfileClicked, setProfile] = useState(false);
   const [isListingClicked, setListing] = useState(false);
@@ -68,12 +74,20 @@ const UserForm = () => {
             </div>
             {isDashboardClicked ? <Dashboard /> : ''}
             {isProfileClicked ? <Profile /> : ''}
-            {isListingClicked ? <Listing /> : ''}
+            {isListingClicked ? <Listing myListing={myListing} /> : ''}
           </div>
         </div>
       </div>
     </Fragment>
   );
 };
+
+UserForm.propTypes = {
+  myListing: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+  })).isRequired,
+  getUserListingStart: PropTypes.func.isRequired,
+};
+
 
 export default UserForm;

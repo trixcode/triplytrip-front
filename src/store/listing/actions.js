@@ -12,3 +12,17 @@ export const createListingFailure = responseError => ({
   type: actionTypes.CREATE_LISTING_FAILURE,
   responseError,
 });
+
+
+export const getUserListingStart = requsetParams => ({
+  type: actionTypes.GET_USER_LISTING_START,
+  requsetParams,
+});
+export const getUserListingSuccess = response => ({
+  type: actionTypes.GET_USER_LISTING_SUCCESS,
+  response,
+});
+export const getUserListingFailure = responseError => ({
+  type: actionTypes.GET_USER_LISTING_FAILURE,
+  responseError,
+});

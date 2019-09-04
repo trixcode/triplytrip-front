@@ -34,7 +34,7 @@ const Header = (props) => {
           <Link to="/">
             <div className="header-brand">
               <img src={Logo} className="header-brand__logo" alt="logo" />
-              <h2 className="header-brand__title">TryplyTrip</h2>
+              <h2 className="header-brand__title">TriplyTrip</h2>
             </div>
           </Link>
           <BurgerMenu isLogined={isLogined} />

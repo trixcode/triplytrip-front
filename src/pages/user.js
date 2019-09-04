@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import HeaderContainer from '../containers/Header';
 import FooterContainer from '../containers/Footer';
-import UserForm from '../components/UserForm';
+import UserContainer from '../containers/User';
 import '../assets/styles/main.scss';
 
 const User = () => (
   <Fragment>
     <HeaderContainer />
-    <UserForm />
+    <UserContainer />
     <FooterContainer text="Footer" />
   </Fragment>
 );

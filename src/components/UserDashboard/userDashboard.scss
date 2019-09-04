@@ -9,7 +9,6 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   &__big {
-    width: 690px;
     max-height: 448px;
     background: linear-gradient(to top, #847be0 0%, #d345ca 100%);
     display: flex;
@@ -41,14 +40,12 @@
     }
   }
   &__box {
-    width: 690px;
     height: 448px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
   }
   &__small {
-    width: 330px;
     height: 209px;
     background: linear-gradient(to top, #f49182 0%, #f9c387 100%);
     display: flex;
@@ -80,7 +77,6 @@
     } 
   }
   &__medium {
-    width: 690px;
     height: 204px;
     background: linear-gradient(to top, #5092e6 0%, #27d1dd 100%);
     display: flex;

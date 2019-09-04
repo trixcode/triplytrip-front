@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { faEdit, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './userListing.scss';
 
-const Listing = () => {
-  console.log('listing');
+const Listing = (props) => {
+  const { myListing } = props;
   return (
     <div className="user-wrapper-listing">
       <div className="user-wrapper-listing__tabs">
@@ -20,21 +21,21 @@ const Listing = () => {
         ))}
       </div>
       <div className="user-wrapper-listing__content">
-        {['Janat Restaraunt', 2, 3, 4, 5].map(block => (
+        {myListing.map(my => (
           <div
-            key={block}
+            key={my._id}
             className="user-wrapper-listing__content--block"
           >
             <div className="user-wrapper-listing__content--block__image">
-              210 x 137px
+              <img src={my.mainImage} alt={my.name} />
             </div>
             <div className="user-wrapper-listing__content--block__sidebar">
               <div className="user-wrapper-listing__content--block__sidebar--info">
                 <div className="user-wrapper-listing__content--block__sidebar--info__name">
-                  {block}
+                  {my.name}
                 </div>
                 <div className="user-wrapper-listing__content--block__sidebar--info__category">
-                  hotel
+                  {my.category.name}
                 </div>
               </div>
               <div className="user-wrapper-listing__content--block__sidebar--buttons">
@@ -78,6 +79,12 @@ const Listing = () => {
       </div>
     </div>
   );
+};
+
+Listing.propTypes = {
+  myListing: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+  })).isRequired,
 };
 
 export default Listing;

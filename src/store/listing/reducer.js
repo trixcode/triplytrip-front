@@ -8,6 +8,11 @@ export default (state = initialState, action) => {
         ...state,
         createListing: action.response,
       };
+    case actionTypes.GET_USER_LISTING_SUCCESS:
+      return {
+        ...state,
+        myListing: action.response,
+      };
     default:
       return state;
   }

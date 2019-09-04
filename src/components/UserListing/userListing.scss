@@ -21,6 +21,8 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 160px; 
+    grid-row-gap: 42px;
     &--block {
       display: flex;
       align-items: center;
@@ -29,10 +31,14 @@
         width: 210px;
         height: 137px;
         margin-right: 31px;
-        border: 2px solid red;
+        img{
+          width: 210px;
+          height: 137px;
+          object-fit: cover;
+        }
       }
       &__sidebar {
-        width: 289;
+        width: 289px;
         height: 137px;
         display: flex;
         flex-direction: column;
@@ -49,14 +55,18 @@
             font-family: "Varela Round";
             font-size: 14px;
             font-weight: 400;
+            text-transform: capitalize;
           }
         }
         &--buttons {
+          display: flex;
+          justify-content: space-between;
           &__btn {
             width: 89px;
             height: 26px;
             background-color: #e03e53;
-            margin-right: 11px;
+            border-radius: 5px;
+            border: none;
             &--icon {
               width: 15px;
               height: 13px;
