@@ -1,77 +1,74 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { faHome, faUser, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserPostTop from '../UserPostTop';
+import Dashboard from '../UserDashboard';
+import Listing from '../UserListing';
+import Profile from '../UserProfile';
 import './userForm.scss';
 
 const UserForm = () => {
-  console.log('a');
+  const [isDashboardClicked, setDashboard] = useState(true);
+  const [isProfileClicked, setProfile] = useState(false);
+  const [isListingClicked, setListing] = useState(false);
+
+  const switchTabs = (a, b, c) => {
+    a(true);
+    b(false);
+    c(false);
+    window.scrollTo(150, 150);
+  };
+
   return (
     <Fragment>
       <UserPostTop />
       <div className="users-wrapper">
         <div className="container">
           <div className="user-wrapper-main-content">
-            <div className="user-wrapper-selector">
-              {['dashboard', 'profile', 'my listing'].map(selector => (
-                <div
-                  key={selector}
-                  value={selector}
-                  className="user-wrapper-selector__content"
-                >
-                  <span className="user-wrapper-selector__content--icon">
-                    f
-                  </span>
-                  <span className="user-wrapper-selector__content--text">
-                    {selector}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="user-wrapper-blocks">
-              <div className="user-wrapper-blocks__big">
-                <div className="user-wrapper-blocks__big--area">
-                  <span className="user-wrapper-blocks__big--area__number">
-                    30
-                  </span>
-                </div>
-                <span className="user-wrapper-blocks__big--text">
-                  all Listings
+            <div className="user-wrapper-tabs">
+              <button
+                type="button"
+                id="Dashboard"
+                onClick={() => switchTabs(setDashboard, setProfile, setListing)}
+                className="user-wrapper-tabs__content"
+              >
+                <span className="user-wrapper-tabs__content--icon">
+                  <FontAwesomeIcon icon={faHome} />
                 </span>
-              </div>
-              <div className="user-wrapper-blocks__box">
-                {['published', 'in review', 'unpaid', 'expired'].map(block => (
-                  <div
-                    key={block}
-                    value={block}
-                    className="user-wrapper-blocks__small"
-                  >
-                    <div className="user-wrapper-blocks__small--area">
-                      <span className="user-wrapper-blocks__small--area__number">
-                        10
-                      </span>
-                    </div>
-                    <span className="user-wrapper-blocks__small--text">
-                      {block}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              {[1, 2].map(block => (
-                <div
-                  key={block}
-                  value={block}
-                  className="user-wrapper-blocks__medium"
-                >
-                  <div className="user-wrapper-blocks__medium--area">
-                    <span className="user-wrapper-blocks__medium--area__number">
-                      320
-                    </span>
-                  </div>
-                  <span className="user-wrapper-blocks__medium--text">
-                    total views
-                  </span>
-                </div>
-              ))}
+                <span className="user-wrapper-tabs__content--text">
+                  dashboard
+                </span>
+              </button>
+              <button
+                type="button"
+                id="Profile"
+                onClick={() => switchTabs(setProfile, setDashboard, setListing)}
+                className="user-wrapper-tabs__content"
+              >
+                <span className="user-wrapper-tabs__content--icon">
+                  <FontAwesomeIcon icon={faUser} />
+                </span>
+                <span className="user-wrapper-tabs__content--text">
+                  profile
+                </span>
+              </button>
+              <button
+                type="button"
+                id="Listing"
+                onClick={() => switchTabs(setListing, setDashboard, setProfile)}
+                className="user-wrapper-tabs__content"
+              >
+                <span className="user-wrapper-tabs__content--icon">
+                  <FontAwesomeIcon icon={faFileAlt} />
+                </span>
+                <span className="user-wrapper-tabs__content--text">
+                  my listing
+                </span>
+              </button>
             </div>
+            {isDashboardClicked ? <Dashboard /> : ''}
+            {isProfileClicked ? <Profile /> : ''}
+            {isListingClicked ? <Listing /> : ''}
           </div>
         </div>
       </div>

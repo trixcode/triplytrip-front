@@ -1,4 +1,6 @@
 import React from 'react';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './userPostTop.scss';
 
 const UserPostTop = () => {
@@ -32,10 +34,14 @@ const UserPostTop = () => {
                 <span className="postTop-wrapper-profile__status--follow-text">following</span>
               </div>
             </div>
-            <button type="button" className="postTop-wrapper-profile__btn">
-              edit profile
-            </button>
-            <span className="postTop-wrapper-profile__icon">f</span>
+            <div className="postTop-wrapper-profile__button">
+              <button type="button" className="postTop-wrapper-profile__button--btn">
+                edit profile
+              </button>
+              <span className="postTop-wrapper-profile__button--icon">
+                <FontAwesomeIcon icon={faEdit} />
+              </span>
+            </div>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ function AppRouter(props) {
       <Route path="/detail/:placeId" component={detail} />
       <Route path="/article/:articleId" component={article} />
       <PrivateRoute path="/addListing" component={addListing} />
-      <PrivateRoute path="/user" component={user} />
+      <Route path="/user" component={user} />
     </BrowserRouter>
   );
 }
