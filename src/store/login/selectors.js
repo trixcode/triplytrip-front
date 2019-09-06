@@ -3,6 +3,7 @@ export const initialState = {
     token: '',
   },
   isLogined: false,
+  user: {},
 };
 
 export const getState = (state = initialState) => state || initialState;

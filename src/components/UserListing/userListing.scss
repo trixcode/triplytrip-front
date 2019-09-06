@@ -2,10 +2,12 @@
 @import '../../assets/styles/variables';
 
 .user-wrapper-listing {
+  background-color: #ffffff;
   width: 100%;
   &__tabs {
     display: flex;
     margin-bottom: 60px;
+    padding-top: 28px;
     &--btn {
       width: 145px;
       height: 41px;

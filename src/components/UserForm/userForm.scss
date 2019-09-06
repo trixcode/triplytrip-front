@@ -4,6 +4,7 @@
 .users-wrapper {
   display: flex;
   justify-content: center;
+  background-color: #f4f4f4;
   .user-wrapper-main-content {
     width: 100%;
   }
@@ -13,7 +14,6 @@
   margin-top: 53px;
   display: flex;
   justify-content: start;
-  margin-bottom: 28px;
   &__content {
     margin-right: 32px;
     display: flex;

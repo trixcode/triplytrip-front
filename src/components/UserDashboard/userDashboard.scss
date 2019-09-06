@@ -8,6 +8,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  padding: 28px 15px 44px 15px;
+  background-color: #ffffff;
   &__big {
     max-height: 448px;
     background: linear-gradient(to top, #847be0 0%, #d345ca 100%);

@@ -9,7 +9,8 @@ import Profile from '../UserProfile';
 import './userForm.scss';
 
 const UserForm = (props) => {
-  const { getUserListingStart, myListing } = props;
+  const { getUserListingStart, myListing, user } = props;
+
   useEffect(() => {
     getUserListingStart();
   }, []);
@@ -27,7 +28,7 @@ const UserForm = (props) => {
 
   return (
     <Fragment>
-      <UserPostTop />
+      <UserPostTop user={user} />
       <div className="users-wrapper">
         <div className="container">
           <div className="user-wrapper-main-content">
@@ -84,6 +85,9 @@ const UserForm = (props) => {
 
 UserForm.propTypes = {
   myListing: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+  })).isRequired,
+  user: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string,
   })).isRequired,
   getUserListingStart: PropTypes.func.isRequired,

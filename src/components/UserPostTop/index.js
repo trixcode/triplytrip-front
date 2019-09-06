@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './userPostTop.scss';
 
-const UserPostTop = () => {
-  console.log('a');
+const UserPostTop = (props) => {
+  const { user } = props;
+  console.log(user);
   return (
     <div className="postTop-wrapper">
       <div className="container">
@@ -15,10 +17,10 @@ const UserPostTop = () => {
             </div>
             <div className="postTop-wrapper-user__info">
               <div className="postTop-wrapper-user__info--name">
-                jon jones
+                {user.username}
               </div>
               <div className="postTop-wrapper-user__info--status">
-                admin
+                {user.roles}
               </div>
             </div>
           </div>
@@ -47,6 +49,12 @@ const UserPostTop = () => {
       </div>
     </div>
   );
+};
+
+UserPostTop.propTypes = {
+  user: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+  })).isRequired,
 };
 
 export default UserPostTop;
