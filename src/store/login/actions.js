@@ -25,6 +25,20 @@ export const logoutUserFailure = responseError => ({
   responseError,
 });
 
+export const userStart = requestParams => ({
+  type: actionTypes.USER_START,
+  requestParams,
+});
+export const userSuccess = response => ({
+  type: actionTypes.USER_SUCCESS,
+  response,
+});
+export const userFailure = responseError => ({
+  type: actionTypes.USER_FAILURE,
+  responseError,
+});
+
+
 export const setLogined = isLogined => ({
   type: actionTypes.SET_LOGINED,
   isLogined,

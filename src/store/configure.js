@@ -6,6 +6,7 @@ import isProd from '../config';
 import rootReducer from './reducer';
 import rootSaga from './sagas';
 import api from '../services/api';
+import { userStart } from './login/actions';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -36,7 +37,7 @@ const configureStore = (initialState = {}) => {
 
   return store;
 };
-
 const store = configureStore();
+store.dispatch(userStart());
 
 export default store;

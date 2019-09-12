@@ -39,6 +39,16 @@ export function* logoutUserRequest(requestParams) {
   }
 }
 
+export function* userRequest(requestParams) {
+  try {
+    const response = yield call(api.GET, 'users/myUser', requestParams);
+    yield put(actions.userSuccess(response));
+  } catch (responseError) {
+    yield put(actions.userFailure(responseError));
+  }
+}
+
+
 export function* wathcloginUserRequest() {
   while (true) {
     const { requestParams } = yield take(actionTypes.LOGIN_USER_START);
@@ -55,7 +65,15 @@ export function* wathclogoutUserRequest() {
   }
 }
 
+export function* wathcUserRequest() {
+  while (true) {
+    const { requestParams } = yield take(actionTypes.USER_START);
+    yield call(userRequest, requestParams);
+  }
+}
+
 export default function* () {
   yield fork(wathcloginUserRequest);
   yield fork(wathclogoutUserRequest);
+  yield fork(wathcUserRequest);
 }

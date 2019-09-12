@@ -20,7 +20,7 @@ const UserPostTop = (props) => {
                 {user.username}
               </div>
               <div className="postTop-wrapper-user__info--status">
-                {user.roles}
+                {user.roles && user.roles.name}
               </div>
             </div>
           </div>
