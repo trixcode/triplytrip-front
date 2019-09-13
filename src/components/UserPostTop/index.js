@@ -6,7 +6,6 @@ import './userPostTop.scss';
 
 const UserPostTop = (props) => {
   const { user } = props;
-  console.log(user);
   return (
     <div className="postTop-wrapper">
       <div className="container">
@@ -20,7 +19,7 @@ const UserPostTop = (props) => {
                 {user.username}
               </div>
               <div className="postTop-wrapper-user__info--status">
-                {user.roles && user.roles.name}
+                {user.roles.name}
               </div>
             </div>
           </div>
@@ -52,9 +51,12 @@ const UserPostTop = (props) => {
 };
 
 UserPostTop.propTypes = {
-  user: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string,
-  })).isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string,
+    roles: PropTypes.shape({
+      name: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default UserPostTop;

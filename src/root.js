@@ -4,43 +4,42 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import HomePage from './pages/HomePage';
-import addListing from './pages/addListing';
-import articles from './pages/articles';
-import placesCategory from './pages/placesCategory';
-import detail from './pages/dynamic/detail';
-import article from './pages/dynamic/article';
-import user from './pages/user';
+import AddListing from './pages/addListing';
+import Articles from './pages/articles';
+import PlacesCategory from './pages/placesCategory';
+import Detail from './pages/dynamic/detail';
+import Article from './pages/dynamic/article';
+import User from './pages/user';
 
-function AppRouter(props) {
-  const { isLogined } = props;
+function PrivateRouter({ isLogined, component: Component, ...rest }) {
+  return (
+    <Route
+      {...rest}
+      render={props => (isLogined ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/',
+          }}
+        />
+      ))
+      }
+    />
+  );
+}
 
-  function PrivateRoute({ component: Component, ...rest }) {
-    return (
-      <Route
-        {...rest}
-        render={() => (isLogined ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/',
-            }}
-          />
-        ))
-        }
-      />
-    );
-  }
 
+export function AppRouter() {
   return (
     <BrowserRouter>
       <Route path="/" exact component={HomePage} />
-      <Route path="/articles" component={articles} />
-      <Route path="/placesCategory" component={placesCategory} />
-      <Route path="/detail/:placeId" component={detail} />
-      <Route path="/article/:articleId" component={article} />
-      <PrivateRoute path="/addListing" component={addListing} />
-      <Route path="/user" component={user} />
+      <Route path="/articles" component={Articles} />
+      <Route path="/placesCategory" component={PlacesCategory} />
+      <Route path="/detail/:placeId" component={Detail} />
+      <Route path="/article/:articleId" component={Article} />
+      <PrivateRoute path="/addListing" component={AddListing} />
+      <PrivateRoute path="/user" component={User} />
     </BrowserRouter>
   );
 }
@@ -50,10 +49,9 @@ const mapStateToProps = store => ({
   isLogined: store.login.isLogined,
 });
 
-AppRouter.propTypes = {
+PrivateRouter.propTypes = {
   isLogined: PropTypes.bool.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   component: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, null)(AppRouter);
+export const PrivateRoute = connect(mapStateToProps, null)(PrivateRouter);

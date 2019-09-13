@@ -23,8 +23,18 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 160px; 
     grid-row-gap: 42px;
+    grid-column-gap: 160px; 
+    @media (max-width: 1400px) { 
+      grid-column-gap: 50px; 
+    }
+    @media (max-width: 1400px) { 
+      grid-column-gap: 20px; 
+    }
+    @media (max-width: 992px) { 
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
     &--block {
       display: flex;
       align-items: center;
@@ -45,6 +55,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @media (max-width: 1200px) { 
+          width: 210px;
+        }
         &--info {
           &__name {
             color: #232323;
@@ -63,7 +76,13 @@
         &--buttons {
           display: flex;
           justify-content: space-between;
+          @media (max-width: 1200px) { 
+            flex-direction: column;
+          }
           &__btn {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             width: 89px;
             height: 26px;
             background-color: #e03e53;
@@ -75,7 +94,7 @@
               color: #ffffff;
               font-size: 12px;
               font-weight: 400;
-              margin-right: 9px;
+              margin: 0 9px 0 20px;
             }
             &--text {
               color: #ffffff;

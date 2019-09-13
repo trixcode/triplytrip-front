@@ -7,7 +7,6 @@ import './detailTitle.scss';
 
 const DetailTitle = (props) => {
   const { articleDetail } = props;
-  console.log(articleDetail);
   return (
     <section className="detail-title">
       <div className="container detail-title__container">

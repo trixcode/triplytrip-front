@@ -8,7 +8,6 @@ import './placesFilterResult.scss';
 
 const PlacesFilterResult = (props) => {
   const { places } = props;
-  console.log(places);
   return (
     <div className="filter-result">
       <div className="container">

@@ -73,7 +73,7 @@ const UserForm = (props) => {
                 </span>
               </button>
             </div>
-            {isDashboardClicked ? <Dashboard /> : ''}
+            {isDashboardClicked ? <Dashboard myListing={myListing} /> : ''}
             {isProfileClicked ? <Profile /> : ''}
             {isListingClicked ? <Listing myListing={myListing} /> : ''}
           </div>
@@ -84,12 +84,8 @@ const UserForm = (props) => {
 };
 
 UserForm.propTypes = {
-  myListing: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string,
-  })).isRequired,
-  user: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string,
-  })).isRequired,
+  myListing: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  user: PropTypes.shape({}).isRequired,
   getUserListingStart: PropTypes.func.isRequired,
 };
 

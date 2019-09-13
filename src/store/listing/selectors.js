@@ -1,6 +1,6 @@
 export const initialState = {
   createListing: {},
-  myListing: {},
+  myListing: [],
 };
 
 export const getState = (state = initialState) => state || initialState;

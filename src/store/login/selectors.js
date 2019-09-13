@@ -3,7 +3,12 @@ export const initialState = {
     token: '',
   },
   isLogined: false,
-  user: {},
+  user: {
+    roles: {
+      name: '',
+    },
+    username: '',
+  },
 };
 
 export const getState = (state = initialState) => state || initialState;

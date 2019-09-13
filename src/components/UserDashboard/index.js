@@ -1,14 +1,21 @@
 import React from 'react';
 import './userDashboard.scss';
 
-const Dashboard = () => {
-  console.log('dash');
+const Dashboard = (prosp) => {
+  const { myListing } = prosp;
+
+  const countList = (list) => {
+    if (list.length === 0) {
+      return 0;
+    }
+    return list.length;
+  };
   return (
     <div className="user-wrapper-dashboard">
       <div className="user-wrapper-dashboard__big">
         <div className="user-wrapper-dashboard__big--area">
           <span className="user-wrapper-dashboard__big--area__number">
-            30
+            {countList(myListing)}
           </span>
         </div>
         <span className="user-wrapper-dashboard__big--text">
