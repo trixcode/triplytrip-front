@@ -52,7 +52,6 @@ const checkException = (response) => {
 //   return response.json();
 // };
 
-const token = localStorage.getItem('token');
 
 export const parseSettings = (
   {
@@ -62,7 +61,7 @@ export const parseSettings = (
   const headers = {
     Accept: 'application/json',
     'Content-type': 'application/json',
-    token: `token ${token}`,
+    token: `token ${localStorage.getItem('token')}`,
   };
   if (otherSettings.removeContentType) {
     delete headers['Content-type'];
