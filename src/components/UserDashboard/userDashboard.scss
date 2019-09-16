@@ -11,7 +11,16 @@
   padding: 28px 15px 44px 15px;
   background-color: #ffffff;
   @media (max-width: 1400px) { 
-  grid-gap: 15px;    
+    grid-gap: 15px;    
+  }
+  @media (max-width: 992px) { 
+    grid-template-columns: 1fr; 
+    justify-items: center;
+    grid-gap: 15px;    
+  }
+  @media (max-width: 576px) { 
+    width: 465px;
+    height: 388px;
   }
   &__big {
     width: 690px;
@@ -24,6 +33,10 @@
     @media (max-width: 1400px) { 
       width: 525px;
       height: 448px;
+    }
+    @media (max-width: 576px) { 
+      width: 465px;
+      height: 388px;
     }
     &--area {
       margin-bottom: 61px;
@@ -54,10 +67,15 @@
     height: 448px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 25px;
     @media (max-width: 1400px) { 
       width: 525px;
       height: 448px;
+    }
+    @media (max-width: 992px) { 
+      width: 525px;
+      height: 448px;
+      grid-gap: 25px;
     }
   }
   &__small {

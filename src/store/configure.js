@@ -2,11 +2,11 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import isProd from '../config';
+import { isProd } from '../config';
 import rootReducer from './reducer';
 import rootSaga from './sagas';
 import api from '../services/api';
-import { userStart } from './login/actions';
+import { userStart, setLogined } from './login/actions';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -38,6 +38,10 @@ const configureStore = (initialState = {}) => {
   return store;
 };
 const store = configureStore();
+const isLogined = localStorage.getItem('token');
+if (isLogined) {
+  store.dispatch(setLogined());
+}
 store.dispatch(userStart());
 
 export default store;

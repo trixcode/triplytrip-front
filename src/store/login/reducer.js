@@ -22,6 +22,7 @@ export default (state = initialState, action) => {
         ...state,
         token: action.response.token,
         user: action.response.user,
+        isLogined: action.response.isLogined,
       };
     case actionTypes.SET_LOGINED:
       return {
