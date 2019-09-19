@@ -41,6 +41,8 @@ const ListingForm = (props) => {
     formData.append('website', formValues.website);
     formData.append('minPrice', formValues.minPrice);
     formData.append('maxPrice', formValues.maxPrice);
+    formData.append('description', formValues.description);
+    formData.append('extraDescription', formValues.extraDescription);
     if (formValues.mainImage === null) {
       formValues.mainImage = '';
     } else {

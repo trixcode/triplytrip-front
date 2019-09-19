@@ -80,6 +80,9 @@
             flex-direction: column;
           }
           &__btn {
+            @media (max-width: 1200px) {
+              margin-top: 3px; 
+            }
             display: flex;
             justify-content: flex-start;
             align-items: center;
