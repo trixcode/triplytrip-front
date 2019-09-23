@@ -11,7 +11,7 @@ const RegisterForm = (props) => {
   const onSubmitHandle = (formValues) => {
     registerStart(formValues);
   };
-
+  console.log(userData);
   if (userData.token) {
     setLogined(true);
     localStorage.setItem('token', userData.token);

@@ -37,7 +37,7 @@ const UserForm = (props) => {
                 type="button"
                 id="Dashboard"
                 onClick={() => switchTabs(setDashboard, setProfile, setListing)}
-                className="user-wrapper-tabs__content"
+                className={isDashboardClicked ? 'selected' : 'user-wrapper-tabs__content'}
               >
                 <span className="user-wrapper-tabs__content--icon">
                   <FontAwesomeIcon icon={faHome} />
@@ -50,7 +50,7 @@ const UserForm = (props) => {
                 type="button"
                 id="Profile"
                 onClick={() => switchTabs(setProfile, setDashboard, setListing)}
-                className="user-wrapper-tabs__content"
+                className={isProfileClicked ? 'selected' : 'user-wrapper-tabs__content'}
               >
                 <span className="user-wrapper-tabs__content--icon">
                   <FontAwesomeIcon icon={faUser} />
@@ -63,7 +63,7 @@ const UserForm = (props) => {
                 type="button"
                 id="Listing"
                 onClick={() => switchTabs(setListing, setDashboard, setProfile)}
-                className="user-wrapper-tabs__content"
+                className={isListingClicked ? 'selected' : 'user-wrapper-tabs__content'}
               >
                 <span className="user-wrapper-tabs__content--icon">
                   <FontAwesomeIcon icon={faFileAlt} />

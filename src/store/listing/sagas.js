@@ -17,7 +17,7 @@ export function* createListingRequest(formData) {
 
 export function* getUserListingRequest(requestParams) {
   try {
-    const response = yield call(api.GET, 'place/my', { params: requestParams });
+    const response = yield call(api.GET, 'place/mylisting', { params: requestParams });
     yield put(actions.getUserListingSuccess(response));
   } catch (responseError) {
     yield put(actions.getUserListingFailure(responseError));

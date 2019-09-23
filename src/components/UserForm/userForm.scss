@@ -22,8 +22,7 @@
     justify-content: center;
     width: 142px;
     height: 54px;
-    box-shadow: 2px -2px 9px rgba(0, 0, 0, 0.07);
-    background: linear-gradient(to top, #5092e6 0%, #27d1dd 100%);
+    background-color: #f4f4f4;
     border: none;
     &--icon {
       margin-right: 10px;   
@@ -36,5 +35,15 @@
       font-weight: 400;
       text-transform: uppercase;
     }
+  }
+  .selected {
+    margin-right: 32px;
+    display: flex;
+    justify-content: center;
+    width: 142px;
+    height: 54px;
+    box-shadow: 2px -2px 9px rgba(0, 0, 0, 0.07);
+    background-color: #ffffff;    
+    border: none;
   }
 }

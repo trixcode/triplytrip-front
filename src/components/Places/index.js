@@ -14,8 +14,10 @@ const Places = (props) => {
   const [isClubSelected, setClubSelected] = useState(false);
   const [isGuestSelected, setGuestSelected] = useState(false);
   const [isHostelSelected, setHostelSelected] = useState(false);
+  const [isChaihanaSelected, setChaihanaSelected] = useState(false);
 
-  const switchClassesOfTabs = (a, b, c, d, e, f, g) => {
+
+  const switchClassesOfTabs = (a, b, c, d, e, f, g, h) => {
     a(true);
     b(false);
     c(false);
@@ -23,6 +25,7 @@ const Places = (props) => {
     e(false);
     f(false);
     g(false);
+    h(false);
   };
   const getCategoryId = (name) => {
     const category = categories.find(categoryOf => (categoryOf.name === name ? categoryOf._id : ''));
@@ -45,7 +48,7 @@ const Places = (props) => {
             className={isAllSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             id="all"
             onClick={() => getPlacesStart('isOpen=true&_limit=8')
-            + switchClassesOfTabs(setAllTab, setHotelTab, setCafeTab, setRestaurantTab, setClubSelected, setGuestSelected, setHostelSelected)}
+            + switchClassesOfTabs(setAllTab, setHotelTab, setCafeTab, setRestaurantTab, setClubSelected, setGuestSelected, setHostelSelected, setChaihanaSelected)}
           >
             Все
           </button>
@@ -53,7 +56,7 @@ const Places = (props) => {
             type="button"
             className={isHotelSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('hotel')
-            + switchClassesOfTabs(setHotelTab, setAllTab, setCafeTab, setRestaurantTab, setClubSelected, setGuestSelected, setHostelSelected)}
+            + switchClassesOfTabs(setHotelTab, setAllTab, setCafeTab, setRestaurantTab, setClubSelected, setGuestSelected, setChaihanaSelected, setHostelSelected)}
           >
             Отели
           </button>
@@ -61,7 +64,8 @@ const Places = (props) => {
             type="button"
             className={isRestaurantSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('restaurant')
-            + switchClassesOfTabs(setRestaurantTab, setAllTab, setCafeTab, setHotelTab, setClubSelected, setGuestSelected, setHostelSelected)}
+            + switchClassesOfTabs(setRestaurantTab, setAllTab, setCafeTab, setHotelTab, setClubSelected,
+              setChaihanaSelected, setGuestSelected, setHostelSelected)}
           >
             Рестораны
           </button>
@@ -69,7 +73,7 @@ const Places = (props) => {
             type="button"
             className={isCafeSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('cafe')
-            + switchClassesOfTabs(setCafeTab, setAllTab, setHotelTab, setRestaurantTab, setClubSelected, setGuestSelected, setHostelSelected)}
+            + switchClassesOfTabs(setCafeTab, setAllTab, setHotelTab, setRestaurantTab, setChaihanaSelected, setClubSelected, setGuestSelected, setHostelSelected)}
           >
             Кафе
           </button>
@@ -77,7 +81,7 @@ const Places = (props) => {
             type="button"
             className={isClubSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('night club')
-            + switchClassesOfTabs(setClubSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab, setGuestSelected, setHostelSelected)}
+            + switchClassesOfTabs(setClubSelected, setCafeTab, setAllTab, setChaihanaSelected, setHotelTab, setRestaurantTab, setGuestSelected, setHostelSelected)}
           >
             Ночные клубы
           </button>
@@ -85,7 +89,7 @@ const Places = (props) => {
             type="button"
             className={isGuestSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('guest house')
-            + switchClassesOfTabs(setGuestSelected, setClubSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab, setHostelSelected)}
+            + switchClassesOfTabs(setGuestSelected, setClubSelected, setChaihanaSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab, setHostelSelected)}
           >
             Гостевые дома
           </button>
@@ -93,9 +97,17 @@ const Places = (props) => {
             type="button"
             className={isHostelSelected ? 'places__tag places__tag_selected' : 'places__tag'}
             onClick={() => getCategoryId('hostel')
-            + switchClassesOfTabs(setHostelSelected, setGuestSelected, setClubSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab)}
+            + switchClassesOfTabs(setHostelSelected, setChaihanaSelected, setGuestSelected, setClubSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab)}
           >
             Хостел
+          </button>
+          <button
+            type="button"
+            className={isChaihanaSelected ? 'places__tag places__tag_selected' : 'places__tag'}
+            onClick={() => getCategoryId('chaihana')
+            + switchClassesOfTabs(setChaihanaSelected, setHostelSelected, setGuestSelected, setClubSelected, setCafeTab, setAllTab, setHotelTab, setRestaurantTab)}
+          >
+            Чайхана
           </button>
         </div>
         <div

@@ -14,10 +14,24 @@
       background-color: #6534c7;
       margin-right: 5px;
       color: #ffffff;
+      border: none;
+      border: 5px;
       font-family: "Montserrat";
       font-size: 14px;
       font-weight: 500;
       text-transform: capitalize;
+    }
+    &--btn:nth-child(2) {
+      background-color: #ffae00;
+    }
+    &--btn:nth-child(3) {
+      background-color: #35ccfd;
+    }
+    &--btn:nth-child(4) {
+      background-color: #9ce27a;
+    }
+    &--btn:nth-child(5) {
+      background-color: #ed1c24;
     }
   }
   &__content {

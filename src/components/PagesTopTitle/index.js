@@ -26,7 +26,7 @@ const PagesTopTitle = (props) => {
                   className="pages-top-subheader__link"
                 >
                   {linkItem}
-                  <span> &gt&gt </span>
+                  <span>{'>>'}</span>
                 </a>
               </li>
             ))}
