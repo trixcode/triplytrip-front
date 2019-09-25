@@ -11,19 +11,24 @@
   padding: 28px 15px 44px 15px;
   background-color: #ffffff;
   @media (max-width: 1400px) { 
-    grid-gap: 15px;    
+    grid-gap: 25px;    
+  }
+  @media (max-width: 1200px) { 
+    grid-gap: 10px;    
   }
   @media (max-width: 992px) { 
     grid-template-columns: 1fr; 
     justify-items: center;
     grid-gap: 15px;    
   }
-  @media (max-width: 576px) { 
-    width: 465px;
-    height: 388px;
+  @media (max-width: 768px) { 
+    justify-items: start;
+  }
+  @media (max-width: 576px) {
+    justify-items: center;
   }
   &__big {
-    width: 690px;
+    width: 680px;
     height: 448px;
     background: linear-gradient(to top, #847be0 0%, #d345ca 100%);
     display: flex;
@@ -34,9 +39,21 @@
       width: 525px;
       height: 448px;
     }
-    @media (max-width: 576px) { 
-      width: 465px;
-      height: 388px;
+    @media (max-width: 1200px) { 
+      width: 445px;
+      height: 400px;
+    }
+    @media (max-width: 992px) { 
+      width: 660px;
+      height: 448px;
+    }
+    @media (max-width: 768px) {
+      width: 480px;
+      height: 400px;
+    }
+    @media (max-width: 576px) {
+      width: 370px;
+      height: 330px;
     }
     &--area {
       margin-bottom: 61px;
@@ -63,24 +80,38 @@
     }
   }
   &__box {
-    width: 690px;
+    width: 680px;
     height: 448px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 20px;    
     @media (max-width: 1400px) { 
       width: 525px;
       height: 448px;
     }
+    @media (max-width: 1200px) { 
+      width: 445px;
+      height: 400px;
+      grid-gap: 10px;
+    }
     @media (max-width: 992px) { 
-      width: 525px;
+      width: 660px;
       height: 448px;
-      grid-gap: 25px;
+      grid-gap: 10px;
+    }
+    @media (max-width: 768px) { 
+      grid-gap: 10px;
+      width: 480px;
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      height: 100%;
+      justify-items: center;
     }
   }
   &__small {
-    height: 207px;
     width: 330px;
+    height: 214px;
     background: linear-gradient(to top, #fb6885 0%, #f85799 100%);
     display: flex;
     flex-direction: column;
@@ -88,7 +119,23 @@
     justify-content: center;
     @media (max-width: 1400px) { 
       width: 251px;
-      height: 208px;
+      height: 214px;
+    }
+    @media (max-width: 1200px) { 
+      width: 215px;
+      height: 195px;
+    }
+    @media (max-width: 992px) { 
+      width: 325px;
+      height: 214px;
+    }
+    @media (max-width: 768px) {
+      width: 235px;
+      height: 219px;
+    }
+    @media (max-width: 576px) {
+      width: 370px;
+      height: 330px;
     }
     &--area{
       margin-bottom: 16px;
@@ -105,6 +152,11 @@
         font-size: 38px;
         font-weight: 400;
       }
+      @media (max-width: 576px) {
+          width: 167px;
+          height: 167px;
+          margin-bottom: 61px;
+      }
     }
     &--text {
       color: #ffffff;
@@ -112,6 +164,10 @@
       font-size: 18px;
       font-weight: 400;
       text-transform: capitalize;
+      @media (max-width: 576px) {
+          font-weight: 400;
+          font-size: 38px;
+      }
     } 
   }
   &__small:nth-child(2) {
@@ -124,14 +180,32 @@
     background: linear-gradient(to top, #3cbcb1 0%, #40d5a0 100%);
   }
   &__medium {
-    width: 690px;
+    width: 680px;
     height: 204px;
     background: linear-gradient(to top, #fb6885 0%, #f85799 100%);
     display: flex;
     align-items: center;
     @media (max-width: 1400px) { 
-      width: 532px;
+      width: 525px;
       height: 140px;
+    }
+    @media (max-width: 1200px) { 
+      width: 445px;
+      height: 130px;
+    }
+    @media (max-width: 992px) { 
+      width: 660px;
+      height: 140px;
+    }
+    @media (max-width: 768px) { 
+      width: 480px;
+    }
+    @media (max-width: 576px) {
+      width: 370px;
+      height: 330px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     &--area {
       margin: 0 44px 0 35px;
@@ -145,6 +219,12 @@
       @media (max-width: 1400px) { 
         width: 110px;
         height: 110px;
+      }
+      @media (max-width: 576px) {
+        flex-direction: column;
+        width: 167px;
+        height: 167px;
+        margin-bottom: 61px;
       }
       &__number {
         color: #ffea01;

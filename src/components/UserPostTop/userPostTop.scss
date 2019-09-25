@@ -30,7 +30,7 @@
     &--name {
       text-transform: capitalize;
       color: #ffffff;
-      font-family: Montserrat;
+      font-family: "Montserrat";
       font-size: 20px;
       font-weight: 500;
       margin-bottom: 10px;
@@ -38,7 +38,7 @@
     &--status {
       text-transform: capitalize;
       color: #ffea01;
-      font-family: Montserrat;
+      font-family: "Montserrat";
       font-size: 14px;
       font-weight: 500;
     }
@@ -51,9 +51,12 @@
   &__status {
     display: flex;
     margin-right: 31px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+      }
     &--follow {
       &-number {
-        font-family: Montserrat;
+        font-family: "Montserrat";
         font-size: 14px;
         font-weight: 500;
         color: #ffea01;
@@ -62,7 +65,7 @@
       &-text {
         text-transform: uppercase;
         color: #ffffff;
-        font-family: Montserrat;
+        font-family: "Montserrat";
         font-size: 14px;
         font-weight: 500;
       }
@@ -82,7 +85,7 @@
       background-color: #ffffff;
     text-transform: capitalize;
     color: #000000;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 14px;
     font-weight: 500;
   }
