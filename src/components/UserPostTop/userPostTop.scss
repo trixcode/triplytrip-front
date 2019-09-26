@@ -48,11 +48,17 @@
 .postTop-wrapper-profile {
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   &__status {
     display: flex;
     margin-right: 31px;
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         flex-direction: column;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 8px;
       }
     &--follow {
       &-number {

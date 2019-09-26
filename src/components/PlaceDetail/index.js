@@ -144,7 +144,7 @@ const PlaceDetail = (props) => {
                 <div className="sidebar-owner-info">
                   <div className="sidebar-owner-info__avatar" />
                   <span className="sidebar-owner-info__name">
-                    {`${placeDetail.user.firstName} ${placeDetail.user.lastName}`}
+                    {`${placeDetail.user.username}`}
                   </span>
                   <span className="sidebar-owner-info__status">Pедактор</span>
                   <div className="sidebar-owner-info__followers">
