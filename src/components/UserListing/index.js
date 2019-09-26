@@ -1,11 +1,17 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { faEdit, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './userListing.scss';
 
 const Listing = (props) => {
-  const { myListing } = props;
+  const { myListing, history } = props;
+
+  const pushToDetail = (event) => {
+    history.push(`/detail/${event.target.value}`);
+  };
+
   return (
     <div className="user-wrapper-listing">
       <div className="user-wrapper-listing__tabs">
@@ -40,6 +46,8 @@ const Listing = (props) => {
               </div>
               <div className="user-wrapper-listing__content--block__sidebar--buttons">
                 <button
+                  onClick={pushToDetail}
+                  value={my._id}
                   type="button"
                   className="user-wrapper-listing__content--block__sidebar--buttons__btn"
                 >
@@ -85,6 +93,9 @@ Listing.propTypes = {
   myListing: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string,
   })).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
-export default Listing;
+export default withRouter(Listing);
