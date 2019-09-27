@@ -26,3 +26,17 @@ export const getUserListingFailure = responseError => ({
   type: actionTypes.GET_USER_LISTING_FAILURE,
   responseError,
 });
+
+
+export const deleteUserListingStart = placeID => ({
+  type: actionTypes.DELETE_USER_LISTING_START,
+  placeID,
+});
+export const deleteUserListingSuccess = placeID => ({
+  type: actionTypes.DELETE_USER_LISTING_SUCCESS,
+  placeID,
+});
+export const deleteUserListingFailure = responseError => ({
+  type: actionTypes.DELETE_USER_LISTING_FAILURE,
+  responseError,
+});

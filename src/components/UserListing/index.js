@@ -6,10 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './userListing.scss';
 
 const Listing = (props) => {
-  const { myListing, history } = props;
+  const { myListing, history, deleteUserListingStart } = props;
 
   const pushToDetail = (event) => {
     history.push(`/detail/${event.target.value}`);
+  };
+
+  const deletePlace = (event) => {
+    deleteUserListingStart(`${event.target.value}`);
   };
 
   return (
@@ -70,6 +74,8 @@ const Listing = (props) => {
                   </span>
                 </button>
                 <button
+                  onClick={deletePlace}
+                  value={my._id}
                   type="button"
                   className="user-wrapper-listing__content--block__sidebar--buttons__btn"
                 >
@@ -96,6 +102,7 @@ Listing.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  deleteUserListingStart: PropTypes.func.isRequired,
 };
 
 export default withRouter(Listing);

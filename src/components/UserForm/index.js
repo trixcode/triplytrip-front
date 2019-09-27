@@ -9,7 +9,9 @@ import Profile from '../UserProfile';
 import './userForm.scss';
 
 const UserForm = (props) => {
-  const { getUserListingStart, myListing, user } = props;
+  const {
+    getUserListingStart, deleteUserListingStart, myListing, user,
+  } = props;
 
   useEffect(() => {
     getUserListingStart();
@@ -75,7 +77,7 @@ const UserForm = (props) => {
             </div>
             {isDashboardClicked ? <Dashboard myListing={myListing} /> : ''}
             {isProfileClicked ? <Profile /> : ''}
-            {isListingClicked ? <Listing myListing={myListing} /> : ''}
+            {isListingClicked ? <Listing myListing={myListing} deleteUserListingStart={deleteUserListingStart} /> : ''}
           </div>
         </div>
       </div>
@@ -85,6 +87,7 @@ const UserForm = (props) => {
 
 UserForm.propTypes = {
   myListing: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  deleteUserListingStart: PropTypes.func.isRequired,
   user: PropTypes.shape({}).isRequired,
   getUserListingStart: PropTypes.func.isRequired,
 };
