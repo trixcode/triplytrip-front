@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
     case actionTypes.REGISTER_SUCCESS:
       return {
         ...state,
-        token: action.response,
+        token: action.response.token,
         user: action.response.user,
       };
     default:

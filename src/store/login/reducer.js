@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
     case actionTypes.LOGIN_USER_SUCCESS:
       return {
         ...state,
-        token: action.response,
+        token: action.response.token,
         user: action.response.user,
       };
     case actionTypes.LOGOUT_USER_SUCCESS:
@@ -20,6 +20,7 @@ export default (state = initialState, action) => {
     case actionTypes.USER_SUCCESS:
       return {
         ...state,
+        token: action.response.token,
         user: action.response.user,
         isLogined: action.response.isLogined,
       };
