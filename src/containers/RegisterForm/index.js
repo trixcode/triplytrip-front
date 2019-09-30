@@ -19,7 +19,7 @@ const formConfig = {
 const RegisterFormContainer = props => <RegisterForm {...props} />;
 
 const mapStateToProps = store => ({
-  userData: store.register.userData,
+  token: store.register.token,
 });
 
 const mapDispatchToProps = dispatch => ({

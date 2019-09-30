@@ -1,5 +1,5 @@
 export const initialState = {
-  userData: {
+  token: {
     token: '',
   },
   user: {

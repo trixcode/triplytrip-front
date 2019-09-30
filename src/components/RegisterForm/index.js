@@ -6,18 +6,19 @@ import customInputField from '../CustomFields';
 
 const RegisterForm = (props) => {
   const {
-    handleSubmit, registerStart, userData, setNotLogined, setLogined,
+    handleSubmit, registerStart, token, setNotLogined, setLogined,
   } = props;
   const onSubmitHandle = (formValues) => {
     registerStart(formValues);
   };
 
-  if (userData.token) {
+  if (token && token.token !== '') {
     setLogined(true);
-    localStorage.setItem('token', userData.token);
+    localStorage.setItem('token', token.token);
   } else {
     setNotLogined(false);
   }
+
   return (
     <div className="modal-sign-up">
       <div className="modal-form-wrapper">
@@ -61,7 +62,7 @@ const RegisterForm = (props) => {
 };
 
 RegisterForm.propTypes = {
-  userData: PropTypes.shape({
+  token: PropTypes.shape({
     token: PropTypes.string,
   }).isRequired,
   handleSubmit: PropTypes.func.isRequired,
