@@ -7,6 +7,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         userData: action.response,
+        user: action.response.user,
       };
     default:
       return state;

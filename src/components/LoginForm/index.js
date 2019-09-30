@@ -18,6 +18,8 @@ const LoginForm = (props) => {
   } else {
     setNotLogined(false);
   }
+  console.log('object', token);
+  console.log('string', token.token);
 
   return (
     <div className="modal-sign-in">
