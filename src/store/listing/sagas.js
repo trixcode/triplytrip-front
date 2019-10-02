@@ -11,8 +11,14 @@ export function* createListingRequest(formData) {
   try {
     const response = yield call(api.POST, 'place', formData, { removeContentType: true });
     yield put(actions.createListingSuccess(response));
+    yield put(mainActions.setResponseSuccessStatuses({
+      message: 'Заведение созданно успешно',
+    }));
   } catch (responseError) {
     yield put(actions.createListingFailure(responseError));
+    yield put(mainActions.setResponseFailureStatuses({
+      message: responseError.message,
+    }));
   }
 }
 
