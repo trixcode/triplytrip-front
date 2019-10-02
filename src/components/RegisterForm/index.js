@@ -6,18 +6,11 @@ import customInputField from '../CustomFields';
 
 const RegisterForm = (props) => {
   const {
-    handleSubmit, registerStart, token, setNotLogined, setLogined,
+    handleSubmit, registerStart,
   } = props;
   const onSubmitHandle = (formValues) => {
     registerStart(formValues);
   };
-
-  if (token && token.token !== '') {
-    setLogined(true);
-    localStorage.setItem('token', token.token);
-  } else {
-    setNotLogined(false);
-  }
 
   return (
     <div className="modal-sign-up">
@@ -67,8 +60,6 @@ RegisterForm.propTypes = {
   }).isRequired,
   handleSubmit: PropTypes.func.isRequired,
   registerStart: PropTypes.func.isRequired,
-  setNotLogined: PropTypes.func.isRequired,
-  setLogined: PropTypes.func.isRequired,
 };
 
 export default RegisterForm;

@@ -11,6 +11,15 @@ export default (state = initialState, action) => {
         },
         user: action.response.user,
       };
+    case actionTypes.REGISTER_SUCCESS:
+      return {
+        ...state,
+        token: {
+          token: action.response.token,
+        },
+        user: action.response.user,
+        isLogined: true,
+      };
     case actionTypes.LOGOUT_USER_SUCCESS:
       return {
         ...state,

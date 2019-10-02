@@ -6,7 +6,7 @@ import { isProd } from '../config';
 import rootReducer from './reducer';
 import rootSaga from './sagas';
 import api from '../services/api';
-import { userStart, setLogined } from './login/actions';
+import { userStart, setLogined } from './user/actions';
 
 const sagaMiddleware = createSagaMiddleware();
 

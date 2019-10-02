@@ -46,7 +46,7 @@ export function AppRouter() {
 
 
 const mapStateToProps = store => ({
-  isLogined: store.login.isLogined,
+  isLogined: store.user.isLogined,
 });
 
 PrivateRouter.propTypes = {

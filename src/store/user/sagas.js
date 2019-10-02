@@ -24,6 +24,24 @@ export function* loginUserRequest(requestParams) {
   }
 }
 
+export function* registerRequest(requestParams) {
+  try {
+    const response = yield call(api.POST, 'auth/register', requestParams);
+    yield put(actions.registerSuccess(response));
+    localStorage.setItem('token', response.token);
+    yield put(mainActions.setResponseSuccessStatuses({
+      title: 'success!',
+      message: 'Вы успешно зарегистрировались!',
+    }));
+  } catch (responseError) {
+    yield put(actions.registerFailure(responseError));
+    yield put(mainActions.setResponseFailureStatuses({
+      title: 'ooops!',
+      message: responseError.message,
+    }));
+  }
+}
+
 export function* logoutUserRequest(requestParams) {
   try {
     const response = yield call(api.DELETE, 'auth/logout', requestParams);
@@ -57,6 +75,14 @@ export function* wathcloginUserRequest() {
   }
 }
 
+export function* wathcRegisterRequest() {
+  while (true) {
+    const { requestParams } = yield take(actionTypes.REGISTER_START);
+    yield put(mainActions.setDefaultResponseStatuses());
+    yield call(registerRequest, requestParams);
+  }
+}
+
 export function* wathclogoutUserRequest() {
   while (true) {
     const { requestParams } = yield take(actionTypes.LOGOUT_USER_START);
@@ -76,4 +102,5 @@ export default function* () {
   yield fork(wathcloginUserRequest);
   yield fork(wathclogoutUserRequest);
   yield fork(wathcUserRequest);
+  yield fork(wathcRegisterRequest);
 }

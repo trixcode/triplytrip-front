@@ -9,7 +9,7 @@ import {
 const ModalWindowContainer = props => <ModalWindow {...props} />;
 
 const mapStateToProps = store => ({
-  isLogined: store.login.isLogined,
+  isLogined: store.user.isLogined,
 });
 const mapDispatchToProps = dispatch => ({
   loginUserSuccess: formValue => dispatch(loginUserSuccess(formValue)),
