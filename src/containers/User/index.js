@@ -8,7 +8,7 @@ const UserContainer = props => <UserForm {...props} />;
 
 const mapStateToProps = store => ({
   myListing: store.listing.myListing,
-  user: store.login.user || store.register.user,
+  user: store.login.user,
 });
 const mapDispatchToProps = dispatch => ({
   getUserListingStart: (requestParams = '') => dispatch(getUserListingStart(requestParams)),
