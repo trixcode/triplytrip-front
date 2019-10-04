@@ -5,10 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-color: #6c8dfc;
   height: 265px;
   opacity: 0.8;
-  background-image: url('../../assets/city_vector_panorama_119914_3840x2160.jpg');
+  background: linear-gradient(to right, rgba(17, 6, 109, 0.404), rgba(55, 25, 228, 0.39)) ,url('../../assets/city_vector_panorama_119914_3840x2160.jpg');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
