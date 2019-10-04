@@ -72,6 +72,9 @@
         @media (max-width: 1200px) { 
           width: 210px;
         }
+        @media (max-width: 768px) { 
+          width: 100px;
+        }
         &--info {
           &__name {
             color: #232323;
