@@ -89,23 +89,22 @@ const ListingForm = (props) => {
                 <span className="listing-form__title">Список категорий</span>
                 <div>
                   <Field
-                    name="categoriesId"
-                    component={customInputField}
-                    autoComplete="on"
                     className="listing-form__input"
+                    name="categoriesId"
+                    component="select"
+                    autoComplete="on"
                     list="categoriesName"
-                  />
-                  <datalist id="categoriesName">
+                  >
                     {categories.map(category => (
                       <option
                         className="listing-form__input__select__value"
                         key={category._id}
-                        value={category._id}
+                        value={category._id || category.name}
                       >
                         {category.name}
                       </option>
                     ))}
-                  </datalist>
+                  </Field>
                 </div>
               </div>
               <div className="listing-form">
@@ -114,11 +113,10 @@ const ListingForm = (props) => {
                   <Field
                     className="listing-form__input "
                     name="citiesId"
-                    component={customInputField}
+                    component="select"
                     autoComplete="on"
                     list="citiesName"
-                  />
-                  <datalist id="citiesName">
+                  >
                     {cities.map(city => (
                       <option
                         className="listing-form__input__select__value"
@@ -128,7 +126,7 @@ const ListingForm = (props) => {
                         {city.name}
                       </option>
                     ))}
-                  </datalist>
+                  </Field>
                 </div>
               </div>
               <div className="listing-form">
