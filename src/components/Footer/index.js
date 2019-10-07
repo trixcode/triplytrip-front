@@ -40,6 +40,9 @@ const Footer = (props) => {
           <li>
             <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('night club')}>Ночные клубы</span>
           </li>
+          <li>
+            <span role="presentation" className="footer-list__link" href="#" onClick={() => pushToCategories('chaihana')}>Чайхана</span>
+          </li>
         </ul>
 
         <ul className="footer-list">

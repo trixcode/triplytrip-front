@@ -8,7 +8,7 @@
   background: linear-gradient(90deg, rgba(94,136,233,1) 0%, rgba(55,202,224,1) 100%);
   display: flex;
   justify-content: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
   height: 250px;
   }
       
@@ -29,7 +29,7 @@
     @media (max-width: 1199px) {
       padding: 20px 0px;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
     flex-direction: column;
     padding: 0;
   }
@@ -41,7 +41,7 @@
   margin-bottom: 15px;
 
   height: 55px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-bottom: 10px;
   }
@@ -55,7 +55,7 @@
   height: 55px;
   width: 40%;
   margin-right: 10px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     margin-bottom: 10px;
   }
@@ -80,7 +80,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     outline: none;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       margin-bottom: 5px;
     }
    }
@@ -98,7 +98,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 15px;
     padding: 12px;
     margin-bottom: 5px;
@@ -109,7 +109,7 @@ color: #ffffff;
 font-family: "Varela Round";
 font-weight: 400;
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   flex-direction: column;
 }
 }
@@ -127,7 +127,7 @@ font-weight: 400;
   text-transform: uppercase;
   border: #e03e53 1px solid;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     padding: 12px;
   }
@@ -144,7 +144,7 @@ font-weight: 400;
   font-weight: 400;
   line-height: 83.33px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     bottom: 22px;
   }
 }
@@ -159,7 +159,7 @@ font-weight: 400;
   font-weight: 400;
   line-height: 83.33px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     bottom: 22px;
   }
 }

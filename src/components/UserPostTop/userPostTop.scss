@@ -51,7 +51,7 @@
 .postTop-wrapper-profile {
   display: flex;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
   &__status {
@@ -60,7 +60,7 @@
     @media (max-width: 576px) {
         flex-direction: column;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         margin-bottom: 8px;
       }
     &--follow {

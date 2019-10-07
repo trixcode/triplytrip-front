@@ -72,7 +72,10 @@
         @media (max-width: 1200px) { 
           width: 210px;
         }
-        @media (max-width: 768px) { 
+        @media (max-width: 992px) { 
+          width: 289px;
+        }
+        @media (max-width: 767px) { 
           width: 100px;
         }
         &--info {
@@ -94,6 +97,12 @@
           display: flex;
           justify-content: space-between;
           @media (max-width: 1200px) { 
+            flex-direction: column;
+          }
+          @media (max-width: 992px) { 
+            flex-direction: row;
+          }
+          @media (max-width: 767px) { 
             flex-direction: column;
           }
           &__btn {
