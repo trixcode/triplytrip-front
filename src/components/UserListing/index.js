@@ -10,10 +10,16 @@ const Listing = (props) => {
 
   const pushToDetail = (event) => {
     history.push(`/detail/${event.target.value}`);
+    console.log('target', event.target.value);
+    console.log('history', history);
   };
+  console.log('outside mylisting id', myListing);
 
   const deletePlace = (event) => {
     deleteUserListingStart(`${event.target.value}`);
+    console.log('target', event.target.value);
+    console.log('history', history);
+    console.log('func', deleteUserListingStart);
   };
 
   return (

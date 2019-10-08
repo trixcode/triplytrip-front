@@ -45,26 +45,18 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .modal-container {
-  position: absolute;
-  top: 16%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  height: 76%;
-  width: 40%;
-  bottom: 51px;
+  height: 70%;
+  max-width: 400px;
   border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
-  overflow: auto;
   border-radius: 4px;
-  outline: none;
-  display: flex;
-
 }
 
 .modal-close-button{
