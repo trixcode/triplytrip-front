@@ -8,18 +8,12 @@ import './userListing.scss';
 const Listing = (props) => {
   const { myListing, history, deleteUserListingStart } = props;
 
-  const pushToDetail = (event) => {
-    history.push(`/detail/${event.target.value}`);
-    console.log('target', event.target.value);
-    console.log('history', history);
+  const pushToDetail = (placeID) => {
+    history.push(`/detail/${placeID}`);
   };
-  console.log('outside mylisting id', myListing);
 
-  const deletePlace = (event) => {
-    deleteUserListingStart(`${event.target.value}`);
-    console.log('target', event.target.value);
-    console.log('history', history);
-    console.log('func', deleteUserListingStart);
+  const deletePlace = (placeID) => {
+    deleteUserListingStart(placeID);
   };
 
   return (
@@ -56,8 +50,7 @@ const Listing = (props) => {
               </div>
               <div className="user-wrapper-listing__content--block__sidebar--buttons">
                 <button
-                  onClick={pushToDetail}
-                  value={my._id}
+                  onClick={() => pushToDetail(my._id)}
                   type="button"
                   className="user-wrapper-listing__content--block__sidebar--buttons__btn"
                 >
@@ -80,8 +73,7 @@ const Listing = (props) => {
                   </span>
                 </button>
                 <button
-                  onClick={deletePlace}
-                  value={my._id}
+                  onClick={() => deletePlace(my._id)}
                   type="button"
                   className="user-wrapper-listing__content--block__sidebar--buttons__btn"
                 >
